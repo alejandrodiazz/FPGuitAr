@@ -1,0 +1,583 @@
+/*
+
+Xilinx Vivado v2019.1.2 (64-bit) [Major: 2019, Minor: 1]
+SW Build: 2615518 on Fri Aug  9 15:53:29 MDT 2019
+IP Build: 2614745 on Fri Aug  9 20:55:02 MDT 2019
+
+Process ID (PID): 18732
+License: Customer
+
+Current time: 	Fri Nov 08 15:29:38 EST 2019
+Time zone: 	Eastern Standard Time (America/New_York)
+
+OS: Ubuntu
+OS Version: 4.2.0-42-generic
+OS Architecture: amd64
+Available processors (cores): 8
+
+Display: :0
+Screen size: 1920x1080
+Screen resolution (DPI): 100
+Available screens: 1
+Available disk space: 591 GB
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+
+Java version: 	9.0.4 64-bit
+Java home: 	/var/local/xilinx-local/Vivado/2019.1/tps/lnx64/jre9.0.4
+Java executable location: 	/var/local/xilinx-local/Vivado/2019.1/tps/lnx64/jre9.0.4/bin/java
+Java initial memory (-Xms): 	128 MB
+Java maximum memory (-Xmx):	 3 GB
+
+
+User name: 	addiaz15
+User home directory: /afs/athena.mit.edu/user/a/d/addiaz15
+User working directory: /afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr
+User country: 	US
+User language: 	en
+User locale: 	en_US
+
+RDI_BASEROOT: /var/local/xilinx-local/Vivado
+HDI_APPROOT: /var/local/xilinx-local/Vivado/2019.1
+RDI_DATADIR: /var/local/xilinx-local/Vivado/2019.1/data
+RDI_BINDIR: /var/local/xilinx-local/Vivado/2019.1/bin
+
+Vivado preferences file location: /afs/athena.mit.edu/user/a/d/addiaz15/.Xilinx/Vivado/2019.1/vivado.xml
+Vivado preferences directory: /afs/athena.mit.edu/user/a/d/addiaz15/.Xilinx/Vivado/2019.1/
+Vivado layouts directory: /afs/athena.mit.edu/user/a/d/addiaz15/.Xilinx/Vivado/2019.1/layouts
+PlanAhead jar file location: 	/var/local/xilinx-local/Vivado/2019.1/lib/classes/planAhead.jar
+Vivado log file location: 	/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/vivado.log
+Vivado journal file location: 	/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/vivado.jou
+Engine tmp dir: 	./.Xil/Vivado-18732-eecs-digital-03
+
+Xilinx Environment Variables
+----------------------------
+XILINX: /var/local/xilinx-local/Vivado/2019.1/ids_lite/ISE
+XILINXD_LICENSE_FILE: 27005@eecslicsrv
+XILINX_DSP: /var/local/xilinx-local/Vivado/2019.1/ids_lite/ISE
+XILINX_PLANAHEAD: /var/local/xilinx-local/Vivado/2019.1
+XILINX_SDK: /var/local/xilinx-local/SDK/2019.1
+XILINX_VIVADO: /var/local/xilinx-local/Vivado/2019.1
+XILINX_VIVADO_HLS: /var/local/xilinx-local/Vivado/2019.1
+
+
+GUI allocated memory:	241 MB
+GUI max memory:		3,072 MB
+Engine allocated memory: 5,049 MB
+
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// HMemoryUtils.trashcanNow. Engine heap size: 5,049 MB. GUI used memory: 46 MB. Current time: 11/8/19, 3:29:40 PM EST
+selectMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // Z (q, cl)
+selectMenu(PAResourceItoN.MainMenuMgr_PROJECT, "Project"); // ae (cl)
+selectMenuItem(PAResourceCommand.PACommandNames_OPEN_PROJECT, "Open..."); // ah (cl)
+dismissMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // Z (q, cl)
+// Run Command: PAResourceCommand.PACommandNames_OPEN_PROJECT
+// Elapsed time: 15 seconds
+setFileChooser("/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.xpr");
+// [GUI Memory]: 85 MB (+86429kb) [00:00:32]
+// [Engine Memory]: 5,061 MB (+5155559kb) [00:00:32]
+// Opening Vivado Project: /afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.xpr. Version: Vivado v2019.1.2 
+// by (cl):  Open Project : addNotify
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// Tcl Message: open_project /afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.xpr 
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_DASHBOARD_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_NEW
+// [GUI Memory]: 106 MB (+18274kb) [00:00:36]
+// WARNING: HEventQueue.dispatchEvent() is taking  2073 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 5,251 MB. GUI used memory: 54 MB. Current time: 11/8/19, 3:30:07 PM EST
+// Tcl Message: open_project /afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.xpr 
+// Tcl Message: INFO: [Project 1-313] Project file moved from '/afs/athena.mit.edu/user/a/d/addiaz15/project_2' since last save. 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/var/local/xilinx-local/Vivado/2019.1/data/ip'. 
+// Project name: project_2; location: /afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2; part: xc7a100tcsg324-1
+// 'i' command handler elapsed time: 20 seconds
+dismissDialog("Open Project"); // by (cl)
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sources_1 
+// Elapsed time: 78 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, labkit (top_level.sv)]", 1, true); // B (F, cl) - Node
+// [GUI Memory]: 114 MB (+2157kb) [00:01:56]
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, labkit (top_level.sv)]", 1, true, false, false, false, false, true); // B (F, cl) - Double Click - Node
+// Elapsed time: 320 seconds
+selectCodeEditor("top_level.sv", 807, 272); // cl (w, cl)
+// Elapsed time: 353 seconds
+selectCodeEditor("top_level.sv", 722, 202); // cl (w, cl)
+// Elapsed time: 124 seconds
+selectCodeEditor("top_level.sv", 326, 187); // cl (w, cl)
+selectCodeEditor("top_level.sv", 326, 187, false, false, false, false, true); // cl (w, cl) - Double Click
+selectCodeEditor("top_level.sv", 382, 185); // cl (w, cl)
+selectCodeEditor("top_level.sv", 382, 185, false, false, false, false, true); // cl (w, cl) - Double Click
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// [Engine Memory]: 5,320 MB (+6244kb) [00:15:24]
+// HMemoryUtils.trashcanNow. Engine heap size: 5,320 MB. GUI used memory: 58 MB. Current time: 11/8/19, 3:44:55 PM EST
+// Elapsed time: 196 seconds
+selectCodeEditor("top_level.sv", 303, 342); // cl (w, cl)
+// Elapsed time: 1279 seconds
+selectCodeEditor("top_level.sv", 602, 110); // cl (w, cl)
+selectTab(PAResourceEtoH.FileSetView_TABBED_PANE, (HResource) null, "Libraries", 2); // i (N, cl)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, SystemVerilog, xil_defaultlib, audio_gen.sv]", 3, false); // B (F, cl)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, SystemVerilog, xil_defaultlib, audio_gen.sv]", 3, false); // B (F, cl)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, SystemVerilog, xil_defaultlib, audio_gen.sv]", 3, false); // B (F, cl)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, SystemVerilog, xil_defaultlib, audio_gen.sv]", 3, false, false, false, false, false, true); // B (F, cl) - Double Click
+// Elapsed time: 40 seconds
+selectCodeEditor("audio_gen.sv", 28, 143); // cl (w, cl)
+typeControlKey((HResource) null, "audio_gen.sv", 'c'); // cl (w, cl)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "top_level.sv", 1); // k (j, cl)
+// Elapsed time: 12 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "audio_gen.sv", 2); // k (j, cl)
+selectCodeEditor("audio_gen.sv", 2, 140); // cl (w, cl)
+typeControlKey((HResource) null, "audio_gen.sv", 'c'); // cl (w, cl)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "top_level.sv", 1); // k (j, cl)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Project Manager]", 0, true); // u (O, cl) - Node
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Project Manager]", 0, true, false, false, false, false, true); // u (O, cl) - Double Click - Node
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Project Manager]", 0, true); // u (O, cl) - Node
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Project Manager]", 0, true, false, false, false, false, true); // u (O, cl) - Double Click - Node
+// Elapsed time: 18 seconds
+selectCodeEditor("top_level.sv", 121, 221); // cl (w, cl)
+typeControlKey((HResource) null, "top_level.sv", 'v'); // cl (w, cl)
+selectCodeEditor("top_level.sv", 219, 305); // cl (w, cl)
+selectCodeEditor("top_level.sv", 219, 305, false, false, false, false, true); // cl (w, cl) - Double Click
+// Elapsed time: 14 seconds
+selectCodeEditor("top_level.sv", 97, 335); // cl (w, cl)
+selectCodeEditor("top_level.sv", 97, 335, false, false, false, false, true); // cl (w, cl) - Double Click
+selectCodeEditor("top_level.sv", 81, 305); // cl (w, cl)
+selectCodeEditor("top_level.sv", 81, 305, false, false, false, false, true); // cl (w, cl) - Double Click
+// Elapsed time: 17 seconds
+selectCodeEditor("top_level.sv", 455, 34); // cl (w, cl)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("top_level.sv", 506, 40); // cl (w, cl)
+selectCodeEditor("top_level.sv", 506, 40, false, false, false, false, true); // cl (w, cl) - Double Click
+// HMemoryUtils.trashcanNow. Engine heap size: 5,354 MB. GUI used memory: 59 MB. Current time: 11/8/19, 4:12:10 PM EST
+// Elapsed time: 17 seconds
+selectCodeEditor("top_level.sv", 533, 138, false, false, false, true, false); // cl (w, cl) - Popup Trigger
+selectMenuItem(RDIResource.HInputHandler_REPLACE_TEXT, "Replace..."); // ah (an, cl)
+// Elapsed time: 26 seconds
+selectComboBox("FindAndReplaceDialog.cl_Replace with:", "music_out", -1); // JComboBox (cl, FindAndReplaceDialog)
+selectButton("FindAndReplaceDialog.cl_Find", "Find"); // JButton (cl, FindAndReplaceDialog)
+// Elapsed time: 13 seconds
+selectCodeEditor("top_level.sv", 80, 191); // cl (w, cl)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 14 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "audio_gen.sv", 2); // k (j, cl)
+selectCodeEditor("audio_gen.sv", 175, 137); // cl (w, cl)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "top_level.sv", 1); // k (j, cl)
+// HMemoryUtils.trashcanNow. Engine heap size: 5,386 MB. GUI used memory: 60 MB. Current time: 11/8/19, 4:13:30 PM EST
+selectCodeEditor("top_level.sv", 155, 265); // cl (w, cl)
+selectCodeEditor("top_level.sv", 114, 172); // cl (w, cl)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "audio_gen.sv", 2); // k (j, cl)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "top_level.sv", 1); // k (j, cl)
+selectCodeEditor("top_level.sv", 71, 321); // cl (w, cl)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 5,418 MB. GUI used memory: 60 MB. Current time: 11/8/19, 4:14:00 PM EST
+selectCodeEditor("top_level.sv", 166, 327); // cl (w, cl)
+selectCodeEditor("top_level.sv", 185, 323); // cl (w, cl)
+// Elapsed time: 21 seconds
+selectCodeEditor("top_level.sv", 160, 231); // cl (w, cl)
+typeControlKey((HResource) null, "top_level.sv", 'c'); // cl (w, cl)
+selectCodeEditor("top_level.sv", 201, 245); // cl (w, cl)
+typeControlKey((HResource) null, "top_level.sv", 'v'); // cl (w, cl)
+selectCodeEditor("top_level.sv", 164, 261); // cl (w, cl)
+typeControlKey((HResource) null, "top_level.sv", 'v'); // cl (w, cl)
+selectCodeEditor("top_level.sv", 162, 275); // cl (w, cl)
+typeControlKey((HResource) null, "top_level.sv", 'v'); // cl (w, cl)
+selectCodeEditor("top_level.sv", 160, 291); // cl (w, cl)
+selectCodeEditor("top_level.sv", 211, 233); // cl (w, cl)
+// Elapsed time: 52 seconds
+selectCodeEditor("top_level.sv", 163, 228); // cl (w, cl)
+typeControlKey((HResource) null, "top_level.sv", 'c'); // cl (w, cl)
+selectCodeEditor("top_level.sv", 162, 246); // cl (w, cl)
+typeControlKey((HResource) null, "top_level.sv", 'v'); // cl (w, cl)
+selectCodeEditor("top_level.sv", 164, 265); // cl (w, cl)
+typeControlKey((HResource) null, "top_level.sv", 'v'); // cl (w, cl)
+selectCodeEditor("top_level.sv", 161, 276); // cl (w, cl)
+typeControlKey((HResource) null, "top_level.sv", 'v'); // cl (w, cl)
+selectCodeEditor("top_level.sv", 160, 290); // cl (w, cl)
+typeControlKey((HResource) null, "top_level.sv", 'v'); // cl (w, cl)
+selectCodeEditor("top_level.sv", 219, 289); // cl (w, cl)
+selectCodeEditor("top_level.sv", 381, 292); // cl (w, cl)
+typeControlKey((HResource) null, "top_level.sv", 'c'); // cl (w, cl)
+selectCodeEditor("top_level.sv", 159, 308); // cl (w, cl)
+typeControlKey((HResource) null, "top_level.sv", 'v'); // cl (w, cl)
+selectCodeEditor("top_level.sv", 161, 321); // cl (w, cl)
+typeControlKey((HResource) null, "top_level.sv", 'v'); // cl (w, cl)
+selectCodeEditor("top_level.sv", 161, 340); // cl (w, cl)
+typeControlKey((HResource) null, "top_level.sv", 'v'); // cl (w, cl)
+selectCodeEditor("top_level.sv", 163, 352); // cl (w, cl)
+typeControlKey((HResource) null, "top_level.sv", 'v'); // cl (w, cl)
+selectCodeEditor("top_level.sv", 163, 366); // cl (w, cl)
+typeControlKey((HResource) null, "top_level.sv", 'v'); // cl (w, cl)
+selectCodeEditor("top_level.sv", 168, 206); // cl (w, cl)
+selectCodeEditor("top_level.sv", 212, 206); // cl (w, cl)
+selectCodeEditor("top_level.sv", 209, 200); // cl (w, cl)
+typeControlKey((HResource) null, "top_level.sv", 'v'); // cl (w, cl)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 16 seconds
+selectCodeEditor("top_level.sv", 213, 65); // cl (w, cl)
+selectCodeEditor("top_level.sv", 164, 67); // cl (w, cl)
+typeControlKey((HResource) null, "top_level.sv", 'v'); // cl (w, cl)
+selectCodeEditor("top_level.sv", 214, 87); // cl (w, cl)
+selectCodeEditor("top_level.sv", 218, 97); // cl (w, cl)
+selectCodeEditor("top_level.sv", 207, 65); // cl (w, cl)
+selectCodeEditor("top_level.sv", 216, 67); // cl (w, cl)
+selectCodeEditor("top_level.sv", 210, 66); // cl (w, cl)
+selectCodeEditor("top_level.sv", 218, 82); // cl (w, cl)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("top_level.sv", 217, 98); // cl (w, cl)
+// HMemoryUtils.trashcanNow. Engine heap size: 5,450 MB. GUI used memory: 60 MB. Current time: 11/8/19, 4:17:05 PM EST
+selectCodeEditor("top_level.sv", 217, 110); // cl (w, cl)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("top_level.sv", 220, 129); // cl (w, cl)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 5,482 MB. GUI used memory: 60 MB. Current time: 11/8/19, 4:17:25 PM EST
+// Elapsed time: 13 seconds
+selectCodeEditor("top_level.sv", 84, 185); // cl (w, cl)
+selectCodeEditor("top_level.sv", 84, 174); // cl (w, cl)
+selectCodeEditor("top_level.sv", 81, 160); // cl (w, cl)
+selectCodeEditor("top_level.sv", 80, 140); // cl (w, cl)
+selectCodeEditor("top_level.sv", 86, 134); // cl (w, cl)
+selectCodeEditor("top_level.sv", 86, 109); // cl (w, cl)
+selectCodeEditor("top_level.sv", 84, 100); // cl (w, cl)
+selectCodeEditor("top_level.sv", 81, 86); // cl (w, cl)
+selectCodeEditor("top_level.sv", 80, 65); // cl (w, cl)
+selectCodeEditor("top_level.sv", 81, 56); // cl (w, cl)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 337 seconds
+selectCodeEditor("top_level.sv", 92, 201); // cl (w, cl)
+typeControlKey((HResource) null, "top_level.sv", 'c'); // cl (w, cl)
+selectCodeEditor("top_level.sv", 93, 219); // cl (w, cl)
+typeControlKey((HResource) null, "top_level.sv", 'v'); // cl (w, cl)
+selectCodeEditor("top_level.sv", 95, 234); // cl (w, cl)
+selectCodeEditor("top_level.sv", 92, 234); // cl (w, cl)
+typeControlKey((HResource) null, "top_level.sv", 'v'); // cl (w, cl)
+selectCodeEditor("top_level.sv", 91, 251); // cl (w, cl)
+typeControlKey((HResource) null, "top_level.sv", 'v'); // cl (w, cl)
+selectCodeEditor("top_level.sv", 87, 266); // cl (w, cl)
+typeControlKey((HResource) null, "top_level.sv", 'v'); // cl (w, cl)
+selectCodeEditor("top_level.sv", 93, 281); // cl (w, cl)
+typeControlKey((HResource) null, "top_level.sv", 'v'); // cl (w, cl)
+selectCodeEditor("top_level.sv", 91, 291); // cl (w, cl)
+typeControlKey((HResource) null, "top_level.sv", 'v'); // cl (w, cl)
+selectCodeEditor("top_level.sv", 92, 308); // cl (w, cl)
+typeControlKey((HResource) null, "top_level.sv", 'v'); // cl (w, cl)
+selectCodeEditor("top_level.sv", 91, 326); // cl (w, cl)
+typeControlKey((HResource) null, "top_level.sv", 'v'); // cl (w, cl)
+selectCodeEditor("top_level.sv", 91, 337); // cl (w, cl)
+typeControlKey((HResource) null, "top_level.sv", 'v'); // cl (w, cl)
+selectCodeEditor("top_level.sv", 88, 354); // cl (w, cl)
+typeControlKey((HResource) null, "top_level.sv", 'v'); // cl (w, cl)
+selectCodeEditor("top_level.sv", 93, 366); // cl (w, cl)
+typeControlKey((HResource) null, "top_level.sv", 'v'); // cl (w, cl)
+selectCodeEditor("top_level.sv", 94, 381); // cl (w, cl)
+typeControlKey((HResource) null, "top_level.sv", 'v'); // cl (w, cl)
+selectCodeEditor("top_level.sv", 93, 399); // cl (w, cl)
+typeControlKey((HResource) null, "top_level.sv", 'v'); // cl (w, cl)
+selectCodeEditor("top_level.sv", 94, 411); // cl (w, cl)
+typeControlKey((HResource) null, "top_level.sv", 'v'); // cl (w, cl)
+selectCodeEditor("top_level.sv", 90, 427); // cl (w, cl)
+typeControlKey((HResource) null, "top_level.sv", 'v'); // cl (w, cl)
+selectCodeEditor("top_level.sv", 89, 307); // cl (w, cl)
+typeControlKey((HResource) null, "top_level.sv", 'v'); // cl (w, cl)
+selectCodeEditor("top_level.sv", 92, 324); // cl (w, cl)
+typeControlKey((HResource) null, "top_level.sv", 'v'); // cl (w, cl)
+selectCodeEditor("top_level.sv", 90, 335); // cl (w, cl)
+typeControlKey((HResource) null, "top_level.sv", 'v'); // cl (w, cl)
+selectCodeEditor("top_level.sv", 90, 356); // cl (w, cl)
+typeControlKey((HResource) null, "top_level.sv", 'v'); // cl (w, cl)
+selectCodeEditor("top_level.sv", 91, 367); // cl (w, cl)
+typeControlKey((HResource) null, "top_level.sv", 'v'); // cl (w, cl)
+selectCodeEditor("top_level.sv", 92, 382); // cl (w, cl)
+typeControlKey((HResource) null, "top_level.sv", 'v'); // cl (w, cl)
+selectCodeEditor("top_level.sv", 92, 395); // cl (w, cl)
+typeControlKey((HResource) null, "top_level.sv", 'v'); // cl (w, cl)
+selectCodeEditor("top_level.sv", 91, 415); // cl (w, cl)
+typeControlKey((HResource) null, "top_level.sv", 'v'); // cl (w, cl)
+selectCodeEditor("top_level.sv", 91, 429); // cl (w, cl)
+typeControlKey((HResource) null, "top_level.sv", 'v'); // cl (w, cl)
+selectCodeEditor("top_level.sv", 93, 441); // cl (w, cl)
+typeControlKey((HResource) null, "top_level.sv", 'v'); // cl (w, cl)
+selectCodeEditor("top_level.sv", 92, 452); // cl (w, cl)
+typeControlKey((HResource) null, "top_level.sv", 'v'); // cl (w, cl)
+selectCodeEditor("top_level.sv", 93, 469); // cl (w, cl)
+typeControlKey((HResource) null, "top_level.sv", 'v'); // cl (w, cl)
+selectCodeEditor("top_level.sv", 91, 221); // cl (w, cl)
+typeControlKey((HResource) null, "top_level.sv", 'v'); // cl (w, cl)
+selectCodeEditor("top_level.sv", 89, 235); // cl (w, cl)
+typeControlKey((HResource) null, "top_level.sv", 'v'); // cl (w, cl)
+selectCodeEditor("top_level.sv", 92, 248); // cl (w, cl)
+typeControlKey((HResource) null, "top_level.sv", 'v'); // cl (w, cl)
+selectCodeEditor("top_level.sv", 93, 260); // cl (w, cl)
+typeControlKey((HResource) null, "top_level.sv", 'v'); // cl (w, cl)
+selectCodeEditor("top_level.sv", 91, 280); // cl (w, cl)
+typeControlKey((HResource) null, "top_level.sv", 'v'); // cl (w, cl)
+selectCodeEditor("top_level.sv", 91, 292); // cl (w, cl)
+typeControlKey((HResource) null, "top_level.sv", 'v'); // cl (w, cl)
+selectCodeEditor("top_level.sv", 89, 308); // cl (w, cl)
+typeControlKey((HResource) null, "top_level.sv", 'v'); // cl (w, cl)
+selectCodeEditor("top_level.sv", 90, 322); // cl (w, cl)
+typeControlKey((HResource) null, "top_level.sv", 'v'); // cl (w, cl)
+selectCodeEditor("top_level.sv", 87, 334); // cl (w, cl)
+typeControlKey((HResource) null, "top_level.sv", 'v'); // cl (w, cl)
+selectCodeEditor("top_level.sv", 93, 349); // cl (w, cl)
+typeControlKey((HResource) null, "top_level.sv", 'v'); // cl (w, cl)
+selectCodeEditor("top_level.sv", 90, 189); // cl (w, cl)
+typeControlKey((HResource) null, "top_level.sv", 'v'); // cl (w, cl)
+selectCodeEditor("top_level.sv", 87, 204); // cl (w, cl)
+typeControlKey((HResource) null, "top_level.sv", 'v'); // cl (w, cl)
+selectCodeEditor("top_level.sv", 95, 219); // cl (w, cl)
+selectCodeEditor("top_level.sv", 90, 221); // cl (w, cl)
+typeControlKey((HResource) null, "top_level.sv", 'v'); // cl (w, cl)
+selectCodeEditor("top_level.sv", 93, 234); // cl (w, cl)
+typeControlKey((HResource) null, "top_level.sv", 'v'); // cl (w, cl)
+selectCodeEditor("top_level.sv", 92, 244); // cl (w, cl)
+typeControlKey((HResource) null, "top_level.sv", 'v'); // cl (w, cl)
+selectCodeEditor("top_level.sv", 90, 266); // cl (w, cl)
+typeControlKey((HResource) null, "top_level.sv", 'v'); // cl (w, cl)
+selectCodeEditor("top_level.sv", 93, 276); // cl (w, cl)
+selectCodeEditor("top_level.sv", 235, 266, false, true, false, false, false); // cl (w, cl) - Control Key
+selectCodeEditor("top_level.sv", 90, 274); // cl (w, cl)
+typeControlKey((HResource) null, "top_level.sv", 'v'); // cl (w, cl)
+selectCodeEditor("top_level.sv", 89, 292); // cl (w, cl)
+typeControlKey((HResource) null, "top_level.sv", 'v'); // cl (w, cl)
+selectCodeEditor("top_level.sv", 92, 310); // cl (w, cl)
+typeControlKey((HResource) null, "top_level.sv", 'v'); // cl (w, cl)
+selectCodeEditor("top_level.sv", 91, 321); // cl (w, cl)
+typeControlKey((HResource) null, "top_level.sv", 'v'); // cl (w, cl)
+selectCodeEditor("top_level.sv", 95, 342); // cl (w, cl)
+selectCodeEditor("top_level.sv", 92, 337); // cl (w, cl)
+typeControlKey((HResource) null, "top_level.sv", 'v'); // cl (w, cl)
+selectCodeEditor("top_level.sv", 87, 354); // cl (w, cl)
+typeControlKey((HResource) null, "top_level.sv", 'v'); // cl (w, cl)
+selectCodeEditor("top_level.sv", 80, 348); // cl (w, cl)
+selectCodeEditor("top_level.sv", 89, 355); // cl (w, cl)
+selectCodeEditor("top_level.sv", 87, 352); // cl (w, cl)
+selectCodeEditor("top_level.sv", 92, 369); // cl (w, cl)
+typeControlKey((HResource) null, "top_level.sv", 'v'); // cl (w, cl)
+selectCodeEditor("top_level.sv", 92, 384); // cl (w, cl)
+typeControlKey((HResource) null, "top_level.sv", 'v'); // cl (w, cl)
+selectCodeEditor("top_level.sv", 90, 395); // cl (w, cl)
+typeControlKey((HResource) null, "top_level.sv", 'v'); // cl (w, cl)
+selectCodeEditor("top_level.sv", 91, 411); // cl (w, cl)
+typeControlKey((HResource) null, "top_level.sv", 'v'); // cl (w, cl)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("top_level.sv", 325, 380); // cl (w, cl)
+selectCodeEditor("top_level.sv", 331, 358); // cl (w, cl)
+// HMemoryUtils.trashcanNow. Engine heap size: 5,514 MB. GUI used memory: 56 MB. Current time: 11/8/19, 4:25:35 PM EST
+selectCodeEditor("top_level.sv", 319, 385); // cl (w, cl)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("top_level.sv", 204, 409); // cl (w, cl)
+selectCodeEditor("top_level.sv", 208, 447); // cl (w, cl)
+selectCodeEditor("top_level.sv", 211, 411); // cl (w, cl)
+selectCodeEditor("top_level.sv", 258, 530); // cl (w, cl)
+selectCodeEditor("top_level.sv", 196, 410); // cl (w, cl)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 5,546 MB. GUI used memory: 56 MB. Current time: 11/8/19, 4:26:05 PM EST
+selectCodeEditor("top_level.sv", 403, 471); // cl (w, cl)
+selectCodeEditor("top_level.sv", 202, 415); // cl (w, cl)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 16 seconds
+selectCodeEditor("top_level.sv", 222, 280); // cl (w, cl)
+selectCodeEditor("top_level.sv", 224, 295); // cl (w, cl)
+selectCodeEditor("top_level.sv", 224, 305); // cl (w, cl)
+selectCodeEditor("top_level.sv", 228, 323); // cl (w, cl)
+selectCodeEditor("top_level.sv", 237, 341); // cl (w, cl)
+selectCodeEditor("top_level.sv", 228, 339); // cl (w, cl)
+selectCodeEditor("top_level.sv", 225, 336); // cl (w, cl)
+selectCodeEditor("top_level.sv", 225, 354); // cl (w, cl)
+selectCodeEditor("top_level.sv", 222, 372); // cl (w, cl)
+selectCodeEditor("top_level.sv", 220, 382); // cl (w, cl)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 5,578 MB. GUI used memory: 56 MB. Current time: 11/8/19, 4:27:20 PM EST
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// [Engine Memory]: 5,594 MB (+8489kb) [00:57:54]
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 5,610 MB. GUI used memory: 56 MB. Current time: 11/8/19, 4:28:15 PM EST
+// Elapsed time: 76 seconds
+selectCodeEditor("top_level.sv", 21, 127); // cl (w, cl)
+selectCodeEditor("top_level.sv", 62, 131); // cl (w, cl)
+selectCodeEditor("top_level.sv", 58, 130); // cl (w, cl)
+selectCodeEditor("top_level.sv", 68, 123); // cl (w, cl)
+selectCodeEditor("top_level.sv", 68, 123, false, false, false, false, true); // cl (w, cl) - Double Click
+selectCodeEditor("top_level.sv", 156, 123); // cl (w, cl)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 33 seconds
+selectCodeEditor("top_level.sv", 136, 381); // cl (w, cl)
+// Elapsed time: 18 seconds
+selectCodeEditor("top_level.sv", 71, 398); // cl (w, cl)
+// Elapsed time: 13 seconds
+selectCodeEditor("top_level.sv", 213, 409); // cl (w, cl)
+// Elapsed time: 33 seconds
+selectCodeEditor("top_level.sv", 127, 205); // cl (w, cl)
+// Elapsed time: 16 seconds
+selectCodeEditor("top_level.sv", 179, 322); // cl (w, cl)
+// Elapsed time: 14 seconds
+selectCodeEditor("top_level.sv", 273, 352); // cl (w, cl)
+selectCodeEditor("top_level.sv", 185, 456); // cl (w, cl)
+selectCodeEditor("top_level.sv", 185, 456, false, false, false, false, true); // cl (w, cl) - Double Click
+typeControlKey((HResource) null, "top_level.sv", 'c'); // cl (w, cl)
+selectCodeEditor("top_level.sv", 276, 356); // cl (w, cl)
+typeControlKey((HResource) null, "top_level.sv", 'v'); // cl (w, cl)
+selectCodeEditor("top_level.sv", 346, 356); // cl (w, cl)
+// Elapsed time: 23 seconds
+selectCodeEditor("top_level.sv", 262, 314); // cl (w, cl)
+// Elapsed time: 11 seconds
+selectCodeEditor("top_level.sv", 110, 265); // cl (w, cl)
+// Elapsed time: 14 seconds
+selectCodeEditor("top_level.sv", 176, 430); // cl (w, cl)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 5,644 MB. GUI used memory: 56 MB. Current time: 11/8/19, 4:31:45 PM EST
+selectCodeEditor("top_level.sv", 114, 439); // cl (w, cl)
+selectCodeEditor("top_level.sv", 124, 442); // cl (w, cl)
+selectCodeEditor("top_level.sv", 117, 440); // cl (w, cl)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 44 seconds
+selectCodeEditor("top_level.sv", 128, 270, false, false, false, true, false); // cl (w, cl) - Popup Trigger
+selectCodeEditor("top_level.sv", 122, 246); // cl (w, cl)
+// Elapsed time: 90 seconds
+selectCodeEditor("top_level.sv", 170, 291); // cl (w, cl)
+selectCodeEditor("top_level.sv", 169, 292); // cl (w, cl)
+// Elapsed time: 18 seconds
+selectCodeEditor("top_level.sv", 139, 262); // cl (w, cl)
+selectCodeEditor("top_level.sv", 133, 214); // cl (w, cl)
+selectCodeEditor("top_level.sv", 158, 213); // cl (w, cl)
+selectCodeEditor("top_level.sv", 157, 218); // cl (w, cl)
+selectCodeEditor("top_level.sv", 419, 220); // cl (w, cl)
+selectCodeEditor("top_level.sv", 135, 218); // cl (w, cl)
+selectCodeEditor("top_level.sv", 512, 217); // cl (w, cl)
+typeControlKey((HResource) null, "top_level.sv", 'v'); // cl (w, cl)
+selectCodeEditor("top_level.sv", 139, 226); // cl (w, cl)
+selectCodeEditor("top_level.sv", 299, 236); // cl (w, cl)
+// Elapsed time: 18 seconds
+selectCodeEditor("top_level.sv", 280, 235); // cl (w, cl)
+selectCodeEditor("top_level.sv", 167, 234); // cl (w, cl)
+selectCodeEditor("top_level.sv", 306, 234); // cl (w, cl)
+// Elapsed time: 10 seconds
+selectCodeEditor("top_level.sv", 175, 231); // cl (w, cl)
+typeControlKey((HResource) null, "top_level.sv", 'c'); // cl (w, cl)
+selectCodeEditor("top_level.sv", 338, 234); // cl (w, cl)
+typeControlKey((HResource) null, "top_level.sv", 'v'); // cl (w, cl)
+// Elapsed time: 175 seconds
+selectCodeEditor("top_level.sv", 409, 233); // cl (w, cl)
+selectCodeEditor("top_level.sv", 411, 236); // cl (w, cl)
+selectCodeEditor("top_level.sv", 472, 230); // cl (w, cl)
+selectCodeEditor("top_level.sv", 217, 281); // cl (w, cl)
+selectCodeEditor("top_level.sv", 189, 242); // cl (w, cl)
+// Elapsed time: 184 seconds
+selectCodeEditor("top_level.sv", 673, 277); // cl (w, cl)
+selectCodeEditor("top_level.sv", 132, 236); // cl (w, cl)
+selectCodeEditor("top_level.sv", 295, 158); // cl (w, cl)
+selectCodeEditor("top_level.sv", 508, 129); // cl (w, cl)
+// Elapsed time: 12 seconds
+selectCodeEditor("top_level.sv", 320, 160); // cl (w, cl)
+selectCodeEditor("top_level.sv", 171, 161); // cl (w, cl)
+selectCodeEditor("top_level.sv", 165, 158); // cl (w, cl)
+// Elapsed time: 27 seconds
+selectCodeEditor("top_level.sv", 188, 161); // cl (w, cl)
+selectCodeEditor("top_level.sv", 309, 161); // cl (w, cl)
+selectCodeEditor("top_level.sv", 200, 155); // cl (w, cl)
+selectCodeEditor("top_level.sv", 197, 156); // cl (w, cl)
+typeControlKey((HResource) null, "top_level.sv", 'c'); // cl (w, cl)
+selectCodeEditor("top_level.sv", 379, 154); // cl (w, cl)
+typeControlKey((HResource) null, "top_level.sv", 'v'); // cl (w, cl)
+selectCodeEditor("top_level.sv", 426, 162); // cl (w, cl)
+// Elapsed time: 14 seconds
+selectCodeEditor("top_level.sv", 326, 184); // cl (w, cl)
+// Elapsed time: 10 seconds
+selectCodeEditor("top_level.sv", 452, 159); // cl (w, cl)
+selectCodeEditor("top_level.sv", 452, 159); // cl (w, cl)
+selectCodeEditor("top_level.sv", 448, 152); // cl (w, cl)
+selectCodeEditor("top_level.sv", 456, 154); // cl (w, cl)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 14 seconds
+selectCodeEditor("top_level.sv", 412, 168); // cl (w, cl)
+// Elapsed time: 40 seconds
+selectCodeEditor("top_level.sv", 196, 152); // cl (w, cl)
+typeControlKey((HResource) null, "top_level.sv", 'c'); // cl (w, cl)
+selectCodeEditor("top_level.sv", 234, 185); // cl (w, cl)
+typeControlKey((HResource) null, "top_level.sv", 'v'); // cl (w, cl)
+selectCodeEditor("top_level.sv", 333, 186); // cl (w, cl)
+selectCodeEditor("top_level.sv", 333, 186, false, false, false, false, true); // cl (w, cl) - Double Click
+selectCodeEditor("top_level.sv", 488, 189); // cl (w, cl)
+selectCodeEditor("top_level.sv", 487, 188, false, false, false, false, true); // cl (w, cl) - Double Click
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 5,708 MB. GUI used memory: 56 MB. Current time: 11/8/19, 4:44:50 PM EST
+// Elapsed time: 21 seconds
+selectCodeEditor("top_level.sv", 309, 210); // cl (w, cl)
+selectCodeEditor("top_level.sv", 312, 197); // cl (w, cl)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 14 seconds
+selectCodeEditor("top_level.sv", 460, 146); // cl (w, cl)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 5,740 MB. GUI used memory: 56 MB. Current time: 11/8/19, 4:45:20 PM EST
+// Elapsed time: 18 seconds
+selectCodeEditor("top_level.sv", 594, 132); // cl (w, cl)
+selectCodeEditor("top_level.sv", 576, 154); // cl (w, cl)
+selectCodeEditor("top_level.sv", 579, 142); // cl (w, cl)
+// Elapsed time: 12 seconds
+selectCodeEditor("top_level.sv", 552, 156); // cl (w, cl)
+selectCodeEditor("top_level.sv", 599, 182); // cl (w, cl)
+selectCodeEditor("top_level.sv", 576, 162); // cl (w, cl)
+selectCodeEditor("top_level.sv", 685, 183); // cl (w, cl)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("top_level.sv", 597, 156); // cl (w, cl)
+selectCodeEditor("top_level.sv", 619, 186); // cl (w, cl)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 5,772 MB. GUI used memory: 56 MB. Current time: 11/8/19, 4:46:20 PM EST

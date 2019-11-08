@@ -172,7 +172,7 @@ module pong_game (
    logic [10:0] note_x1;     // x coordinate
    logic [9:0] note_y1;        // y coordinate which changes
    wire [11:0] note_pixel1;    // output from blob module for paddle
-   parameter note_width = 16;        // fixed paddle dimensions
+   parameter note_width = 16;        // fixed note width
    logic[8:0] note_length1;
    blob note1(.width(note_width), .height(note_length1), .color(12'hFFF), .pixel_clk_in(vclock_in),.x_in(note_x1),.y_in(note_y1),
                 .hcount_in(hcount_in),.vcount_in(vcount_in), .pixel_out(note_pixel1));
@@ -199,8 +199,11 @@ module pong_game (
    logic[3:0] b;
    logic[3:0] c;
    
-   
+   logic [5:0] beat;
    logic [7:0] bpm;
+   logic [23:0] music_out;
+   music_lookup muse(.beat(beat), .clk_in(vclock_in), .music_out(music_out));
+   
    logic [25:0] counter;
    logic [20:0] hand1_counter;
    logic [20:0] hand2_counter;
@@ -235,15 +238,19 @@ module pong_game (
                 notes[12] <= n1? 1:0;
                 notes[11] <= n2? 1:0;
             end else begin
-                if((note_pixel1 != 0) && ((hand1_pixel != 0) || (hand2_pixel != 0)) ) begin
-                    n1 <= 1;
+                if( (hand1_pixel != 0) || (hand2_pixel != 0) ) begin        // if hand pixels are being drawn
+                    if ( (note_pixel1 != 0) || (note_pixel2 != 0) )begin    // if any note is being drawn
+                        if( (hcount_in >=100) && (hcount_in <=116) )        // if C  1
+                            n1 <= 1;
+                        else if ((hcount_in >= 167) && (hcount_in <=200))   // if C# 2
+                            n2 <= 1;
+                        
+                    end
                 end 
-                if((note_pixel2 != 0) && ((hand1_pixel != 0) || (hand2_pixel != 0)) ) begin
-                    n2 <= 1;
-                end
             end
             
             
+            // move NOTES
             if (counter == 500000) begin
                 counter <= 0;
                 if (note_y1 >= 700) begin
@@ -299,6 +306,79 @@ module pong_game (
             
         end
     end
+endmodule
+
+
+//6bit music lookup, 24bit depth
+module music_lookup(input[5:0] beat, input clk_in, output logic[24:0] music_out);
+  always_ff @(posedge clk_in)begin
+    case(beat)
+      6'd0:  music_out<=24'b000100_000000_000000_000000;
+      6'd1:  music_out<=24'b001000_000000_000000_000000;
+      6'd2:  music_out<=24'b001100_000000_000000_000000;
+      6'd3:  music_out<=24'b010000_000000_000000_000000;
+      6'd4:  music_out<=24'b010100_000000_000000_000000;
+      6'd5:  music_out<=24'b011000_000000_000000_000000;
+      6'd6:  music_out<=24'b011100_000000_000000_000000;
+      6'd7:  music_out<=24'b100000_000000_000000_000000;
+      6'd8:  music_out<=24'b100100_000000_000000_000000;
+      6'd9:  music_out<=24'b101000_000000_000000_000000;
+      6'd10: music_out<=24'b101100_000000_000000_000000;
+      6'd11: music_out<=24'b110000_000000_000000_000000;
+      6'd12: music_out<=24'b110100_000000_000000_000000;
+      6'd13: music_out<=24'b000000_000000_000000_000000;
+      6'd14: music_out<=24'b000000_000000_000000_000000;
+      6'd15: music_out<=24'b000000_000000_000000_000000;
+      6'd16: music_out<=24'b000000_000000_000000_000000;
+      6'd17: music_out<=24'b000000_000000_000000_000000;
+      6'd18: music_out<=24'b000000_000000_000000_000000;
+      6'd19: music_out<=24'b000000_000000_000000_000000;
+      6'd20: music_out<=24'b000000_000000_000000_000000;
+      6'd21: music_out<=24'b000000_000000_000000_000000;
+      6'd22: music_out<=24'b000000_000000_000000_000000;
+      6'd23: music_out<=24'b000000_000000_000000_000000;
+      6'd24: music_out<=24'b000000_000000_000000_000000;
+      6'd25: music_out<=24'b000000_000000_000000_000000;
+      6'd26: music_out<=24'b000000_000000_000000_000000;
+      6'd27: music_out<=24'b000000_000000_000000_000000;
+      6'd28: music_out<=24'b000000_000000_000000_000000;
+      6'd29: music_out<=24'b000000_000000_000000_000000;
+      6'd30: music_out<=24'b000000_000000_000000_000000;
+      6'd31: music_out<=24'b000000_000000_000000_000000;
+      6'd32: music_out<=24'b000000_000000_000000_000000;
+      6'd33: music_out<=24'b000000_000000_000000_000000;
+      6'd34: music_out<=24'b000000_000000_000000_000000;
+      6'd35: music_out<=24'b000000_000000_000000_000000;
+      6'd36: music_out<=24'b000000_000000_000000_000000;
+      6'd37: music_out<=24'b000000_000000_000000_000000;
+      6'd38: music_out<=24'b000000_000000_000000_000000;
+      6'd39: music_out<=24'b000000_000000_000000_000000;
+      6'd40: music_out<=24'b000000_000000_000000_000000;
+      6'd41: music_out<=24'b000000_000000_000000_000000;
+      6'd42: music_out<=24'b000000_000000_000000_000000;
+      6'd43: music_out<=24'b000000_000000_000000_000000;
+      6'd44: music_out<=24'b000000_000000_000000_000000;
+      6'd45: music_out<=24'b000000_000000_000000_000000;
+      6'd46: music_out<=24'b000000_000000_000000_000000;
+      6'd47: music_out<=24'b000000_000000_000000_000000;
+      6'd48: music_out<=24'b000000_000000_000000_000000;
+      6'd49: music_out<=24'b000000_000000_000000_000000;
+      6'd50: music_out<=24'b000000_000000_000000_000000;
+      6'd51: music_out<=24'b000000_000000_000000_000000;
+      6'd52: music_out<=24'b000000_000000_000000_000000;
+      6'd53: music_out<=24'b000000_000000_000000_000000;
+      6'd54: music_out<=24'b000000_000000_000000_000000;
+      6'd55: music_out<=24'b000000_000000_000000_000000;
+      6'd56: music_out<=24'b000000_000000_000000_000000;
+      6'd57: music_out<=24'b000000_000000_000000_000000;
+      6'd58: music_out<=24'b000000_000000_000000_000000;
+      6'd59: music_out<=24'b000000_000000_000000_000000;
+      6'd60: music_out<=24'b000000_000000_000000_000000;
+      6'd61: music_out<=24'b000000_000000_000000_000000;
+      6'd62: music_out<=24'b000000_000000_000000_000000;
+      6'd63: music_out<=24'b000000_000000_000000_000000;
+    endcase
+  end
 endmodule
 
 

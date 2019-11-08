@@ -1,74 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="impl_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1573173369">
-  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
+  <File Type="PA-TCL" Name="labkit.tcl"/>
+  <File Type="ROUTE-BUS-SKEW-PB" Name="labkit_bus_skew_routed.pb"/>
+  <File Type="REPORTS-TCL" Name="labkit_reports.tcl"/>
+  <File Type="ROUTE-BUS-SKEW-RPX" Name="labkit_bus_skew_routed.rpx"/>
+  <File Type="OPT-DCP" Name="labkit_opt.dcp"/>
+  <File Type="OPT-DRC" Name="labkit_drc_opted.rpt"/>
+  <File Type="OPT-HWDEF" Name="labkit.hwdef"/>
+  <File Type="PWROPT-DCP" Name="labkit_pwropt.dcp"/>
+  <File Type="PLACE-DCP" Name="labkit_placed.dcp"/>
+  <File Type="PLACE-IO" Name="labkit_io_placed.rpt"/>
+  <File Type="PLACE-UTIL" Name="labkit_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL-PB" Name="labkit_utilization_placed.pb"/>
+  <File Type="PLACE-CTRL" Name="labkit_control_sets_placed.rpt"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="labkit_incremental_reuse_pre_placed.rpt"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="labkit_postplace_pwropt.dcp"/>
+  <File Type="PHYSOPT-DCP" Name="labkit_physopt.dcp"/>
+  <File Type="ROUTE-ERROR-DCP" Name="labkit_routed_error.dcp"/>
+  <File Type="ROUTE-DCP" Name="labkit_routed.dcp"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="labkit_routed_bb.dcp"/>
+  <File Type="ROUTE-DRC" Name="labkit_drc_routed.rpt"/>
+  <File Type="ROUTE-DRC-PB" Name="labkit_drc_routed.pb"/>
+  <File Type="BG-BIT" Name="labkit.bit"/>
+  <File Type="ROUTE-STATUS-PB" Name="labkit_route_status.pb"/>
+  <File Type="ROUTE-METHODOLOGY-DRC" Name="labkit_methodology_drc_routed.rpt"/>
+  <File Type="BG-BIN" Name="labkit.bin"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="labkit_timing_summary_routed.rpt"/>
+  <File Type="BITSTR-MSK" Name="labkit.msk"/>
+  <File Type="ROUTE-TIMING-PB" Name="labkit_timing_summary_routed.pb"/>
+  <File Type="BITSTR-RBT" Name="labkit.rbt"/>
+  <File Type="ROUTE-TIMING-RPX" Name="labkit_timing_summary_routed.rpx"/>
+  <File Type="BITSTR-NKY" Name="labkit.nky"/>
+  <File Type="BITSTR-BMM" Name="labkit_bd.bmm"/>
+  <File Type="ROUTE-CLK" Name="labkit_clock_utilization_routed.rpt"/>
   <File Type="BG-DRC" Name="labkit.drc"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="labkit_methodology_drc_routed.rpx"/>
+  <File Type="BITSTR-MMI" Name="labkit.mmi"/>
+  <File Type="ROUTE-BUS-SKEW" Name="labkit_bus_skew_routed.rpt"/>
+  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
   <File Type="BG-BGN" Name="labkit.bgn"/>
   <File Type="BITSTR-SYSDEF" Name="labkit.sysdef"/>
-  <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
   <File Type="BITSTR-LTX" Name="labkit.ltx"/>
-  <File Type="BITSTR-MMI" Name="labkit.mmi"/>
-  <File Type="BITSTR-BMM" Name="labkit_bd.bmm"/>
-  <File Type="BITSTR-NKY" Name="labkit.nky"/>
-  <File Type="BITSTR-RBT" Name="labkit.rbt"/>
-  <File Type="BITSTR-MSK" Name="labkit.msk"/>
-  <File Type="BG-BIN" Name="labkit.bin"/>
-  <File Type="BG-BIT" Name="labkit.bit"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="labkit_bus_skew_postroute_physopted.rpx"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="labkit_bus_skew_postroute_physopted.pb"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="labkit_bus_skew_postroute_physopted.rpt"/>
   <File Type="RDI-RDI" Name="labkit.vdi"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="labkit_timing_summary_postroute_physopted.rpx"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="labkit_timing_summary_postroute_physopted.pb"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="labkit_timing_summary_postroute_physopted.rpt"/>
   <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="labkit_postroute_physopt_bb.dcp"/>
   <File Type="POSTROUTE-PHYSOPT-DCP" Name="labkit_postroute_physopt.dcp"/>
-  <File Type="ROUTE-BUS-SKEW" Name="labkit_bus_skew_routed.rpt"/>
-  <File Type="ROUTE-CLK" Name="labkit_clock_utilization_routed.rpt"/>
-  <File Type="ROUTE-SIMILARITY" Name="labkit_incremental_reuse_routed.rpt"/>
-  <File Type="ROUTE-TIMING-RPX" Name="labkit_timing_summary_routed.rpx"/>
-  <File Type="ROUTE-TIMING-PB" Name="labkit_timing_summary_routed.pb"/>
-  <File Type="ROUTE-TIMINGSUMMARY" Name="labkit_timing_summary_routed.rpt"/>
-  <File Type="ROUTE-STATUS-PB" Name="labkit_route_status.pb"/>
   <File Type="ROUTE-STATUS" Name="labkit_route_status.rpt"/>
   <File Type="ROUTE-PWR-RPX" Name="labkit_power_routed.rpx"/>
   <File Type="ROUTE-PWR-SUM" Name="labkit_power_summary_routed.pb"/>
   <File Type="ROUTE-PWR" Name="labkit_power_routed.rpt"/>
   <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="labkit_methodology_drc_routed.pb"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="labkit_methodology_drc_routed.rpx"/>
-  <File Type="ROUTE-METHODOLOGY-DRC" Name="labkit_methodology_drc_routed.rpt"/>
   <File Type="ROUTE-DRC-RPX" Name="labkit_drc_routed.rpx"/>
-  <File Type="ROUTE-DRC-PB" Name="labkit_drc_routed.pb"/>
-  <File Type="ROUTE-DRC" Name="labkit_drc_routed.rpt"/>
-  <File Type="ROUTE-BLACKBOX-DCP" Name="labkit_routed_bb.dcp"/>
-  <File Type="ROUTE-DCP" Name="labkit_routed.dcp"/>
-  <File Type="ROUTE-ERROR-DCP" Name="labkit_routed_error.dcp"/>
-  <File Type="PHYSOPT-TIMING" Name="labkit_timing_summary_physopted.rpt"/>
-  <File Type="PHYSOPT-DRC" Name="labkit_drc_physopted.rpt"/>
-  <File Type="PHYSOPT-DCP" Name="labkit_physopt.dcp"/>
-  <File Type="POSTPLACE-PWROPT-TIMING" Name="labkit_timing_summary_postplace_pwropted.rpt"/>
-  <File Type="POSTPLACE-PWROPT-DCP" Name="labkit_postplace_pwropt.dcp"/>
-  <File Type="PLACE-TIMING" Name="labkit_timing_summary_placed.rpt"/>
-  <File Type="PLACE-PRE-SIMILARITY" Name="labkit_incremental_reuse_pre_placed.rpt"/>
-  <File Type="PLACE-SIMILARITY" Name="labkit_incremental_reuse_placed.rpt"/>
-  <File Type="PLACE-CTRL" Name="labkit_control_sets_placed.rpt"/>
-  <File Type="PLACE-UTIL-PB" Name="labkit_utilization_placed.pb"/>
-  <File Type="PLACE-UTIL" Name="labkit_utilization_placed.rpt"/>
-  <File Type="PLACE-CLK" Name="labkit_clock_utilization_placed.rpt"/>
-  <File Type="PLACE-IO" Name="labkit_io_placed.rpt"/>
-  <File Type="PLACE-DCP" Name="labkit_placed.dcp"/>
-  <File Type="PWROPT-TIMING" Name="labkit_timing_summary_pwropted.rpt"/>
-  <File Type="PWROPT-DRC" Name="labkit_drc_pwropted.rpt"/>
-  <File Type="PWROPT-DCP" Name="labkit_pwropt.dcp"/>
-  <File Type="OPT-TIMING" Name="labkit_timing_summary_opted.rpt"/>
-  <File Type="OPT-HWDEF" Name="labkit.hwdef"/>
-  <File Type="OPT-METHODOLOGY-DRC" Name="labkit_methodology_drc_opted.rpt"/>
-  <File Type="OPT-DRC" Name="labkit_drc_opted.rpt"/>
-  <File Type="OPT-DCP" Name="labkit_opt.dcp"/>
-  <File Type="INIT-TIMING" Name="labkit_timing_summary_init.rpt"/>
-  <File Type="ROUTE-BUS-SKEW-RPX" Name="labkit_bus_skew_routed.rpx"/>
-  <File Type="REPORTS-TCL" Name="labkit_reports.tcl"/>
-  <File Type="ROUTE-BUS-SKEW-PB" Name="labkit_bus_skew_routed.pb"/>
-  <File Type="PA-TCL" Name="labkit.tcl"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/new/audio_gen.sv">
@@ -92,13 +73,13 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/../Downloads/ds_image.coe">
+    <File Path="$PPRDIR/../../Downloads/ds_image.coe">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/../Downloads/ds_color_map.coe">
+    <File Path="$PPRDIR/../../Downloads/ds_color_map.coe">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -112,7 +93,7 @@
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
     <Filter Type="Constrs"/>
-    <File Path="$PPRDIR/../Downloads/nexys4_ddr_lab3.xdc">
+    <File Path="$PPRDIR/../../Downloads/nexys4_ddr_lab3.xdc">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
