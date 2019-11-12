@@ -168,22 +168,7 @@ module pong_game (
 //   hand1(.pixel_clk_in(vclock_in), .x_in(hand1_x),.y_in(hand1_y),.hcount_in(hcount_in),
 //                .vcount_in(vcount_in), .pixel_out(line_pixel)); 
              
-   // Notes
-   logic [10:0] note_x1;     // x coordinate
-   logic [9:0] note_y1;        // y coordinate which changes
-   wire [11:0] note_pixel1;    // output from blob module for paddle
-   parameter note_width = 16;        // fixed note width
-   logic[8:0] note_length1;
-   blob note1(.width(note_width), .height(note_length1), .color(12'hFFF), .pixel_clk_in(vclock_in),.x_in(note_x1),.y_in(note_y1),
-                .hcount_in(hcount_in),.vcount_in(vcount_in), .pixel_out(note_pixel1));
-   
-   logic [10:0] note_x2;     // x coordinate
-   logic [9:0] note_y2;        // y coordinate which changes
-   wire [11:0] note_pixel2;    // output from blob module for paddle
-   logic[8:0] note_length2;             
-   blob note2(.width(note_width), .height(note_length2), .color(12'hFFF), .pixel_clk_in(vclock_in),.x_in(note_x2),.y_in(note_y2),
-                .hcount_in(hcount_in),.vcount_in(vcount_in), .pixel_out(note_pixel2));
-             
+         
    // RED PLANET
    wire [11:0] planet_pixel;
    blob planet1(.width(128), .height(128), .color(12'hF00), .pixel_clk_in(vclock_in),.x_in(450),.y_in(330),
@@ -200,9 +185,12 @@ module pong_game (
    logic[3:0] c;
    
    logic [5:0] beat;
-   logic [7:0] bpm;
+   
+   logic [26:0] bpm;
    logic [23:0] music_out;
    music_lookup muse(.beat(beat), .clk_in(vclock_in), .music_out(music_out));
+   beat_generator meter1(.reset(reset_in), .clk_in(vclock_in), .bpm(bpm), .beat(beat));
+   note_generator notegen(.reset(reset_in), .clk_in(vclock_in), .beat(beat), .music_out(music_out));
    
    logic [25:0] counter;
    logic [20:0] hand1_counter;
@@ -227,7 +215,7 @@ module pong_game (
             hand2_x <= 680; hand2_y <= 600;
             note_x1 <= 300; note_y1 <= 0; note_length1 <= 150; // CHANGE could be changed later as a function of bpm and length of note
             note_x2 <= 770; note_y2 <= 0; note_length2 <= 150; // CHANGE could be changed later as a function of bpm and length of note
-            bpm <= 60;                          // CHANGE later should be set in another manner
+            bpm <= 65000000;                          // CHANGE later should be set in another manner
             counter <= 0;                       // initialize counter
             notes <= 0;
         end else begin
@@ -242,6 +230,8 @@ module pong_game (
                     if ( (note_pixel1 != 0) || (note_pixel2 != 0) )begin    // if any note is being drawn
                         if( (hcount_in >=100) && (hcount_in <=116) )        // if C  1
                             n1 <= 1;
+                        else if ((hcount_in >= 167) && (hcount_in <=200))   // if C# 2
+                            n2 <= 1;
                         else if ((hcount_in >= 167) && (hcount_in <=200))   // if C# 2
                             n2 <= 1;
                         
@@ -262,6 +252,7 @@ module pong_game (
                 end
             end else begin
                 counter <= counter + 1;
+                
             end
             
             
