@@ -72,19 +72,35 @@ module note_generator(
     blob note3(.width(note_width), .height(nlen3), .color(12'hFFF), .pixel_clk_in(clk_in),.x_in(x3),.y_in(y3),
             .hcount_in(hcount_in),.vcount_in(vcount_in), .pixel_out(npixel3));
     
+    logic [10:0] x4;     // x coordinate
+    logic [9:0] y4;        // y coordinate which changes
+    wire [11:0] npixel4;    // output from blob module for paddle
+    logic[8:0] nlen4;             
+    blob note4(.width(note_width), .height(nlen4), .color(12'hFFF), .pixel_clk_in(clk_in),.x_in(x4),.y_in(y4),
+            .hcount_in(hcount_in),.vcount_in(vcount_in), .pixel_out(npixel4));
+    
+    logic [10:0] x5;     // x coordinate
+    logic [9:0] y5;        // y coordinate which changes
+    wire [11:0] npixel5;    // output from blob module for paddle
+    logic[8:0] nlen5;             
+    blob note5(.width(note_width), .height(nlen5), .color(12'hFFF), .pixel_clk_in(clk_in),.x_in(x5),.y_in(y5),
+            .hcount_in(hcount_in),.vcount_in(vcount_in), .pixel_out(npixel5));
     
     
-    logic [8:0] curr_note_length;
+    
+    logic [1:0] curr_note_length;
+    logic [8:0] note_length;
     logic [26:0] speed;
-    assign speed = bpm / 10;
+    assign speed = bpm / 60;
     logic [26:0] speed_counter;
     logic activate_note;
+    logic activate_wait;
     
     assign testing = { 8'b0, note_buffer, note_num, 2'b0, music_out[23:18]};
     
     always_ff @ (posedge clk_in) begin
         old_beat <= beat;                   // feed in new beat
-        pixel <= (npixel0 | npixel1 | npixel2 | npixel3);       // displays the note pixels on the screen
+        pixel <= (npixel0 | npixel1 | npixel2 | npixel3 | npixel4 | npixel5);       // displays the note pixels on the screen
         if( reset ) begin                   // reset values
             note_state <= 0;
             wait_ <= 0;
@@ -143,22 +159,33 @@ module note_generator(
             
             // display appropriate notes with x position and length
             if( activate_note ) begin
-                activate_note <= 0;
+                
+                if(activate_wait) begin
+                    activate_note <= 0;
+                    activate_wait <= 0;
+                end else begin
+                    activate_wait <= 1;
+                end
+                
                 case(note_buffer) 
                     4'd0:  begin
-                        x0 <= x_pos; y0 <= 0; nlen0 <= 50;//(5 << (curr_note_length + 9'b1));
+                        x0 <= x_pos; y0 <= 0; nlen0 <= note_length;
                         end
                     4'd1:  begin
-                        x1 <= x_pos; y1 <= 0; nlen1 <= 50;//(5 << (curr_note_length + 9'b1));
+                        x1 <= x_pos; y1 <= 0; nlen1 <= note_length;
                         end
                     4'd2:  begin
-                        x2 <= x_pos; y2 <= 0; nlen2 <= 50;//(5 << (curr_note_length + 9'b1));
+                        x2 <= x_pos; y2 <= 0; nlen2 <= note_length;
                         end
                     4'd3: begin
-                        x3 <= x_pos; y3 <= 0; nlen3 <= 50;//(5 << (curr_note_length + 9'b1));
+                        x3 <= x_pos; y3 <= 0; nlen3 <= note_length;
                         end
-//                    4'd4:  
-//                    4'd5:  
+                    4'd4: begin
+                        x4 <= x_pos; y4 <= 0; nlen4 <= note_length;
+                        end
+                    4'd5: begin
+                        x5 <= x_pos; y5 <= 0; nlen5 <= note_length;
+                        end 
 //                    4'd6:  x_pos<= 433;
 //                    4'd7:  x_pos<= 500;
 //                    4'd8:  x_pos<= 567;
@@ -174,11 +201,19 @@ module note_generator(
             
             // move notes
             if(speed_counter >= speed) begin
-                y0 <= y0 + 1; y1 <= y1 + 1; y2 <= y2 + 1; y3 <= y3 + 1;
+                y0 <= y0 + 1; y1 <= y1 + 1; y2 <= y2 + 1; y3 <= y3 + 1; y4 <= y4 + 1; y5 <= y5 + 1;
                 speed_counter <= 0;
             end else begin
                 speed_counter <= speed_counter + 1;
             end
+            
+            // determine length of notes
+            case(curr_note_length) 
+                2'd0: note_length <= 9'b000100000;
+                2'd1: note_length <= 9'b001000000;
+                2'd2: note_length <= 9'b010000000;
+                2'd3: note_length <= 9'b100000000;
+            endcase
         end
     end
     

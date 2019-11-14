@@ -2,8 +2,8 @@
 # Vivado v2019.1.2 (64-bit)
 # SW Build 2615518 on Fri Aug  9 15:53:29 MDT 2019
 # IP Build 2614745 on Fri Aug  9 20:55:02 MDT 2019
-# Start of session at: Thu Nov 14 15:59:27 2019
-# Process ID: 16277
+# Start of session at: Thu Nov 14 17:10:35 2019
+# Process ID: 21254
 # Current directory: /afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.runs/synth_1
 # Command line: vivado -log labkit.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source labkit.tcl
 # Log file: /afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.runs/synth_1/labkit.vds
@@ -16,9 +16,9 @@ Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Device 21-403] Loading part xc7a100tcsg324-1
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 16296 
+INFO: Helper process launched with PID 21276 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 1797.914 ; gain = 154.527 ; free physical = 1231 ; free virtual = 12403
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 1797.910 ; gain = 154.527 ; free physical = 722 ; free virtual = 11961
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'labkit' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/top_level.sv:14]
 INFO: [Synth 8-6157] synthesizing module 'clk_wiz_65' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/clk_wizard_65.sv:66]
@@ -102,22 +102,34 @@ INFO: [Synth 8-6157] synthesizing module 'FPGuitAr_Hero' [/afs/athena.mit.edu/us
 	Parameter n bound to: 1 - type: integer 
 INFO: [Synth 8-6157] synthesizing module 'audio_gen' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:25]
 	Parameter SAMPLE_COUNT bound to: 2082 - type: integer 
-INFO: [Synth 8-6157] synthesizing module 'play_notes' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:88]
-INFO: [Synth 8-6157] synthesizing module 'sine_generator' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:226]
-	Parameter PHASE_INCR bound to: 67108864 - type: integer 
-INFO: [Synth 8-6157] synthesizing module 'sine_lut' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:247]
-INFO: [Synth 8-6155] done synthesizing module 'sine_lut' (8#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:247]
-WARNING: [Synth 8-6014] Unused sequential element divider_reg was removed.  [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:238]
-INFO: [Synth 8-6155] done synthesizing module 'sine_generator' (9#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:226]
-INFO: [Synth 8-6157] synthesizing module 'sine_generator__parameterized0' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:226]
+INFO: [Synth 8-6157] synthesizing module 'play_notes' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:85]
+INFO: [Synth 8-6157] synthesizing module 'sine_generator' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:238]
 	Parameter PHASE_INCR bound to: 39370534 - type: integer 
-WARNING: [Synth 8-6014] Unused sequential element divider_reg was removed.  [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:238]
-INFO: [Synth 8-6155] done synthesizing module 'sine_generator__parameterized0' (9#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:226]
-INFO: [Synth 8-6155] done synthesizing module 'play_notes' (10#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:88]
-INFO: [Synth 8-6157] synthesizing module 'volume_control' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:203]
-INFO: [Synth 8-6155] done synthesizing module 'volume_control' (11#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:203]
-INFO: [Synth 8-6157] synthesizing module 'pwm' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:210]
-INFO: [Synth 8-6155] done synthesizing module 'pwm' (12#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:210]
+INFO: [Synth 8-6157] synthesizing module 'sine_lut' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:259]
+INFO: [Synth 8-6155] done synthesizing module 'sine_lut' (8#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:259]
+WARNING: [Synth 8-6014] Unused sequential element divider_reg was removed.  [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:250]
+INFO: [Synth 8-6155] done synthesizing module 'sine_generator' (9#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:238]
+INFO: [Synth 8-6157] synthesizing module 'sine_generator__parameterized0' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:238]
+	Parameter PHASE_INCR bound to: 41711649 - type: integer 
+WARNING: [Synth 8-6014] Unused sequential element divider_reg was removed.  [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:250]
+INFO: [Synth 8-6155] done synthesizing module 'sine_generator__parameterized0' (9#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:238]
+INFO: [Synth 8-6157] synthesizing module 'sine_generator__parameterized1' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:238]
+	Parameter PHASE_INCR bound to: 44191903 - type: integer 
+WARNING: [Synth 8-6014] Unused sequential element divider_reg was removed.  [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:250]
+INFO: [Synth 8-6155] done synthesizing module 'sine_generator__parameterized1' (9#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:238]
+INFO: [Synth 8-6157] synthesizing module 'sine_generator__parameterized2' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:238]
+	Parameter PHASE_INCR bound to: 46819707 - type: integer 
+WARNING: [Synth 8-6014] Unused sequential element divider_reg was removed.  [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:250]
+INFO: [Synth 8-6155] done synthesizing module 'sine_generator__parameterized2' (9#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:238]
+INFO: [Synth 8-6157] synthesizing module 'sine_generator__parameterized3' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:238]
+	Parameter PHASE_INCR bound to: 49603741 - type: integer 
+WARNING: [Synth 8-6014] Unused sequential element divider_reg was removed.  [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:250]
+INFO: [Synth 8-6155] done synthesizing module 'sine_generator__parameterized3' (9#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:238]
+INFO: [Synth 8-6155] done synthesizing module 'play_notes' (10#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:85]
+INFO: [Synth 8-6157] synthesizing module 'volume_control' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:215]
+INFO: [Synth 8-6155] done synthesizing module 'volume_control' (11#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:215]
+INFO: [Synth 8-6157] synthesizing module 'pwm' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:222]
+INFO: [Synth 8-6155] done synthesizing module 'pwm' (12#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:222]
 WARNING: [Synth 8-3848] Net sampled_adc_data in module/entity audio_gen does not have driver. [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:36]
 INFO: [Synth 8-6155] done synthesizing module 'audio_gen' (13#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:25]
 INFO: [Synth 8-6157] synthesizing module 'blob' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/top_level.sv:119]
@@ -132,20 +144,13 @@ INFO: [Synth 8-6157] synthesizing module 'note_generator' [/afs/athena.mit.edu/u
 INFO: [Synth 8-6157] synthesizing module 'note_positions' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/note_positions.sv:23]
 INFO: [Synth 8-155] case statement is not full and has no default [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/note_positions.sv:25]
 INFO: [Synth 8-6155] done synthesizing module 'note_positions' (17#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/note_positions.sv:23]
-INFO: [Synth 8-155] case statement is not full and has no default [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/note_generator.sv:147]
-WARNING: [Synth 8-6014] Unused sequential element curr_note_length_reg was removed.  [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/note_generator.sv:108]
+INFO: [Synth 8-155] case statement is not full and has no default [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/note_generator.sv:170]
 INFO: [Synth 8-6155] done synthesizing module 'note_generator' (18#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/note_generator.sv:23]
 WARNING: [Synth 8-3848] Net led in module/entity FPGuitAr_Hero does not have driver. [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/FPGuitAr_Hero.sv:47]
 INFO: [Synth 8-6155] done synthesizing module 'FPGuitAr_Hero' (19#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/FPGuitAr_Hero.sv:29]
 INFO: [Synth 8-6155] done synthesizing module 'labkit' (20#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/top_level.sv:14]
 WARNING: [Synth 8-3917] design labkit has port dp driven by constant 1
 WARNING: [Synth 8-3331] design blob has unconnected port pixel_clk_in
-WARNING: [Synth 8-3331] design note_generator has unconnected port music_out[13]
-WARNING: [Synth 8-3331] design note_generator has unconnected port music_out[12]
-WARNING: [Synth 8-3331] design note_generator has unconnected port music_out[7]
-WARNING: [Synth 8-3331] design note_generator has unconnected port music_out[6]
-WARNING: [Synth 8-3331] design note_generator has unconnected port music_out[1]
-WARNING: [Synth 8-3331] design note_generator has unconnected port music_out[0]
 WARNING: [Synth 8-3331] design play_notes has unconnected port mic_in[7]
 WARNING: [Synth 8-3331] design play_notes has unconnected port mic_in[6]
 WARNING: [Synth 8-3331] design play_notes has unconnected port mic_in[5]
@@ -154,9 +159,6 @@ WARNING: [Synth 8-3331] design play_notes has unconnected port mic_in[3]
 WARNING: [Synth 8-3331] design play_notes has unconnected port mic_in[2]
 WARNING: [Synth 8-3331] design play_notes has unconnected port mic_in[1]
 WARNING: [Synth 8-3331] design play_notes has unconnected port mic_in[0]
-WARNING: [Synth 8-3331] design play_notes has unconnected port notes[10]
-WARNING: [Synth 8-3331] design play_notes has unconnected port notes[9]
-WARNING: [Synth 8-3331] design play_notes has unconnected port notes[8]
 WARNING: [Synth 8-3331] design play_notes has unconnected port notes[7]
 WARNING: [Synth 8-3331] design play_notes has unconnected port notes[6]
 WARNING: [Synth 8-3331] design play_notes has unconnected port notes[5]
@@ -199,7 +201,7 @@ WARNING: [Synth 8-3331] design FPGuitAr_Hero has unconnected port pspeed_in[2]
 WARNING: [Synth 8-3331] design FPGuitAr_Hero has unconnected port pspeed_in[1]
 WARNING: [Synth 8-3331] design FPGuitAr_Hero has unconnected port pspeed_in[0]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1851.668 ; gain = 208.281 ; free physical = 1252 ; free virtual = 12425
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1851.664 ; gain = 208.281 ; free physical = 740 ; free virtual = 11980
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -212,10 +214,10 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:05 . Memory (MB): peak = 1857.602 ; gain = 214.215 ; free physical = 1251 ; free virtual = 12424
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:05 . Memory (MB): peak = 1857.598 ; gain = 214.215 ; free physical = 739 ; free virtual = 11979
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:05 . Memory (MB): peak = 1857.602 ; gain = 214.215 ; free physical = 1251 ; free virtual = 12424
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:05 . Memory (MB): peak = 1857.598 ; gain = 214.215 ; free physical = 739 ; free virtual = 11979
 ---------------------------------------------------------------------------------
 INFO: [Netlist 29-17] Analyzing 1 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -254,32 +256,32 @@ Resolution: To avoid this warning, move constraints listed in [.Xil/labkit_propI
 INFO: [Timing 38-2] Deriving generated clocks
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2041.227 ; gain = 0.000 ; free physical = 1138 ; free virtual = 12311
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2042.191 ; gain = 0.000 ; free physical = 620 ; free virtual = 11861
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2041.227 ; gain = 0.000 ; free physical = 1137 ; free virtual = 12311
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2042.191 ; gain = 0.000 ; free physical = 620 ; free virtual = 11860
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:07 ; elapsed = 00:00:10 . Memory (MB): peak = 2041.227 ; gain = 397.840 ; free physical = 1231 ; free virtual = 12404
+Finished Constraint Validation : Time (s): cpu = 00:00:07 ; elapsed = 00:00:10 . Memory (MB): peak = 2042.191 ; gain = 398.809 ; free physical = 716 ; free virtual = 11956
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:07 ; elapsed = 00:00:10 . Memory (MB): peak = 2041.227 ; gain = 397.840 ; free physical = 1231 ; free virtual = 12404
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:07 ; elapsed = 00:00:10 . Memory (MB): peak = 2042.191 ; gain = 398.809 ; free physical = 716 ; free virtual = 11956
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:07 ; elapsed = 00:00:10 . Memory (MB): peak = 2041.227 ; gain = 397.840 ; free physical = 1231 ; free virtual = 12404
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:07 ; elapsed = 00:00:10 . Memory (MB): peak = 2042.191 ; gain = 398.809 ; free physical = 718 ; free virtual = 11958
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-4471] merging register 'hand2_y_reg[9:0]' into 'hand1_y_reg[9:0]' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/FPGuitAr_Hero.sv:73]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/FPGuitAr_Hero.sv:155]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/FPGuitAr_Hero.sv:174]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/FPGuitAr_Hero.sv:156]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/FPGuitAr_Hero.sv:175]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:10 . Memory (MB): peak = 2041.227 ; gain = 397.840 ; free physical = 1221 ; free virtual = 12395
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:11 . Memory (MB): peak = 2042.191 ; gain = 398.809 ; free physical = 708 ; free virtual = 11949
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -294,46 +296,50 @@ Detailed RTL Component Info :
 +---Adders : 
 	   2 Input     21 Bit       Adders := 2     
 	   2 Input     16 Bit       Adders := 1     
-	   3 Input     12 Bit       Adders := 7     
-	   2 Input     11 Bit       Adders := 10    
-	   3 Input     11 Bit       Adders := 7     
-	   2 Input     10 Bit       Adders := 12    
+	   3 Input     12 Bit       Adders := 9     
+	   2 Input     11 Bit       Adders := 12    
+	   5 Input     11 Bit       Adders := 1     
+	   3 Input     11 Bit       Adders := 9     
+	   2 Input     10 Bit       Adders := 16    
 	   2 Input      8 Bit       Adders := 1     
 	   2 Input      6 Bit       Adders := 1     
 	   2 Input      4 Bit       Adders := 1     
 	   2 Input      2 Bit       Adders := 2     
-+---XORs : 
-	   2 Input      8 Bit         XORs := 1     
 +---Registers : 
 	               27 Bit    Registers := 1     
 	               24 Bit    Registers := 1     
 	               21 Bit    Registers := 2     
 	               16 Bit    Registers := 1     
-	               13 Bit    Registers := 1     
+	               13 Bit    Registers := 2     
 	               12 Bit    Registers := 3     
-	               11 Bit    Registers := 8     
-	               10 Bit    Registers := 6     
-	                9 Bit    Registers := 4     
-	                8 Bit    Registers := 7     
+	               11 Bit    Registers := 11    
+	               10 Bit    Registers := 8     
+	                9 Bit    Registers := 7     
+	                8 Bit    Registers := 12    
 	                7 Bit    Registers := 1     
 	                6 Bit    Registers := 2     
 	                4 Bit    Registers := 2     
-	                2 Bit    Registers := 2     
-	                1 Bit    Registers := 19    
+	                2 Bit    Registers := 3     
+	                1 Bit    Registers := 17    
 +---Muxes : 
 	  64 Input     24 Bit        Muxes := 1     
 	   2 Input     21 Bit        Muxes := 2     
-	   2 Input     12 Bit        Muxes := 7     
+	   2 Input     13 Bit        Muxes := 3     
+	   6 Input     13 Bit        Muxes := 1     
+	   2 Input     12 Bit        Muxes := 9     
 	   3 Input     12 Bit        Muxes := 1     
-	   2 Input     10 Bit        Muxes := 4     
+	   2 Input     10 Bit        Muxes := 6     
+	   4 Input      9 Bit        Muxes := 1     
 	   8 Input      8 Bit        Muxes := 1     
-	   2 Input      8 Bit        Muxes := 2     
+	   2 Input      8 Bit        Muxes := 5     
 	   4 Input      4 Bit        Muxes := 1     
 	   2 Input      4 Bit        Muxes := 3     
+	   4 Input      2 Bit        Muxes := 1     
 	   2 Input      2 Bit        Muxes := 2     
-	   2 Input      1 Bit        Muxes := 36    
+	   2 Input      1 Bit        Muxes := 42    
 	  14 Input      1 Bit        Muxes := 1     
-	   4 Input      1 Bit        Muxes := 8     
+	   4 Input      1 Bit        Muxes := 4     
+	   7 Input      1 Bit        Muxes := 6     
 	   3 Input      1 Bit        Muxes := 3     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
@@ -381,12 +387,13 @@ Detailed RTL Component Info :
 	                8 Bit    Registers := 1     
 Module play_notes 
 Detailed RTL Component Info : 
-+---XORs : 
-	   2 Input      8 Bit         XORs := 1     
++---Adders : 
+	   5 Input     11 Bit       Adders := 1     
 +---Registers : 
-	                8 Bit    Registers := 3     
+	               11 Bit    Registers := 1     
+	                8 Bit    Registers := 5     
 +---Muxes : 
-	   2 Input      8 Bit        Muxes := 2     
+	   2 Input      8 Bit        Muxes := 5     
 Module pwm 
 Detailed RTL Component Info : 
 +---Adders : 
@@ -431,23 +438,26 @@ Detailed RTL Component Info :
 Module note_generator 
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input     10 Bit       Adders := 4     
+	   2 Input     10 Bit       Adders := 6     
 	   2 Input      4 Bit       Adders := 1     
 	   2 Input      2 Bit       Adders := 2     
 +---Registers : 
 	               12 Bit    Registers := 1     
-	               11 Bit    Registers := 4     
-	               10 Bit    Registers := 4     
-	                9 Bit    Registers := 4     
+	               11 Bit    Registers := 6     
+	               10 Bit    Registers := 6     
+	                9 Bit    Registers := 7     
 	                6 Bit    Registers := 1     
 	                4 Bit    Registers := 2     
-	                2 Bit    Registers := 2     
-	                1 Bit    Registers := 2     
+	                2 Bit    Registers := 3     
+	                1 Bit    Registers := 3     
 +---Muxes : 
-	   2 Input     10 Bit        Muxes := 4     
+	   2 Input     10 Bit        Muxes := 6     
+	   4 Input      9 Bit        Muxes := 1     
 	   4 Input      4 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 19    
-	   4 Input      1 Bit        Muxes := 8     
+	   4 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 25    
+	   4 Input      1 Bit        Muxes := 4     
+	   7 Input      1 Bit        Muxes := 6     
 Module FPGuitAr_Hero 
 Detailed RTL Component Info : 
 +---Adders : 
@@ -456,13 +466,14 @@ Detailed RTL Component Info :
 +---Registers : 
 	               27 Bit    Registers := 1     
 	               21 Bit    Registers := 2     
-	               13 Bit    Registers := 1     
+	               13 Bit    Registers := 2     
 	               12 Bit    Registers := 1     
 	               11 Bit    Registers := 2     
 	               10 Bit    Registers := 1     
-	                1 Bit    Registers := 3     
 +---Muxes : 
 	   2 Input     21 Bit        Muxes := 2     
+	   2 Input     13 Bit        Muxes := 3     
+	   6 Input     13 Bit        Muxes := 1     
 	   2 Input      2 Bit        Muxes := 2     
 	   2 Input      1 Bit        Muxes := 2     
 ---------------------------------------------------------------------------------
@@ -482,12 +493,6 @@ Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 Warning: Parallel synthesis criteria is not met 
 WARNING: [Synth 8-3917] design labkit has port dp driven by constant 1
-WARNING: [Synth 8-3331] design note_generator has unconnected port music_out[13]
-WARNING: [Synth 8-3331] design note_generator has unconnected port music_out[12]
-WARNING: [Synth 8-3331] design note_generator has unconnected port music_out[7]
-WARNING: [Synth 8-3331] design note_generator has unconnected port music_out[6]
-WARNING: [Synth 8-3331] design note_generator has unconnected port music_out[1]
-WARNING: [Synth 8-3331] design note_generator has unconnected port music_out[0]
 WARNING: [Synth 8-3331] design blob has unconnected port pixel_clk_in
 WARNING: [Synth 8-3331] design audio_gen has unconnected port sw[12]
 WARNING: [Synth 8-3331] design audio_gen has unconnected port sw[11]
@@ -502,9 +507,6 @@ WARNING: [Synth 8-3331] design audio_gen has unconnected port sw[3]
 WARNING: [Synth 8-3331] design audio_gen has unconnected port sw[2]
 WARNING: [Synth 8-3331] design audio_gen has unconnected port sw[1]
 WARNING: [Synth 8-3331] design audio_gen has unconnected port sw[0]
-WARNING: [Synth 8-3331] design audio_gen has unconnected port notes[10]
-WARNING: [Synth 8-3331] design audio_gen has unconnected port notes[9]
-WARNING: [Synth 8-3331] design audio_gen has unconnected port notes[8]
 WARNING: [Synth 8-3331] design audio_gen has unconnected port notes[7]
 WARNING: [Synth 8-3331] design audio_gen has unconnected port notes[6]
 WARNING: [Synth 8-3331] design audio_gen has unconnected port notes[5]
@@ -523,51 +525,61 @@ WARNING: [Synth 8-3331] design FPGuitAr_Hero has unconnected port led[9]
 WARNING: [Synth 8-3331] design FPGuitAr_Hero has unconnected port led[8]
 WARNING: [Synth 8-3331] design FPGuitAr_Hero has unconnected port led[7]
 WARNING: [Synth 8-3331] design FPGuitAr_Hero has unconnected port led[6]
-INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+WARNING: [Synth 8-3331] design FPGuitAr_Hero has unconnected port led[5]
+WARNING: [Synth 8-3331] design FPGuitAr_Hero has unconnected port led[4]
+WARNING: [Synth 8-3331] design FPGuitAr_Hero has unconnected port led[3]
+WARNING: [Synth 8-3331] design FPGuitAr_Hero has unconnected port led[2]
+WARNING: [Synth 8-3331] design FPGuitAr_Hero has unconnected port led[1]
+WARNING: [Synth 8-3331] design FPGuitAr_Hero has unconnected port led[0]
+WARNING: [Synth 8-3331] design FPGuitAr_Hero has unconnected port pspeed_in[3]
+WARNING: [Synth 8-3331] design FPGuitAr_Hero has unconnected port pspeed_in[2]
+WARNING: [Synth 8-3331] design FPGuitAr_Hero has unconnected port pspeed_in[1]
+WARNING: [Synth 8-3331] design FPGuitAr_Hero has unconnected port pspeed_in[0]
+INFO: [Synth 8-3886] merging instance 'pg/muse/music_out_reg[12]' (FD) to 'pg/muse/music_out_reg[0]'
+INFO: [Synth 8-3886] merging instance 'pg/muse/music_out_reg[6]' (FD) to 'pg/muse/music_out_reg[0]'
+INFO: [Synth 8-3886] merging instance 'pg/muse/music_out_reg[0]' (FD) to 'pg/muse/music_out_reg[1]'
+INFO: [Synth 8-3886] merging instance 'pg/muse/music_out_reg[13]' (FD) to 'pg/muse/music_out_reg[1]'
+INFO: [Synth 8-3886] merging instance 'pg/muse/music_out_reg[7]' (FD) to 'pg/muse/music_out_reg[1]'
+INFO: [Synth 8-3886] merging instance 'pg/muse/music_out_reg[1]' (FD) to 'pg/muse/music_out_reg[2]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (pg/\notegen/notepos/x_pos_reg[10] )
+INFO: [Synth 8-3886] merging instance 'pg/notegen/note_length_reg[0]' (FDE) to 'pg/notegen/note_length_reg[1]'
+INFO: [Synth 8-3886] merging instance 'pg/notegen/note_length_reg[1]' (FDE) to 'pg/notegen/note_length_reg[2]'
+INFO: [Synth 8-3886] merging instance 'pg/notegen/note_length_reg[2]' (FDE) to 'pg/notegen/note_length_reg[3]'
+INFO: [Synth 8-3886] merging instance 'pg/notegen/note_length_reg[3]' (FDE) to 'pg/notegen/note_length_reg[4]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (pg/\notegen/note_length_reg[4] )
 INFO: [Synth 8-3886] merging instance 'pg/bpm_reg[0]' (FDRE) to 'pg/bpm_reg[1]'
 INFO: [Synth 8-3886] merging instance 'pg/bpm_reg[1]' (FDRE) to 'pg/bpm_reg[2]'
 INFO: [Synth 8-3886] merging instance 'pg/bpm_reg[2]' (FDRE) to 'pg/bpm_reg[3]'
 INFO: [Synth 8-3886] merging instance 'pg/notegen/x0_reg[10]' (FDE) to 'pg/notegen/nlen0_reg[0]'
-INFO: [Synth 8-3886] merging instance 'pg/notegen/nlen0_reg[0]' (FDE) to 'pg/notegen/nlen0_reg[2]'
-INFO: [Synth 8-3886] merging instance 'pg/notegen/nlen0_reg[1]' (FDE) to 'pg/notegen/nlen0_reg[4]'
+INFO: [Synth 8-3886] merging instance 'pg/notegen/nlen0_reg[0]' (FDE) to 'pg/notegen/nlen0_reg[1]'
+INFO: [Synth 8-3886] merging instance 'pg/notegen/nlen0_reg[1]' (FDE) to 'pg/notegen/nlen0_reg[2]'
 INFO: [Synth 8-3886] merging instance 'pg/notegen/nlen0_reg[2]' (FDE) to 'pg/notegen/nlen0_reg[3]'
-INFO: [Synth 8-3886] merging instance 'pg/notegen/nlen0_reg[3]' (FDE) to 'pg/notegen/nlen0_reg[6]'
-INFO: [Synth 8-3886] merging instance 'pg/notegen/nlen0_reg[4]' (FDE) to 'pg/notegen/nlen0_reg[5]'
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (pg/\notegen/nlen0_reg[5] )
-INFO: [Synth 8-3886] merging instance 'pg/notegen/nlen0_reg[6]' (FDE) to 'pg/notegen/nlen0_reg[7]'
-INFO: [Synth 8-3886] merging instance 'pg/notegen/nlen0_reg[7]' (FDE) to 'pg/notegen/nlen0_reg[8]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (pg/\notegen/nlen0_reg[8] )
+INFO: [Synth 8-3886] merging instance 'pg/notegen/nlen0_reg[3]' (FDE) to 'pg/notegen/nlen0_reg[4]'
+INFO: [Synth 8-3886] merging instance 'pg/notegen/x5_reg[10]' (FDE) to 'pg/notegen/nlen5_reg[0]'
+INFO: [Synth 8-3886] merging instance 'pg/notegen/nlen5_reg[0]' (FDE) to 'pg/notegen/nlen5_reg[1]'
+INFO: [Synth 8-3886] merging instance 'pg/notegen/nlen5_reg[1]' (FDE) to 'pg/notegen/nlen5_reg[2]'
+INFO: [Synth 8-3886] merging instance 'pg/notegen/nlen5_reg[2]' (FDE) to 'pg/notegen/nlen5_reg[3]'
+INFO: [Synth 8-3886] merging instance 'pg/notegen/nlen5_reg[3]' (FDE) to 'pg/notegen/nlen5_reg[4]'
+INFO: [Synth 8-3886] merging instance 'pg/notegen/x4_reg[10]' (FDE) to 'pg/notegen/nlen4_reg[0]'
+INFO: [Synth 8-3886] merging instance 'pg/notegen/nlen4_reg[0]' (FDE) to 'pg/notegen/nlen4_reg[1]'
+INFO: [Synth 8-3886] merging instance 'pg/notegen/nlen4_reg[1]' (FDE) to 'pg/notegen/nlen4_reg[2]'
+INFO: [Synth 8-3886] merging instance 'pg/notegen/nlen4_reg[2]' (FDE) to 'pg/notegen/nlen4_reg[3]'
+INFO: [Synth 8-3886] merging instance 'pg/notegen/nlen4_reg[3]' (FDE) to 'pg/notegen/nlen4_reg[4]'
 INFO: [Synth 8-3886] merging instance 'pg/notegen/x3_reg[10]' (FDE) to 'pg/notegen/nlen3_reg[0]'
-INFO: [Synth 8-3886] merging instance 'pg/notegen/nlen3_reg[0]' (FDE) to 'pg/notegen/nlen3_reg[2]'
-INFO: [Synth 8-3886] merging instance 'pg/notegen/nlen3_reg[1]' (FDE) to 'pg/notegen/nlen3_reg[4]'
+INFO: [Synth 8-3886] merging instance 'pg/notegen/nlen3_reg[0]' (FDE) to 'pg/notegen/nlen3_reg[1]'
+INFO: [Synth 8-3886] merging instance 'pg/notegen/nlen3_reg[1]' (FDE) to 'pg/notegen/nlen3_reg[2]'
 INFO: [Synth 8-3886] merging instance 'pg/notegen/nlen3_reg[2]' (FDE) to 'pg/notegen/nlen3_reg[3]'
-INFO: [Synth 8-3886] merging instance 'pg/notegen/nlen3_reg[3]' (FDE) to 'pg/notegen/nlen3_reg[6]'
-INFO: [Synth 8-3886] merging instance 'pg/notegen/nlen3_reg[4]' (FDE) to 'pg/notegen/nlen3_reg[5]'
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (pg/\notegen/nlen3_reg[5] )
-INFO: [Synth 8-3886] merging instance 'pg/notegen/nlen3_reg[6]' (FDE) to 'pg/notegen/nlen3_reg[7]'
-INFO: [Synth 8-3886] merging instance 'pg/notegen/nlen3_reg[7]' (FDE) to 'pg/notegen/nlen3_reg[8]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (pg/\notegen/nlen3_reg[8] )
+INFO: [Synth 8-3886] merging instance 'pg/notegen/nlen3_reg[3]' (FDE) to 'pg/notegen/nlen3_reg[4]'
 INFO: [Synth 8-3886] merging instance 'pg/notegen/x2_reg[10]' (FDE) to 'pg/notegen/nlen2_reg[0]'
-INFO: [Synth 8-3886] merging instance 'pg/notegen/nlen2_reg[0]' (FDE) to 'pg/notegen/nlen2_reg[2]'
-INFO: [Synth 8-3886] merging instance 'pg/notegen/nlen2_reg[1]' (FDE) to 'pg/notegen/nlen2_reg[4]'
+INFO: [Synth 8-3886] merging instance 'pg/notegen/nlen2_reg[0]' (FDE) to 'pg/notegen/nlen2_reg[1]'
+INFO: [Synth 8-3886] merging instance 'pg/notegen/nlen2_reg[1]' (FDE) to 'pg/notegen/nlen2_reg[2]'
 INFO: [Synth 8-3886] merging instance 'pg/notegen/nlen2_reg[2]' (FDE) to 'pg/notegen/nlen2_reg[3]'
-INFO: [Synth 8-3886] merging instance 'pg/notegen/nlen2_reg[3]' (FDE) to 'pg/notegen/nlen2_reg[6]'
-INFO: [Synth 8-3886] merging instance 'pg/notegen/nlen2_reg[4]' (FDE) to 'pg/notegen/nlen2_reg[5]'
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (pg/\notegen/nlen2_reg[5] )
-INFO: [Synth 8-3886] merging instance 'pg/notegen/nlen2_reg[6]' (FDE) to 'pg/notegen/nlen2_reg[7]'
-INFO: [Synth 8-3886] merging instance 'pg/notegen/nlen2_reg[7]' (FDE) to 'pg/notegen/nlen2_reg[8]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (pg/\notegen/nlen2_reg[8] )
+INFO: [Synth 8-3886] merging instance 'pg/notegen/nlen2_reg[3]' (FDE) to 'pg/notegen/nlen2_reg[4]'
 INFO: [Synth 8-3886] merging instance 'pg/notegen/x1_reg[10]' (FDE) to 'pg/notegen/nlen1_reg[0]'
-INFO: [Synth 8-3886] merging instance 'pg/notegen/nlen1_reg[0]' (FDE) to 'pg/notegen/nlen1_reg[2]'
-INFO: [Synth 8-3886] merging instance 'pg/notegen/nlen1_reg[1]' (FDE) to 'pg/notegen/nlen1_reg[4]'
+INFO: [Synth 8-3886] merging instance 'pg/notegen/nlen1_reg[0]' (FDE) to 'pg/notegen/nlen1_reg[1]'
+INFO: [Synth 8-3886] merging instance 'pg/notegen/nlen1_reg[1]' (FDE) to 'pg/notegen/nlen1_reg[2]'
 INFO: [Synth 8-3886] merging instance 'pg/notegen/nlen1_reg[2]' (FDE) to 'pg/notegen/nlen1_reg[3]'
-INFO: [Synth 8-3886] merging instance 'pg/notegen/nlen1_reg[3]' (FDE) to 'pg/notegen/nlen1_reg[6]'
-INFO: [Synth 8-3886] merging instance 'pg/notegen/nlen1_reg[4]' (FDE) to 'pg/notegen/nlen1_reg[5]'
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (pg/\notegen/nlen1_reg[5] )
-INFO: [Synth 8-3886] merging instance 'pg/notegen/nlen1_reg[6]' (FDE) to 'pg/notegen/nlen1_reg[7]'
-INFO: [Synth 8-3886] merging instance 'pg/notegen/nlen1_reg[7]' (FDE) to 'pg/notegen/nlen1_reg[8]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (pg/\notegen/nlen1_reg[8] )
+INFO: [Synth 8-3886] merging instance 'pg/notegen/nlen1_reg[3]' (FDE) to 'pg/notegen/nlen1_reg[4]'
 INFO: [Synth 8-3886] merging instance 'pg/bpm_reg[3]' (FDRE) to 'pg/bpm_reg[4]'
 INFO: [Synth 8-3886] merging instance 'pg/bpm_reg[4]' (FDRE) to 'pg/bpm_reg[5]'
 INFO: [Synth 8-3886] merging instance 'pg/bpm_reg[5]' (FDRE) to 'pg/bpm_reg[7]'
@@ -592,13 +604,7 @@ INFO: [Synth 8-3886] merging instance 'pg/bpm_reg[23]' (FDSE) to 'pg/bpm_reg[24]
 INFO: [Synth 8-3886] merging instance 'pg/bpm_reg[24]' (FDSE) to 'pg/bpm_reg[25]'
 INFO: [Synth 8-3886] merging instance 'pg/bpm_reg[25]' (FDSE) to 'pg/hand1_y_reg[9]'
 INFO: [Synth 8-3886] merging instance 'pg/bpm_reg[26]' (FDRE) to 'pg/hand1_y_reg[8]'
-INFO: [Synth 8-3886] merging instance 'pg/muse/music_out_reg[0]' (FD) to 'pg/muse/music_out_reg[14]'
-INFO: [Synth 8-3886] merging instance 'pg/muse/music_out_reg[1]' (FD) to 'pg/muse/music_out_reg[14]'
 INFO: [Synth 8-3886] merging instance 'pg/muse/music_out_reg[14]' (FD) to 'pg/muse/music_out_reg[2]'
-INFO: [Synth 8-3886] merging instance 'pg/muse/music_out_reg[6]' (FD) to 'pg/muse/music_out_reg[2]'
-INFO: [Synth 8-3886] merging instance 'pg/muse/music_out_reg[7]' (FD) to 'pg/muse/music_out_reg[2]'
-INFO: [Synth 8-3886] merging instance 'pg/muse/music_out_reg[12]' (FD) to 'pg/muse/music_out_reg[2]'
-INFO: [Synth 8-3886] merging instance 'pg/muse/music_out_reg[13]' (FD) to 'pg/muse/music_out_reg[2]'
 INFO: [Synth 8-3886] merging instance 'pg/muse/music_out_reg[15]' (FD) to 'pg/muse/music_out_reg[2]'
 INFO: [Synth 8-3886] merging instance 'pg/muse/music_out_reg[17]' (FD) to 'pg/muse/music_out_reg[2]'
 INFO: [Synth 8-3886] merging instance 'pg/muse/music_out_reg[16]' (FD) to 'pg/muse/music_out_reg[2]'
@@ -633,12 +639,31 @@ INFO: [Synth 8-3333] propagating constant 0 across sequential element (pg/\hand1
 INFO: [Synth 8-3333] propagating constant 1 across sequential element (pg/\hand1_y_reg[9] )
 INFO: [Synth 8-3886] merging instance 'pg/muse/music_out_reg[18]' (FD) to 'pg/muse/music_out_reg[19]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (pg/\muse/music_out_reg[19] )
-INFO: [Synth 8-3886] merging instance 'pg/alpha_pixel_reg[4]' (FD) to 'pg/alpha_pixel_reg[5]'
-INFO: [Synth 8-3886] merging instance 'pg/alpha_pixel_reg[5]' (FD) to 'pg/alpha_pixel_reg[6]'
-INFO: [Synth 8-3886] merging instance 'pg/alpha_pixel_reg[6]' (FD) to 'pg/alpha_pixel_reg[7]'
+INFO: [Synth 8-3886] merging instance 'pg/notegen/curr_note_length_reg[0]' (FDE) to 'pg/notegen/curr_note_length_reg[1]'
 INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (pg/\notegen/curr_note_length_reg[1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (pg/\notegen/nlen0_reg[4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (pg/\notegen/nlen5_reg[4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (pg/\notegen/nlen4_reg[4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (pg/\notegen/nlen3_reg[4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (pg/\notegen/nlen2_reg[4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (pg/\notegen/nlen1_reg[4] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (pg/\notegen/note_length_reg[5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (pg/\notegen/note_length_reg[8] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (pg/\notegen/nlen0_reg[5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (pg/\notegen/nlen0_reg[8] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (pg/\notegen/nlen5_reg[5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (pg/\notegen/nlen5_reg[8] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (pg/\notegen/nlen4_reg[5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (pg/\notegen/nlen4_reg[8] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (pg/\notegen/nlen3_reg[5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (pg/\notegen/nlen3_reg[8] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (pg/\notegen/nlen2_reg[5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (pg/\notegen/nlen2_reg[8] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (pg/\notegen/nlen1_reg[5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (pg/\notegen/nlen1_reg[8] )
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:11 ; elapsed = 00:00:14 . Memory (MB): peak = 2041.227 ; gain = 397.840 ; free physical = 1198 ; free virtual = 12379
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:12 ; elapsed = 00:00:15 . Memory (MB): peak = 2042.191 ; gain = 398.809 ; free physical = 679 ; free virtual = 11928
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -649,7 +674,10 @@ ROM:
 |Module Name | RTL Object                    | Depth x Width | Implemented As | 
 +------------+-------------------------------+---------------+----------------+
 |sine_lut    | amp_out                       | 64x8          | LUT            | 
-|audio_gen   | myrec/tone750hz/lut_1/amp_out | 64x8          | LUT            | 
+|audio_gen   | myrec/tone554hz/lut_1/amp_out | 64x8          | LUT            | 
+|audio_gen   | myrec/tone466hz/lut_1/amp_out | 64x8          | LUT            | 
+|audio_gen   | myrec/tone493hz/lut_1/amp_out | 64x8          | LUT            | 
+|audio_gen   | myrec/tone523hz/lut_1/amp_out | 64x8          | LUT            | 
 |audio_gen   | myrec/tone440hz/lut_1/amp_out | 64x8          | LUT            | 
 +------------+-------------------------------+---------------+----------------+
 
@@ -666,13 +694,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:15 ; elapsed = 00:00:18 . Memory (MB): peak = 2041.227 ; gain = 397.840 ; free physical = 1080 ; free virtual = 12262
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:16 ; elapsed = 00:00:19 . Memory (MB): peak = 2042.191 ; gain = 398.809 ; free physical = 561 ; free virtual = 11809
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:17 ; elapsed = 00:00:20 . Memory (MB): peak = 2041.227 ; gain = 397.840 ; free physical = 1051 ; free virtual = 12232
+Finished Timing Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:20 . Memory (MB): peak = 2042.191 ; gain = 398.809 ; free physical = 560 ; free virtual = 11808
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -684,7 +712,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:17 ; elapsed = 00:00:20 . Memory (MB): peak = 2041.227 ; gain = 397.840 ; free physical = 1065 ; free virtual = 12247
+Finished Technology Mapping : Time (s): cpu = 00:00:17 ; elapsed = 00:00:20 . Memory (MB): peak = 2042.191 ; gain = 398.809 ; free physical = 557 ; free virtual = 11805
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -704,13 +732,16 @@ Finished Flattening Before IO Insertion
 ---------------------------------------------------------------------------------
 Start Final Netlist Cleanup
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-5365] Flop pg/audio1/myrec/tone750hz/lut_1/amp_out_reg[7] is being inverted and renamed to pg/audio1/myrec/tone750hz/lut_1/amp_out_reg[7]_inv.
+INFO: [Synth 8-5365] Flop pg/audio1/myrec/tone554hz/lut_1/amp_out_reg[7] is being inverted and renamed to pg/audio1/myrec/tone554hz/lut_1/amp_out_reg[7]_inv.
+INFO: [Synth 8-5365] Flop pg/audio1/myrec/tone466hz/lut_1/amp_out_reg[7] is being inverted and renamed to pg/audio1/myrec/tone466hz/lut_1/amp_out_reg[7]_inv.
+INFO: [Synth 8-5365] Flop pg/audio1/myrec/tone493hz/lut_1/amp_out_reg[7] is being inverted and renamed to pg/audio1/myrec/tone493hz/lut_1/amp_out_reg[7]_inv.
+INFO: [Synth 8-5365] Flop pg/audio1/myrec/tone523hz/lut_1/amp_out_reg[7] is being inverted and renamed to pg/audio1/myrec/tone523hz/lut_1/amp_out_reg[7]_inv.
 INFO: [Synth 8-5365] Flop pg/audio1/myrec/tone440hz/lut_1/amp_out_reg[7] is being inverted and renamed to pg/audio1/myrec/tone440hz/lut_1/amp_out_reg[7]_inv.
 ---------------------------------------------------------------------------------
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:18 ; elapsed = 00:00:21 . Memory (MB): peak = 2041.227 ; gain = 397.840 ; free physical = 1065 ; free virtual = 12247
+Finished IO Insertion : Time (s): cpu = 00:00:18 ; elapsed = 00:00:21 . Memory (MB): peak = 2042.191 ; gain = 398.809 ; free physical = 556 ; free virtual = 11805
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -723,7 +754,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:18 ; elapsed = 00:00:21 . Memory (MB): peak = 2041.227 ; gain = 397.840 ; free physical = 1065 ; free virtual = 12247
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:18 ; elapsed = 00:00:21 . Memory (MB): peak = 2042.191 ; gain = 398.809 ; free physical = 556 ; free virtual = 11805
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -735,25 +766,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:18 ; elapsed = 00:00:22 . Memory (MB): peak = 2041.227 ; gain = 397.840 ; free physical = 1065 ; free virtual = 12247
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:18 ; elapsed = 00:00:21 . Memory (MB): peak = 2042.191 ; gain = 398.809 ; free physical = 556 ; free virtual = 11805
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:18 ; elapsed = 00:00:22 . Memory (MB): peak = 2041.227 ; gain = 397.840 ; free physical = 1065 ; free virtual = 12247
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:18 ; elapsed = 00:00:21 . Memory (MB): peak = 2042.191 ; gain = 398.809 ; free physical = 556 ; free virtual = 11805
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:18 ; elapsed = 00:00:22 . Memory (MB): peak = 2041.227 ; gain = 397.840 ; free physical = 1065 ; free virtual = 12247
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:18 ; elapsed = 00:00:21 . Memory (MB): peak = 2042.191 ; gain = 398.809 ; free physical = 558 ; free virtual = 11806
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:18 ; elapsed = 00:00:22 . Memory (MB): peak = 2041.227 ; gain = 397.840 ; free physical = 1065 ; free virtual = 12247
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:18 ; elapsed = 00:00:21 . Memory (MB): peak = 2042.191 ; gain = 398.809 ; free physical = 558 ; free virtual = 11806
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -770,16 +801,16 @@ Report Cell Usage:
 |      |Cell       |Count |
 +------+-----------+------+
 |1     |BUFG       |     2|
-|2     |CARRY4     |   146|
-|3     |LUT1       |    75|
-|4     |LUT2       |   249|
-|5     |LUT3       |    54|
-|6     |LUT4       |   162|
-|7     |LUT5       |    40|
-|8     |LUT6       |   125|
+|2     |CARRY4     |   200|
+|3     |LUT1       |   128|
+|4     |LUT2       |   276|
+|5     |LUT3       |    85|
+|6     |LUT4       |   222|
+|7     |LUT5       |    49|
+|8     |LUT6       |   176|
 |9     |MMCME2_ADV |     1|
 |10    |MUXF7      |     4|
-|11    |FDRE       |   412|
+|11    |FDRE       |   632|
 |12    |FDSE       |    17|
 |13    |IBUF       |    11|
 |14    |OBUF       |    37|
@@ -790,53 +821,61 @@ Report Instance Areas:
 +------+---------------------+-------------------------------+------+
 |      |Instance             |Module                         |Cells |
 +------+---------------------+-------------------------------+------+
-|1     |top                  |                               |  1352|
+|1     |top                  |                               |  1857|
 |2     |  clkdivider         |clk_wiz_65                     |     4|
 |3     |  db1                |debounce                       |    41|
 |4     |  display            |display_8hex                   |    43|
-|5     |  pg                 |FPGuitAr_Hero                  |   925|
-|6     |    audio1           |audio_gen                      |   190|
-|7     |      myrec          |play_notes                     |   147|
-|8     |        tone440hz    |sine_generator__parameterized0 |    74|
-|9     |          lut_1      |sine_lut_6                     |    16|
-|10    |        tone750hz    |sine_generator                 |    25|
-|11    |          lut_1      |sine_lut                       |    16|
-|12    |      nolabel_line72 |pwm                            |    22|
-|13    |    hand1            |blob                           |    15|
-|14    |    hand2            |blob_0                         |    16|
-|15    |    meter1           |beat_generator                 |    74|
-|16    |    muse             |music_lookup                   |    14|
-|17    |    notegen          |note_generator                 |   429|
-|18    |      note1          |blob_2                         |    23|
-|19    |      note2          |blob_3                         |    22|
-|20    |      note3          |blob_4                         |    22|
-|21    |      note4          |blob_5                         |    22|
-|22    |      notepos        |note_positions                 |    19|
-|23    |    planet1          |blob_1                         |    11|
-|24    |  xvga1              |xvga                           |   264|
+|5     |  pg                 |FPGuitAr_Hero                  |  1390|
+|6     |    audio1           |audio_gen                      |   510|
+|7     |      myrec          |play_notes                     |   464|
+|8     |        tone440hz    |sine_generator                 |    69|
+|9     |          lut_1      |sine_lut_11                    |    16|
+|10    |        tone466hz    |sine_generator__parameterized0 |    68|
+|11    |          lut_1      |sine_lut_10                    |    16|
+|12    |        tone493hz    |sine_generator__parameterized1 |    72|
+|13    |          lut_1      |sine_lut_9                     |    16|
+|14    |        tone523hz    |sine_generator__parameterized2 |    71|
+|15    |          lut_1      |sine_lut_8                     |    16|
+|16    |        tone554hz    |sine_generator__parameterized3 |    71|
+|17    |          lut_1      |sine_lut                       |    16|
+|18    |      nolabel_line72 |pwm                            |    22|
+|19    |    hand1            |blob                           |    15|
+|20    |    hand2            |blob_0                         |    18|
+|21    |    meter1           |beat_generator                 |    74|
+|22    |    muse             |music_lookup                   |    14|
+|23    |    notegen          |note_generator                 |   568|
+|24    |      note0          |blob_2                         |    21|
+|25    |      note1          |blob_3                         |    21|
+|26    |      note2          |blob_4                         |    21|
+|27    |      note3          |blob_5                         |    21|
+|28    |      note4          |blob_6                         |    21|
+|29    |      note5          |blob_7                         |    21|
+|30    |      notepos        |note_positions                 |    19|
+|31    |    planet1          |blob_1                         |    11|
+|32    |  xvga1              |xvga                           |   304|
 +------+---------------------+-------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:18 ; elapsed = 00:00:22 . Memory (MB): peak = 2041.227 ; gain = 397.840 ; free physical = 1065 ; free virtual = 12247
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:18 ; elapsed = 00:00:21 . Memory (MB): peak = 2042.191 ; gain = 398.809 ; free physical = 558 ; free virtual = 11806
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 52 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 2041.227 ; gain = 214.215 ; free physical = 1118 ; free virtual = 12300
-Synthesis Optimization Complete : Time (s): cpu = 00:00:18 ; elapsed = 00:00:22 . Memory (MB): peak = 2041.227 ; gain = 397.840 ; free physical = 1133 ; free virtual = 12314
+Synthesis finished with 0 errors, 0 critical warnings and 43 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:16 ; elapsed = 00:00:19 . Memory (MB): peak = 2042.191 ; gain = 214.215 ; free physical = 611 ; free virtual = 11859
+Synthesis Optimization Complete : Time (s): cpu = 00:00:18 ; elapsed = 00:00:21 . Memory (MB): peak = 2042.191 ; gain = 398.809 ; free physical = 625 ; free virtual = 11873
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 151 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 205 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2041.227 ; gain = 0.000 ; free physical = 1064 ; free virtual = 12245
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2042.191 ; gain = 0.000 ; free physical = 557 ; free virtual = 11806
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-178 Infos, 116 Warnings, 8 Critical Warnings and 0 Errors encountered.
+200 Infos, 110 Warnings, 8 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:22 ; elapsed = 00:00:25 . Memory (MB): peak = 2041.227 ; gain = 628.074 ; free physical = 1164 ; free virtual = 12346
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2041.227 ; gain = 0.000 ; free physical = 1164 ; free virtual = 12346
+synth_design: Time (s): cpu = 00:00:22 ; elapsed = 00:00:25 . Memory (MB): peak = 2042.191 ; gain = 629.043 ; free physical = 655 ; free virtual = 11903
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2042.191 ; gain = 0.000 ; free physical = 655 ; free virtual = 11903
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint '/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.runs/synth_1/labkit.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file labkit_utilization_synth.rpt -pb labkit_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Thu Nov 14 16:00:01 2019...
+INFO: [Common 17-206] Exiting Vivado at Thu Nov 14 17:11:08 2019...

@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.1.2 (lin64) Build 2615518 Fri Aug  9 15:53:29 MDT 2019
-| Date         : Thu Nov 14 16:00:29 2019
+| Date         : Thu Nov 14 17:11:37 2019
 | Host         : eecs-digital-207 running 64-bit Ubuntu 14.04.6 LTS
 | Command      : report_control_sets -verbose -file labkit_control_sets_placed.rpt
 | Design       : labkit
@@ -23,11 +23,11 @@ Table of Contents
 +----------------------------------------------------------+-------+
 |                          Status                          | Count |
 +----------------------------------------------------------+-------+
-| Total control sets                                       |    31 |
-|    Minimum number of control sets                        |    31 |
+| Total control sets                                       |    40 |
+|    Minimum number of control sets                        |    40 |
 |    Addition due to synthesis replication                 |     0 |
 |    Addition due to physical synthesis replication        |     0 |
-| Unused register locations in slices containing registers |   107 |
+| Unused register locations in slices containing registers |   127 |
 +----------------------------------------------------------+-------+
 * Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
 ** Run report_qor_suggestions for automated merging and remapping suggestions
@@ -39,12 +39,12 @@ Table of Contents
 +--------------------+-------+
 |       Fanout       | Count |
 +--------------------+-------+
-| Total control sets |    31 |
+| Total control sets |    40 |
 | >= 0 to < 4        |     3 |
-| >= 4 to < 6        |     3 |
+| >= 4 to < 6        |     5 |
 | >= 6 to < 8        |     1 |
-| >= 8 to < 10       |     7 |
-| >= 10 to < 12      |     8 |
+| >= 8 to < 10       |    12 |
+| >= 10 to < 12      |    10 |
 | >= 12 to < 14      |     0 |
 | >= 14 to < 16      |     1 |
 | >= 16              |     8 |
@@ -58,52 +58,61 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |              80 |           36 |
+| No           | No                    | No                     |             110 |           46 |
 | No           | No                    | Yes                    |               0 |            0 |
-| No           | Yes                   | No                     |             121 |           37 |
-| Yes          | No                    | No                     |              53 |           24 |
+| No           | Yes                   | No                     |             148 |           46 |
+| Yes          | No                    | No                     |              73 |           32 |
 | Yes          | No                    | Yes                    |               0 |            0 |
-| Yes          | Yes                   | No                     |             175 |           49 |
+| Yes          | Yes                   | No                     |             318 |           86 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 
 4. Detailed Control Set Information
 -----------------------------------
 
-+----------------------+-------------------------------------------------+-------------------------------------------------+------------------+----------------+
-|     Clock Signal     |                  Enable Signal                  |                 Set/Reset Signal                | Slice Load Count | Bel Load Count |
-+----------------------+-------------------------------------------------+-------------------------------------------------+------------------+----------------+
-|  clkdivider/clk_out1 | db1/new_input_i_1_n_0                           |                                                 |                1 |              1 |
-|  clkdivider/clk_out1 | xvga1/hreset                                    |                                                 |                2 |              2 |
-|  clkdivider/clk_out1 |                                                 | display/p_0_in__0[2]                            |                2 |              2 |
-|  clkdivider/clk_out1 |                                                 | display/strobe_out[3]_i_1_n_0                   |                1 |              4 |
-|  clkdivider/clk_out1 | pg/notegen/note_buffer                          | db1/reset                                       |                1 |              4 |
-|  clkdivider/clk_out1 | pg/notegen/note_num[3]_i_2_n_0                  | pg/notegen/note_num[3]_i_1_n_0                  |                2 |              4 |
-|  clkdivider/clk_out1 | pg/meter1/E[0]                                  | db1/reset                                       |                1 |              6 |
-|  clkdivider/clk_out1 | xvga1/hreset                                    | xvga1/vcount_out0                               |                3 |              8 |
-|  clkdivider/clk_out1 |                                                 | pg/audio1/myrec/data1[7]_i_1_n_0                |                2 |              8 |
-|  clkdivider/clk_out1 |                                                 | pg/audio1/myrec/data2[7]_i_1_n_0                |                2 |              8 |
-|  clkdivider/clk_out1 | pg/notegen/y3                                   | pg/notegen/y3[8]_i_1_n_0                        |                2 |              8 |
-|  clkdivider/clk_out1 | pg/notegen/y2                                   | pg/notegen/y2[8]_i_1_n_0                        |                2 |              8 |
-|  clkdivider/clk_out1 | pg/notegen/y1                                   | pg/notegen/y1[8]_i_1_n_0                        |                3 |              8 |
-|  clkdivider/clk_out1 | pg/notegen/y0                                   | pg/notegen/y0[8]_i_1_n_0                        |                2 |              8 |
-|  clkdivider/clk_out1 | pg/notegen/x0[9]_i_1_n_0                        |                                                 |                4 |             10 |
-|  clkdivider/clk_out1 | pg/notegen/x3[9]_i_1_n_0                        |                                                 |                6 |             10 |
-|  clkdivider/clk_out1 | pg/notegen/x2[9]_i_1_n_0                        |                                                 |                4 |             10 |
-|  clkdivider/clk_out1 | pg/notegen/x1[9]_i_1_n_0                        |                                                 |                4 |             10 |
-|  clkdivider/clk_out1 | pg/notegen/notepos/x_pos_n_0                    |                                                 |                3 |             10 |
-|  clkdivider/clk_out1 | pg/hand2_x[10]_i_1_n_0                          | db1/reset                                       |                4 |             11 |
-|  clkdivider/clk_out1 | pg/hand1_x[10]_i_1_n_0                          | db1/reset                                       |                4 |             11 |
-|  clkdivider/clk_out1 |                                                 | xvga1/hreset                                    |                6 |             11 |
-|  clkdivider/clk_out1 |                                                 | pg/audio1/myrec/tone440hz/sample_counter_reg[0] |                4 |             15 |
-|  clkdivider/clk_out1 |                                                 | db1/reset                                       |                6 |             19 |
-|  clkdivider/clk_out1 | db1/count                                       | db1/new_input_i_1_n_0                           |                5 |             20 |
-|  clkdivider/clk_out1 | db1/E[0]                                        | db1/clean_out_reg_2[0]                          |                5 |             21 |
-|  clkdivider/clk_out1 | db1/E[0]                                        | db1/SR[0]                                       |                5 |             21 |
-|  clkdivider/clk_out1 |                                                 | db1/clear                                       |                7 |             27 |
-|  clkdivider/clk_out1 |                                                 | db1/clean_out_reg_0                             |                7 |             27 |
-|  clkdivider/clk_out1 | pg/audio1/myrec/tone440hz/sample_counter_reg[0] | db1/reset                                       |               10 |             37 |
-|  clkdivider/clk_out1 |                                                 |                                                 |               36 |             80 |
-+----------------------+-------------------------------------------------+-------------------------------------------------+------------------+----------------+
++----------------------+-------------------------------------------------+--------------------------------------+------------------+----------------+
+|     Clock Signal     |                  Enable Signal                  |           Set/Reset Signal           | Slice Load Count | Bel Load Count |
++----------------------+-------------------------------------------------+--------------------------------------+------------------+----------------+
+|  clkdivider/clk_out1 | db1/new_input_i_1_n_0                           |                                      |                1 |              1 |
+|  clkdivider/clk_out1 | xvga1/hreset                                    |                                      |                2 |              2 |
+|  clkdivider/clk_out1 |                                                 | display/p_0_in__0[2]                 |                2 |              2 |
+|  clkdivider/clk_out1 | pg/notegen/note_num                             | pg/notegen/note_num[3]_i_1_n_0       |                1 |              4 |
+|  clkdivider/clk_out1 | pg/notegen/note_buffer                          | db1/reset                            |                1 |              4 |
+|  clkdivider/clk_out1 |                                                 | display/strobe_out[3]_i_1_n_0        |                1 |              4 |
+|  clkdivider/clk_out1 | xvga1/vcount_out_reg[6]_0[0]                    | db1/reset                            |                3 |              5 |
+|  clkdivider/clk_out1 |                                                 | db1/clean_out_reg_2                  |                4 |              5 |
+|  clkdivider/clk_out1 | pg/meter1/E[0]                                  | db1/reset                            |                2 |              6 |
+|  clkdivider/clk_out1 |                                                 | pg/audio1/myrec/data0[7]_i_1_n_0     |                2 |              8 |
+|  clkdivider/clk_out1 |                                                 | pg/audio1/myrec/data3[7]_i_1_n_0     |                2 |              8 |
+|  clkdivider/clk_out1 | pg/notegen/y1                                   | pg/notegen/y1[8]_i_1_n_0             |                2 |              8 |
+|  clkdivider/clk_out1 |                                                 | pg/audio1/myrec/data1[7]_i_1_n_0     |                2 |              8 |
+|  clkdivider/clk_out1 | pg/notegen/y3                                   | pg/notegen/y3[8]_i_1_n_0             |                3 |              8 |
+|  clkdivider/clk_out1 | pg/notegen/y2                                   | pg/notegen/y2[8]_i_1_n_0             |                2 |              8 |
+|  clkdivider/clk_out1 | xvga1/hreset                                    | xvga1/vcount_out0                    |                2 |              8 |
+|  clkdivider/clk_out1 | pg/notegen/y0                                   | pg/notegen/y0[8]_i_1_n_0             |                3 |              8 |
+|  clkdivider/clk_out1 |                                                 | pg/audio1/myrec/data4[7]_i_1_n_0     |                2 |              8 |
+|  clkdivider/clk_out1 |                                                 | pg/audio1/myrec/data2[7]_i_1_n_0     |                1 |              8 |
+|  clkdivider/clk_out1 | pg/notegen/y4                                   | pg/notegen/y4[8]_i_1_n_0             |                2 |              8 |
+|  clkdivider/clk_out1 | pg/notegen/y5                                   | pg/notegen/y5[8]_i_1_n_0             |                2 |              8 |
+|  clkdivider/clk_out1 | pg/notegen/x4[9]_i_1_n_0                        |                                      |                3 |             10 |
+|  clkdivider/clk_out1 | pg/notegen/x5[9]_i_1_n_0                        |                                      |                5 |             10 |
+|  clkdivider/clk_out1 | pg/notegen/x3[9]_i_1_n_0                        |                                      |                5 |             10 |
+|  clkdivider/clk_out1 | pg/notegen/x2[9]_i_1_n_0                        |                                      |                4 |             10 |
+|  clkdivider/clk_out1 | pg/notegen/x1[9]_i_1_n_0                        |                                      |                5 |             10 |
+|  clkdivider/clk_out1 | pg/notegen/x0[9]_i_1_n_0                        |                                      |                4 |             10 |
+|  clkdivider/clk_out1 | pg/notegen/notepos/x_pos_n_0                    |                                      |                3 |             10 |
+|  clkdivider/clk_out1 |                                                 | xvga1/hreset                         |                8 |             11 |
+|  clkdivider/clk_out1 | pg/hand2_x[10]_i_1_n_0                          | db1/reset                            |                4 |             11 |
+|  clkdivider/clk_out1 | pg/hand1_x[10]_i_1_n_0                          | db1/reset                            |                4 |             11 |
+|  clkdivider/clk_out1 |                                                 | pg/audio1/sample_counter[15]_i_1_n_0 |                4 |             15 |
+|  clkdivider/clk_out1 |                                                 | db1/reset                            |                4 |             17 |
+|  clkdivider/clk_out1 | db1/count                                       | db1/new_input_i_1_n_0                |                5 |             20 |
+|  clkdivider/clk_out1 | db1/E[0]                                        | db1/clean_out_reg_3[0]               |                5 |             21 |
+|  clkdivider/clk_out1 | db1/E[0]                                        | db1/SR[0]                            |                5 |             21 |
+|  clkdivider/clk_out1 |                                                 | db1/clean_out_reg_1                  |                7 |             27 |
+|  clkdivider/clk_out1 |                                                 | db1/clean_out_reg_0                  |                7 |             27 |
+|  clkdivider/clk_out1 |                                                 |                                      |               46 |            110 |
+|  clkdivider/clk_out1 | pg/audio1/myrec/tone493hz/sample_counter_reg[0] | db1/reset                            |               40 |            159 |
++----------------------+-------------------------------------------------+--------------------------------------+------------------+----------------+
 
 

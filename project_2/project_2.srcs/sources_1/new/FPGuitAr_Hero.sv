@@ -109,7 +109,7 @@ module FPGuitAr_Hero (
    
    logic [20:0] hand1_counter;
    logic [20:0] hand2_counter;
-   logic n1; logic n2; logic n3;
+   logic [12:0] n_array;
    always @ (posedge vclock_in) begin 
         // PIXEL OUT          
 //        if ((hand_pixel & planet_pixel) == 0)begin      // if puck and planet do not overlap
@@ -130,23 +130,24 @@ module FPGuitAr_Hero (
             notes <= 0;
         end else begin
             // AUDIO
-            if((vcount_in == 1) && (hcount_in == 1)) begin    // every frame check flags
-                n1 <= 0;
-                n2 <= 0;
-                n3 <= 0;
-                notes[12] <= n1? 1:0;
-                notes[11] <= n2? 1:0;
-                notes[10] <= n3? 1:0;
+            if((vcount_in == 1) && (hcount_in == 1)) begin    // EVERY FRAME check flags
+                n_array <= 0;                                 // reset all flags
+                notes <= n_array;                          // shift flags into notes being played
             end else begin
                 if( (hand1_pixel != 0) || (hand2_pixel != 0) ) begin        // if hand pixels are being drawn
                     if ( note_pixels != 0 )begin    // if any note is being drawn
-                        if( (hcount_in >=100) && (hcount_in <=116) )        // if C  1
-                            n1 <= 1;
-                        else if ((hcount_in >= 167) && (hcount_in <=200))   // if C# 2
-                            n2 <= 1;
-                        else if ((hcount_in >= 233) && (hcount_in <=250))   // if D  3
-                            n3 <= 1;
-                        
+                        if( (hcount_in >=100) && (hcount_in <=116) )        // if C  0
+                            n_array[12] <= 1;
+                        else if ((hcount_in >= 167) && (hcount_in <=200))   // if C# 1
+                            n_array[11] <= 1;
+                        else if ((hcount_in >= 233) && (hcount_in <=250))   // if D  2
+                            n_array[10] <= 1;
+                        else if ((hcount_in >= 300) && (hcount_in <=320))   // if Eb 3
+                            n_array[9] <= 1;
+                        else if ((hcount_in >= 367) && (hcount_in <=387))   // if F  4
+                            n_array[8] <= 1;
+                        else if ((hcount_in >= 433) && (hcount_in <=453))   // if F# 5
+                            n_array[7] <= 1;
                     end
                 end 
             end
@@ -188,7 +189,6 @@ module FPGuitAr_Hero (
             end else begin
                 hand2_counter <= 0;
             end
-            
             
         end
     end

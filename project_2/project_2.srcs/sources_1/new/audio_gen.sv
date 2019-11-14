@@ -37,7 +37,7 @@ module audio_gen(   input clk_100mhz,
     logic sample_trigger;
     logic adc_ready;
     logic enable;
-    logic [7:0] recorder_data;             
+    logic [11:0] recorder_data;             
     logic [7:0] vol_out;
     logic pwm_val; //pwm signal (HI/LO)
     
@@ -75,9 +75,6 @@ module audio_gen(   input clk_100mhz,
 endmodule
 
 
-
-
-
 ///////////////////////////////////////////////////////////////////////////////
 //
 // Record/playback
@@ -91,28 +88,43 @@ module play_notes(
   input logic ready_in,             // 1 when data is available
   input logic signed [7:0] mic_in,         // 8-bit PCM data from mic
   input [12:0] notes,
-  output logic signed [7:0] data_out       // 8-bit PCM data to headphone
+  output logic signed [11:0] data_out       // 8-bit PCM data to headphone
 ); 
-    logic [7:0] tone_750;
     logic [7:0] tone_440;
-    //generate a 750 Hz tone
-    sine_generator  tone750hz (   .clk_in(clk_in), .rst_in(rst_in), 
-                                 .step_in(ready_in), .amp_out(tone_750));
-    //generate a 440 Hz tone
-    sine_generator  #(.PHASE_INCR(32'd39370534)) tone440hz(.clk_in(clk_in), .rst_in(rst_in), 
-                               .step_in(ready_in), .amp_out(tone_440));                          
+    logic [7:0] tone_466;
+    logic [7:0] tone_493;
+    logic [7:0] tone_523;
+    logic [7:0] tone_554;
+    
+    sine_generator #(.PHASE_INCR(32'd39370534)) 
+    tone440hz (.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(tone_440));
+    sine_generator #(.PHASE_INCR(32'd41711649)) 
+    tone466hz (.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(tone_466)); 
+    sine_generator #(.PHASE_INCR(32'd44191903)) 
+    tone493hz (.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(tone_493)); 
+    sine_generator #(.PHASE_INCR(32'd46819707)) 
+    tone523hz (.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(tone_523)); 
+    sine_generator #(.PHASE_INCR(32'd49603741)) 
+    tone554hz (.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(tone_554));                           
     //logic [7:0] data_to_bram;
     //logic [7:0] data_from_bram;
     //logic [15:0] addr;
     //logic wea;
     //  blk_mem_gen_0(.addra(addr), .clka(clk_in), .dina(data_to_bram), .douta(data_from_bram), 
     //                .ena(1), .wea(bram_write));                                  
+    logic [7:0] data0;
     logic [7:0] data1;
     logic [7:0] data2;
+    logic [7:0] data3;
+    logic [7:0] data4;
+    
     always_ff @(posedge clk_in)begin
-        data1 <= notes[12]?   tone_440:8'b0;
-        data2 <= notes[11]?   tone_750:8'b0; //send tone immediately to output
-        data_out <= (data1 ^ data2); 
+        data0 <= notes[12]?   tone_440:8'b0;   // A
+        data1 <= notes[11]?   tone_466:8'b0; //send tone immediately to output
+        data2 <= notes[10]?   tone_493:8'b0; //send tone immediately to output
+        data3 <= notes[9]?    tone_523:8'b0; //send tone immediately to output
+        data4 <= notes[8]?    tone_554:8'b0; //send tone immediately to output
+        data_out <= (data0 + data1 + data2 + data3 + data4); 
     end                            
 endmodule                              
 
@@ -200,7 +212,7 @@ endmodule
 //endmodule
 
 //Volume Control
-module volume_control (input [2:0] vol_in, input signed [7:0] signal_in, output logic signed[7:0] signal_out);
+module volume_control (input [2:0] vol_in, input signed [11:0] signal_in, output logic signed[7:0] signal_out);
     logic [2:0] shift;
     assign shift = 3'd7 - vol_in;
     assign signal_out = signal_in>>>shift;
