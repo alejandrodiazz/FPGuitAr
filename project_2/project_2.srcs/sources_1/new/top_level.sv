@@ -40,7 +40,7 @@ module labkit(
     assign  dp = 1'b1;  // turn off the period
 
 //    assign led = sw;                        // turn leds on
-    assign data = {28'h0123456, sw[3:0]};   // display 0123456 + sw[3:0]
+    //assign data = {28'h0123456, sw[3:0]};   // display 0123456 + sw[3:0]
     assign led16_r = btnl;                  // left button -> red led
     assign led16_g = btnc;                  // center button -> green led
     assign led16_b = btnr;                  // right button -> blue led
@@ -66,9 +66,9 @@ module labkit(
     debounce db3(.reset_in(reset),.clock_in(clk_65mhz),.noisy_in(btnd),.clean_out(down));
 
     wire phsync,pvsync,pblank;
-    pong_game pg(.vclock_in(clk_65mhz),.reset_in(reset), .btnu(btnu),.btnd(btnd),.btnr(btnr), .btnl(btnl), 
+    FPGuitAr_Hero pg(.vclock_in(clk_65mhz),.reset_in(reset), .btnu(btnu),.btnd(btnd),.btnr(btnr), .btnl(btnl), 
                 .pspeed_in(sw[15:12]), .hcount_in(hcount),.vcount_in(vcount), .hsync_in(hsync),.vsync_in(vsync),
-                .blank_in(blank),.phsync_out(phsync),.pvsync_out(pvsync),.pblank_out(pblank),.pixel_out(pixel), 
+                .blank_in(blank),.phsync_out(phsync),.pvsync_out(pvsync),.pblank_out(pblank),.pixel_out(pixel), .hex_disp(data), 
                 .sw(sw), .aud_pwm(aud_pwm), .aud_sd(aud_sd), .led(led));
 
     wire border = (hcount==0 | hcount==1023 | vcount==0 | vcount==767 |
@@ -110,268 +110,6 @@ module labkit(
 
 endmodule
 
-////////////////////////////////////////////////////////////////////////////////
-//
-// Final_Project: the game itself!
-//
-////////////////////////////////////////////////////////////////////////////////
-
-module pong_game (
-    input vclock_in,        // 65MHz clock
-    input reset_in,         // 1 to initialize module
-    input btnu, btnd, btnr, btnl,          // when hands should move
-    input [3:0] pspeed_in,  // puck speed in pixels/tick 
-    input [10:0] hcount_in, // horizontal index of current pixel (0..1023)
-    input [9:0]  vcount_in, // vertical index of current pixel (0..767)
-    input hsync_in,         // XVGA horizontal sync signal (active low)
-    input vsync_in,         // XVGA vertical sync signal (active low)
-    input blank_in,         // XVGA blanking (1 means output black pixel)
-        
-    output phsync_out,       // pong game's horizontal sync
-    output pvsync_out,       // pong game's vertical sync
-    output pblank_out,       // pong game's blanking
-    output [11:0] pixel_out,  // pong game's pixel  // r=11:8, g=7:4, b=3:0
-    input [15:0] sw,
-    output logic aud_pwm,
-    output logic aud_sd,
-    output reg [15:0] led
-    );
-        
-   assign phsync_out = hsync_in;
-   assign pvsync_out = vsync_in;
-   assign pblank_out = blank_in;
-   
-   logic [12:0] notes;
-   
-   audio_gen audio1( .clk_100mhz(vclock_in), .reset(reset_in), .sw(sw), .notes(notes),
-                .aud_pwm(aud_pwm), .aud_sd(aud_sd)); // CHANGE running on 65MHz clock
-
-   // Hands
-   logic [10:0] hand1_x;     // location of hand on screen 
-   logic [9:0] hand1_y;
-   logic [10:0] h_x = 70;      // hand dimensions
-   logic [9:0] h_y = 30;
-   wire [11:0] hand1_pixel;  // output for puck pixel from module
-   blob hand1(.width(h_x), .height(h_y), .color(12'hFFF), .pixel_clk_in(vclock_in), .x_in(hand1_x),
-            .y_in(hand1_y),.hcount_in(hcount_in), .vcount_in(vcount_in), .pixel_out(hand1_pixel)); 
-   
-   logic [10:0] hand2_x;     // location of hand on screen 
-   logic [9:0] hand2_y;
-   wire [11:0] hand2_pixel;  // output for puck pixel from module
-   blob hand2(.width(h_x), .height(h_y), .color(12'hFFF), .pixel_clk_in(vclock_in), .x_in(hand2_x),
-            .y_in(hand2_y),.hcount_in(hcount_in), .vcount_in(vcount_in), .pixel_out(hand2_pixel)); 
-     
-   // lines           
-//   wire [11:0] line_pixel;  // output for puck pixel from module
-//   parameter line_width = 8;
-//   blob #(.WIDTH(h1_x),.HEIGHT(h1_y),.COLOR(12'hFFF))   // white!  
-//   hand1(.pixel_clk_in(vclock_in), .x_in(hand1_x),.y_in(hand1_y),.hcount_in(hcount_in),
-//                .vcount_in(vcount_in), .pixel_out(line_pixel)); 
-             
-         
-   // RED PLANET
-   wire [11:0] planet_pixel;
-   blob planet1(.width(128), .height(128), .color(12'hF00), .pixel_clk_in(vclock_in),.x_in(450),.y_in(330),
-                .hcount_in(hcount_in),.vcount_in(vcount_in), .pixel_out(planet_pixel));
-   
-   parameter m = 1;             // alpha parameters
-   parameter n = 1;             // power of two
-   logic [11:0] alpha_pixel;    // holds shifted values after alpha blending 
-   
-   //assign pixel_out = paddle_pixel | alpha_pixel; // add together all pixels for the screen 
-   assign pixel_out = alpha_pixel; // add together all pixels for the screen 
-   logic[3:0] a;                // different segments of the alpha blending
-   logic[3:0] b;
-   logic[3:0] c;
-   
-   logic [5:0] beat;
-   
-   logic [26:0] bpm;
-   logic [23:0] music_out;
-   music_lookup muse(.beat(beat), .clk_in(vclock_in), .music_out(music_out));
-   beat_generator meter1(.reset(reset_in), .clk_in(vclock_in), .bpm(bpm), .beat(beat));
-   note_generator notegen(.reset(reset_in), .clk_in(vclock_in), .beat(beat), .music_out(music_out));
-   
-   logic [25:0] counter;
-   logic [20:0] hand1_counter;
-   logic [20:0] hand2_counter;
-   logic n1;
-   logic n2;
-   always @ (posedge vclock_in) begin 
-        // PIXEL OUT          
-//        if ((hand_pixel & planet_pixel) == 0)begin      // if puck and planet do not overlap
-//            alpha_pixel <= hand_pixel | planet_pixel;   // regular adding of pixels
-//        end else begin                                  // alpha blending
-//            a <= ((hand_pixel[11:8] * m) >> n)| (planet_pixel[11:8] - ((planet_pixel[11:8] * m) >> n));
-//            b <= ((hand_pixel[7:4] * m) >> n) | (planet_pixel[7:4] - ((planet_pixel[7:4] * m) >> n));
-//            c <= ((hand_pixel[3:0] * m) >> n) | (planet_pixel[3:0] - ((planet_pixel[3:0] * m) >> n));
-//            alpha_pixel <= {a,b,c};
-//        end
-        alpha_pixel <= note_pixel1 | note_pixel2 | hand1_pixel | hand2_pixel | planet_pixel;
-        
-        // MOVING HANDS
-        if(reset_in) begin                      // reset values on a reset
-            hand1_x <= 200; hand1_y <= 600;                    // reset hands
-            hand2_x <= 680; hand2_y <= 600;
-            note_x1 <= 300; note_y1 <= 0; note_length1 <= 150; // CHANGE could be changed later as a function of bpm and length of note
-            note_x2 <= 770; note_y2 <= 0; note_length2 <= 150; // CHANGE could be changed later as a function of bpm and length of note
-            bpm <= 65000000;                          // CHANGE later should be set in another manner
-            counter <= 0;                       // initialize counter
-            notes <= 0;
-        end else begin
-            // AUDIO
-            if((vcount_in == 1) && (hcount_in == 1)) begin    // every frame check flags
-                n1 <= 0;
-                n2 <= 0;
-                notes[12] <= n1? 1:0;
-                notes[11] <= n2? 1:0;
-            end else begin
-                if( (hand1_pixel != 0) || (hand2_pixel != 0) ) begin        // if hand pixels are being drawn
-                    if ( (note_pixel1 != 0) || (note_pixel2 != 0) )begin    // if any note is being drawn
-                        if( (hcount_in >=100) && (hcount_in <=116) )        // if C  1
-                            n1 <= 1;
-                        else if ((hcount_in >= 167) && (hcount_in <=200))   // if C# 2
-                            n2 <= 1;
-                        else if ((hcount_in >= 167) && (hcount_in <=200))   // if C# 2
-                            n2 <= 1;
-                        
-                    end
-                end 
-            end
-            
-            
-            // move NOTES
-            if (counter == 500000) begin
-                counter <= 0;
-                if (note_y1 >= 700) begin
-                    note_y1 <= 0;
-                    note_y2 <= 0;
-                end else begin
-                    note_y1 <= note_y1 + 1;
-                    note_y2 <= note_y2 + 1;
-                end
-            end else begin
-                counter <= counter + 1;
-                
-            end
-            
-            
-            // HAND1 Movement
-            if (btnu) begin
-                if(hand1_counter == 200000) begin
-                    hand1_x <= hand1_x + 1;
-                    hand1_counter <= 0;
-                end else begin
-                    hand1_counter <= hand1_counter + 1;
-                end
-            end else if(btnl) begin
-                if(hand1_counter == 200000) begin
-                    hand1_x <= hand1_x - 1;
-                    hand1_counter <= 0;
-                end else begin
-                    hand1_counter <= hand1_counter + 1;
-                end
-            end else begin
-                hand1_counter <= 0;
-            end
-            
-            // HAND2 Movement
-            if (btnr) begin
-                if(hand2_counter == 200000) begin
-                    hand2_x <= hand2_x + 1;
-                    hand2_counter <= 0;
-                end else begin
-                    hand2_counter <= hand2_counter + 1;
-                end
-            end else if(btnd) begin
-                if(hand2_counter == 200000) begin
-                    hand2_x <= hand2_x - 1;
-                    hand2_counter <= 0;
-                end else begin
-                    hand2_counter <= hand2_counter + 1;
-                end
-            end else begin
-                hand2_counter <= 0;
-            end
-            
-            
-        end
-    end
-endmodule
-
-
-//6bit music lookup, 24bit depth
-module music_lookup(input[5:0] beat, input clk_in, output logic[24:0] music_out);
-  always_ff @(posedge clk_in)begin
-    case(beat)
-      6'd0:  music_out<=24'b000100_000000_000000_000000;
-      6'd1:  music_out<=24'b001000_000000_000000_000000;
-      6'd2:  music_out<=24'b001100_000000_000000_000000;
-      6'd3:  music_out<=24'b010000_000000_000000_000000;
-      6'd4:  music_out<=24'b010100_000000_000000_000000;
-      6'd5:  music_out<=24'b011000_000000_000000_000000;
-      6'd6:  music_out<=24'b011100_000000_000000_000000;
-      6'd7:  music_out<=24'b100000_000000_000000_000000;
-      6'd8:  music_out<=24'b100100_000000_000000_000000;
-      6'd9:  music_out<=24'b101000_000000_000000_000000;
-      6'd10: music_out<=24'b101100_000000_000000_000000;
-      6'd11: music_out<=24'b110000_000000_000000_000000;
-      6'd12: music_out<=24'b110100_000000_000000_000000;
-      6'd13: music_out<=24'b000000_000000_000000_000000;
-      6'd14: music_out<=24'b000000_000000_000000_000000;
-      6'd15: music_out<=24'b000000_000000_000000_000000;
-      6'd16: music_out<=24'b000000_000000_000000_000000;
-      6'd17: music_out<=24'b000000_000000_000000_000000;
-      6'd18: music_out<=24'b000000_000000_000000_000000;
-      6'd19: music_out<=24'b000000_000000_000000_000000;
-      6'd20: music_out<=24'b000000_000000_000000_000000;
-      6'd21: music_out<=24'b000000_000000_000000_000000;
-      6'd22: music_out<=24'b000000_000000_000000_000000;
-      6'd23: music_out<=24'b000000_000000_000000_000000;
-      6'd24: music_out<=24'b000000_000000_000000_000000;
-      6'd25: music_out<=24'b000000_000000_000000_000000;
-      6'd26: music_out<=24'b000000_000000_000000_000000;
-      6'd27: music_out<=24'b000000_000000_000000_000000;
-      6'd28: music_out<=24'b000000_000000_000000_000000;
-      6'd29: music_out<=24'b000000_000000_000000_000000;
-      6'd30: music_out<=24'b000000_000000_000000_000000;
-      6'd31: music_out<=24'b000000_000000_000000_000000;
-      6'd32: music_out<=24'b000000_000000_000000_000000;
-      6'd33: music_out<=24'b000000_000000_000000_000000;
-      6'd34: music_out<=24'b000000_000000_000000_000000;
-      6'd35: music_out<=24'b000000_000000_000000_000000;
-      6'd36: music_out<=24'b000000_000000_000000_000000;
-      6'd37: music_out<=24'b000000_000000_000000_000000;
-      6'd38: music_out<=24'b000000_000000_000000_000000;
-      6'd39: music_out<=24'b000000_000000_000000_000000;
-      6'd40: music_out<=24'b000000_000000_000000_000000;
-      6'd41: music_out<=24'b000000_000000_000000_000000;
-      6'd42: music_out<=24'b000000_000000_000000_000000;
-      6'd43: music_out<=24'b000000_000000_000000_000000;
-      6'd44: music_out<=24'b000000_000000_000000_000000;
-      6'd45: music_out<=24'b000000_000000_000000_000000;
-      6'd46: music_out<=24'b000000_000000_000000_000000;
-      6'd47: music_out<=24'b000000_000000_000000_000000;
-      6'd48: music_out<=24'b000000_000000_000000_000000;
-      6'd49: music_out<=24'b000000_000000_000000_000000;
-      6'd50: music_out<=24'b000000_000000_000000_000000;
-      6'd51: music_out<=24'b000000_000000_000000_000000;
-      6'd52: music_out<=24'b000000_000000_000000_000000;
-      6'd53: music_out<=24'b000000_000000_000000_000000;
-      6'd54: music_out<=24'b000000_000000_000000_000000;
-      6'd55: music_out<=24'b000000_000000_000000_000000;
-      6'd56: music_out<=24'b000000_000000_000000_000000;
-      6'd57: music_out<=24'b000000_000000_000000_000000;
-      6'd58: music_out<=24'b000000_000000_000000_000000;
-      6'd59: music_out<=24'b000000_000000_000000_000000;
-      6'd60: music_out<=24'b000000_000000_000000_000000;
-      6'd61: music_out<=24'b000000_000000_000000_000000;
-      6'd62: music_out<=24'b000000_000000_000000_000000;
-      6'd63: music_out<=24'b000000_000000_000000_000000;
-    endcase
-  end
-endmodule
-
 
 //////////////////////////////////////////////////////////////////////
 //
@@ -395,51 +133,51 @@ module blob
    end
 endmodule
 
+//////////////////////////////////////////////////////
+////
+//// picture_blob: display a picture
+////
 ////////////////////////////////////////////////////
-//
-// picture_blob: display a picture
-//
-//////////////////////////////////////////////////
-module picture_blob
-   (input [8:0] WIDTH,        // CHANGED width and height to inputs ########
-    input [8:0] HEIGHT,
-    input pixel_clk_in,
-    input [10:0] x_in,hcount_in,
-    input [9:0] y_in,vcount_in,
-    input [7:0] offset,       // ADDED in an offset to change PUCK size
-    output logic [11:0] pixel_out);
+//module picture_blob
+//   (input [8:0] WIDTH,        // CHANGED width and height to inputs ########
+//    input [8:0] HEIGHT,
+//    input pixel_clk_in,
+//    input [10:0] x_in,hcount_in,
+//    input [9:0] y_in,vcount_in,
+//    input [7:0] offset,       // ADDED in an offset to change PUCK size
+//    output logic [11:0] pixel_out);
    
-   logic[9:0] w;              // static parameters of dimensions
-   logic[9:0] h;
-   assign w = 256;
-   assign h = 240;
-   logic [15:0] image_addr;   // num of bits for 256*240 ROM
-   logic [7:0] image_bits, red_mapped, green_mapped, blue_mapped;
+//   logic[9:0] w;              // static parameters of dimensions
+//   logic[9:0] h;
+//   assign w = 256;
+//   assign h = 240;
+//   logic [15:0] image_addr;   // num of bits for 256*240 ROM
+//   logic [7:0] image_bits, red_mapped, green_mapped, blue_mapped;
 
-   // calculate rom address and read the location
-   //   assign image_addr = (hcount_in-x_in) + (vcount_in-y_in) * WIDTH;
+//   // calculate rom address and read the location
+//   //   assign image_addr = (hcount_in-x_in) + (vcount_in-y_in) * WIDTH;
     
-   image_rom  rom1(.clka(pixel_clk_in), .addra(image_addr), .douta(image_bits));
+//   image_rom  rom1(.clka(pixel_clk_in), .addra(image_addr), .douta(image_bits));
 
-   // use color map to create 4 bits R, 4 bits G, 4 bits B
-   // since the image is greyscale, just replicate the red pixels
-   // and not bother with the other two color maps.
-   image_rom_map rcm (.clka(pixel_clk_in), .addra({8'b00000000, image_bits}), .douta(red_mapped));
-   //green_coe gcm (.clka(pixel_clk_in), .addra(image_bits), .douta(green_mapped));
-   //blue_coe bcm (.clka(pixel_clk_in), .addra(image_bits), .douta(blue_mapped));
-   // note the one clock cycle delay in pixel!
-   always @ (posedge pixel_clk_in) begin
+//   // use color map to create 4 bits R, 4 bits G, 4 bits B
+//   // since the image is greyscale, just replicate the red pixels
+//   // and not bother with the other two color maps.
+//   image_rom_map rcm (.clka(pixel_clk_in), .addra({8'b00000000, image_bits}), .douta(red_mapped));
+//   //green_coe gcm (.clka(pixel_clk_in), .addra(image_bits), .douta(green_mapped));
+//   //blue_coe bcm (.clka(pixel_clk_in), .addra(image_bits), .douta(blue_mapped));
+//   // note the one clock cycle delay in pixel!
+//   always @ (posedge pixel_clk_in) begin
      
-     if ((hcount_in >= x_in && hcount_in < (x_in+WIDTH)) &&
-          (vcount_in >= y_in && vcount_in < (y_in+HEIGHT))) begin
-          image_addr <= ((hcount_in-x_in) << offset) + ((vcount_in-y_in)<<offset) * w; // INTRODUCED left shifting ########
-          // use MSB 4 bits
-          pixel_out <= {red_mapped[7:4], red_mapped[7:4], red_mapped[7:4]}; // greyscale
-          //    pixel_out <= {red_mapped[7:4], 8'h0}; // only red hues
-        end else begin pixel_out <= 0;
-        end
-   end
-endmodule
+//     if ((hcount_in >= x_in && hcount_in < (x_in+WIDTH)) &&
+//          (vcount_in >= y_in && vcount_in < (y_in+HEIGHT))) begin
+//          image_addr <= ((hcount_in-x_in) << offset) + ((vcount_in-y_in)<<offset) * w; // INTRODUCED left shifting ########
+//          // use MSB 4 bits
+//          pixel_out <= {red_mapped[7:4], red_mapped[7:4], red_mapped[7:4]}; // greyscale
+//          //    pixel_out <= {red_mapped[7:4], 8'h0}; // only red hues
+//        end else begin pixel_out <= 0;
+//        end
+//   end
+//endmodule
 
 //module red_coe(
 //    input clka,

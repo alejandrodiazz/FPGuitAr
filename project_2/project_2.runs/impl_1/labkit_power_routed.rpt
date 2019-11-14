@@ -1,8 +1,8 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2019.1.2 (lin64) Build 2615518 Fri Aug  9 15:53:29 MDT 2019
-| Date             : Thu Nov  7 19:37:28 2019
-| Host             : eecs-digital-03 running 64-bit Ubuntu 14.04.6 LTS
+| Date             : Thu Nov 14 16:00:51 2019
+| Host             : eecs-digital-207 running 64-bit Ubuntu 14.04.6 LTS
 | Command          : report_power -file labkit_power_routed.rpt -pb labkit_power_summary_routed.pb -rpx labkit_power_routed.rpx
 | Design           : labkit
 | Device           : xc7a100tcsg324-1
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.233        |
+| Total On-Chip Power (W)  | 0.232        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.135        |
+| Dynamic (W)              | 0.134        |
 | Device Static (W)        | 0.097        |
 | Effective TJA (C/W)      | 4.6          |
 | Max Ambient (C)          | 83.9         |
@@ -53,16 +53,17 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |     0.002 |        5 |       --- |             --- |
-| Slice Logic    |    <0.001 |      829 |       --- |             --- |
-|   LUT as Logic |    <0.001 |      329 |     63400 |            0.52 |
-|   CARRY4       |    <0.001 |       80 |     15850 |            0.50 |
-|   Register     |    <0.001 |      290 |    126800 |            0.23 |
-|   Others       |     0.000 |       34 |       --- |             --- |
-| Signals        |    <0.001 |      557 |       --- |             --- |
+| Slice Logic    |     0.001 |     1331 |       --- |             --- |
+|   LUT as Logic |    <0.001 |      552 |     63400 |            0.87 |
+|   CARRY4       |    <0.001 |      146 |     15850 |            0.92 |
+|   Register     |    <0.001 |      429 |    126800 |            0.34 |
+|   F7/F8 Muxes  |    <0.001 |        4 |     63400 |           <0.01 |
+|   Others       |     0.000 |       47 |       --- |             --- |
+| Signals        |    <0.001 |      816 |       --- |             --- |
 | MMCM           |     0.122 |        1 |         6 |           16.67 |
-| I/O            |     0.011 |       67 |       210 |           31.90 |
+| I/O            |     0.008 |       65 |       210 |           30.95 |
 | Static Power   |     0.097 |          |           |                 |
-| Total          |     0.233 |          |           |                 |
+| Total          |     0.232 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -72,9 +73,9 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.019 |       0.003 |      0.015 |
+| Vccint    |       1.000 |     0.019 |       0.004 |      0.015 |
 | Vccaux    |       1.800 |     0.086 |       0.068 |      0.018 |
-| Vcco33    |       3.300 |     0.007 |       0.003 |      0.004 |
+| Vcco33    |       3.300 |     0.006 |       0.002 |      0.004 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |
@@ -143,9 +144,10 @@ Table of Contents
 +--------------+-----------+
 | Name         | Power (W) |
 +--------------+-----------+
-| labkit       |     0.135 |
+| labkit       |     0.134 |
 |   clkdivider |     0.122 |
-|   pg         |     0.002 |
+|   pg         |     0.003 |
+|     notegen  |     0.001 |
 +--------------+-----------+
 
 

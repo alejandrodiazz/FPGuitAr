@@ -27,7 +27,7 @@ module beat_generator(
     output reg [5:0] beat
     );
     
-    logic [26:0]counter;
+    logic [26:0] counter;
     
     always_ff @ (posedge clk_in) begin
         if( reset ) begin                   // reset values
