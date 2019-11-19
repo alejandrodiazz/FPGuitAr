@@ -95,9 +95,17 @@ module play_notes(
     logic [7:0] tone_493;
     logic [7:0] tone_523;
     logic [7:0] tone_554;
+    logic [7:0] tone_587;
+    logic [7:0] tone_622;
+    logic [7:0] tone_659;
+    logic [7:0] tone_698;
+    logic [7:0] tone_740;
+    logic [7:0] tone_784;
+    logic [7:0] tone_831;
+    logic [7:0] tone_880;
     
     sine_generator #(.PHASE_INCR(32'd39370534)) 
-    tone440hz (.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(tone_440));
+    tone440hz (.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(tone_440));    // A4
     sine_generator #(.PHASE_INCR(32'd41711649)) 
     tone466hz (.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(tone_466)); 
     sine_generator #(.PHASE_INCR(32'd44191903)) 
@@ -105,7 +113,23 @@ module play_notes(
     sine_generator #(.PHASE_INCR(32'd46819707)) 
     tone523hz (.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(tone_523)); 
     sine_generator #(.PHASE_INCR(32'd49603741)) 
-    tone554hz (.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(tone_554));                           
+    tone554hz (.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(tone_554));    //C#5
+    sine_generator #(.PHASE_INCR(32'd52523870)) 
+    tone587hz (.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(tone_587));   
+    sine_generator #(.PHASE_INCR(32'd55655617)) 
+    tone622hz (.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(tone_622));   
+    sine_generator #(.PHASE_INCR(32'd58966321)) 
+    tone659hz (.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(tone_659));   
+    sine_generator #(.PHASE_INCR(32'd62455982)) 
+    tone698hz (.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(tone_698));   
+    sine_generator #(.PHASE_INCR(32'd66214079)) 
+    tone740hz (.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(tone_740));   
+    sine_generator #(.PHASE_INCR(32'd70151132)) 
+    tone784hz (.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(tone_784));   
+    sine_generator #(.PHASE_INCR(32'd74356621)) 
+    tone831hz (.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(tone_831));   
+    sine_generator #(.PHASE_INCR(32'd78741067)) 
+    tone880hz (.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(tone_880));                              
     //logic [7:0] data_to_bram;
     //logic [7:0] data_from_bram;
     //logic [15:0] addr;
@@ -117,14 +141,31 @@ module play_notes(
     logic [7:0] data2;
     logic [7:0] data3;
     logic [7:0] data4;
+    logic [7:0] data5;
+    logic [7:0] data6;
+    logic [7:0] data7;
+    logic [7:0] data8;
+    logic [7:0] data9;
+    logic [7:0] data10;
+    logic [7:0] data11;
+    logic [7:0] data12;
     
     always_ff @(posedge clk_in)begin
-        data0 <= notes[12]?   tone_440:8'b0;   // A
-        data1 <= notes[11]?   tone_466:8'b0; //send tone immediately to output
-        data2 <= notes[10]?   tone_493:8'b0; //send tone immediately to output
-        data3 <= notes[9]?    tone_523:8'b0; //send tone immediately to output
-        data4 <= notes[8]?    tone_554:8'b0; //send tone immediately to output
-        data_out <= (data0 + data1 + data2 + data3 + data4); 
+        data0 <=  notes[12]?  tone_440:8'b0;   // A
+        data1 <=  notes[11]?  tone_466:8'b0; //send tone immediately to output
+        data2 <=  notes[10]?  tone_493:8'b0; //send tone immediately to output
+        data3 <=  notes[9]?   tone_523:8'b0; //send tone immediately to output
+        data4 <=  notes[8]?   tone_554:8'b0; //send tone immediately to output
+        data5 <=  notes[7]?   tone_587:8'b0;   // A
+        data6 <=  notes[6]?   tone_622:8'b0; //send tone immediately to output
+        data7 <=  notes[5]?   tone_659:8'b0; //send tone immediately to output
+        data8 <=  notes[4]?   tone_698:8'b0; //send tone immediately to output
+        data9 <=  notes[3]?   tone_740:8'b0; //send tone immediately to output
+        data10 <= notes[2]?   tone_784:8'b0;   // A
+        data11 <= notes[1]?   tone_831:8'b0; //send tone immediately to output
+        data12 <= notes[0]?   tone_880:8'b0; //send tone immediately to output
+        data_out <= (data0 + data1 + data2 + data3 + data4 + data5 + data6 +
+            data7 + data8 + data9 + data10 + data11 + data12); 
     end                            
 endmodule                              
 

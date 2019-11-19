@@ -66,7 +66,8 @@ module labkit(
     debounce db3(.reset_in(reset),.clock_in(clk_65mhz),.noisy_in(btnd),.clean_out(down));
 
     wire phsync,pvsync,pblank;
-    FPGuitAr_Hero pg(.vclock_in(clk_65mhz),.reset_in(reset), .btnu(btnu),.btnd(btnd),.btnr(btnr), .btnl(btnl), 
+//    logic clk_100 = clk_100mhz; 
+    FPGuitAr_Hero pg(.vclock_in(clk_65mhz),.clk_100(clk_65mhz), .reset_in(reset), .btnu(btnu),.btnd(btnd),.btnr(btnr), .btnl(btnl), 
                 .pspeed_in(sw[15:12]), .hcount_in(hcount),.vcount_in(vcount), .hsync_in(hsync),.vsync_in(vsync),
                 .blank_in(blank),.phsync_out(phsync),.pvsync_out(pvsync),.pblank_out(pblank),.pixel_out(pixel), .hex_disp(data), 
                 .sw(sw), .aud_pwm(aud_pwm), .aud_sd(aud_sd), .led(led));

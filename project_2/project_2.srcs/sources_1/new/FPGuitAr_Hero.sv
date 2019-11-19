@@ -28,6 +28,7 @@
 
 module FPGuitAr_Hero (
     input vclock_in,        // 65MHz clock
+    input clk_100,
     input reset_in,         // 1 to initialize module
     input btnu, btnd, btnr, btnl,          // when hands should move
     input [3:0] pspeed_in,  // puck speed in pixels/tick 
@@ -54,14 +55,14 @@ module FPGuitAr_Hero (
    
    logic [12:0] notes;
    
-   audio_gen audio1( .clk_100mhz(vclock_in), .reset(reset_in), .sw(sw), .notes(notes),
+   audio_gen audio1( .clk_100mhz(clk_100), .reset(reset_in), .sw(sw), .notes(notes),
                 .aud_pwm(aud_pwm), .aud_sd(aud_sd)); // CHANGE running on 65MHz clock
 
    // Hands
    logic [10:0] hand1_x;     // location of hand on screen 
    logic [9:0] hand1_y;
-   logic [10:0] h_x = 70;      // hand dimensions
-   logic [9:0] h_y = 30;
+   logic [10:0] h_x = 200;      // hand dimensions
+   logic [9:0] h_y = 10;
    wire [11:0] hand1_pixel;  // output for puck pixel from module
    blob hand1(.width(h_x), .height(h_y), .color(12'hFFF), .pixel_clk_in(vclock_in), .x_in(hand1_x),
             .y_in(hand1_y),.hcount_in(hcount_in), .vcount_in(vcount_in), .pixel_out(hand1_pixel)); 
@@ -86,7 +87,7 @@ module FPGuitAr_Hero (
                 .hcount_in(hcount_in),.vcount_in(vcount_in), .pixel_out(planet_pixel));
    
    parameter m = 1;             // alpha parameters
-   parameter n = 1;             // power of two
+   parameter n = 2;             // power of two
    logic [11:0] alpha_pixel;    // holds shifted values after alpha blending 
    
    //assign pixel_out = paddle_pixel | alpha_pixel; // add together all pixels for the screen 
@@ -100,16 +101,20 @@ module FPGuitAr_Hero (
    logic [23:0] music_out;
    logic [11:0] note_pixels;
    logic [23:0] testing;
+   logic pixel_step;
+   logic add_to_score;
    music_lookup muse(.beat(beat), .clk_in(vclock_in), .music_out(music_out));
    beat_generator meter1(.reset(reset_in), .clk_in(vclock_in), .bpm(bpm), .beat(beat));
    note_generator notegen(.reset(reset_in), .clk_in(vclock_in), .hcount_in(hcount_in),.vcount_in(vcount_in),
-        .beat(beat), .bpm(bpm), .music_out(music_out), .pixel(note_pixels), .testing(testing));
+        .beat(beat), .bpm(bpm), .music_out(music_out), .pixel(note_pixels), .testing(testing), .pixel_step(pixel_step));
         
-   assign hex_disp = {testing,2'b0, beat};     // to hex out for debugging
+   //assign hex_disp = {testing,2'b0, beat};     // to hex out for debugging
+   assign hex_disp = score;
    
    logic [20:0] hand1_counter;
    logic [20:0] hand2_counter;
    logic [12:0] n_array;
+   logic [31:0] score;
    always @ (posedge vclock_in) begin 
         // PIXEL OUT          
 //        if ((hand_pixel & planet_pixel) == 0)begin      // if puck and planet do not overlap
@@ -126,28 +131,52 @@ module FPGuitAr_Hero (
         if(reset_in) begin                      // reset values on a reset
             hand1_x <= 200; hand1_y <= 600;                    // reset hands
             hand2_x <= 720; hand2_y <= 600;
-            bpm <= 65000000;                          // CHANGE later should be set in another manner
+            bpm <= 21666000;                          // CHANGE later should be set in another manner
             notes <= 0;
+            score <= 0;
         end else begin
             // AUDIO
-            if((vcount_in == 1) && (hcount_in == 1)) begin    // EVERY FRAME check flags
-                n_array <= 0;                                 // reset all flags
-                notes <= n_array;                          // shift flags into notes being played
+            if((vcount_in == 1) && (hcount_in == 1)) begin      // EVERY FRAME check flags
+                n_array <= 0;                                   // reset all flags
+                notes <= n_array;                               // shift flags into notes being played
+                if(add_to_score) begin                            // add to score based on note intersections
+                    score <= score + n_array[0] + n_array[1] + n_array[2] + n_array[3] + n_array[4] + n_array[5] +
+                        n_array[6] + n_array[7] + n_array[8] + n_array[9] + n_array[10] + n_array[11] + n_array[12];
+                    add_to_score <= 0;    
+                end
             end else begin
+                if (pixel_step) begin
+                    add_to_score <= 1;
+                end
                 if( (hand1_pixel != 0) || (hand2_pixel != 0) ) begin        // if hand pixels are being drawn
                     if ( note_pixels != 0 )begin    // if any note is being drawn
-                        if( (hcount_in >=100) && (hcount_in <=116) )        // if C  0
+                        if( (hcount_in >=100) && (hcount_in <=116) )        // if A4  0
                             n_array[12] <= 1;
-                        else if ((hcount_in >= 167) && (hcount_in <=200))   // if C# 1
+                        else if ((hcount_in >= 167) && (hcount_in <=200))   // if Bb4 1
                             n_array[11] <= 1;
-                        else if ((hcount_in >= 233) && (hcount_in <=250))   // if D  2
+                        else if ((hcount_in >= 233) && (hcount_in <=250))   // if B4  2
                             n_array[10] <= 1;
-                        else if ((hcount_in >= 300) && (hcount_in <=320))   // if Eb 3
+                        else if ((hcount_in >= 300) && (hcount_in <=320))   // if C5  3
                             n_array[9] <= 1;
-                        else if ((hcount_in >= 367) && (hcount_in <=387))   // if F  4
+                        else if ((hcount_in >= 367) && (hcount_in <=387))   // if C#5 4
                             n_array[8] <= 1;
-                        else if ((hcount_in >= 433) && (hcount_in <=453))   // if F# 5
+                        else if ((hcount_in >= 433) && (hcount_in <=453))   // if D5  5
                             n_array[7] <= 1;
+                        else if ((hcount_in >= 500) && (hcount_in <=520))   // if Eb5 6
+                            n_array[6] <= 1;
+                        else if ((hcount_in >= 567) && (hcount_in <=587))   // if E5  7
+                            n_array[5] <= 1;
+                        else if ((hcount_in >= 633) && (hcount_in <=653))   // if F5  8
+                            n_array[4] <= 1;
+                        else if ((hcount_in >= 700) && (hcount_in <=720))   // if F#5 9
+                            n_array[3] <= 1;
+                        else if ((hcount_in >= 767) && (hcount_in <=787))   // if G5  10
+                            n_array[2] <= 1;
+                        else if ((hcount_in >= 833) && (hcount_in <=853))   // if Ab5 11
+                            n_array[1] <= 1;    
+                        else if ((hcount_in >= 900) && (hcount_in <=920))   // if A5  12
+                            n_array[0] <= 1;
+                           
                     end
                 end 
             end
