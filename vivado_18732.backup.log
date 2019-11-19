@@ -1,0 +1,31 @@
+#-----------------------------------------------------------
+# Vivado v2019.1.2 (64-bit)
+# SW Build 2615518 on Fri Aug  9 15:53:29 MDT 2019
+# IP Build 2614745 on Fri Aug  9 20:55:02 MDT 2019
+# Start of session at: Fri Nov  8 15:29:24 2019
+# Process ID: 18732
+# Current directory: /afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr
+# Command line: vivado
+# Log file: /afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/vivado.log
+# Journal file: /afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project /afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.xpr
+INFO: [Project 1-313] Project file moved from '/afs/athena.mit.edu/user/a/d/addiaz15/project_2' since last save.
+WARNING: [Project 1-312] File not found as '/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/Downloads/ds_image.coe'; using path '/afs/athena.mit.edu/user/a/d/addiaz15/Downloads/ds_image.coe' instead.
+WARNING: [Project 1-312] File not found as '/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/Downloads/ds_color_map.coe'; using path '/afs/athena.mit.edu/user/a/d/addiaz15/Downloads/ds_color_map.coe' instead.
+WARNING: [Project 1-312] File not found as '/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/Downloads/nexys4_ddr_lab3.xdc'; using path '/afs/athena.mit.edu/user/a/d/addiaz15/Downloads/nexys4_ddr_lab3.xdc' instead.
+Scanning sources...
+Finished scanning sources
+WARNING: [Project 1-312] File not found as '/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/Downloads/ds_image.coe'; using path '/afs/athena.mit.edu/user/a/d/addiaz15/Downloads/ds_image.coe' instead.
+WARNING: [Project 1-312] File not found as '/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/Downloads/ds_color_map.coe'; using path '/afs/athena.mit.edu/user/a/d/addiaz15/Downloads/ds_color_map.coe' instead.
+WARNING: [Project 1-312] File not found as '/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/Downloads/nexys4_ddr_lab3.xdc'; using path '/afs/athena.mit.edu/user/a/d/addiaz15/Downloads/nexys4_ddr_lab3.xdc' instead.
+WARNING: [Project 1-312] File not found as '/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/Downloads/ds_image.coe'; using path '/afs/athena.mit.edu/user/a/d/addiaz15/Downloads/ds_image.coe' instead.
+WARNING: [Project 1-312] File not found as '/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/Downloads/ds_color_map.coe'; using path '/afs/athena.mit.edu/user/a/d/addiaz15/Downloads/ds_color_map.coe' instead.
+WARNING: [Project 1-312] File not found as '/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/Downloads/nexys4_ddr_lab3.xdc'; using path '/afs/athena.mit.edu/user/a/d/addiaz15/Downloads/nexys4_ddr_lab3.xdc' instead.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/var/local/xilinx-local/Vivado/2019.1/data/ip'.
+update_compile_order -fileset sources_1
+exit
+INFO: [Common 17-206] Exiting Vivado at Fri Nov  8 16:49:11 2019...

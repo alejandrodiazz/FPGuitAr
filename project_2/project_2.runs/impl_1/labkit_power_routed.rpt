@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2019.1.2 (lin64) Build 2615518 Fri Aug  9 15:53:29 MDT 2019
-| Date             : Tue Nov 19 16:17:46 2019
+| Date             : Tue Nov 19 17:54:17 2019
 | Host             : eecs-digital-207 running 64-bit Ubuntu 14.04.6 LTS
 | Command          : report_power -file labkit_power_routed.rpt -pb labkit_power_summary_routed.pb -rpx labkit_power_routed.rpx
 | Design           : labkit
@@ -30,11 +30,11 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.234        |
+| Total On-Chip Power (W)  | 0.236        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.136        |
-| Device Static (W)        | 0.097        |
+| Dynamic (W)              | 0.139        |
+| Device Static (W)        | 0.098        |
 | Effective TJA (C/W)      | 4.6          |
 | Max Ambient (C)          | 83.9         |
 | Junction Temperature (C) | 26.1         |
@@ -52,18 +52,17 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Clocks         |     0.003 |        5 |       --- |             --- |
-| Slice Logic    |     0.002 |     3889 |       --- |             --- |
-|   LUT as Logic |     0.002 |     1625 |     63400 |            2.56 |
-|   CARRY4       |    <0.001 |      456 |     15850 |            2.88 |
-|   Register     |    <0.001 |     1371 |    126800 |            1.08 |
-|   F7/F8 Muxes  |    <0.001 |        1 |     63400 |           <0.01 |
-|   Others       |     0.000 |       84 |       --- |             --- |
-| Signals        |     0.002 |     2516 |       --- |             --- |
+| Clocks         |     0.004 |        5 |       --- |             --- |
+| Slice Logic    |     0.004 |     4353 |       --- |             --- |
+|   LUT as Logic |     0.003 |     1900 |     63400 |            3.00 |
+|   CARRY4       |    <0.001 |      517 |     15850 |            3.26 |
+|   Register     |    <0.001 |     1382 |    126800 |            1.09 |
+|   Others       |     0.000 |       82 |       --- |             --- |
+| Signals        |     0.003 |     2925 |       --- |             --- |
 | MMCM           |     0.122 |        1 |         6 |           16.67 |
-| I/O            |     0.007 |       65 |       210 |           30.95 |
-| Static Power   |     0.097 |          |           |                 |
-| Total          |     0.234 |          |           |                 |
+| I/O            |     0.006 |       72 |       210 |           34.29 |
+| Static Power   |     0.098 |          |           |                 |
+| Total          |     0.236 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -73,7 +72,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.023 |       0.007 |      0.015 |
+| Vccint    |       1.000 |     0.027 |       0.012 |      0.015 |
 | Vccaux    |       1.800 |     0.086 |       0.068 |      0.018 |
 | Vcco33    |       3.300 |     0.006 |       0.002 |      0.004 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
@@ -144,12 +143,12 @@ Table of Contents
 +--------------+-----------+
 | Name         | Power (W) |
 +--------------+-----------+
-| labkit       |     0.136 |
+| labkit       |     0.139 |
 |   clkdivider |     0.122 |
-|   pg         |     0.005 |
-|     audio1   |     0.002 |
+|   pg         |     0.008 |
+|     audio1   |     0.003 |
 |       myrec  |     0.002 |
-|     notegen  |     0.002 |
+|     notegen  |     0.003 |
 |   xvga1      |     0.002 |
 +--------------+-----------+
 

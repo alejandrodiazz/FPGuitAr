@@ -62,7 +62,7 @@ module FPGuitAr_Hero (
    logic [10:0] hand1_x;     // location of hand on screen 
    logic [9:0] hand1_y;
    logic [10:0] h_x = 200;      // hand dimensions
-   logic [9:0] h_y = 10;
+   logic [9:0] h_y = 5;
    wire [11:0] hand1_pixel;  // output for puck pixel from module
    blob hand1(.width(h_x), .height(h_y), .color(12'hFFF), .pixel_clk_in(vclock_in), .x_in(hand1_x),
             .y_in(hand1_y),.hcount_in(hcount_in), .vcount_in(vcount_in), .pixel_out(hand1_pixel)); 
@@ -103,7 +103,11 @@ module FPGuitAr_Hero (
    logic [23:0] testing;
    logic pixel_step;
    logic add_to_score;
-   music_lookup muse(.beat(beat), .clk_in(vclock_in), .music_out(music_out));
+   logic [3:0] song;
+   logic [2:0] speed;
+   assign song = sw[5:2];
+   assign speed = sw[8:6];
+   music_lookup muse(.beat(beat),.song(song), .clk_in(vclock_in), .music_out(music_out));
    beat_generator meter1(.reset(reset_in), .clk_in(vclock_in), .bpm(bpm), .beat(beat));
    note_generator notegen(.reset(reset_in), .clk_in(vclock_in), .hcount_in(hcount_in),.vcount_in(vcount_in),
         .beat(beat), .bpm(bpm), .music_out(music_out), .pixel(note_pixels), .testing(testing), .pixel_step(pixel_step));
@@ -115,6 +119,7 @@ module FPGuitAr_Hero (
    logic [20:0] hand2_counter;
    logic [12:0] n_array;
    logic [31:0] score;
+   logic reset_score;
    always @ (posedge vclock_in) begin 
         // PIXEL OUT          
 //        if ((hand_pixel & planet_pixel) == 0)begin      // if puck and planet do not overlap
@@ -131,10 +136,24 @@ module FPGuitAr_Hero (
         if(reset_in) begin                      // reset values on a reset
             hand1_x <= 200; hand1_y <= 600;                    // reset hands
             hand2_x <= 720; hand2_y <= 600;
-            bpm <= 21666000;                          // CHANGE later should be set in another manner
             notes <= 0;
             score <= 0;
+            reset_score <= 0;
         end else begin
+            // SPEED
+            case(speed)
+                3'd0: bpm <= 65000000;
+                3'd1: bpm <= 48750000;
+                3'd2: bpm <= 32500000;
+                3'd3: bpm <= 16250000;
+                3'd4: bpm <= 8125000;
+            endcase
+            // SCORE
+            if( (beat == 0) && reset_score) begin
+                score<= 0; reset_score <= 0;
+            end else if (beat != 0) begin
+                reset_score <= 1;
+            end
             // AUDIO
             if((vcount_in == 1) && (hcount_in == 1)) begin      // EVERY FRAME check flags
                 n_array <= 0;                                   // reset all flags

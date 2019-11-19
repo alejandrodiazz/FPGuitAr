@@ -162,7 +162,7 @@ module note_generator(
     logic [1:0] curr_note_length;
     logic [8:0] note_length;
     logic [26:0] speed;
-    assign speed = bpm / 50;
+    assign speed = bpm / 52;
     logic [26:0] speed_counter;
     logic activate_note;
     logic activate_wait;
