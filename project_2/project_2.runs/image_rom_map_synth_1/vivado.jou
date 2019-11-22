@@ -2,11 +2,11 @@
 # Vivado v2019.1.2 (64-bit)
 # SW Build 2615518 on Fri Aug  9 15:53:29 MDT 2019
 # IP Build 2614745 on Fri Aug  9 20:55:02 MDT 2019
-# Start of session at: Tue Oct 29 22:23:09 2019
-# Process ID: 18353
-# Current directory: /afs/athena.mit.edu/user/a/d/addiaz15/project_2/project_2.runs/image_rom_map_synth_1
+# Start of session at: Fri Nov 22 16:31:02 2019
+# Process ID: 20400
+# Current directory: /afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.runs/image_rom_map_synth_1
 # Command line: vivado -log image_rom_map.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source image_rom_map.tcl
-# Log file: /afs/athena.mit.edu/user/a/d/addiaz15/project_2/project_2.runs/image_rom_map_synth_1/image_rom_map.vds
-# Journal file: /afs/athena.mit.edu/user/a/d/addiaz15/project_2/project_2.runs/image_rom_map_synth_1/vivado.jou
+# Log file: /afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.runs/image_rom_map_synth_1/image_rom_map.vds
+# Journal file: /afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.runs/image_rom_map_synth_1/vivado.jou
 #-----------------------------------------------------------
 source image_rom_map.tcl -notrace

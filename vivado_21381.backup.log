@@ -1,0 +1,37 @@
+#-----------------------------------------------------------
+# Vivado v2019.1.2 (64-bit)
+# SW Build 2615518 on Fri Aug  9 15:53:29 MDT 2019
+# IP Build 2614745 on Fri Aug  9 20:55:02 MDT 2019
+# Start of session at: Fri Nov 22 14:52:17 2019
+# Process ID: 21381
+# Current directory: /afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr
+# Command line: vivado
+# Log file: /afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/vivado.log
+# Journal file: /afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project /afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.xpr
+CRITICAL WARNING: [Project 1-19] Could not find the file '/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/Downloads/ds_image.coe'.
+CRITICAL WARNING: [Project 1-19] Could not find the file '/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/Downloads/ds_color_map.coe'.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/var/local/xilinx-local/Vivado/2019.1/data/ip'.
+update_compile_order -fileset sources_1
+export_ip_user_files -of_objects  [get_files /afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/Downloads/ds_color_map.coe] -no_script -reset -force -quiet
+remove_files  /afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/Downloads/ds_color_map.coe
+export_ip_user_files -of_objects  [get_files /afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/Downloads/ds_image.coe] -no_script -reset -force -quiet
+remove_files  /afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/Downloads/ds_image.coe
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'image_rom'...
+ERROR: [Ipptcl 7-519] NULL COE Data pointer: Unable to open the file 
+ERROR: [Common 17-39] 'ipgui::get_coe_val' failed due to earlier errors.
+CRITICAL WARNING: [IP_Flow 19-1747] Failed to deliver file '/var/local/xilinx-local/Vivado/2019.1/data/ip/xilinx/blk_mem_gen_v8_4/hdl/mem_init_file.xit': ERROR: [Common 17-39] 'ipgui::get_coe_val' failed due to earlier errors.
+
+ERROR: [IP_Flow 19-167] Failed to deliver one or more file(s).
+ERROR: [IP_Flow 19-3505] IP Generation error: Failed to generate IP 'image_rom'. Failed to generate 'Vivado VHDL Synthesis' outputs: 
+ERROR: [IP_Flow 19-98] Generation of the IP CORE failed.
+Failed to generate IP 'image_rom'. Failed to generate 'Vivado VHDL Synthesis' outputs: 
+exit
+INFO: [Common 17-206] Exiting Vivado at Fri Nov 22 14:53:55 2019...

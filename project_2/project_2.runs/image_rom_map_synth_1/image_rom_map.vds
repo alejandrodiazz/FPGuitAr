@@ -2,12 +2,12 @@
 # Vivado v2019.1.2 (64-bit)
 # SW Build 2615518 on Fri Aug  9 15:53:29 MDT 2019
 # IP Build 2614745 on Fri Aug  9 20:55:02 MDT 2019
-# Start of session at: Tue Oct 29 22:23:09 2019
-# Process ID: 18353
-# Current directory: /afs/athena.mit.edu/user/a/d/addiaz15/project_2/project_2.runs/image_rom_map_synth_1
+# Start of session at: Fri Nov 22 16:31:02 2019
+# Process ID: 20400
+# Current directory: /afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.runs/image_rom_map_synth_1
 # Command line: vivado -log image_rom_map.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source image_rom_map.tcl
-# Log file: /afs/athena.mit.edu/user/a/d/addiaz15/project_2/project_2.runs/image_rom_map_synth_1/image_rom_map.vds
-# Journal file: /afs/athena.mit.edu/user/a/d/addiaz15/project_2/project_2.runs/image_rom_map_synth_1/vivado.jou
+# Log file: /afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.runs/image_rom_map_synth_1/image_rom_map.vds
+# Journal file: /afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.runs/image_rom_map_synth_1/vivado.jou
 #-----------------------------------------------------------
 source image_rom_map.tcl -notrace
 Command: synth_design -top image_rom_map -part xc7a100tcsg324-1 -mode out_of_context
@@ -16,11 +16,11 @@ Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Device 21-403] Loading part xc7a100tcsg324-1
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 18427 
+INFO: Helper process launched with PID 20482 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:11 . Memory (MB): peak = 1805.785 ; gain = 153.527 ; free physical = 2229 ; free virtual = 12973
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:11 . Memory (MB): peak = 1806.336 ; gain = 152.527 ; free physical = 743 ; free virtual = 10523
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'image_rom_map' [/afs/athena.mit.edu/user/a/d/addiaz15/project_2/project_2.srcs/sources_1/ip/image_rom_map/synth/image_rom_map.vhd:67]
+INFO: [Synth 8-638] synthesizing module 'image_rom_map' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/ip/image_rom_map_1/synth/image_rom_map.vhd:67]
 	Parameter C_FAMILY bound to: artix7 - type: string 
 	Parameter C_XDEVICEFAMILY bound to: artix7 - type: string 
 	Parameter C_ELABORATION_DIR bound to: ./ - type: string 
@@ -52,8 +52,8 @@ INFO: [Synth 8-638] synthesizing module 'image_rom_map' [/afs/athena.mit.edu/use
 	Parameter C_WRITE_MODE_A bound to: WRITE_FIRST - type: string 
 	Parameter C_WRITE_WIDTH_A bound to: 8 - type: integer 
 	Parameter C_READ_WIDTH_A bound to: 8 - type: integer 
-	Parameter C_WRITE_DEPTH_A bound to: 61440 - type: integer 
-	Parameter C_READ_DEPTH_A bound to: 61440 - type: integer 
+	Parameter C_WRITE_DEPTH_A bound to: 55748 - type: integer 
+	Parameter C_READ_DEPTH_A bound to: 55748 - type: integer 
 	Parameter C_ADDRA_WIDTH bound to: 16 - type: integer 
 	Parameter C_HAS_RSTB bound to: 0 - type: integer 
 	Parameter C_RST_PRIORITY_B bound to: CE - type: string 
@@ -66,8 +66,8 @@ INFO: [Synth 8-638] synthesizing module 'image_rom_map' [/afs/athena.mit.edu/use
 	Parameter C_WRITE_MODE_B bound to: WRITE_FIRST - type: string 
 	Parameter C_WRITE_WIDTH_B bound to: 8 - type: integer 
 	Parameter C_READ_WIDTH_B bound to: 8 - type: integer 
-	Parameter C_WRITE_DEPTH_B bound to: 61440 - type: integer 
-	Parameter C_READ_DEPTH_B bound to: 61440 - type: integer 
+	Parameter C_WRITE_DEPTH_B bound to: 55748 - type: integer 
+	Parameter C_READ_DEPTH_B bound to: 55748 - type: integer 
 	Parameter C_ADDRB_WIDTH bound to: 16 - type: integer 
 	Parameter C_HAS_MEM_OUTPUT_REGS_A bound to: 1 - type: integer 
 	Parameter C_HAS_MEM_OUTPUT_REGS_B bound to: 0 - type: integer 
@@ -93,11 +93,11 @@ INFO: [Synth 8-638] synthesizing module 'image_rom_map' [/afs/athena.mit.edu/use
 	Parameter C_EN_SHUTDOWN_PIN bound to: 0 - type: integer 
 	Parameter C_EN_SAFETY_CKT bound to: 0 - type: integer 
 	Parameter C_DISABLE_WARN_BHV_RANGE bound to: 0 - type: integer 
-	Parameter C_COUNT_36K_BRAM bound to: 15 - type: string 
+	Parameter C_COUNT_36K_BRAM bound to: 14 - type: string 
 	Parameter C_COUNT_18K_BRAM bound to: 0 - type: string 
 	Parameter C_EST_POWER_SUMMARY bound to: Estimated Power for IP     :     2.3264 mW - type: string 
-INFO: [Synth 8-3491] module 'blk_mem_gen_v8_4_3' declared at '/afs/athena.mit.edu/user/a/d/addiaz15/project_2/project_2.srcs/sources_1/ip/image_rom_map/hdl/blk_mem_gen_v8_4_vhsyn_rfs.vhd:195321' bound to instance 'U0' of component 'blk_mem_gen_v8_4_3' [/afs/athena.mit.edu/user/a/d/addiaz15/project_2/project_2.srcs/sources_1/ip/image_rom_map/synth/image_rom_map.vhd:230]
-INFO: [Synth 8-256] done synthesizing module 'image_rom_map' (11#1) [/afs/athena.mit.edu/user/a/d/addiaz15/project_2/project_2.srcs/sources_1/ip/image_rom_map/synth/image_rom_map.vhd:67]
+INFO: [Synth 8-3491] module 'blk_mem_gen_v8_4_3' declared at '/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/ip/image_rom_map_1/hdl/blk_mem_gen_v8_4_vhsyn_rfs.vhd:195321' bound to instance 'U0' of component 'blk_mem_gen_v8_4_3' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/ip/image_rom_map_1/synth/image_rom_map.vhd:230]
+INFO: [Synth 8-256] done synthesizing module 'image_rom_map' (11#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/ip/image_rom_map_1/synth/image_rom_map.vhd:67]
 WARNING: [Synth 8-3331] design blk_mem_gen_mux__parameterized0 has unconnected port MUX_RST[0]
 WARNING: [Synth 8-3331] design blk_mem_gen_mux__parameterized0 has unconnected port MEM_LAT_RST
 WARNING: [Synth 8-3331] design blk_mem_gen_mux__parameterized0 has unconnected port MEM_REG_RST
@@ -200,7 +200,7 @@ WARNING: [Synth 8-3331] design blk_mem_gen_mux has unconnected port DBITERRIN[8]
 WARNING: [Synth 8-3331] design blk_mem_gen_mux has unconnected port DBITERRIN[7]
 INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:52 ; elapsed = 00:01:05 . Memory (MB): peak = 2060.039 ; gain = 407.781 ; free physical = 2194 ; free virtual = 12933
+Finished RTL Elaboration : Time (s): cpu = 00:00:57 ; elapsed = 00:01:10 . Memory (MB): peak = 2056.590 ; gain = 402.781 ; free physical = 1202 ; free virtual = 10511
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -213,47 +213,47 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:52 ; elapsed = 00:01:06 . Memory (MB): peak = 2063.004 ; gain = 410.746 ; free physical = 2199 ; free virtual = 12938
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:57 ; elapsed = 00:01:11 . Memory (MB): peak = 2059.555 ; gain = 405.746 ; free physical = 1198 ; free virtual = 10507
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:52 ; elapsed = 00:01:06 . Memory (MB): peak = 2063.004 ; gain = 410.746 ; free physical = 2199 ; free virtual = 12938
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:57 ; elapsed = 00:01:11 . Memory (MB): peak = 2059.555 ; gain = 405.746 ; free physical = 1198 ; free virtual = 10507
 ---------------------------------------------------------------------------------
-INFO: [Netlist 29-17] Analyzing 15 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 14 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [/afs/athena.mit.edu/user/a/d/addiaz15/project_2/project_2.srcs/sources_1/ip/image_rom_map/image_rom_map_ooc.xdc] for cell 'U0'
-Finished Parsing XDC File [/afs/athena.mit.edu/user/a/d/addiaz15/project_2/project_2.srcs/sources_1/ip/image_rom_map/image_rom_map_ooc.xdc] for cell 'U0'
-Parsing XDC File [/afs/athena.mit.edu/user/a/d/addiaz15/project_2/project_2.runs/image_rom_map_synth_1/dont_touch.xdc]
-Finished Parsing XDC File [/afs/athena.mit.edu/user/a/d/addiaz15/project_2/project_2.runs/image_rom_map_synth_1/dont_touch.xdc]
+Parsing XDC File [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/ip/image_rom_map_1/image_rom_map_ooc.xdc] for cell 'U0'
+Finished Parsing XDC File [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/ip/image_rom_map_1/image_rom_map_ooc.xdc] for cell 'U0'
+Parsing XDC File [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.runs/image_rom_map_synth_1/dont_touch.xdc]
+Finished Parsing XDC File [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.runs/image_rom_map_synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2194.785 ; gain = 0.000 ; free physical = 2068 ; free virtual = 12807
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2189.336 ; gain = 0.000 ; free physical = 977 ; free virtual = 10286
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.03 . Memory (MB): peak = 2194.785 ; gain = 0.000 ; free physical = 2067 ; free virtual = 12806
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.05 . Memory (MB): peak = 2189.336 ; gain = 0.000 ; free physical = 973 ; free virtual = 10282
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:56 ; elapsed = 00:01:11 . Memory (MB): peak = 2194.785 ; gain = 542.527 ; free physical = 2190 ; free virtual = 12929
+Finished Constraint Validation : Time (s): cpu = 00:01:01 ; elapsed = 00:01:17 . Memory (MB): peak = 2189.336 ; gain = 535.527 ; free physical = 900 ; free virtual = 10210
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:56 ; elapsed = 00:01:11 . Memory (MB): peak = 2194.785 ; gain = 542.527 ; free physical = 2190 ; free virtual = 12929
+Finished Loading Part and Timing Information : Time (s): cpu = 00:01:01 ; elapsed = 00:01:17 . Memory (MB): peak = 2189.336 ; gain = 535.527 ; free physical = 898 ; free virtual = 10207
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
-Applied set_property DONT_TOUCH = true for U0. (constraint file  /afs/athena.mit.edu/user/a/d/addiaz15/project_2/project_2.runs/image_rom_map_synth_1/dont_touch.xdc, line 9).
+Applied set_property DONT_TOUCH = true for U0. (constraint file  /afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.runs/image_rom_map_synth_1/dont_touch.xdc, line 9).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:56 ; elapsed = 00:01:11 . Memory (MB): peak = 2194.785 ; gain = 542.527 ; free physical = 2193 ; free virtual = 12932
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:01:01 ; elapsed = 00:01:17 . Memory (MB): peak = 2189.336 ; gain = 535.527 ; free physical = 900 ; free virtual = 10209
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:57 ; elapsed = 00:01:12 . Memory (MB): peak = 2194.785 ; gain = 542.527 ; free physical = 2184 ; free virtual = 12924
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:01:02 ; elapsed = 00:01:18 . Memory (MB): peak = 2189.336 ; gain = 535.527 ; free physical = 862 ; free virtual = 10173
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -309,7 +309,7 @@ Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 Warning: Parallel synthesis criteria is not met 
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:57 ; elapsed = 00:01:13 . Memory (MB): peak = 2194.785 ; gain = 542.527 ; free physical = 2161 ; free virtual = 12915
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:02 ; elapsed = 00:01:18 . Memory (MB): peak = 2189.336 ; gain = 535.527 ; free physical = 750 ; free virtual = 10075
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -321,13 +321,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:01 ; elapsed = 00:01:17 . Memory (MB): peak = 2194.785 ; gain = 542.527 ; free physical = 2044 ; free virtual = 12798
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:07 ; elapsed = 00:01:23 . Memory (MB): peak = 2189.336 ; gain = 535.527 ; free physical = 477 ; free virtual = 9801
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:01:01 ; elapsed = 00:01:17 . Memory (MB): peak = 2194.785 ; gain = 542.527 ; free physical = 2044 ; free virtual = 12798
+Finished Timing Optimization : Time (s): cpu = 00:01:07 ; elapsed = 00:01:23 . Memory (MB): peak = 2189.336 ; gain = 535.527 ; free physical = 476 ; free virtual = 9800
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -339,7 +339,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:01:01 ; elapsed = 00:01:17 . Memory (MB): peak = 2194.785 ; gain = 542.527 ; free physical = 2042 ; free virtual = 12796
+Finished Technology Mapping : Time (s): cpu = 00:01:07 ; elapsed = 00:01:23 . Memory (MB): peak = 2189.336 ; gain = 535.527 ; free physical = 472 ; free virtual = 9797
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -363,7 +363,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:01:02 ; elapsed = 00:01:18 . Memory (MB): peak = 2194.785 ; gain = 542.527 ; free physical = 2042 ; free virtual = 12796
+Finished IO Insertion : Time (s): cpu = 00:01:08 ; elapsed = 00:01:24 . Memory (MB): peak = 2189.336 ; gain = 535.527 ; free physical = 457 ; free virtual = 9782
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -376,7 +376,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:01:02 ; elapsed = 00:01:18 . Memory (MB): peak = 2194.785 ; gain = 542.527 ; free physical = 2042 ; free virtual = 12796
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:08 ; elapsed = 00:01:24 . Memory (MB): peak = 2189.336 ; gain = 535.527 ; free physical = 457 ; free virtual = 9782
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -388,25 +388,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:02 ; elapsed = 00:01:18 . Memory (MB): peak = 2194.785 ; gain = 542.527 ; free physical = 2042 ; free virtual = 12796
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:08 ; elapsed = 00:01:24 . Memory (MB): peak = 2189.336 ; gain = 535.527 ; free physical = 457 ; free virtual = 9782
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:01:02 ; elapsed = 00:01:18 . Memory (MB): peak = 2194.785 ; gain = 542.527 ; free physical = 2042 ; free virtual = 12796
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:08 ; elapsed = 00:01:24 . Memory (MB): peak = 2189.336 ; gain = 535.527 ; free physical = 457 ; free virtual = 9782
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:01:02 ; elapsed = 00:01:18 . Memory (MB): peak = 2194.785 ; gain = 542.527 ; free physical = 2042 ; free virtual = 12796
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:08 ; elapsed = 00:01:24 . Memory (MB): peak = 2189.336 ; gain = 535.527 ; free physical = 457 ; free virtual = 9782
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:01:02 ; elapsed = 00:01:18 . Memory (MB): peak = 2194.785 ; gain = 542.527 ; free physical = 2042 ; free virtual = 12796
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:08 ; elapsed = 00:01:24 . Memory (MB): peak = 2189.336 ; gain = 535.527 ; free physical = 457 ; free virtual = 9782
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -422,26 +422,25 @@ Report Cell Usage:
 +------+-----------+------+
 |      |Cell       |Count |
 +------+-----------+------+
-|1     |LUT4       |    15|
-|2     |LUT5       |     8|
-|3     |LUT6       |    24|
-|4     |MUXF7      |    16|
-|5     |MUXF8      |     8|
-|6     |RAMB36E1   |     1|
-|7     |RAMB36E1_1 |    14|
-|8     |FDRE       |     8|
+|1     |LUT4       |    22|
+|2     |LUT6       |    24|
+|3     |MUXF7      |    16|
+|4     |MUXF8      |     8|
+|5     |RAMB36E1   |     1|
+|6     |RAMB36E1_1 |    13|
+|7     |FDRE       |     8|
 +------+-----------+------+
 
 Report Instance Areas: 
 +------+---------------------------------------------+-----------------------------------------------+------+
 |      |Instance                                     |Module                                         |Cells |
 +------+---------------------------------------------+-----------------------------------------------+------+
-|1     |top                                          |                                               |    94|
-|2     |  U0                                         |blk_mem_gen_v8_4_3                             |    94|
-|3     |    inst_blk_mem_gen                         |blk_mem_gen_v8_4_3_synth                       |    94|
-|4     |      \gnbram.gnativebmg.native_blk_mem_gen  |blk_mem_gen_top                                |    94|
-|5     |        \valid.cstr                          |blk_mem_gen_generic_cstr                       |    94|
-|6     |          \bindec_a.bindec_inst_a            |bindec                                         |    15|
+|1     |top                                          |                                               |    92|
+|2     |  U0                                         |blk_mem_gen_v8_4_3                             |    92|
+|3     |    inst_blk_mem_gen                         |blk_mem_gen_v8_4_3_synth                       |    92|
+|4     |      \gnbram.gnativebmg.native_blk_mem_gen  |blk_mem_gen_top                                |    92|
+|5     |        \valid.cstr                          |blk_mem_gen_generic_cstr                       |    92|
+|6     |          \bindec_a.bindec_inst_a            |bindec                                         |    14|
 |7     |          \has_mux_a.A                       |blk_mem_gen_mux                                |    64|
 |8     |          \ramloop[0].ram.r                  |blk_mem_gen_prim_width                         |     1|
 |9     |            \prim_init.ram                   |blk_mem_gen_prim_wrapper_init                  |     1|
@@ -453,56 +452,54 @@ Report Instance Areas:
 |15    |            \prim_init.ram                   |blk_mem_gen_prim_wrapper_init__parameterized11 |     1|
 |16    |          \ramloop[13].ram.r                 |blk_mem_gen_prim_width__parameterized12        |     1|
 |17    |            \prim_init.ram                   |blk_mem_gen_prim_wrapper_init__parameterized12 |     1|
-|18    |          \ramloop[14].ram.r                 |blk_mem_gen_prim_width__parameterized13        |     1|
-|19    |            \prim_init.ram                   |blk_mem_gen_prim_wrapper_init__parameterized13 |     1|
-|20    |          \ramloop[1].ram.r                  |blk_mem_gen_prim_width__parameterized0         |     1|
-|21    |            \prim_init.ram                   |blk_mem_gen_prim_wrapper_init__parameterized0  |     1|
-|22    |          \ramloop[2].ram.r                  |blk_mem_gen_prim_width__parameterized1         |     1|
-|23    |            \prim_init.ram                   |blk_mem_gen_prim_wrapper_init__parameterized1  |     1|
-|24    |          \ramloop[3].ram.r                  |blk_mem_gen_prim_width__parameterized2         |     1|
-|25    |            \prim_init.ram                   |blk_mem_gen_prim_wrapper_init__parameterized2  |     1|
-|26    |          \ramloop[4].ram.r                  |blk_mem_gen_prim_width__parameterized3         |     1|
-|27    |            \prim_init.ram                   |blk_mem_gen_prim_wrapper_init__parameterized3  |     1|
-|28    |          \ramloop[5].ram.r                  |blk_mem_gen_prim_width__parameterized4         |     1|
-|29    |            \prim_init.ram                   |blk_mem_gen_prim_wrapper_init__parameterized4  |     1|
-|30    |          \ramloop[6].ram.r                  |blk_mem_gen_prim_width__parameterized5         |     1|
-|31    |            \prim_init.ram                   |blk_mem_gen_prim_wrapper_init__parameterized5  |     1|
-|32    |          \ramloop[7].ram.r                  |blk_mem_gen_prim_width__parameterized6         |     1|
-|33    |            \prim_init.ram                   |blk_mem_gen_prim_wrapper_init__parameterized6  |     1|
-|34    |          \ramloop[8].ram.r                  |blk_mem_gen_prim_width__parameterized7         |     1|
-|35    |            \prim_init.ram                   |blk_mem_gen_prim_wrapper_init__parameterized7  |     1|
-|36    |          \ramloop[9].ram.r                  |blk_mem_gen_prim_width__parameterized8         |     1|
-|37    |            \prim_init.ram                   |blk_mem_gen_prim_wrapper_init__parameterized8  |     1|
+|18    |          \ramloop[1].ram.r                  |blk_mem_gen_prim_width__parameterized0         |     1|
+|19    |            \prim_init.ram                   |blk_mem_gen_prim_wrapper_init__parameterized0  |     1|
+|20    |          \ramloop[2].ram.r                  |blk_mem_gen_prim_width__parameterized1         |     1|
+|21    |            \prim_init.ram                   |blk_mem_gen_prim_wrapper_init__parameterized1  |     1|
+|22    |          \ramloop[3].ram.r                  |blk_mem_gen_prim_width__parameterized2         |     1|
+|23    |            \prim_init.ram                   |blk_mem_gen_prim_wrapper_init__parameterized2  |     1|
+|24    |          \ramloop[4].ram.r                  |blk_mem_gen_prim_width__parameterized3         |     1|
+|25    |            \prim_init.ram                   |blk_mem_gen_prim_wrapper_init__parameterized3  |     1|
+|26    |          \ramloop[5].ram.r                  |blk_mem_gen_prim_width__parameterized4         |     1|
+|27    |            \prim_init.ram                   |blk_mem_gen_prim_wrapper_init__parameterized4  |     1|
+|28    |          \ramloop[6].ram.r                  |blk_mem_gen_prim_width__parameterized5         |     1|
+|29    |            \prim_init.ram                   |blk_mem_gen_prim_wrapper_init__parameterized5  |     1|
+|30    |          \ramloop[7].ram.r                  |blk_mem_gen_prim_width__parameterized6         |     1|
+|31    |            \prim_init.ram                   |blk_mem_gen_prim_wrapper_init__parameterized6  |     1|
+|32    |          \ramloop[8].ram.r                  |blk_mem_gen_prim_width__parameterized7         |     1|
+|33    |            \prim_init.ram                   |blk_mem_gen_prim_wrapper_init__parameterized7  |     1|
+|34    |          \ramloop[9].ram.r                  |blk_mem_gen_prim_width__parameterized8         |     1|
+|35    |            \prim_init.ram                   |blk_mem_gen_prim_wrapper_init__parameterized8  |     1|
 +------+---------------------------------------------+-----------------------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:01:02 ; elapsed = 00:01:18 . Memory (MB): peak = 2194.785 ; gain = 542.527 ; free physical = 2042 ; free virtual = 12796
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:08 ; elapsed = 00:01:24 . Memory (MB): peak = 2189.336 ; gain = 535.527 ; free physical = 457 ; free virtual = 9782
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 163 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:01:01 ; elapsed = 00:01:16 . Memory (MB): peak = 2194.785 ; gain = 410.746 ; free physical = 2092 ; free virtual = 12847
-Synthesis Optimization Complete : Time (s): cpu = 00:01:02 ; elapsed = 00:01:18 . Memory (MB): peak = 2194.785 ; gain = 542.527 ; free physical = 2107 ; free virtual = 12861
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:06 ; elapsed = 00:01:22 . Memory (MB): peak = 2189.336 ; gain = 405.746 ; free physical = 505 ; free virtual = 9829
+Synthesis Optimization Complete : Time (s): cpu = 00:01:08 ; elapsed = 00:01:24 . Memory (MB): peak = 2189.336 ; gain = 535.527 ; free physical = 519 ; free virtual = 9844
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 39 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 38 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2194.785 ; gain = 0.000 ; free physical = 2041 ; free virtual = 12796
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2189.336 ; gain = 0.000 ; free physical = 443 ; free virtual = 9767
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
 17 Infos, 100 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:01:05 ; elapsed = 00:01:21 . Memory (MB): peak = 2194.785 ; gain = 760.824 ; free physical = 2141 ; free virtual = 12895
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2194.785 ; gain = 0.000 ; free physical = 2141 ; free virtual = 12895
+synth_design: Time (s): cpu = 00:01:12 ; elapsed = 00:01:28 . Memory (MB): peak = 2189.336 ; gain = 754.824 ; free physical = 541 ; free virtual = 9865
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2189.336 ; gain = 0.000 ; free physical = 541 ; free virtual = 9865
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
-INFO: [Common 17-1381] The checkpoint '/afs/athena.mit.edu/user/a/d/addiaz15/project_2/project_2.runs/image_rom_map_synth_1/image_rom_map.dcp' has been generated.
+INFO: [Common 17-1381] The checkpoint '/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.runs/image_rom_map_synth_1/image_rom_map.dcp' has been generated.
 WARNING: [Common 17-576] 'use_project_ipc' is deprecated. This option is deprecated and no longer used.
-INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP image_rom_map, cache-ID = 116463ebe7d01a5e
-INFO: [Coretcl 2-1174] Renamed 36 cell refs.
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2194.785 ; gain = 0.000 ; free physical = 2138 ; free virtual = 12894
+INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP image_rom_map, cache-ID = dec161f7858cabde
+INFO: [Coretcl 2-1174] Renamed 34 cell refs.
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2189.336 ; gain = 0.000 ; free physical = 527 ; free virtual = 9853
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
-INFO: [Common 17-1381] The checkpoint '/afs/athena.mit.edu/user/a/d/addiaz15/project_2/project_2.runs/image_rom_map_synth_1/image_rom_map.dcp' has been generated.
+INFO: [Common 17-1381] The checkpoint '/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.runs/image_rom_map_synth_1/image_rom_map.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file image_rom_map_utilization_synth.rpt -pb image_rom_map_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Tue Oct 29 22:24:41 2019...
+INFO: [Common 17-206] Exiting Vivado at Fri Nov 22 16:32:40 2019...

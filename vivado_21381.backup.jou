@@ -1,0 +1,19 @@
+#-----------------------------------------------------------
+# Vivado v2019.1.2 (64-bit)
+# SW Build 2615518 on Fri Aug  9 15:53:29 MDT 2019
+# IP Build 2614745 on Fri Aug  9 20:55:02 MDT 2019
+# Start of session at: Fri Nov 22 14:52:17 2019
+# Process ID: 21381
+# Current directory: /afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr
+# Command line: vivado
+# Log file: /afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/vivado.log
+# Journal file: /afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project /afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.xpr
+update_compile_order -fileset sources_1
+export_ip_user_files -of_objects  [get_files /afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/Downloads/ds_color_map.coe] -no_script -reset -force -quiet
+remove_files  /afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/Downloads/ds_color_map.coe
+export_ip_user_files -of_objects  [get_files /afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/Downloads/ds_image.coe] -no_script -reset -force -quiet
+remove_files  /afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/Downloads/ds_image.coe
+launch_runs impl_1 -to_step write_bitstream -jobs 4

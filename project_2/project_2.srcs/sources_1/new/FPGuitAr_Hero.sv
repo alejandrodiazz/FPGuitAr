@@ -57,6 +57,12 @@ module FPGuitAr_Hero (
    
    audio_gen audio1( .clk_100mhz(clk_100), .reset(reset_in), .sw(sw), .notes(notes),
                 .aud_pwm(aud_pwm), .aud_sd(aud_sd)); // CHANGE running on 65MHz clock
+                
+   //IMAGE
+   wire [11:0] digit_pixel;  // output for puck pixel from module
+   picture_blob  
+   puck1(.WIDTH(724),.HEIGHT(77),.pixel_clk_in(vclock_in), .x_in(200),.y_in(200),.hcount_in(hcount_in),.vcount_in(vcount_in),
+             .pixel_out(digit_pixel), .offset(0)); // introduced an offset to change PUCK dimensions
 
    // Hands
    logic [10:0] hand1_x;     // location of hand on screen 
@@ -130,7 +136,7 @@ module FPGuitAr_Hero (
 //            c <= ((hand_pixel[3:0] * m) >> n) | (planet_pixel[3:0] - ((planet_pixel[3:0] * m) >> n));
 //            alpha_pixel <= {a,b,c};
 //        end
-        alpha_pixel <= note_pixels | hand1_pixel | hand2_pixel | planet_pixel;
+        alpha_pixel <= note_pixels | hand1_pixel | hand2_pixel | planet_pixel | digit_pixel;
         
         // MOVING HANDS
         if(reset_in) begin                      // reset values on a reset

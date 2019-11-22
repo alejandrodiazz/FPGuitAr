@@ -75,7 +75,10 @@ set rc [catch {
   set_property parent.project_path /afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.xpr [current_project]
   set_property ip_output_repo /afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
+  set_property XPM_LIBRARIES XPM_MEMORY [current_project]
   add_files -quiet /afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.runs/synth_1/labkit.dcp
+  read_ip -quiet /afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/ip/image_rom_1/image_rom.xci
+  read_ip -quiet /afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/ip/image_rom_map_1/image_rom_map.xci
   read_xdc /afs/athena.mit.edu/user/a/d/addiaz15/Downloads/nexys4_ddr_lab3.xdc
   link_design -top labkit -part xc7a100tcsg324-1
   close_msg_db -file init_design.pb
@@ -156,6 +159,7 @@ start_step write_bitstream
 set ACTIVE_STEP write_bitstream
 set rc [catch {
   create_msg_db write_bitstream.pb
+  set_property XPM_LIBRARIES XPM_MEMORY [current_project]
   catch { write_mem_info -force labkit.mmi }
   write_bitstream -force labkit.bit 
   catch {write_debug_probes -quiet -force labkit}
