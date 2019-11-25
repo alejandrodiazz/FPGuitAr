@@ -57,12 +57,10 @@ module FPGuitAr_Hero (
    
    audio_gen audio1( .clk_100mhz(clk_100), .reset(reset_in), .sw(sw), .notes(notes),
                 .aud_pwm(aud_pwm), .aud_sd(aud_sd)); // CHANGE running on 65MHz clock
-                
-   //IMAGE
-   wire [11:0] digit_pixel;  // output for puck pixel from module
-   picture_blob  
-   puck1(.WIDTH(724),.HEIGHT(77),.pixel_clk_in(vclock_in), .x_in(200),.y_in(200),.hcount_in(hcount_in),.vcount_in(vcount_in),
-             .pixel_out(digit_pixel), .offset(0)); // introduced an offset to change PUCK dimensions
+   
+   wire [11:0] digit_pixels;             
+   hex_to_decimal hd(.reset(reset_in), .vcount_in(vcount_in), .hcount_in(hcount_in), .score(score),
+            .clk_in(vclock_in), .digit_pixels(digit_pixels) );
 
    // Hands
    logic [10:0] hand1_x;     // location of hand on screen 
@@ -124,7 +122,7 @@ module FPGuitAr_Hero (
    logic [20:0] hand1_counter;
    logic [20:0] hand2_counter;
    logic [12:0] n_array;
-   logic [31:0] score;
+   logic [16:0] score;
    logic reset_score;
    always @ (posedge vclock_in) begin 
         // PIXEL OUT          
@@ -136,7 +134,7 @@ module FPGuitAr_Hero (
 //            c <= ((hand_pixel[3:0] * m) >> n) | (planet_pixel[3:0] - ((planet_pixel[3:0] * m) >> n));
 //            alpha_pixel <= {a,b,c};
 //        end
-        alpha_pixel <= note_pixels | hand1_pixel | hand2_pixel | planet_pixel | digit_pixel;
+        alpha_pixel <= note_pixels | hand1_pixel | hand2_pixel | planet_pixel | digit_pixels;
         
         // MOVING HANDS
         if(reset_in) begin                      // reset values on a reset
@@ -208,14 +206,14 @@ module FPGuitAr_Hero (
             
             // HAND1 Movement
             if (btnu) begin
-                if(hand1_counter == 200000) begin
+                if(hand1_counter == 150000) begin
                     hand1_x <= hand1_x + 1;
                     hand1_counter <= 0;
                 end else begin
                     hand1_counter <= hand1_counter + 1;
                 end
             end else if(btnl) begin
-                if(hand1_counter == 200000) begin
+                if(hand1_counter == 150000) begin
                     hand1_x <= hand1_x - 1;
                     hand1_counter <= 0;
                 end else begin
@@ -227,14 +225,14 @@ module FPGuitAr_Hero (
             
             // HAND2 Movement
             if (btnr) begin
-                if(hand2_counter == 200000) begin
+                if(hand2_counter == 150000) begin
                     hand2_x <= hand2_x + 1;
                     hand2_counter <= 0;
                 end else begin
                     hand2_counter <= hand2_counter + 1;
                 end
             end else if(btnd) begin
-                if(hand2_counter == 200000) begin
+                if(hand2_counter == 150000) begin
                     hand2_x <= hand2_x - 1;
                     hand2_counter <= 0;
                 end else begin
