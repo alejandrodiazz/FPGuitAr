@@ -60,7 +60,7 @@ module picture_blob_digit
      if ((hcount_in >= x_in && hcount_in < (x_in+WIDTH)) &&
           (vcount_in >= y_in && vcount_in < (y_in+HEIGHT))) begin
           digit_selector <= digit * 72;
-          image_addr <= ((hcount_in-x_in + digit_selector+8) << offset) + ((vcount_in-y_in)<<offset) * w; // INTRODUCED left shifting ########
+          image_addr <= ((hcount_in-x_in + digit_selector+4 ) << offset) + ((vcount_in-y_in)<<offset) * w; // INTRODUCED left shifting ########
           // use MSB 4 bits
           pixel_out <= {red_mapped[7:4], red_mapped[7:4], red_mapped[7:4]}; // greyscale
           //    pixel_out <= {red_mapped[7:4], 8'h0}; // only red hues

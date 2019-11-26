@@ -37,14 +37,14 @@ module hex_to_decimal(
     
     //IMAGE
     wire [11:0] dig1, dig10, dig100, dig1000;  // output for digit pixel from module
-    picture_blob_digit  d1(.WIDTH(72),.HEIGHT(77),.pixel_clk_in(clk_in), .x_in(900),.y_in(100),
-        .hcount_in(hcount_in),.vcount_in(vcount_in), .pixel_out(dig1), .offset(0), .digit(digit1)); 
-    picture_blob_digit  d10(.WIDTH(72),.HEIGHT(77),.pixel_clk_in(clk_in), .x_in(830),.y_in(100),
-        .hcount_in(hcount_in),.vcount_in(vcount_in), .pixel_out(dig10), .offset(0), .digit(digit10)); 
-    picture_blob_digit  d100(.WIDTH(72),.HEIGHT(77),.pixel_clk_in(clk_in), .x_in(760),.y_in(100),
-        .hcount_in(hcount_in),.vcount_in(vcount_in), .pixel_out(dig100), .offset(0), .digit(digit100)); 
-    picture_blob_digit  d1000(.WIDTH(72),.HEIGHT(77),.pixel_clk_in(clk_in), .x_in(690),.y_in(100),
-        .hcount_in(hcount_in),.vcount_in(vcount_in), .pixel_out(dig1000), .offset(0), .digit(digit1000)); 
+    picture_blob_digit  d1(.WIDTH(72),.HEIGHT(77),.pixel_clk_in(clk_in), .x_in(900),.y_in(50),
+        .hcount_in(hcount_in),.vcount_in(vcount_in), .pixel_out(dig1), .offset(0), .digit(di1)); 
+    picture_blob_digit  d10(.WIDTH(72),.HEIGHT(77),.pixel_clk_in(clk_in), .x_in(830),.y_in(50),
+        .hcount_in(hcount_in),.vcount_in(vcount_in), .pixel_out(dig10), .offset(0), .digit(di10)); 
+    picture_blob_digit  d100(.WIDTH(72),.HEIGHT(77),.pixel_clk_in(clk_in), .x_in(760),.y_in(50),
+        .hcount_in(hcount_in),.vcount_in(vcount_in), .pixel_out(dig100), .offset(0), .digit(di100)); 
+    picture_blob_digit  d1000(.WIDTH(72),.HEIGHT(77),.pixel_clk_in(clk_in), .x_in(690),.y_in(50),
+        .hcount_in(hcount_in),.vcount_in(vcount_in), .pixel_out(dig1000), .offset(0), .digit(di1000)); 
 
     assign digit_pixels = dig1 | dig10 | dig100 | dig1000;
     always_ff @(posedge clk_in) begin

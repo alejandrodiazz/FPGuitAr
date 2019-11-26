@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="image_rom_map_synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1574458260">
-  <File Type="RDS-UTIL" Name="image_rom_map_utilization_synth.rpt"/>
   <File Type="RDS-UTIL-PB" Name="image_rom_map_utilization_synth.pb"/>
+  <File Type="RDS-UTIL" Name="image_rom_map_utilization_synth.rpt"/>
   <File Type="RDS-RDS" Name="image_rom_map.vds"/>
   <File Type="RDS-DCP" Name="image_rom_map.dcp"/>
   <File Type="PA-TCL" Name="image_rom_map.tcl"/>
