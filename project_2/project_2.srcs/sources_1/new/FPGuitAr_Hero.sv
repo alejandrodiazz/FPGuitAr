@@ -53,7 +53,8 @@ module FPGuitAr_Hero (
    assign pvsync_out = vsync_in;
    assign pblank_out = blank_in;
    
-   logic [12:0] notes;
+   logic [60:0] notes;
+   logic [16:0] score;
    
    audio_gen audio1( .clk_100mhz(clk_100), .reset(reset_in), .sw(sw), .notes(notes),
                 .aud_pwm(aud_pwm), .aud_sd(aud_sd)); // CHANGE running on 65MHz clock
@@ -65,7 +66,7 @@ module FPGuitAr_Hero (
    // Hands
    logic [10:0] hand1_x;     // location of hand on screen 
    logic [9:0] hand1_y;
-   logic [10:0] h_x = 200;      // hand dimensions
+   logic [10:0] h_x = 150;      // hand dimensions
    logic [9:0] h_y = 5;
    wire [11:0] hand1_pixel;  // output for puck pixel from module
    blob hand1(.width(h_x), .height(h_y), .color(12'hFFF), .pixel_clk_in(vclock_in), .x_in(hand1_x),
@@ -121,8 +122,7 @@ module FPGuitAr_Hero (
    
    logic [20:0] hand1_counter;
    logic [20:0] hand2_counter;
-   logic [12:0] n_array;
-   logic [16:0] score;
+   logic [60:0] n_array;
    logic reset_score;
    always @ (posedge vclock_in) begin 
         // PIXEL OUT          
@@ -163,8 +163,17 @@ module FPGuitAr_Hero (
                 n_array <= 0;                                   // reset all flags
                 notes <= n_array;                               // shift flags into notes being played
                 if(add_to_score) begin                            // add to score based on note intersections
-                    score <= score + n_array[0] + n_array[1] + n_array[2] + n_array[3] + n_array[4] + n_array[5] +
-                        n_array[6] + n_array[7] + n_array[8] + n_array[9] + n_array[10] + n_array[11] + n_array[12];
+                    score <= score + n_array[0] + n_array[1] + n_array[2] + n_array[3] + n_array[4] 
+                        + n_array[5] + n_array[6] + n_array[7] + n_array[8] + n_array[9] + n_array[10] 
+                        + n_array[11] + n_array[12] + n_array[13] + n_array[14] + n_array[15] + n_array[16] 
+                        + n_array[17] + n_array[18] + n_array[19] + n_array[20] + n_array[21] + n_array[22] 
+                        + n_array[23] + n_array[24] + n_array[25] + n_array[26] + n_array[27] + n_array[28] 
+                        + n_array[29] + n_array[30] + n_array[31] + n_array[32] + n_array[33] + n_array[34] 
+                        + n_array[35] + n_array[36] + n_array[37] + n_array[38] + n_array[39] + n_array[40] 
+                        + n_array[41] + n_array[42] + n_array[43] + n_array[44] + n_array[45] + n_array[46] 
+                        + n_array[47] + n_array[48] + n_array[49] + n_array[50] + n_array[51] + n_array[52] 
+                        + n_array[53] + n_array[54] + n_array[55] + n_array[56] + n_array[57] + n_array[58] 
+                        + n_array[59] + n_array[60];
                     add_to_score <= 0;    
                 end
             end else begin
@@ -172,34 +181,68 @@ module FPGuitAr_Hero (
                     add_to_score <= 1;
                 end
                 if( (hand1_pixel != 0) || (hand2_pixel != 0) ) begin        // if hand pixels are being drawn
-                    if ( note_pixels != 0 )begin    // if any note is being drawn
-                        if( (hcount_in >=100) && (hcount_in <=116) )        // if A4  0
-                            n_array[12] <= 1;
-                        else if ((hcount_in >= 167) && (hcount_in <=200))   // if Bb4 1
-                            n_array[11] <= 1;
-                        else if ((hcount_in >= 233) && (hcount_in <=250))   // if B4  2
-                            n_array[10] <= 1;
-                        else if ((hcount_in >= 300) && (hcount_in <=320))   // if C5  3
-                            n_array[9] <= 1;
-                        else if ((hcount_in >= 367) && (hcount_in <=387))   // if C#5 4
-                            n_array[8] <= 1;
-                        else if ((hcount_in >= 433) && (hcount_in <=453))   // if D5  5
-                            n_array[7] <= 1;
-                        else if ((hcount_in >= 500) && (hcount_in <=520))   // if Eb5 6
-                            n_array[6] <= 1;
-                        else if ((hcount_in >= 567) && (hcount_in <=587))   // if E5  7
-                            n_array[5] <= 1;
-                        else if ((hcount_in >= 633) && (hcount_in <=653))   // if F5  8
-                            n_array[4] <= 1;
-                        else if ((hcount_in >= 700) && (hcount_in <=720))   // if F#5 9
-                            n_array[3] <= 1;
-                        else if ((hcount_in >= 767) && (hcount_in <=787))   // if G5  10
-                            n_array[2] <= 1;
-                        else if ((hcount_in >= 833) && (hcount_in <=853))   // if Ab5 11
-                            n_array[1] <= 1;    
-                        else if ((hcount_in >= 900) && (hcount_in <=920))   // if A5  12
-                            n_array[0] <= 1;
-                           
+                    if(note_pixels != 0) begin                              // if note pixels are being drawn
+                        if ((hcount_in >= 200) && (hcount_in <=209)) n_array[60] <= 1;
+                        else if ((hcount_in >= 250) && (hcount_in <=259)) n_array[59] <= 1;
+                        else if ((hcount_in >= 300) && (hcount_in <=309)) n_array[58] <= 1;
+                        else if ((hcount_in >= 350) && (hcount_in <=359)) n_array[57] <= 1;
+                        else if ((hcount_in >= 400) && (hcount_in <=409)) n_array[56] <= 1;
+                        else if ((hcount_in >= 450) && (hcount_in <=459)) n_array[55] <= 1;
+                        else if ((hcount_in >= 500) && (hcount_in <=509)) n_array[54] <= 1;
+                        else if ((hcount_in >= 550) && (hcount_in <=559)) n_array[53] <= 1;
+                        else if ((hcount_in >= 600) && (hcount_in <=609)) n_array[52] <= 1;
+                        else if ((hcount_in >= 650) && (hcount_in <=659)) n_array[51] <= 1;
+                        else if ((hcount_in >= 700) && (hcount_in <=709)) n_array[50] <= 1;
+                        else if ((hcount_in >= 750) && (hcount_in <=759)) n_array[49] <= 1;
+                        else if ((hcount_in >= 210) && (hcount_in <=219)) n_array[48] <= 1;
+                        else if ((hcount_in >= 260) && (hcount_in <=269)) n_array[47] <= 1;
+                        else if ((hcount_in >= 310) && (hcount_in <=319)) n_array[46] <= 1;
+                        else if ((hcount_in >= 360) && (hcount_in <=369)) n_array[45] <= 1;
+                        else if ((hcount_in >= 410) && (hcount_in <=419)) n_array[44] <= 1;
+                        else if ((hcount_in >= 460) && (hcount_in <=469)) n_array[43] <= 1;
+                        else if ((hcount_in >= 510) && (hcount_in <=519)) n_array[42] <= 1;
+                        else if ((hcount_in >= 560) && (hcount_in <=569)) n_array[41] <= 1;
+                        else if ((hcount_in >= 610) && (hcount_in <=619)) n_array[40] <= 1;
+                        else if ((hcount_in >= 660) && (hcount_in <=669)) n_array[39] <= 1;
+                        else if ((hcount_in >= 710) && (hcount_in <=719)) n_array[38] <= 1;
+                        else if ((hcount_in >= 760) && (hcount_in <=769)) n_array[37] <= 1;
+                        else if ((hcount_in >= 220) && (hcount_in <=229)) n_array[36] <= 1;
+                        else if ((hcount_in >= 270) && (hcount_in <=279)) n_array[35] <= 1;
+                        else if ((hcount_in >= 320) && (hcount_in <=329)) n_array[34] <= 1;
+                        else if ((hcount_in >= 370) && (hcount_in <=379)) n_array[33] <= 1;
+                        else if ((hcount_in >= 420) && (hcount_in <=429)) n_array[32] <= 1;
+                        else if ((hcount_in >= 470) && (hcount_in <=479)) n_array[31] <= 1;
+                        else if ((hcount_in >= 520) && (hcount_in <=529)) n_array[30] <= 1;
+                        else if ((hcount_in >= 570) && (hcount_in <=579)) n_array[29] <= 1;
+                        else if ((hcount_in >= 620) && (hcount_in <=629)) n_array[28] <= 1;
+                        else if ((hcount_in >= 670) && (hcount_in <=679)) n_array[27] <= 1;
+                        else if ((hcount_in >= 720) && (hcount_in <=729)) n_array[26] <= 1;
+                        else if ((hcount_in >= 770) && (hcount_in <=779)) n_array[25] <= 1;
+                        else if ((hcount_in >= 230) && (hcount_in <=239)) n_array[24] <= 1;
+                        else if ((hcount_in >= 280) && (hcount_in <=289)) n_array[23] <= 1;
+                        else if ((hcount_in >= 330) && (hcount_in <=339)) n_array[22] <= 1;
+                        else if ((hcount_in >= 380) && (hcount_in <=389)) n_array[21] <= 1;
+                        else if ((hcount_in >= 430) && (hcount_in <=439)) n_array[20] <= 1;
+                        else if ((hcount_in >= 480) && (hcount_in <=489)) n_array[19] <= 1;
+                        else if ((hcount_in >= 530) && (hcount_in <=539)) n_array[18] <= 1;
+                        else if ((hcount_in >= 580) && (hcount_in <=589)) n_array[17] <= 1;
+                        else if ((hcount_in >= 630) && (hcount_in <=639)) n_array[16] <= 1;
+                        else if ((hcount_in >= 680) && (hcount_in <=689)) n_array[15] <= 1;
+                        else if ((hcount_in >= 730) && (hcount_in <=739)) n_array[14] <= 1;
+                        else if ((hcount_in >= 780) && (hcount_in <=789)) n_array[13] <= 1;
+                        else if ((hcount_in >= 240) && (hcount_in <=249)) n_array[12] <= 1;
+                        else if ((hcount_in >= 290) && (hcount_in <=299)) n_array[11] <= 1;
+                        else if ((hcount_in >= 340) && (hcount_in <=349)) n_array[10] <= 1;
+                        else if ((hcount_in >= 390) && (hcount_in <=399)) n_array[9] <= 1;
+                        else if ((hcount_in >= 440) && (hcount_in <=449)) n_array[8] <= 1;
+                        else if ((hcount_in >= 490) && (hcount_in <=499)) n_array[7] <= 1;
+                        else if ((hcount_in >= 540) && (hcount_in <=549)) n_array[6] <= 1;
+                        else if ((hcount_in >= 590) && (hcount_in <=599)) n_array[5] <= 1;
+                        else if ((hcount_in >= 640) && (hcount_in <=649)) n_array[4] <= 1;
+                        else if ((hcount_in >= 690) && (hcount_in <=699)) n_array[3] <= 1;
+                        else if ((hcount_in >= 740) && (hcount_in <=749)) n_array[2] <= 1;
+                        else if ((hcount_in >= 790) && (hcount_in <=799)) n_array[1] <= 1;
+                        else if ((hcount_in >= 800) && (hcount_in <=809)) n_array[0] <= 1;
                     end
                 end 
             end

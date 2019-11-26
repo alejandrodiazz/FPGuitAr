@@ -37,7 +37,7 @@ module note_generator(
     logic [1:0] note_state;
     logic outputting;
     logic [3:0] note_buffer;
-    logic [3:0] note_num;
+    logic [5:0] note_num;
     logic [1:0] wait_; 
     logic [10:0] x_pos;
     
@@ -47,7 +47,7 @@ module note_generator(
     logic [10:0] x0;     // x coordinate
     logic [9:0] y0;        // y coordinate which changes
     wire [11:0] npixel0;    // output from blob module for paddle
-    parameter note_width = 16;        // fixed note width
+    parameter note_width = 10;        // fixed note width
     logic[8:0] nlen0;
     blob note0(.width(note_width), .height(nlen0), .color(12'hFFF), .pixel_clk_in(clk_in),.x_in(x0),.y_in(y0),
             .hcount_in(hcount_in),.vcount_in(vcount_in), .pixel_out(npixel0));

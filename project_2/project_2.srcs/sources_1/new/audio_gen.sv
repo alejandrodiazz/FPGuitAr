@@ -25,7 +25,7 @@
 module audio_gen(   input clk_100mhz,
                     input [15:0] sw,
                     input reset,
-                    input [12:0] notes,
+                    input [60:0] notes,
                     output logic aud_pwm,
                     output logic aud_sd
     );  
@@ -87,85 +87,77 @@ module play_notes(
   input logic rst_in,               // 1 to reset to initial state
   input logic ready_in,             // 1 when data is available
   input logic signed [7:0] mic_in,         // 8-bit PCM data from mic
-  input [12:0] notes,
+  input [60:0] notes,
   output logic signed [11:0] data_out       // 8-bit PCM data to headphone
 ); 
-    logic [7:0] tone_440;
-    logic [7:0] tone_466;
-    logic [7:0] tone_493;
-    logic [7:0] tone_523;
-    logic [7:0] tone_554;
-    logic [7:0] tone_587;
-    logic [7:0] tone_622;
-    logic [7:0] tone_659;
-    logic [7:0] tone_698;
-    logic [7:0] tone_740;
-    logic [7:0] tone_784;
-    logic [7:0] tone_831;
-    logic [7:0] tone_880;
+    logic [7:0] t220, t233, t247, t262, t277, t294, t311, t329, t349, t370, t392, t415, 
+        t440, t466, t493, t523, t554, t587, t622, t659, t698, t740, t784, t831, t880;
     
-    sine_generator #(.PHASE_INCR(32'd39370534)) 
-    tone440hz (.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(tone_440));    // A4
-    sine_generator #(.PHASE_INCR(32'd41711649)) 
-    tone466hz (.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(tone_466)); 
-    sine_generator #(.PHASE_INCR(32'd44191903)) 
-    tone493hz (.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(tone_493)); 
-    sine_generator #(.PHASE_INCR(32'd46819707)) 
-    tone523hz (.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(tone_523)); 
-    sine_generator #(.PHASE_INCR(32'd49603741)) 
-    tone554hz (.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(tone_554));    //C#5
-    sine_generator #(.PHASE_INCR(32'd52523870)) 
-    tone587hz (.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(tone_587));   
-    sine_generator #(.PHASE_INCR(32'd55655617)) 
-    tone622hz (.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(tone_622));   
-    sine_generator #(.PHASE_INCR(32'd58966321)) 
-    tone659hz (.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(tone_659));   
-    sine_generator #(.PHASE_INCR(32'd62455982)) 
-    tone698hz (.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(tone_698));   
-    sine_generator #(.PHASE_INCR(32'd66214079)) 
-    tone740hz (.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(tone_740));   
-    sine_generator #(.PHASE_INCR(32'd70151132)) 
-    tone784hz (.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(tone_784));   
-    sine_generator #(.PHASE_INCR(32'd74356621)) 
-    tone831hz (.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(tone_831));   
-    sine_generator #(.PHASE_INCR(32'd78741067)) 
-    tone880hz (.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(tone_880));                              
+    sine_generator #(.PHASE_INCR(32'd19685267))   tone10    (.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(t220));  // A3
+    sine_generator #(.PHASE_INCR(32'd20855645))   tone9     (.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(t233)); 
+    sine_generator #(.PHASE_INCR(32'd22095817))   tone8     (.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(t247)); 
+    sine_generator #(.PHASE_INCR(32'd23410256))   tone7     (.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(t262)); 
+    sine_generator #(.PHASE_INCR(32'd24801647))   tone6     (.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(t277));  // C#3
+    sine_generator #(.PHASE_INCR(32'd26276252))   tone5     (.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(t294));   
+    sine_generator #(.PHASE_INCR(32'd27839441))   tone4     (.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(t311));   
+    sine_generator #(.PHASE_INCR(32'd29494793))   tone3     (.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(t329));   
+    sine_generator #(.PHASE_INCR(32'd31248571))   tone2     (.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(t349));   
+    sine_generator #(.PHASE_INCR(32'd33106145))   tone1     (.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(t370));   
+    sine_generator #(.PHASE_INCR(32'd35075566))   tone0     (.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(t392));   
+    sine_generator #(.PHASE_INCR(32'd37160415))   tone415hz (.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(t415));   // Ab4
+    sine_generator #(.PHASE_INCR(32'd39370534))   tone440hz (.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(t440));  // A4
+    sine_generator #(.PHASE_INCR(32'd41711291))   tone466hz (.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(t466)); 
+    sine_generator #(.PHASE_INCR(32'd44191634))   tone493hz (.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(t493)); 
+    sine_generator #(.PHASE_INCR(32'd46819617))   tone523hz (.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(t523)); 
+    sine_generator #(.PHASE_INCR(32'd49603741))   tone554hz (.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(t554));  // C#5
+    sine_generator #(.PHASE_INCR(32'd52523870))   tone587hz (.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(t587));   
+    sine_generator #(.PHASE_INCR(32'd55655617))   tone622hz (.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(t622));   
+    sine_generator #(.PHASE_INCR(32'd58966321))   tone659hz (.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(t659));   
+    sine_generator #(.PHASE_INCR(32'd62455982))   tone698hz (.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(t698));   
+    sine_generator #(.PHASE_INCR(32'd66214079))   tone740hz (.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(t740));   
+    sine_generator #(.PHASE_INCR(32'd70151132))   tone784hz (.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(t784));   
+    sine_generator #(.PHASE_INCR(32'd74356621))   tone831hz (.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(t831));   // Ab5
+    sine_generator #(.PHASE_INCR(32'd74356621))   tone880hz (.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(t880));   // A5                              
     //logic [7:0] data_to_bram;
     //logic [7:0] data_from_bram;
     //logic [15:0] addr;
     //logic wea;
     //  blk_mem_gen_0(.addra(addr), .clka(clk_in), .dina(data_to_bram), .douta(data_from_bram), 
     //                .ena(1), .wea(bram_write));                                  
-    logic [7:0] data0;
-    logic [7:0] data1;
-    logic [7:0] data2;
-    logic [7:0] data3;
-    logic [7:0] data4;
-    logic [7:0] data5;
-    logic [7:0] data6;
-    logic [7:0] data7;
-    logic [7:0] data8;
-    logic [7:0] data9;
-    logic [7:0] data10;
-    logic [7:0] data11;
-    logic [7:0] data12;
+    logic [7:0] d0, d1, d2, d3, d4, d5, d6, d7, d8, d9, d10, d11, 
+        d12, d13, d14, d15, d16, d17, d18, d19, d20, d21, d22, d23, 
+        d24, d25, d26, d27, d28, d29, d30, d31, d32, d33, d34, d35, 
+        d36, d37, d38, d39, d40, d41, d42, d43, d44, d45, d46, d47, 
+        d48, d49, d50, d51, d52, d53, d54, d55, d56, d57, d58, d59, d60;
     
     always_ff @(posedge clk_in)begin
-        data0 <=  notes[12]?  tone_440:8'b0;   // A
-        data1 <=  notes[11]?  tone_466:8'b0; //send tone immediately to output
-        data2 <=  notes[10]?  tone_493:8'b0; //send tone immediately to output
-        data3 <=  notes[9]?   tone_523:8'b0; //send tone immediately to output
-        data4 <=  notes[8]?   tone_554:8'b0; //send tone immediately to output
-        data5 <=  notes[7]?   tone_587:8'b0;   // A
-        data6 <=  notes[6]?   tone_622:8'b0; //send tone immediately to output
-        data7 <=  notes[5]?   tone_659:8'b0; //send tone immediately to output
-        data8 <=  notes[4]?   tone_698:8'b0; //send tone immediately to output
-        data9 <=  notes[3]?   tone_740:8'b0; //send tone immediately to output
-        data10 <= notes[2]?   tone_784:8'b0;   // A
-        data11 <= notes[1]?   tone_831:8'b0; //send tone immediately to output
-        data12 <= notes[0]?   tone_880:8'b0; //send tone immediately to output
-        data_out <= (data0 + data1 + data2 + data3 + data4 + data5 + data6 +
-            data7 + data8 + data9 + data10 + data11 + data12); 
+        d36 <=  notes[60]?  t220:8'b0; // send tone immediately to output
+        d37 <=  notes[59]?  t233:8'b0; // send tone immediately to output
+        d38 <=  notes[58]?  t247:8'b0; // send tone immediately to output
+        d39 <=  notes[57]?  t262:8'b0; // send tone immediately to output
+        d40 <=  notes[56]?  t277:8'b0; // send tone
+        d41 <=  notes[55]?  t294:8'b0; // send tone immediately to output
+        d42 <=  notes[54]?  t311:8'b0; // send tone immediately to output
+        d43 <=  notes[53]?  t329:8'b0; // send tone immediately to output
+        d44 <=  notes[52]?  t349:8'b0; // send tone immediately to output
+        d45 <=  notes[52]?  t370:8'b0; // send tone
+        d46 <=  notes[51]?  t392:8'b0; //send tone immediately to output
+        d47 <=  notes[50]?  t415:8'b0; //send tone immediately to output
+        d48 <=  notes[49]?  t440:8'b0; // send tone
+        d49 <=  notes[48]?  t466:8'b0; // send tone immediately to output
+        d50 <=  notes[47]?  t493:8'b0; // send tone immediately to output
+        d51 <=  notes[46]?   t523:8'b0; // send tone immediately to output
+        d52 <=  notes[45]?   t554:8'b0; // send tone immediately to output
+        d53 <=  notes[44]?   t587:8'b0; // send tone
+        d54 <=  notes[43]?   t622:8'b0; // send tone immediately to output
+        d55 <=  notes[42]?   t659:8'b0; // send tone immediately to output
+        d56 <=  notes[41]?   t698:8'b0; // send tone immediately to output
+        d57 <=  notes[40]?   t740:8'b0; // send tone immediately to output
+        d58 <=  notes[39]?   t784:8'b0; // send tone
+        d59 <=  notes[38]?   t831:8'b0; //send tone immediately to output
+        d60 <=  notes[37]?   t880:8'b0; //send tone immediately to output
+        data_out <= (d36 + d37 + d38 + d39 + d40 + d41 + d42 + d43 + d44 + d45 + d46 + d47 + 
+            d48 + d49 + d50 + d51 + d52 + d53 + d54 + d55 + d56 + d57 + d58 + d59 + d60); 
     end                            
 endmodule                              
 
