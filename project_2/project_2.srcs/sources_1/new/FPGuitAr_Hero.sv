@@ -101,9 +101,9 @@ module FPGuitAr_Hero (
    logic[3:0] b;
    logic[3:0] c;
    
-   logic [5:0] beat;
+   logic [6:0] beat; // up to 127 beats
    logic [26:0] bpm;
-   logic [23:0] music_out;
+   logic [35:0] music_out;
    logic [11:0] note_pixels;
    logic [23:0] testing;
    logic pixel_step;
@@ -112,13 +112,13 @@ module FPGuitAr_Hero (
    logic [2:0] speed;
    assign song = sw[5:2];
    assign speed = sw[8:6];
-   music_lookup muse(.beat(beat),.song(song), .clk_in(vclock_in), .music_out(music_out));
+   music_lookup music(.beat(beat),.song(song), .clk_in(vclock_in), .music_out(music_out));
    beat_generator meter1(.reset(reset_in), .clk_in(vclock_in), .bpm(bpm), .beat(beat));
    note_generator notegen(.reset(reset_in), .clk_in(vclock_in), .hcount_in(hcount_in),.vcount_in(vcount_in),
         .beat(beat), .bpm(bpm), .music_out(music_out), .pixel(note_pixels), .testing(testing), .pixel_step(pixel_step));
         
    //assign hex_disp = {testing,2'b0, beat};     // to hex out for debugging
-   assign hex_disp = score;
+   assign hex_disp = {testing,1'b0, beat};
    
    logic [20:0] hand1_counter;
    logic [20:0] hand2_counter;

@@ -131,21 +131,21 @@ module play_notes(
         d48, d49, d50, d51, d52, d53, d54, d55, d56, d57, d58, d59, d60;
     
     always_ff @(posedge clk_in)begin
-        d36 <=  notes[60]?  t220:8'b0; // send tone immediately to output
-        d37 <=  notes[59]?  t233:8'b0; // send tone immediately to output
-        d38 <=  notes[58]?  t247:8'b0; // send tone immediately to output
-        d39 <=  notes[57]?  t262:8'b0; // send tone immediately to output
-        d40 <=  notes[56]?  t277:8'b0; // send tone
-        d41 <=  notes[55]?  t294:8'b0; // send tone immediately to output
-        d42 <=  notes[54]?  t311:8'b0; // send tone immediately to output
-        d43 <=  notes[53]?  t329:8'b0; // send tone immediately to output
-        d44 <=  notes[52]?  t349:8'b0; // send tone immediately to output
-        d45 <=  notes[52]?  t370:8'b0; // send tone
-        d46 <=  notes[51]?  t392:8'b0; //send tone immediately to output
-        d47 <=  notes[50]?  t415:8'b0; //send tone immediately to output
-        d48 <=  notes[49]?  t440:8'b0; // send tone
-        d49 <=  notes[48]?  t466:8'b0; // send tone immediately to output
-        d50 <=  notes[47]?  t493:8'b0; // send tone immediately to output
+        d36 <=  notes[60]?   t220:8'b0; // send tone immediately to output
+        d37 <=  notes[59]?   t233:8'b0; // send tone immediately to output
+        d38 <=  notes[58]?   t247:8'b0; // send tone immediately to output
+        d39 <=  notes[57]?   t262:8'b0; // send tone immediately to output
+        d40 <=  notes[56]?   t277:8'b0; // send tone
+        d41 <=  notes[55]?   t294:8'b0; // send tone immediately to output
+        d42 <=  notes[54]?   t311:8'b0; // send tone immediately to output
+        d43 <=  notes[53]?   t329:8'b0; // send tone immediately to output
+        d44 <=  notes[52]?   t349:8'b0; // send tone immediately to output
+        d45 <=  notes[52]?   t370:8'b0; // send tone
+        d46 <=  notes[51]?   t392:8'b0; //send tone immediately to output
+        d47 <=  notes[50]?   t415:8'b0; //send tone immediately to output
+        d48 <=  notes[49]?   t440:8'b0; // send tone
+        d49 <=  notes[48]?   t466:8'b0; // send tone immediately to output
+        d50 <=  notes[47]?   t493:8'b0; // send tone immediately to output
         d51 <=  notes[46]?   t523:8'b0; // send tone immediately to output
         d52 <=  notes[45]?   t554:8'b0; // send tone immediately to output
         d53 <=  notes[44]?   t587:8'b0; // send tone

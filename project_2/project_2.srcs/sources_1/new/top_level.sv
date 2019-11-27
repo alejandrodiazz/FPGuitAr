@@ -23,8 +23,8 @@ module labkit(
    output led16_b, led16_g, led16_r,
    output led17_b, led17_g, led17_r,
    output[15:0] led,
-   output ca, cb, cc, cd, ce, cf, cg, dp,  // segments a-g, dp
-   output[7:0] an,    // Display location 0-7
+   output ca, cb, cc, cd, ce, cf, cg, dp,   // segments a-g, dp
+   output[7:0] an,                          // Display location 0-7
    output logic aud_pwm,
    output logic aud_sd
    );

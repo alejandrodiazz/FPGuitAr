@@ -32,9 +32,34 @@
 ##        offset += 1
 
 # Pring a bunch of n_array to add for score
-string = ""
-for i in range(0, 61):
-    string += "n_array[" + str(i) + "] + "
+##string = ""
+##for i in range(0, 61):
+##    string += "n_array[" + str(i) + "] + "
+##
+##print(string)
+##          
+##
 
-print(string)
-          
+###generating empty music rows
+##for i in range(0, 128):
+##    print("7'd" + str(i) + ": music_out<= {6'd0, 3'd0, 6'd0, 3'd0, 6'd0, 3'd0, 6'd0, 3'd0};")
+
+
+#generating chromatic music rows
+##count = 1
+##for i in range(0, 128):
+##    print("7'd" + str(i) + ": music_out<= {6'd" + str(count) + ", 3'd0, 6'd0, 3'd0, 6'd0, 3'd0, 6'd0, 3'd0};")
+##    count += 1
+##    if count == 62:
+##        count = 1
+
+### quick printing
+##string = ""
+##for i in range(0, 16):
+##    string = string +  "ncolor" + str(i) + ", "
+##
+##print(string)
+
+
+
+    

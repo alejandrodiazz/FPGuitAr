@@ -24,7 +24,7 @@ module beat_generator(
     input reset,
     input clk_in,
     input [26:0] bpm,
-    output reg [5:0] beat
+    output reg [6:0] beat
     );
     
     logic [26:0] counter;
