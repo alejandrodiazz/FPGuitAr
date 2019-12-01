@@ -40,15 +40,15 @@
 ##          
 ##
 
-###generating empty music rows
-##for i in range(0, 128):
-##    print("7'd" + str(i) + ": music_out<= {6'd0, 3'd0, 6'd0, 3'd0, 6'd0, 3'd0, 6'd0, 3'd0};")
+#generating empty music rows
+for i in range(0, 128):
+    print("7'd" + str(i) + ": music_out<= {6'd0, 3'd0, 6'd0, 3'd0, 6'd0, 3'd0, 6'd0, 3'd0};")
 
 
-#generating chromatic music rows
+# generating chromatic music rows
 ##count = 1
 ##for i in range(0, 128):
-##    print("7'd" + str(i) + ": music_out<= {6'd" + str(count) + ", 3'd0, 6'd0, 3'd0, 6'd0, 3'd0, 6'd0, 3'd0};")
+##    print("7'd" + str(i) + ": music_out<= {6'd" + str(count) + ", 3'd2, 6'd0, 3'd0, 6'd0, 3'd0, 6'd0, 3'd0};")
 ##    count += 1
 ##    if count == 62:
 ##        count = 1

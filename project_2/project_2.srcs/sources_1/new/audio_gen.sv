@@ -90,34 +90,73 @@ module play_notes(
   input [60:0] notes,
   output logic signed [11:0] data_out       // 8-bit PCM data to headphone
 ); 
-    logic [7:0] t220, t233, t247, t262, t277, t294, t311, t329, t349, t370, t392, t415, 
-        t440, t466, t493, t523, t554, t587, t622, t659, t698, t740, t784, t831, t880;
+    logic [7:0] t55, t58, t61, t65, t69, t73, t77, t82, t87, t92, t98, t103, t110, t116, 
+    t123, t130, t138, t146, t155, t164, t174, t185, t196, t207, t220, t233, t246, t261, 
+    t277, t293, t311, t329, t349, t369, t392, t415, t440, t466, t493, t523, t554, t587, 
+    t622, t659, t698, t739, t783, t830, t880, t932, t987, t1046, t1108, t1174, t1244, 
+    t1318, t1396, t1479, t1567, t1661, t1760;
     
-    sine_generator #(.PHASE_INCR(32'd19685267))   tone10    (.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(t220));  // A3
-    sine_generator #(.PHASE_INCR(32'd20855645))   tone9     (.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(t233)); 
-    sine_generator #(.PHASE_INCR(32'd22095817))   tone8     (.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(t247)); 
-    sine_generator #(.PHASE_INCR(32'd23410256))   tone7     (.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(t262)); 
-    sine_generator #(.PHASE_INCR(32'd24801647))   tone6     (.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(t277));  // C#3
-    sine_generator #(.PHASE_INCR(32'd26276252))   tone5     (.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(t294));   
-    sine_generator #(.PHASE_INCR(32'd27839441))   tone4     (.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(t311));   
-    sine_generator #(.PHASE_INCR(32'd29494793))   tone3     (.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(t329));   
-    sine_generator #(.PHASE_INCR(32'd31248571))   tone2     (.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(t349));   
-    sine_generator #(.PHASE_INCR(32'd33106145))   tone1     (.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(t370));   
-    sine_generator #(.PHASE_INCR(32'd35075566))   tone0     (.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(t392));   
-    sine_generator #(.PHASE_INCR(32'd37160415))   tone415hz (.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(t415));   // Ab4
-    sine_generator #(.PHASE_INCR(32'd39370534))   tone440hz (.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(t440));  // A4
-    sine_generator #(.PHASE_INCR(32'd41711291))   tone466hz (.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(t466)); 
-    sine_generator #(.PHASE_INCR(32'd44191634))   tone493hz (.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(t493)); 
-    sine_generator #(.PHASE_INCR(32'd46819617))   tone523hz (.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(t523)); 
-    sine_generator #(.PHASE_INCR(32'd49603741))   tone554hz (.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(t554));  // C#5
-    sine_generator #(.PHASE_INCR(32'd52523870))   tone587hz (.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(t587));   
-    sine_generator #(.PHASE_INCR(32'd55655617))   tone622hz (.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(t622));   
-    sine_generator #(.PHASE_INCR(32'd58966321))   tone659hz (.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(t659));   
-    sine_generator #(.PHASE_INCR(32'd62455982))   tone698hz (.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(t698));   
-    sine_generator #(.PHASE_INCR(32'd66214079))   tone740hz (.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(t740));   
-    sine_generator #(.PHASE_INCR(32'd70151132))   tone784hz (.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(t784));   
-    sine_generator #(.PHASE_INCR(32'd74356621))   tone831hz (.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(t831));   // Ab5
-    sine_generator #(.PHASE_INCR(32'd74356621))   tone880hz (.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(t880));   // A5                              
+    sine_generator #(.PHASE_INCR(32'd4921316))   tonet55(.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(t55));
+    sine_generator #(.PHASE_INCR(32'd5213911))   tonet58(.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(t58));
+    sine_generator #(.PHASE_INCR(32'd5524401))   tonet61(.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(t61));
+    sine_generator #(.PHASE_INCR(32'd5852787))   tonet65(.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(t65));
+    sine_generator #(.PHASE_INCR(32'd6200859))   tonet69(.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(t69));
+    sine_generator #(.PHASE_INCR(32'd6569510))   tonet73(.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(t73));
+    sine_generator #(.PHASE_INCR(32'd6959636))   tonet77(.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(t77));
+    sine_generator #(.PHASE_INCR(32'd7373921))   tonet82(.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(t82));
+    sine_generator #(.PHASE_INCR(32'd7812366))   tonet87(.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(t87));
+    sine_generator #(.PHASE_INCR(32'd8276759))   tonet92(.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(t92));
+    sine_generator #(.PHASE_INCR(32'd8768891))   tonet98(.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(t98));
+    sine_generator #(.PHASE_INCR(32'd9290551))   tonet103(.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(t103));
+    sine_generator #(.PHASE_INCR(32'd9842633))   tonet110(.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(t110));
+    sine_generator #(.PHASE_INCR(32'd10427822))   tonet116(.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(t116));
+    sine_generator #(.PHASE_INCR(32'd11047908))   tonet123(.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(t123));
+    sine_generator #(.PHASE_INCR(32'd11704680))   tonet130(.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(t130));
+    sine_generator #(.PHASE_INCR(32'd12400823))   tonet138(.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(t138));
+    sine_generator #(.PHASE_INCR(32'd13138126))   tonet146(.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(t146));
+    sine_generator #(.PHASE_INCR(32'd13919273))   tonet155(.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(t155));
+    sine_generator #(.PHASE_INCR(32'd14746949))   tonet164(.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(t164));
+    sine_generator #(.PHASE_INCR(32'd15623838))   tonet174(.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(t174));
+    sine_generator #(.PHASE_INCR(32'd16553519))   tonet185(.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(t185));
+    sine_generator #(.PHASE_INCR(32'd17537783))   tonet196(.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(t196));
+    sine_generator #(.PHASE_INCR(32'd18580207))   tonet207(.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(t207));
+    sine_generator #(.PHASE_INCR(32'd19685266))   tonet220(.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(t220));
+    sine_generator #(.PHASE_INCR(32'd20855645))   tonet233(.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(t233));
+    sine_generator #(.PHASE_INCR(32'd22095817))   tonet246(.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(t246));
+    sine_generator #(.PHASE_INCR(32'd23410256))   tonet261(.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(t261));
+    sine_generator #(.PHASE_INCR(32'd24801646))   tonet277(.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(t277));
+    sine_generator #(.PHASE_INCR(32'd26276252))   tonet293(.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(t293));
+    sine_generator #(.PHASE_INCR(32'd27839441))   tonet311(.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(t311));
+    sine_generator #(.PHASE_INCR(32'd29494793))   tonet329(.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(t329));
+    sine_generator #(.PHASE_INCR(32'd31248571))   tonet349(.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(t349));
+    sine_generator #(.PHASE_INCR(32'd33106144))   tonet369(.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(t369));
+    sine_generator #(.PHASE_INCR(32'd35075566))   tonet392(.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(t392));
+    sine_generator #(.PHASE_INCR(32'd37160414))   tonet415(.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(t415));
+    sine_generator #(.PHASE_INCR(32'd39370533))   tonet440(.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(t440));
+    sine_generator #(.PHASE_INCR(32'd41711290))   tonet466(.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(t466));
+    sine_generator #(.PHASE_INCR(32'd44191634))   tonet493(.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(t493));
+    sine_generator #(.PHASE_INCR(32'd46819617))   tonet523(.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(t523));
+    sine_generator #(.PHASE_INCR(32'd49604187))   tonet554(.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(t554));
+    sine_generator #(.PHASE_INCR(32'd52553398))   tonet587(.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(t587));
+    sine_generator #(.PHASE_INCR(32'd55677987))   tonet622(.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(t622));
+    sine_generator #(.PHASE_INCR(32'd58988691))   tonet659(.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(t659));
+    sine_generator #(.PHASE_INCR(32'd62497142))   tonet698(.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(t698));
+    sine_generator #(.PHASE_INCR(32'd66213184))   tonet739(.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(t739));
+    sine_generator #(.PHASE_INCR(32'd70150237))   tonet783(.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(t783));
+    sine_generator #(.PHASE_INCR(32'd74321724))   tonet830(.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(t830));
+    sine_generator #(.PHASE_INCR(32'd78741067))   tonet880(.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(t880));
+    sine_generator #(.PHASE_INCR(32'd83423476))   tonet932(.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(t932));
+    sine_generator #(.PHASE_INCR(32'd88384163))   tonet987(.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(t987));
+    sine_generator #(.PHASE_INCR(32'd93639234))   tonet1046(.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(t1046));
+    sine_generator #(.PHASE_INCR(32'd99207481))   tonet1108(.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(t1108));
+    sine_generator #(.PHASE_INCR(32'd105106797))   tonet1174(.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(t1174));
+    sine_generator #(.PHASE_INCR(32'd111356869))   tonet1244(.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(t1244));
+    sine_generator #(.PHASE_INCR(32'd117978277))   tonet1318(.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(t1318));
+    sine_generator #(.PHASE_INCR(32'd124993390))   tonet1396(.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(t1396));
+    sine_generator #(.PHASE_INCR(32'd132426368))   tonet1479(.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(t1479));
+    sine_generator #(.PHASE_INCR(32'd140300475))   tonet1567(.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(t1567));
+    sine_generator #(.PHASE_INCR(32'd148643449))   tonet1661(.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(t1661));
+    sine_generator #(.PHASE_INCR(32'd157482134))   tonet1760(.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(t1760));                            
     //logic [7:0] data_to_bram;
     //logic [7:0] data_from_bram;
     //logic [15:0] addr;
@@ -131,33 +170,74 @@ module play_notes(
         d48, d49, d50, d51, d52, d53, d54, d55, d56, d57, d58, d59, d60;
     
     always_ff @(posedge clk_in)begin
-        d36 <=  notes[60]?   t220:8'b0; // send tone immediately to output
-        d37 <=  notes[59]?   t233:8'b0; // send tone immediately to output
-        d38 <=  notes[58]?   t247:8'b0; // send tone immediately to output
-        d39 <=  notes[57]?   t262:8'b0; // send tone immediately to output
-        d40 <=  notes[56]?   t277:8'b0; // send tone
-        d41 <=  notes[55]?   t294:8'b0; // send tone immediately to output
-        d42 <=  notes[54]?   t311:8'b0; // send tone immediately to output
-        d43 <=  notes[53]?   t329:8'b0; // send tone immediately to output
-        d44 <=  notes[52]?   t349:8'b0; // send tone immediately to output
-        d45 <=  notes[52]?   t370:8'b0; // send tone
-        d46 <=  notes[51]?   t392:8'b0; //send tone immediately to output
-        d47 <=  notes[50]?   t415:8'b0; //send tone immediately to output
-        d48 <=  notes[49]?   t440:8'b0; // send tone
-        d49 <=  notes[48]?   t466:8'b0; // send tone immediately to output
-        d50 <=  notes[47]?   t493:8'b0; // send tone immediately to output
-        d51 <=  notes[46]?   t523:8'b0; // send tone immediately to output
-        d52 <=  notes[45]?   t554:8'b0; // send tone immediately to output
-        d53 <=  notes[44]?   t587:8'b0; // send tone
-        d54 <=  notes[43]?   t622:8'b0; // send tone immediately to output
-        d55 <=  notes[42]?   t659:8'b0; // send tone immediately to output
-        d56 <=  notes[41]?   t698:8'b0; // send tone immediately to output
-        d57 <=  notes[40]?   t740:8'b0; // send tone immediately to output
-        d58 <=  notes[39]?   t784:8'b0; // send tone
-        d59 <=  notes[38]?   t831:8'b0; //send tone immediately to output
-        d60 <=  notes[37]?   t880:8'b0; //send tone immediately to output
-        data_out <= (d36 + d37 + d38 + d39 + d40 + d41 + d42 + d43 + d44 + d45 + d46 + d47 + 
-            d48 + d49 + d50 + d51 + d52 + d53 + d54 + d55 + d56 + d57 + d58 + d59 + d60); 
+        d0 <= notes[60]?    t55:8'b0; // send tone
+        d1 <= notes[59]?    t58:8'b0; // send tone
+        d2 <= notes[58]?    t61:8'b0; // send tone
+        d3 <= notes[57]?    t65:8'b0; // send tone
+        d4 <= notes[56]?    t69:8'b0; // send tone
+        d5 <= notes[55]?    t73:8'b0; // send tone
+        d6 <= notes[54]?    t77:8'b0; // send tone
+        d7 <= notes[53]?    t82:8'b0; // send tone
+        d8 <= notes[52]?    t87:8'b0; // send tone
+        d9 <= notes[51]?    t92:8'b0; // send tone
+        d10 <= notes[50]?   t98:8'b0; // send tone
+        d11 <= notes[49]?   t103:8'b0; // send tone
+        d12 <= notes[48]?   t110:8'b0; // send tone
+        d13 <= notes[47]?   t116:8'b0; // send tone
+        d14 <= notes[46]?   t123:8'b0; // send tone
+        d15 <= notes[45]?   t130:8'b0; // send tone
+        d16 <= notes[44]?   t138:8'b0; // send tone
+        d17 <= notes[43]?   t146:8'b0; // send tone
+        d18 <= notes[42]?   t155:8'b0; // send tone
+        d19 <= notes[41]?   t164:8'b0; // send tone
+        d20 <= notes[40]?   t174:8'b0; // send tone
+        d21 <= notes[39]?   t185:8'b0; // send tone
+        d22 <= notes[38]?   t196:8'b0; // send tone
+        d23 <= notes[37]?   t207:8'b0; // send tone
+        d24 <= notes[36]?   t220:8'b0; // send tone
+        d25 <= notes[35]?   t233:8'b0; // send tone
+        d26 <= notes[34]?   t246:8'b0; // send tone
+        d27 <= notes[33]?   t261:8'b0; // send tone
+        d28 <= notes[32]?   t277:8'b0; // send tone
+        d29 <= notes[31]?   t293:8'b0; // send tone
+        d30 <= notes[30]?   t311:8'b0; // send tone
+        d31 <= notes[29]?   t329:8'b0; // send tone
+        d32 <= notes[28]?   t349:8'b0; // send tone
+        d33 <= notes[27]?   t369:8'b0; // send tone
+        d34 <= notes[26]?   t392:8'b0; // send tone
+        d35 <= notes[25]?   t415:8'b0; // send tone
+        d36 <= notes[24]?   t440:8'b0; // send tone
+        d37 <= notes[23]?   t466:8'b0; // send tone
+        d38 <= notes[22]?   t493:8'b0; // send tone
+        d39 <= notes[21]?   t523:8'b0; // send tone
+        d40 <= notes[20]?   t554:8'b0; // send tone
+        d41 <= notes[19]?   t587:8'b0; // send tone
+        d42 <= notes[18]?   t622:8'b0; // send tone
+        d43 <= notes[17]?   t659:8'b0; // send tone
+        d44 <= notes[16]?   t698:8'b0; // send tone
+        d45 <= notes[15]?   t739:8'b0; // send tone
+        d46 <= notes[14]?   t783:8'b0; // send tone
+        d47 <= notes[13]?   t830:8'b0; // send tone
+        d48 <= notes[12]?   t880:8'b0; // send tone
+        d49 <= notes[11]?   t932:8'b0; // send tone
+        d50 <= notes[10]?   t987:8'b0; // send tone
+        d51 <= notes[9]?    t1046:8'b0; // send tone
+        d52 <= notes[8]?    t1108:8'b0; // send tone
+        d53 <= notes[7]?    t1174:8'b0; // send tone
+        d54 <= notes[6]?    t1244:8'b0; // send tone
+        d55 <= notes[5]?    t1318:8'b0; // send tone
+        d56 <= notes[4]?    t1396:8'b0; // send tone
+        d57 <= notes[3]?    t1479:8'b0; // send tone
+        d58 <= notes[2]?    t1567:8'b0; // send tone
+        d59 <= notes[1]?    t1661:8'b0; // send tone
+        d60 <= notes[0]?    t1760:8'b0; // send tone
+        data_out <= (d0 + d1 + d2 + d3 + d4 + d5 + d6 + d7 + 
+            d8 + d9 + d10 + d11 + d12 + d13 + d14 + d15 + d16 + 
+            d17 + d18 + d19 + d20 + d21 + d22 + d23 + d24 + d25 + 
+            d26 + d27 + d28 + d29 + d30 + d31 + d32 + d33 + d34 + 
+            d35 + d36 + d37 + d38 + d39 + d40 + d41 + d42 + d43 + 
+            d44 + d45 + d46 + d47 + d48 + d49 + d50 + d51 + d52 + 
+            d53 + d54 + d55 + d56 + d57 + d58 + d59 + d60);
     end                            
 endmodule                              
 

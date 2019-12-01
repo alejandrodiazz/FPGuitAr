@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2019.1.2 (lin64) Build 2615518 Fri Aug  9 15:53:29 MDT 2019
-| Date             : Tue Nov 26 23:23:58 2019
+| Date             : Sun Dec  1 15:13:28 2019
 | Host             : eecs-digital-207 running 64-bit Ubuntu 14.04.6 LTS
 | Command          : report_power -file labkit_power_routed.rpt -pb labkit_power_summary_routed.pb -rpx labkit_power_routed.rpx
 | Design           : labkit
@@ -52,14 +52,14 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Clocks         |     0.008 |        5 |       --- |             --- |
-| Slice Logic    |     0.006 |     6691 |       --- |             --- |
-|   LUT as Logic |     0.004 |     2881 |     63400 |            4.54 |
-|   CARRY4       |     0.001 |      679 |     15850 |            4.28 |
-|   Register     |    <0.001 |     2058 |    126800 |            1.62 |
-|   F7/F8 Muxes  |    <0.001 |      148 |     63400 |            0.23 |
-|   Others       |     0.000 |      298 |       --- |             --- |
-| Signals        |     0.008 |     5079 |       --- |             --- |
+| Clocks         |     0.009 |        5 |       --- |             --- |
+| Slice Logic    |     0.006 |    10094 |       --- |             --- |
+|   LUT as Logic |     0.003 |     3796 |     63400 |            5.99 |
+|   CARRY4       |     0.002 |     1003 |     15850 |            6.33 |
+|   Register     |    <0.001 |     3920 |    126800 |            3.09 |
+|   F7/F8 Muxes  |    <0.001 |      152 |     63400 |            0.24 |
+|   Others       |     0.000 |      477 |       --- |             --- |
+| Signals        |     0.006 |     7457 |       --- |             --- |
 | Block RAM      |     0.009 |       72 |       135 |           53.33 |
 | MMCM           |     0.122 |        1 |         6 |           16.67 |
 | DSPs           |     0.002 |        4 |       240 |            1.67 |
@@ -148,15 +148,15 @@ Table of Contents
 +--------------+-----------+
 | labkit       |     0.163 |
 |   clkdivider |     0.122 |
-|   pg         |     0.028 |
-|     audio1   |     0.005 |
-|       myrec  |     0.005 |
+|   pg         |     0.030 |
+|     audio1   |     0.009 |
+|       myrec  |     0.009 |
 |     hd       |     0.016 |
 |       d1     |     0.004 |
 |       d10    |     0.004 |
 |       d100   |     0.004 |
 |       d1000  |     0.004 |
-|     notegen  |     0.004 |
+|     notegen  |     0.003 |
 |   xvga1      |     0.002 |
 +--------------+-----------+
 

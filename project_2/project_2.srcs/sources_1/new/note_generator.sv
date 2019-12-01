@@ -163,7 +163,7 @@ module note_generator(
     logic [8:0] note_length;
     logic [11:0] note_color;
     logic [26:0] speed;
-    assign speed = bpm / 52;
+    assign speed = bpm / 30;    // controls rate of falling and distance between notes
     logic [26:0] speed_counter;
     logic activate_note;
     logic activate_wait;
@@ -289,11 +289,11 @@ module note_generator(
             
             // determine length of notes
             case(curr_note_length) 
-                3'd0: note_length <= 9'b000011000;
-                3'd1: note_length <= 9'b000110000;
-                3'd2: note_length <= 9'b001100000;
-                3'd3: note_length <= 9'b011000000;
-                3'd4: note_length <= 9'b110000000;
+                3'd0: note_length <= 9'b000011000;  //16th note
+                3'd1: note_length <= 9'b000110000;  // 8th note
+                3'd2: note_length <= 9'b001100000;  // 1/4th note
+                3'd3: note_length <= 9'b011000000;  // 1/2 note
+                3'd4: note_length <= 9'b110000000;  // whole note
             endcase
             
             // determine note color based on octave
