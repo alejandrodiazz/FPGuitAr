@@ -2,8 +2,8 @@
 # Vivado v2019.1.2 (64-bit)
 # SW Build 2615518 on Fri Aug  9 15:53:29 MDT 2019
 # IP Build 2614745 on Fri Aug  9 20:55:02 MDT 2019
-# Start of session at: Mon Dec  2 15:02:02 2019
-# Process ID: 15625
+# Start of session at: Mon Dec  2 17:41:01 2019
+# Process ID: 31623
 # Current directory: /afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.runs/synth_1
 # Command line: vivado -log labkit.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source labkit.tcl
 # Log file: /afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.runs/synth_1/labkit.vds

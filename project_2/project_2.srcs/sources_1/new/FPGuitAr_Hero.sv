@@ -65,9 +65,22 @@ module FPGuitAr_Hero (
             .clk_in(vclock_in), .digit_pixels(digit_pixels) );
    
    // DEMO INTRO PIXELS         
-    wire [11:0] dpixel0;  // output for digit pixel from module
-    picture_blob_digit  d1(.WIDTH(72),.HEIGHT(77),.pixel_clk_in(vclock_in), .x_in(400),.y_in(300),
+    wire [11:0] dpixel0, dpixel1, dpixel2; //dpixel3; //dpixel4, dpixel5, dpixel6;  // output for digit pixel from module
+    picture_blob_digit  d0(.WIDTH(72),.HEIGHT(77),.pixel_clk_in(vclock_in), .x_in(600),.y_in(50),
         .hcount_in(hcount_in),.vcount_in(vcount_in), .pixel_out(dpixel0), .offset(0), .digit(0));
+    picture_blob_digit  d1(.WIDTH(72),.HEIGHT(77),.pixel_clk_in(vclock_in), .x_in(600),.y_in(150),
+        .hcount_in(hcount_in),.vcount_in(vcount_in), .pixel_out(dpixel1), .offset(0), .digit(1));
+    picture_blob_digit  d2(.WIDTH(72),.HEIGHT(77),.pixel_clk_in(vclock_in), .x_in(600),.y_in(250),
+        .hcount_in(hcount_in),.vcount_in(vcount_in), .pixel_out(dpixel2), .offset(0), .digit(2));
+//    picture_blob_digit  d3(.WIDTH(72),.HEIGHT(77),.pixel_clk_in(vclock_in), .x_in(600),.y_in(350),
+//        .hcount_in(hcount_in),.vcount_in(vcount_in), .pixel_out(dpixel3), .offset(0), .digit(3));
+//    picture_blob_digit  d4(.WIDTH(72),.HEIGHT(77),.pixel_clk_in(vclock_in), .x_in(600),.y_in(450),
+//        .hcount_in(hcount_in),.vcount_in(vcount_in), .pixel_out(dpixel4), .offset(0), .digit(4));
+//    picture_blob_digit  d5(.WIDTH(72),.HEIGHT(77),.pixel_clk_in(vclock_in), .x_in(600),.y_in(550),
+//        .hcount_in(hcount_in),.vcount_in(vcount_in), .pixel_out(dpixel5), .offset(0), .digit(5));
+//    picture_blob_digit  d6(.WIDTH(72),.HEIGHT(77),.pixel_clk_in(vclock_in), .x_in(600),.y_in(650),
+//        .hcount_in(hcount_in),.vcount_in(vcount_in), .pixel_out(dpixel6), .offset(0), .digit(6));
+       
 
    // Hands
    logic [10:0] hand1_x;     // location of hand on screen 
@@ -108,6 +121,7 @@ module FPGuitAr_Hero (
    logic[3:0] c;
    
    logic [6:0] beat; // up to 127 beats
+   logic reset_beat;
    logic [26:0] bpm;
    logic [35:0] music_out;
    logic [11:0] note_pixels;
@@ -116,10 +130,10 @@ module FPGuitAr_Hero (
    logic add_to_score;
    logic [3:0] song;
    logic [2:0] speed;
-   assign song = sw[5:2];
+//   assign song = sw[5:2];
    assign speed = sw[8:6];
+   beat_generator meter1(.reset(reset_beat), .clk_in(vclock_in), .bpm(bpm), .beat(beat));
    music_lookup music(.beat(beat),.song(song), .clk_in(vclock_in), .music_out(music_out));
-   beat_generator meter1(.reset(reset_in), .clk_in(vclock_in), .bpm(bpm), .beat(beat));
    note_generator notegen(.reset(reset_in), .clk_in(vclock_in), .hcount_in(hcount_in),.vcount_in(vcount_in),
         .beat(beat), .bpm(bpm), .music_out(music_out), .pixel(note_pixels), .testing(testing), .pixel_step(pixel_step));
         
@@ -132,7 +146,6 @@ module FPGuitAr_Hero (
    logic [3:0]  game_state;
    logic [7:0] button_click_counter;
    logic [9:0] menu_array;
-   logic reset_score;
    always @ (posedge vclock_in) begin 
         // PIXEL OUT          
 //        if ((hand_pixel & planet_pixel) == 0)begin      // if puck and planet do not overlap
@@ -150,26 +163,38 @@ module FPGuitAr_Hero (
             hand2_x <= 720; hand2_y <= 600;
             notes <= 0;
             score <= 0;
-            reset_score <= 0;
             game_state <= 1;
             button_click_counter <= 0;
         end else if (game_state == 1) begin
-            alpha_pixel <= dpixel0 | hand1_pixel;
+            alpha_pixel <= hand1_pixel | dpixel0 | dpixel1 | dpixel2; //| dpixel3; //| dpixel4 | dpixel5 | dpixel6;
+            reset_beat <= 1;
             
             if(button_click_counter == 200)begin
                 game_state <= 2;    // goes to next menu if button is selected
                 hand1_x <= 200; hand1_y <= 600;  // reset hands (probably won't overlap with hand movement)
+                score <= 0;
             end
             
             if(vcount_in == 1 && hcount_in == 1) begin          // counts hand button intersect time
-                if(menu_array[0] == 1) begin
-                    button_click_counter <= button_click_counter + 1;
-                end else button_click_counter <= 0;
                 menu_array <= 0;
+                if(menu_array[0] == 1)begin button_click_counter <= button_click_counter + 1;      song <= 0; end
+                else if(menu_array[1] == 1)begin button_click_counter <= button_click_counter + 1; song <= 1; end
+                else if(menu_array[2] == 1)begin button_click_counter <= button_click_counter + 1; song <= 3; end
+//                else if(menu_array[3] == 1)begin button_click_counter <= button_click_counter + 1; song <= 3; end
+//                else if(menu_array[4] == 1)begin button_click_counter <= button_click_counter + 1; song <= 4; end
+//                else if(menu_array[5] == 1)begin button_click_counter <= button_click_counter + 1; song <= 5; end
+//                else if(menu_array[6] == 1)begin button_click_counter <= button_click_counter + 1; song <= 6; end
+                else button_click_counter <= 0;
             end
             
-            if(hand1_pixel != 0 && dpixel0 != 0) begin          // checks for hand button intersect
-                menu_array[0] <= 1;
+            if(hand1_pixel != 0) begin          // checks for hand button intersect
+                if(dpixel0 != 0)  menu_array[0] <= 1;
+                if(dpixel1 != 0)  menu_array[1] <= 1;
+                if(dpixel2 != 0)  menu_array[2] <= 1;
+//                menu_array[3] <= (dpixel3 != 0)? 1:0;
+//                menu_array[4] <= (dpixel4 != 0)? 1:0;
+//                menu_array[5] <= (dpixel5 != 0)? 1:0;
+//                menu_array[6] <= (dpixel6 != 0)? 1:0;
             end
             
             // HAND1 Movement
@@ -206,23 +231,25 @@ module FPGuitAr_Hero (
             end
             
         end else if(game_state == 2) begin
-            
+            reset_beat <= 0;    // end reset beat pulse
             // PIXELS
-            alpha_pixel <= note_pixels | hand1_pixel | hand2_pixel | planet_pixel | digit_pixels;
+            alpha_pixel <= note_pixels | hand1_pixel | hand2_pixel | digit_pixels;
             // SPEED
             case(speed)
                 3'd0: bpm <= 65000000;
                 3'd1: bpm <= 48750000;
                 3'd2: bpm <= 32500000;
                 3'd3: bpm <= 16250000;
-                3'd4: bpm <= 8125000;
+                3'd4: bpm <= 13000000;
+                3'd5: bpm <= 10000000;
+                3'd6: bpm <= 8125000;
+                3'd7: bpm <= 7000000;
             endcase
-            // SCORE
-            if( (beat == 0) && reset_score) begin
-                score<= 0; reset_score <= 0;
-            end else if (beat != 0) begin
-                reset_score <= 1;
-            end
+            
+            if(beat == 127) begin // GO BACK to START
+                game_state <= 0;
+            end 
+            
             // AUDIO
             if((vcount_in == 1) && (hcount_in == 1)) begin      // EVERY FRAME check flags
                 n_array <= 0;                                   // reset all flags

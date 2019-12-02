@@ -135,6 +135,62 @@ module blob
 endmodule
 
 
+//////////////////////////////////////////////////////////////////////
+//
+// blob: generate rectangle on screen
+//
+//////////////////////////////////////////////////////////////////////
+module note_blob
+   (input [10:0] width,
+    input [2:0] height,
+    input[11:0] color, 
+    input pixel_clk_in,
+    input [10:0] x_in,hcount_in,
+    input [9:0] y_in,vcount_in,
+    output logic [11:0] pixel_out);
+            
+    always_comb begin
+        case(height) 
+            3'd0: begin
+                if ((hcount_in >= x_in && hcount_in < (x_in+width)) &&
+                (vcount_in >= y_in && vcount_in < (y_in+ 9'b000011000)))
+                pixel_out = color;
+                else pixel_out = 0;
+            end //16th note
+            3'd1: begin
+                if ((hcount_in >= x_in && hcount_in < (x_in+width)) &&
+                (vcount_in >= y_in && vcount_in < (y_in+ 9'b000110000)))
+                pixel_out = color;
+                else pixel_out = 0;
+            end  // 8th note
+            3'd2: begin
+                if ((hcount_in >= x_in && hcount_in < (x_in+width)) &&
+                (vcount_in >= y_in && vcount_in < (y_in+ 9'b001100000)))
+                pixel_out = color;
+                else pixel_out = 0;
+            end // 1/4th note
+            3'd3: begin
+                if ((hcount_in >= x_in && hcount_in < (x_in+width)) &&
+                (vcount_in >= y_in && vcount_in < (y_in+9'b011000000)))
+                pixel_out = color;
+                else pixel_out = 0;
+            end // 1/2 note
+            3'd4: begin
+                if ((hcount_in >= x_in && hcount_in < (x_in+width)) &&
+                (vcount_in >= y_in && vcount_in < (y_in+9'b110000000)))
+                pixel_out = color;
+                else pixel_out = 0;
+            end // whole note
+            
+//            3'd0: note_length <= 9'b000011000;  //16th note
+//            3'd1: note_length <= 9'b000110000;  // 8th note
+//            3'd2: note_length <= 9'b001100000;  // 1/4th note
+//            3'd3: note_length <= 9'b011000000;  // 1/2 note
+//            3'd4: note_length <= 9'b110000000;  // whole note
+        endcase      
+   end
+endmodule
+
 
 //module red_coe(
 //    input clka,
