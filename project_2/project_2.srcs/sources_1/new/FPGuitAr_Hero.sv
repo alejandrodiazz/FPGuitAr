@@ -59,9 +59,15 @@ module FPGuitAr_Hero (
    audio_gen audio1( .clk_100mhz(clk_100), .reset(reset_in), .sw(sw), .notes(notes),
                 .aud_pwm(aud_pwm), .aud_sd(aud_sd)); // CHANGE running on 65MHz clock
    
+   // SCORE PIXELS
    wire [11:0] digit_pixels;             
    hex_to_decimal hd(.reset(reset_in), .vcount_in(vcount_in), .hcount_in(hcount_in), .score(score),
             .clk_in(vclock_in), .digit_pixels(digit_pixels) );
+   
+   // DEMO INTRO PIXELS         
+    wire [11:0] dpixel0;  // output for digit pixel from module
+    picture_blob_digit  d1(.WIDTH(72),.HEIGHT(77),.pixel_clk_in(vclock_in), .x_in(400),.y_in(300),
+        .hcount_in(hcount_in),.vcount_in(vcount_in), .pixel_out(dpixel0), .offset(0), .digit(0));
 
    // Hands
    logic [10:0] hand1_x;     // location of hand on screen 
@@ -123,6 +129,9 @@ module FPGuitAr_Hero (
    logic [20:0] hand1_counter;
    logic [20:0] hand2_counter;
    logic [60:0] n_array;
+   logic [3:0]  game_state;
+   logic [7:0] button_click_counter;
+   logic [9:0] menu_array;
    logic reset_score;
    always @ (posedge vclock_in) begin 
         // PIXEL OUT          
@@ -134,16 +143,72 @@ module FPGuitAr_Hero (
 //            c <= ((hand_pixel[3:0] * m) >> n) | (planet_pixel[3:0] - ((planet_pixel[3:0] * m) >> n));
 //            alpha_pixel <= {a,b,c};
 //        end
-        alpha_pixel <= note_pixels | hand1_pixel | hand2_pixel | planet_pixel | digit_pixels;
         
         // MOVING HANDS
-        if(reset_in) begin                      // reset values on a reset
-            hand1_x <= 200; hand1_y <= 600;                    // reset hands
+        if( (game_state == 0) || reset_in) begin                      // reset values on a reset
+            hand1_x <= 400; hand1_y <= 600;                    // reset hands
             hand2_x <= 720; hand2_y <= 600;
             notes <= 0;
             score <= 0;
             reset_score <= 0;
-        end else begin
+            game_state <= 1;
+            button_click_counter <= 0;
+        end else if (game_state == 1) begin
+            alpha_pixel <= dpixel0 | hand1_pixel;
+            
+            if(button_click_counter == 200)begin
+                game_state <= 2;    // goes to next menu if button is selected
+                hand1_x <= 200; hand1_y <= 600;  // reset hands (probably won't overlap with hand movement)
+            end
+            
+            if(vcount_in == 1 && hcount_in == 1) begin          // counts hand button intersect time
+                if(menu_array[0] == 1) begin
+                    button_click_counter <= button_click_counter + 1;
+                end else button_click_counter <= 0;
+                menu_array <= 0;
+            end
+            
+            if(hand1_pixel != 0 && dpixel0 != 0) begin          // checks for hand button intersect
+                menu_array[0] <= 1;
+            end
+            
+            // HAND1 Movement
+            if (btnl) begin
+                if(hand1_counter == 150000) begin
+                    hand1_x <= hand1_x - 1;
+                    hand1_counter <= 0;
+                end else begin
+                    hand1_counter <= hand1_counter + 1;
+                end
+            end else if(btnr) begin
+                if(hand1_counter == 150000) begin
+                    hand1_x <= hand1_x + 1;
+                    hand1_counter <= 0;
+                end else begin
+                    hand1_counter <= hand1_counter + 1;
+                end
+            end else if(btnu) begin
+                if(hand1_counter == 150000) begin
+                    hand1_y <= hand1_y - 1;
+                    hand1_counter <= 0;
+                end else begin
+                    hand1_counter <= hand1_counter + 1;
+                end
+            end else if(btnd) begin
+                if(hand1_counter == 150000) begin
+                    hand1_y <= hand1_y + 1;
+                    hand1_counter <= 0;
+                end else begin
+                    hand1_counter <= hand1_counter + 1;
+                end
+            end else begin
+                hand1_counter <= 0;
+            end
+            
+        end else if(game_state == 2) begin
+            
+            // PIXELS
+            alpha_pixel <= note_pixels | hand1_pixel | hand2_pixel | planet_pixel | digit_pixels;
             // SPEED
             case(speed)
                 3'd0: bpm <= 65000000;
@@ -287,4 +352,5 @@ module FPGuitAr_Hero (
             
         end
     end
+    
 endmodule

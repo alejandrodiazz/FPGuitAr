@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.1.2 (lin64) Build 2615518 Fri Aug  9 15:53:29 MDT 2019
-| Date         : Sun Dec  1 15:58:10 2019
+| Date         : Mon Dec  2 15:03:07 2019
 | Host         : eecs-digital-207 running 64-bit Ubuntu 14.04.6 LTS
 | Command      : report_utilization -file labkit_utilization_synth.rpt -pb labkit_utilization_synth.pb
 | Design       : labkit
@@ -30,11 +30,11 @@ Table of Contents
 +-------------------------+------+-------+-----------+-------+
 |        Site Type        | Used | Fixed | Available | Util% |
 +-------------------------+------+-------+-----------+-------+
-| Slice LUTs*             | 4462 |     0 |     63400 |  7.04 |
-|   LUT as Logic          | 4462 |     0 |     63400 |  7.04 |
+| Slice LUTs*             | 4556 |     0 |     63400 |  7.19 |
+|   LUT as Logic          | 4556 |     0 |     63400 |  7.19 |
 |   LUT as Memory         |    0 |     0 |     19000 |  0.00 |
-| Slice Registers         | 4331 |     0 |    126800 |  3.42 |
-|   Register as Flip Flop | 4331 |     0 |    126800 |  3.42 |
+| Slice Registers         | 4356 |     0 |    126800 |  3.44 |
+|   Register as Flip Flop | 4356 |     0 |    126800 |  3.44 |
 |   Register as Latch     |    0 |     0 |    126800 |  0.00 |
 | F7 Muxes                |    8 |     0 |     31700 |  0.03 |
 | F8 Muxes                |    1 |     0 |     15850 | <0.01 |
@@ -56,8 +56,8 @@ Table of Contents
 | 0     |          Yes |           - |            - |
 | 0     |          Yes |           - |          Set |
 | 0     |          Yes |           - |        Reset |
-| 166   |          Yes |         Set |            - |
-| 4165  |          Yes |       Reset |            - |
+| 158   |          Yes |         Set |            - |
+| 4198  |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -80,8 +80,8 @@ Table of Contents
 +----------------+------+-------+-----------+-------+
 |    Site Type   | Used | Fixed | Available | Util% |
 +----------------+------+-------+-----------+-------+
-| DSPs           |    4 |     0 |       240 |  1.67 |
-|   DSP48E1 only |    4 |       |           |       |
+| DSPs           |    5 |     0 |       240 |  2.08 |
+|   DSP48E1 only |    5 |       |           |       |
 +----------------+------+-------+-----------+-------+
 
 
@@ -147,20 +147,20 @@ Table of Contents
 +------------+------+---------------------+
 |  Ref Name  | Used | Functional Category |
 +------------+------+---------------------+
-| FDRE       | 4165 |        Flop & Latch |
-| CARRY4     | 1243 |          CarryLogic |
-| LUT4       | 1203 |                 LUT |
-| LUT2       | 1111 |                 LUT |
-| LUT1       | 1097 |                 LUT |
-| LUT6       |  971 |                 LUT |
-| LUT3       |  732 |                 LUT |
-| LUT5       |  298 |                 LUT |
-| FDSE       |  166 |        Flop & Latch |
+| FDRE       | 4198 |        Flop & Latch |
+| CARRY4     | 1267 |          CarryLogic |
+| LUT4       | 1232 |                 LUT |
+| LUT2       | 1139 |                 LUT |
+| LUT1       | 1120 |                 LUT |
+| LUT6       |  994 |                 LUT |
+| LUT3       |  729 |                 LUT |
+| LUT5       |  310 |                 LUT |
+| FDSE       |  158 |        Flop & Latch |
 | OBUF       |   37 |                  IO |
 | IBUF       |   18 |                  IO |
 | OBUFT      |   17 |                  IO |
 | MUXF7      |    8 |               MuxFx |
-| DSP48E1    |    4 |    Block Arithmetic |
+| DSP48E1    |    5 |    Block Arithmetic |
 | BUFG       |    2 |               Clock |
 | MUXF8      |    1 |               MuxFx |
 | MMCME2_ADV |    1 |               Clock |
@@ -173,8 +173,8 @@ Table of Contents
 +---------------+------+
 |    Ref Name   | Used |
 +---------------+------+
-| image_rom_map |    4 |
-| image_rom     |    4 |
+| image_rom_map |    5 |
+| image_rom     |    5 |
 +---------------+------+
 
 

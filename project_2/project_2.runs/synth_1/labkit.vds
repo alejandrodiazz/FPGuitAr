@@ -2,8 +2,8 @@
 # Vivado v2019.1.2 (64-bit)
 # SW Build 2615518 on Fri Aug  9 15:53:29 MDT 2019
 # IP Build 2614745 on Fri Aug  9 20:55:02 MDT 2019
-# Start of session at: Sun Dec  1 15:57:07 2019
-# Process ID: 24574
+# Start of session at: Mon Dec  2 15:02:02 2019
+# Process ID: 15625
 # Current directory: /afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.runs/synth_1
 # Command line: vivado -log labkit.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source labkit.tcl
 # Log file: /afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.runs/synth_1/labkit.vds
@@ -16,9 +16,9 @@ Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Device 21-403] Loading part xc7a100tcsg324-1
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 24593 
+INFO: Helper process launched with PID 15643 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 1806.082 ; gain = 153.496 ; free physical = 1584 ; free virtual = 11307
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 1806.758 ; gain = 154.496 ; free physical = 2639 ; free virtual = 13227
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'labkit' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/top_level.sv:14]
 INFO: [Synth 8-6157] synthesizing module 'clk_wiz_65' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/clk_wizard_65.sv:66]
@@ -358,10 +358,10 @@ WARNING: [Synth 8-3848] Net sampled_adc_data in module/entity audio_gen does not
 INFO: [Synth 8-6155] done synthesizing module 'audio_gen' (13#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:25]
 INFO: [Synth 8-6157] synthesizing module 'hex_to_decimal' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/hex_to_decimal.sv:23]
 INFO: [Synth 8-6157] synthesizing module 'picture_blob_digit' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/picture_blob.sv:28]
-INFO: [Synth 8-6157] synthesizing module 'image_rom' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.runs/synth_1/.Xil/Vivado-24574-eecs-digital-207/realtime/image_rom_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'image_rom' (14#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.runs/synth_1/.Xil/Vivado-24574-eecs-digital-207/realtime/image_rom_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'image_rom_map' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.runs/synth_1/.Xil/Vivado-24574-eecs-digital-207/realtime/image_rom_map_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'image_rom_map' (15#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.runs/synth_1/.Xil/Vivado-24574-eecs-digital-207/realtime/image_rom_map_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'image_rom' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.runs/synth_1/.Xil/Vivado-15625-eecs-digital-207/realtime/image_rom_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'image_rom' (14#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.runs/synth_1/.Xil/Vivado-15625-eecs-digital-207/realtime/image_rom_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'image_rom_map' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.runs/synth_1/.Xil/Vivado-15625-eecs-digital-207/realtime/image_rom_map_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'image_rom_map' (15#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.runs/synth_1/.Xil/Vivado-15625-eecs-digital-207/realtime/image_rom_map_stub.v:6]
 INFO: [Synth 8-6155] done synthesizing module 'picture_blob_digit' (16#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/picture_blob.sv:28]
 INFO: [Synth 8-6155] done synthesizing module 'hex_to_decimal' (17#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/hex_to_decimal.sv:23]
 INFO: [Synth 8-6157] synthesizing module 'blob' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/top_level.sv:120]
@@ -378,7 +378,7 @@ INFO: [Synth 8-155] case statement is not full and has no default [/afs/athena.m
 INFO: [Synth 8-6155] done synthesizing module 'note_positions' (21#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/note_positions.sv:23]
 INFO: [Synth 8-155] case statement is not full and has no default [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/note_generator.sv:264]
 INFO: [Synth 8-6155] done synthesizing module 'note_generator' (22#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/note_generator.sv:23]
-INFO: [Synth 8-155] case statement is not full and has no default [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/FPGuitAr_Hero.sv:148]
+INFO: [Synth 8-155] case statement is not full and has no default [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/FPGuitAr_Hero.sv:211]
 WARNING: [Synth 8-3848] Net led in module/entity FPGuitAr_Hero does not have driver. [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/FPGuitAr_Hero.sv:48]
 INFO: [Synth 8-6155] done synthesizing module 'FPGuitAr_Hero' (23#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/FPGuitAr_Hero.sv:29]
 INFO: [Synth 8-6155] done synthesizing module 'labkit' (24#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/top_level.sv:14]
@@ -426,7 +426,7 @@ WARNING: [Synth 8-3331] design FPGuitAr_Hero has unconnected port pspeed_in[2]
 WARNING: [Synth 8-3331] design FPGuitAr_Hero has unconnected port pspeed_in[1]
 WARNING: [Synth 8-3331] design FPGuitAr_Hero has unconnected port pspeed_in[0]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:05 . Memory (MB): peak = 1883.805 ; gain = 231.219 ; free physical = 1574 ; free virtual = 11299
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1885.480 ; gain = 233.219 ; free physical = 2655 ; free virtual = 13246
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -439,10 +439,10 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 1901.613 ; gain = 249.027 ; free physical = 1583 ; free virtual = 11308
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 1903.289 ; gain = 251.027 ; free physical = 2664 ; free virtual = 13255
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 1901.613 ; gain = 249.027 ; free physical = 1583 ; free virtual = 11308
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 1903.289 ; gain = 251.027 ; free physical = 2664 ; free virtual = 13255
 ---------------------------------------------------------------------------------
 INFO: [Netlist 29-17] Analyzing 1 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -458,6 +458,8 @@ Parsing XDC File [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/proje
 Finished Parsing XDC File [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/ip/image_rom_1/image_rom/image_rom_in_context.xdc] for cell 'pg/hd/d100/rom1'
 Parsing XDC File [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/ip/image_rom_1/image_rom/image_rom_in_context.xdc] for cell 'pg/hd/d1000/rom1'
 Finished Parsing XDC File [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/ip/image_rom_1/image_rom/image_rom_in_context.xdc] for cell 'pg/hd/d1000/rom1'
+Parsing XDC File [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/ip/image_rom_1/image_rom/image_rom_in_context.xdc] for cell 'pg/d1/rom1'
+Finished Parsing XDC File [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/ip/image_rom_1/image_rom/image_rom_in_context.xdc] for cell 'pg/d1/rom1'
 Parsing XDC File [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/ip/image_rom_map_1/image_rom_map/image_rom_map_in_context.xdc] for cell 'pg/hd/d1/rcm'
 Finished Parsing XDC File [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/ip/image_rom_map_1/image_rom_map/image_rom_map_in_context.xdc] for cell 'pg/hd/d1/rcm'
 Parsing XDC File [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/ip/image_rom_map_1/image_rom_map/image_rom_map_in_context.xdc] for cell 'pg/hd/d10/rcm'
@@ -466,6 +468,8 @@ Parsing XDC File [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/proje
 Finished Parsing XDC File [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/ip/image_rom_map_1/image_rom_map/image_rom_map_in_context.xdc] for cell 'pg/hd/d100/rcm'
 Parsing XDC File [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/ip/image_rom_map_1/image_rom_map/image_rom_map_in_context.xdc] for cell 'pg/hd/d1000/rcm'
 Finished Parsing XDC File [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/ip/image_rom_map_1/image_rom_map/image_rom_map_in_context.xdc] for cell 'pg/hd/d1000/rcm'
+Parsing XDC File [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/ip/image_rom_map_1/image_rom_map/image_rom_map_in_context.xdc] for cell 'pg/d1/rcm'
+Finished Parsing XDC File [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/ip/image_rom_map_1/image_rom_map/image_rom_map_in_context.xdc] for cell 'pg/d1/rcm'
 Parsing XDC File [/afs/athena.mit.edu/user/a/d/addiaz15/Downloads/nexys4_ddr_lab3.xdc]
 WARNING: [Vivado 12-584] No ports matched 'ja[0]'. [/afs/athena.mit.edu/user/a/d/addiaz15/Downloads/nexys4_ddr_lab3.xdc:101]
 WARNING: [Vivado 12-584] No ports matched 'ja[1]'. [/afs/athena.mit.edu/user/a/d/addiaz15/Downloads/nexys4_ddr_lab3.xdc:102]
@@ -490,11 +494,13 @@ Resolution: To avoid this warning, move constraints listed in [.Xil/labkit_propI
 INFO: [Timing 38-2] Deriving generated clocks
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2090.176 ; gain = 0.000 ; free physical = 1449 ; free virtual = 11174
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2087.914 ; gain = 0.000 ; free physical = 2526 ; free virtual = 13116
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.03 . Memory (MB): peak = 2090.176 ; gain = 0.000 ; free physical = 1449 ; free virtual = 11174
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.03 . Memory (MB): peak = 2087.914 ; gain = 0.000 ; free physical = 2526 ; free virtual = 13116
+WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'pg/d1/rcm' at clock pin 'clka' is different from the actual clock period '15.385', this can lead to different synthesis results.
+WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'pg/d1/rom1' at clock pin 'clka' is different from the actual clock period '15.385', this can lead to different synthesis results.
 WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'pg/hd/d1/rcm' at clock pin 'clka' is different from the actual clock period '15.385', this can lead to different synthesis results.
 WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'pg/hd/d1/rom1' at clock pin 'clka' is different from the actual clock period '15.385', this can lead to different synthesis results.
 WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'pg/hd/d10/rcm' at clock pin 'clka' is different from the actual clock period '15.385', this can lead to different synthesis results.
@@ -504,14 +510,14 @@ WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context s
 WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'pg/hd/d1000/rcm' at clock pin 'clka' is different from the actual clock period '15.385', this can lead to different synthesis results.
 WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'pg/hd/d1000/rom1' at clock pin 'clka' is different from the actual clock period '15.385', this can lead to different synthesis results.
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:09 ; elapsed = 00:00:12 . Memory (MB): peak = 2090.176 ; gain = 437.590 ; free physical = 1564 ; free virtual = 11289
+Finished Constraint Validation : Time (s): cpu = 00:00:09 ; elapsed = 00:00:12 . Memory (MB): peak = 2087.914 ; gain = 435.652 ; free physical = 2645 ; free virtual = 13236
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:09 ; elapsed = 00:00:12 . Memory (MB): peak = 2090.176 ; gain = 437.590 ; free physical = 1564 ; free virtual = 11289
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:09 ; elapsed = 00:00:12 . Memory (MB): peak = 2087.914 ; gain = 435.652 ; free physical = 2645 ; free virtual = 13236
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -520,12 +526,14 @@ Applied set_property DONT_TOUCH = true for pg/hd/d1/rom1. (constraint file  auto
 Applied set_property DONT_TOUCH = true for pg/hd/d10/rom1. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for pg/hd/d100/rom1. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for pg/hd/d1000/rom1. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for pg/d1/rom1. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for pg/hd/d1/rcm. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for pg/hd/d10/rcm. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for pg/hd/d100/rcm. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for pg/hd/d1000/rcm. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for pg/d1/rcm. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:09 ; elapsed = 00:00:12 . Memory (MB): peak = 2090.176 ; gain = 437.590 ; free physical = 1566 ; free virtual = 11291
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:09 ; elapsed = 00:00:12 . Memory (MB): peak = 2087.914 ; gain = 435.652 ; free physical = 2647 ; free virtual = 13238
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'hex_to_decimal'
 INFO: [Synth 8-5546] ROM "x0" won't be mapped to RAM because it is too sparse
@@ -560,9 +568,8 @@ INFO: [Synth 8-5546] ROM "x28" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "x29" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "x30" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "x31" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-4471] merging register 'hand2_y_reg[9:0]' into 'hand1_y_reg[9:0]' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/FPGuitAr_Hero.sv:79]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/FPGuitAr_Hero.sv:251]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/FPGuitAr_Hero.sv:270]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/FPGuitAr_Hero.sv:188]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/FPGuitAr_Hero.sv:333]
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
@@ -572,7 +579,7 @@ INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To p
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'hex_to_decimal'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:15 . Memory (MB): peak = 2090.176 ; gain = 437.590 ; free physical = 1553 ; free virtual = 11281
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:15 . Memory (MB): peak = 2087.914 ; gain = 435.652 ; free physical = 2635 ; free virtual = 13229
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -589,13 +596,13 @@ Detailed RTL Component Info :
 	   2 Input     17 Bit       Adders := 4     
 	  62 Input     17 Bit       Adders := 1     
 	   2 Input     16 Bit       Adders := 1     
-	   3 Input     16 Bit       Adders := 4     
+	   3 Input     16 Bit       Adders := 5     
 	  61 Input     12 Bit       Adders := 1     
-	   3 Input     12 Bit       Adders := 39    
-	   2 Input     11 Bit       Adders := 42    
-	   3 Input     11 Bit       Adders := 39    
-	   2 Input     10 Bit       Adders := 72    
-	   2 Input      8 Bit       Adders := 1     
+	   3 Input     12 Bit       Adders := 40    
+	   2 Input     11 Bit       Adders := 43    
+	   3 Input     11 Bit       Adders := 40    
+	   2 Input     10 Bit       Adders := 74    
+	   2 Input      8 Bit       Adders := 2     
 	   2 Input      7 Bit       Adders := 1     
 	   2 Input      5 Bit       Adders := 1     
 	   2 Input      4 Bit       Adders := 4     
@@ -606,45 +613,52 @@ Detailed RTL Component Info :
 	               27 Bit    Registers := 1     
 	               21 Bit    Registers := 2     
 	               17 Bit    Registers := 2     
-	               16 Bit    Registers := 5     
-	               12 Bit    Registers := 41    
+	               16 Bit    Registers := 6     
+	               12 Bit    Registers := 42    
 	               11 Bit    Registers := 35    
-	               10 Bit    Registers := 35    
+	               10 Bit    Registers := 37    
 	                9 Bit    Registers := 33    
-	                8 Bit    Registers := 124   
+	                8 Bit    Registers := 125   
 	                7 Bit    Registers := 3     
 	                6 Bit    Registers := 1     
 	                5 Bit    Registers := 1     
-	                4 Bit    Registers := 8     
+	                4 Bit    Registers := 9     
 	                3 Bit    Registers := 1     
 	                2 Bit    Registers := 2     
 	                1 Bit    Registers := 20    
 +---Muxes : 
-	   2 Input     61 Bit        Muxes := 3     
+	   2 Input     61 Bit        Muxes := 4     
+	   3 Input     61 Bit        Muxes := 1     
 	 128 Input     36 Bit        Muxes := 4     
 	   6 Input     27 Bit        Muxes := 1     
 	   2 Input     21 Bit        Muxes := 2     
 	   2 Input     17 Bit        Muxes := 6     
-	   2 Input     12 Bit        Muxes := 39    
+	   2 Input     12 Bit        Muxes := 41    
 	   4 Input     12 Bit        Muxes := 1     
 	   7 Input     12 Bit        Muxes := 1     
 	   5 Input     12 Bit        Muxes := 1     
 	   3 Input     12 Bit        Muxes := 1     
-	   2 Input     10 Bit        Muxes := 32    
+	   2 Input     11 Bit        Muxes := 4     
+	   3 Input     11 Bit        Muxes := 1     
+	   4 Input     11 Bit        Muxes := 1     
+	   2 Input     10 Bit        Muxes := 36    
 	   6 Input      9 Bit        Muxes := 1     
+	   2 Input      9 Bit        Muxes := 4     
+	   3 Input      9 Bit        Muxes := 1     
 	   8 Input      8 Bit        Muxes := 1     
 	   2 Input      8 Bit        Muxes := 61    
 	   4 Input      6 Bit        Muxes := 1     
 	   2 Input      4 Bit        Muxes := 3     
 	   4 Input      3 Bit        Muxes := 1     
-	   2 Input      2 Bit        Muxes := 3     
-	   2 Input      1 Bit        Muxes := 74    
-	   3 Input      1 Bit        Muxes := 4     
+	   2 Input      2 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 95    
+	   3 Input      1 Bit        Muxes := 14    
 	   5 Input      1 Bit        Muxes := 1     
 	  62 Input      1 Bit        Muxes := 1     
 	   4 Input      1 Bit        Muxes := 4     
 	  32 Input      1 Bit        Muxes := 32    
-	   6 Input      1 Bit        Muxes := 2     
+	   6 Input      1 Bit        Muxes := 1     
+	   8 Input      1 Bit        Muxes := 1     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -749,7 +763,7 @@ Detailed RTL Component Info :
 	               12 Bit    Registers := 1     
 +---Muxes : 
 	   2 Input     12 Bit        Muxes := 1     
-Module picture_blob_digit 
+Module picture_blob_digit__xdcDup__4 
 Detailed RTL Component Info : 
 +---Adders : 
 	   3 Input     16 Bit       Adders := 1     
@@ -775,6 +789,19 @@ Detailed RTL Component Info :
 	   2 Input      2 Bit        Muxes := 1     
 	   2 Input      1 Bit        Muxes := 11    
 	   3 Input      1 Bit        Muxes := 1     
+Module picture_blob_digit 
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input     16 Bit       Adders := 1     
+	   3 Input     12 Bit       Adders := 1     
+	   3 Input     11 Bit       Adders := 1     
+	   2 Input     11 Bit       Adders := 1     
+	   2 Input     10 Bit       Adders := 1     
++---Registers : 
+	               16 Bit    Registers := 1     
+	               12 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     12 Bit        Muxes := 1     
 Module blob 
 Detailed RTL Component Info : 
 +---Adders : 
@@ -841,6 +868,8 @@ Detailed RTL Component Info :
 	   2 Input     21 Bit       Adders := 2     
 	  62 Input     17 Bit       Adders := 1     
 	   2 Input     11 Bit       Adders := 2     
+	   2 Input     10 Bit       Adders := 1     
+	   2 Input      8 Bit       Adders := 1     
 +---Registers : 
 	               61 Bit    Registers := 2     
 	               27 Bit    Registers := 1     
@@ -848,16 +877,27 @@ Detailed RTL Component Info :
 	               17 Bit    Registers := 1     
 	               12 Bit    Registers := 1     
 	               11 Bit    Registers := 2     
-	               10 Bit    Registers := 1     
+	               10 Bit    Registers := 3     
+	                8 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
 	                1 Bit    Registers := 2     
 +---Muxes : 
-	   2 Input     61 Bit        Muxes := 3     
+	   2 Input     61 Bit        Muxes := 4     
+	   3 Input     61 Bit        Muxes := 1     
 	   6 Input     27 Bit        Muxes := 1     
 	   2 Input     21 Bit        Muxes := 2     
 	   2 Input     17 Bit        Muxes := 2     
-	   2 Input      2 Bit        Muxes := 2     
-	   2 Input      1 Bit        Muxes := 5     
-	   6 Input      1 Bit        Muxes := 1     
+	   2 Input     12 Bit        Muxes := 1     
+	   2 Input     11 Bit        Muxes := 4     
+	   3 Input     11 Bit        Muxes := 1     
+	   4 Input     11 Bit        Muxes := 1     
+	   2 Input     10 Bit        Muxes := 4     
+	   2 Input      9 Bit        Muxes := 4     
+	   3 Input      9 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 26    
+	   3 Input      1 Bit        Muxes := 10    
+	   8 Input      1 Bit        Muxes := 1     
 ---------------------------------------------------------------------------------
 Finished RTL Hierarchical Component Statistics
 ---------------------------------------------------------------------------------
@@ -890,6 +930,10 @@ DSP Report: Generating DSP d1000/image_addr_reg, operation Mode is: C+A*(B:0x2d4
 DSP Report: register d1000/image_addr_reg is absorbed into DSP d1000/image_addr_reg.
 DSP Report: operator d1000/image_addr0 is absorbed into DSP d1000/image_addr_reg.
 DSP Report: operator d1000/image_addr1 is absorbed into DSP d1000/image_addr_reg.
+DSP Report: Generating DSP image_addr_reg, operation Mode is: C+A*(B:0x2d4).
+DSP Report: register image_addr_reg is absorbed into DSP image_addr_reg.
+DSP Report: operator image_addr0 is absorbed into DSP image_addr_reg.
+DSP Report: operator image_addr1 is absorbed into DSP image_addr_reg.
 WARNING: [Synth 8-3917] design labkit has port dp driven by constant 1
 WARNING: [Synth 8-3331] design blob has unconnected port pixel_clk_in
 WARNING: [Synth 8-3331] design play_notes has unconnected port mic_in[7]
@@ -941,6 +985,17 @@ INFO: [Synth 8-3886] merging instance 'pg/music/music_out_reg[9]' (FDRE) to 'pg/
 INFO: [Synth 8-3886] merging instance 'pg/music/music_out_reg[0]' (FDRE) to 'pg/music/music_out_reg[17]'
 INFO: [Synth 8-3886] merging instance 'pg/music/music_out_reg[10]' (FDRE) to 'pg/music/music_out_reg[17]'
 INFO: [Synth 8-3886] merging instance 'pg/music/music_out_reg[1]' (FDRE) to 'pg/music/music_out_reg[17]'
+INFO: [Synth 8-3886] merging instance 'pg/d1/digit_selector_reg[0]' (FDE) to 'pg/d1/digit_selector_reg[10]'
+INFO: [Synth 8-3886] merging instance 'pg/d1/digit_selector_reg[1]' (FDE) to 'pg/d1/digit_selector_reg[10]'
+INFO: [Synth 8-3886] merging instance 'pg/d1/digit_selector_reg[2]' (FDE) to 'pg/d1/digit_selector_reg[10]'
+INFO: [Synth 8-3886] merging instance 'pg/d1/digit_selector_reg[3]' (FDE) to 'pg/d1/digit_selector_reg[10]'
+INFO: [Synth 8-3886] merging instance 'pg/d1/digit_selector_reg[4]' (FDE) to 'pg/d1/digit_selector_reg[10]'
+INFO: [Synth 8-3886] merging instance 'pg/d1/digit_selector_reg[5]' (FDE) to 'pg/d1/digit_selector_reg[10]'
+INFO: [Synth 8-3886] merging instance 'pg/d1/digit_selector_reg[6]' (FDE) to 'pg/d1/digit_selector_reg[10]'
+INFO: [Synth 8-3886] merging instance 'pg/d1/digit_selector_reg[7]' (FDE) to 'pg/d1/digit_selector_reg[10]'
+INFO: [Synth 8-3886] merging instance 'pg/d1/digit_selector_reg[8]' (FDE) to 'pg/d1/digit_selector_reg[10]'
+INFO: [Synth 8-3886] merging instance 'pg/d1/digit_selector_reg[9]' (FDE) to 'pg/d1/digit_selector_reg[10]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (pg/d1/\digit_selector_reg[10] )
 INFO: [Synth 8-3886] merging instance 'pg/hd/d1/digit_selector_reg[0]' (FDE) to 'pg/hd/d1/digit_selector_reg[2]'
 INFO: [Synth 8-3886] merging instance 'pg/hd/d1/digit_selector_reg[1]' (FDE) to 'pg/hd/d1/digit_selector_reg[2]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (pg/hd/\d1/digit_selector_reg[2] )
@@ -1029,22 +1084,13 @@ INFO: [Synth 8-3886] merging instance 'pg/notegen/ncolor28_reg[6]' (FDE) to 'pg/
 INFO: [Synth 8-3886] merging instance 'pg/notegen/ncolor28_reg[8]' (FDE) to 'pg/notegen/ncolor28_reg[9]'
 INFO: [Synth 8-3886] merging instance 'pg/notegen/ncolor28_reg[9]' (FDE) to 'pg/notegen/ncolor28_reg[10]'
 INFO: [Synth 8-3886] merging instance 'pg/notegen/ncolor28_reg[10]' (FDE) to 'pg/notegen/ncolor28_reg[11]'
-INFO: [Synth 8-3886] merging instance 'pg/notegen/nlen28_reg[0]' (FDE) to 'pg/notegen/nlen28_reg[2]'
-INFO: [Synth 8-3886] merging instance 'pg/notegen/nlen28_reg[1]' (FDE) to 'pg/notegen/nlen28_reg[2]'
-INFO: [Synth 8-3886] merging instance 'pg/notegen/x27_reg[0]' (FDE) to 'pg/notegen/nlen27_reg[2]'
-INFO: [Synth 8-3886] merging instance 'pg/notegen/x27_reg[10]' (FDE) to 'pg/notegen/nlen27_reg[2]'
-INFO: [Synth 8-3886] merging instance 'pg/notegen/ncolor27_reg[0]' (FDE) to 'pg/notegen/ncolor27_reg[1]'
-INFO: [Synth 8-3886] merging instance 'pg/notegen/ncolor27_reg[1]' (FDE) to 'pg/notegen/ncolor27_reg[2]'
-INFO: [Synth 8-3886] merging instance 'pg/notegen/ncolor27_reg[2]' (FDE) to 'pg/notegen/ncolor27_reg[3]'
-INFO: [Synth 8-3886] merging instance 'pg/notegen/ncolor27_reg[4]' (FDE) to 'pg/notegen/ncolor27_reg[5]'
-INFO: [Synth 8-3886] merging instance 'pg/notegen/ncolor27_reg[5]' (FDE) to 'pg/notegen/ncolor27_reg[6]'
-INFO: [Synth 8-3886] merging instance 'pg/notegen/ncolor27_reg[6]' (FDE) to 'pg/notegen/ncolor27_reg[7]'
 INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (pg/\hand1_y_reg[8] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (pg/\hand1_y_reg[9] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (pg/\hand2_y_reg[8] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (pg/\hand2_y_reg[9] )
 INFO: [Synth 8-3333] propagating constant 1 across sequential element (pg/\bpm_reg[22] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (pg/\bpm_reg[26] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (pg/music/\music_out_reg[7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (pg/\game_state_reg[3] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (pg/notegen/\curr_note_length_reg[2] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (pg/notegen/\nlen0_reg[2] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (pg/notegen/\nlen31_reg[2] )
@@ -1112,7 +1158,7 @@ INFO: [Synth 8-3333] propagating constant 0 across sequential element (pg/notege
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (pg/notegen/\nlen2_reg[8] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (pg/notegen/\nlen1_reg[8] )
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:28 ; elapsed = 00:00:34 . Memory (MB): peak = 2090.176 ; gain = 437.590 ; free physical = 1499 ; free virtual = 11243
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:29 ; elapsed = 00:00:34 . Memory (MB): peak = 2087.914 ; gain = 435.652 ; free physical = 2582 ; free virtual = 13192
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -1197,6 +1243,7 @@ DSP: Preliminary Mapping  Report (see note below)
 |picture_blob_digit | C+A*(B:0x2d4) | 16     | 10     | 16     | -      | 16     | 0    | 0    | 0    | -    | -     | 0    | 1    | 
 |picture_blob_digit | C+A*(B:0x2d4) | 16     | 10     | 16     | -      | 16     | 0    | 0    | 0    | -    | -     | 0    | 1    | 
 |picture_blob_digit | C+A*(B:0x2d4) | 16     | 10     | 16     | -      | 16     | 0    | 0    | 0    | -    | -     | 0    | 1    | 
+|picture_blob_digit | C+A*(B:0x2d4) | 16     | 10     | 16     | -      | 16     | 0    | 0    | 0    | -    | -     | 0    | 1    | 
 +-------------------+---------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
 
 Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
@@ -1213,13 +1260,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:34 ; elapsed = 00:00:39 . Memory (MB): peak = 2090.176 ; gain = 437.590 ; free physical = 1360 ; free virtual = 11104
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:34 ; elapsed = 00:00:40 . Memory (MB): peak = 2087.914 ; gain = 435.652 ; free physical = 2443 ; free virtual = 13054
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:37 ; elapsed = 00:00:43 . Memory (MB): peak = 2090.176 ; gain = 437.590 ; free physical = 1330 ; free virtual = 11075
+Finished Timing Optimization : Time (s): cpu = 00:00:38 ; elapsed = 00:00:44 . Memory (MB): peak = 2087.914 ; gain = 435.652 ; free physical = 2415 ; free virtual = 13026
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1231,7 +1278,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:41 ; elapsed = 00:00:47 . Memory (MB): peak = 2100.102 ; gain = 447.516 ; free physical = 1325 ; free virtual = 11069
+Finished Technology Mapping : Time (s): cpu = 00:00:42 ; elapsed = 00:00:48 . Memory (MB): peak = 2100.910 ; gain = 448.648 ; free physical = 2409 ; free virtual = 13020
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1316,7 +1363,7 @@ INFO: [Synth 8-5365] Flop pg/audio1/myrec/tonet55/lut_1/amp_out_reg[7] is being 
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:42 ; elapsed = 00:00:48 . Memory (MB): peak = 2100.105 ; gain = 447.520 ; free physical = 1324 ; free virtual = 11068
+Finished IO Insertion : Time (s): cpu = 00:00:43 ; elapsed = 00:00:49 . Memory (MB): peak = 2100.914 ; gain = 448.652 ; free physical = 2407 ; free virtual = 13019
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -1329,7 +1376,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:42 ; elapsed = 00:00:48 . Memory (MB): peak = 2100.105 ; gain = 447.520 ; free physical = 1324 ; free virtual = 11068
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:43 ; elapsed = 00:00:49 . Memory (MB): peak = 2100.914 ; gain = 448.652 ; free physical = 2407 ; free virtual = 13019
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1341,25 +1388,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:43 ; elapsed = 00:00:49 . Memory (MB): peak = 2100.105 ; gain = 447.520 ; free physical = 1323 ; free virtual = 11068
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:44 ; elapsed = 00:00:50 . Memory (MB): peak = 2100.914 ; gain = 448.652 ; free physical = 2405 ; free virtual = 13017
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:43 ; elapsed = 00:00:49 . Memory (MB): peak = 2100.105 ; gain = 447.520 ; free physical = 1323 ; free virtual = 11068
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:44 ; elapsed = 00:00:50 . Memory (MB): peak = 2100.914 ; gain = 448.652 ; free physical = 2406 ; free virtual = 13017
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:43 ; elapsed = 00:00:49 . Memory (MB): peak = 2100.105 ; gain = 447.520 ; free physical = 1323 ; free virtual = 11068
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:44 ; elapsed = 00:00:50 . Memory (MB): peak = 2100.914 ; gain = 448.652 ; free physical = 2406 ; free virtual = 13017
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:43 ; elapsed = 00:00:49 . Memory (MB): peak = 2100.105 ; gain = 447.520 ; free physical = 1323 ; free virtual = 11068
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:44 ; elapsed = 00:00:50 . Memory (MB): peak = 2100.914 ; gain = 448.652 ; free physical = 2406 ; free virtual = 13017
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -1369,8 +1416,8 @@ Report BlackBoxes:
 +------+--------------+----------+
 |      |BlackBox name |Instances |
 +------+--------------+----------+
-|1     |image_rom     |         4|
-|2     |image_rom_map |         4|
+|1     |image_rom     |         5|
+|2     |image_rom_map |         5|
 +------+--------------+----------+
 
 Report Cell Usage: 
@@ -1378,41 +1425,43 @@ Report Cell Usage:
 |      |Cell             |Count |
 +------+-----------------+------+
 |1     |image_rom        |     1|
-|2     |image_rom__4     |     1|
-|3     |image_rom__5     |     1|
-|4     |image_rom__6     |     1|
-|5     |image_rom_map    |     1|
-|6     |image_rom_map__4 |     1|
+|2     |image_rom__5     |     1|
+|3     |image_rom__6     |     1|
+|4     |image_rom__7     |     1|
+|5     |image_rom__8     |     1|
+|6     |image_rom_map    |     1|
 |7     |image_rom_map__5 |     1|
 |8     |image_rom_map__6 |     1|
-|9     |BUFG             |     2|
-|10    |CARRY4           |  1243|
-|11    |DSP48E1          |     4|
-|12    |LUT1             |  1097|
-|13    |LUT2             |  1111|
-|14    |LUT3             |   732|
-|15    |LUT4             |  1203|
-|16    |LUT5             |   298|
-|17    |LUT6             |   971|
-|18    |MMCME2_ADV       |     1|
-|19    |MUXF7            |     8|
-|20    |MUXF8            |     1|
-|21    |FDRE             |  4165|
-|22    |FDSE             |   166|
-|23    |IBUF             |    18|
-|24    |OBUF             |    37|
-|25    |OBUFT            |    17|
+|9     |image_rom_map__7 |     1|
+|10    |image_rom_map__8 |     1|
+|11    |BUFG             |     2|
+|12    |CARRY4           |  1267|
+|13    |DSP48E1          |     5|
+|14    |LUT1             |  1120|
+|15    |LUT2             |  1139|
+|16    |LUT3             |   729|
+|17    |LUT4             |  1232|
+|18    |LUT5             |   310|
+|19    |LUT6             |   994|
+|20    |MMCME2_ADV       |     1|
+|21    |MUXF7            |     8|
+|22    |MUXF8            |     1|
+|23    |FDRE             |  4198|
+|24    |FDSE             |   158|
+|25    |IBUF             |    18|
+|26    |OBUF             |    37|
+|27    |OBUFT            |    17|
 +------+-----------------+------+
 
 Report Instance Areas: 
 +------+---------------------+--------------------------------+------+
 |      |Instance             |Module                          |Cells |
 +------+---------------------+--------------------------------+------+
-|1     |top                  |                                | 11138|
+|1     |top                  |                                | 11316|
 |2     |  clkdivider         |clk_wiz_65                      |     4|
-|3     |  db1                |debounce                        |    41|
+|3     |  db1                |debounce                        |    38|
 |4     |  display            |display_8hex                    |    45|
-|5     |  pg                 |FPGuitAr_Hero                   |  8740|
+|5     |  pg                 |FPGuitAr_Hero                   |  8879|
 |6     |    audio1           |audio_gen                       |  5405|
 |7     |      myrec          |play_notes                      |  5364|
 |8     |        tonet103     |sine_generator__parameterized10 |    69|
@@ -1538,39 +1587,40 @@ Report Instance Areas:
 |128   |        tonet987     |sine_generator__parameterized49 |    67|
 |129   |          lut_1      |sine_lut                        |    16|
 |130   |      nolabel_line72 |pwm                             |    20|
-|131   |    hd               |hex_to_decimal                  |   407|
-|132   |      d1             |picture_blob_digit__xdcDup__1   |    54|
-|133   |      d10            |picture_blob_digit__xdcDup__2   |    53|
-|134   |      d100           |picture_blob_digit__xdcDup__3   |    55|
-|135   |      d1000          |picture_blob_digit              |    53|
-|136   |    meter1           |beat_generator                  |   121|
-|137   |    music            |music_lookup                    |    41|
-|138   |    notegen          |note_generator                  |  2106|
-|139   |      notepos        |note_positions                  |    19|
-|140   |  xvga1              |xvga                            |  2207|
+|131   |    d1               |picture_blob_digit              |    42|
+|132   |    hd               |hex_to_decimal                  |   407|
+|133   |      d1             |picture_blob_digit__xdcDup__1   |    54|
+|134   |      d10            |picture_blob_digit__xdcDup__2   |    53|
+|135   |      d100           |picture_blob_digit__xdcDup__3   |    55|
+|136   |      d1000          |picture_blob_digit__xdcDup__4   |    53|
+|137   |    meter1           |beat_generator                  |   121|
+|138   |    music            |music_lookup                    |    41|
+|139   |    notegen          |note_generator                  |  2117|
+|140   |      notepos        |note_positions                  |    19|
+|141   |  xvga1              |xvga                            |  2249|
 +------+---------------------+--------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:43 ; elapsed = 00:00:49 . Memory (MB): peak = 2100.105 ; gain = 447.520 ; free physical = 1323 ; free virtual = 11068
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:44 ; elapsed = 00:00:50 . Memory (MB): peak = 2100.914 ; gain = 448.652 ; free physical = 2406 ; free virtual = 13017
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 43 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:41 ; elapsed = 00:00:47 . Memory (MB): peak = 2100.105 ; gain = 258.957 ; free physical = 1386 ; free virtual = 11130
-Synthesis Optimization Complete : Time (s): cpu = 00:00:43 ; elapsed = 00:00:49 . Memory (MB): peak = 2100.109 ; gain = 447.520 ; free physical = 1401 ; free virtual = 11145
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:42 ; elapsed = 00:00:48 . Memory (MB): peak = 2100.914 ; gain = 264.027 ; free physical = 2468 ; free virtual = 13079
+Synthesis Optimization Complete : Time (s): cpu = 00:00:44 ; elapsed = 00:00:50 . Memory (MB): peak = 2100.918 ; gain = 448.652 ; free physical = 2482 ; free virtual = 13093
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 1257 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 1282 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2132.121 ; gain = 0.000 ; free physical = 1336 ; free virtual = 11080
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2132.930 ; gain = 0.000 ; free physical = 2418 ; free virtual = 13029
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-463 Infos, 174 Warnings, 0 Critical Warnings and 0 Errors encountered.
+464 Infos, 176 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:48 ; elapsed = 00:00:54 . Memory (MB): peak = 2132.121 ; gain = 674.863 ; free physical = 1454 ; free virtual = 11197
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2132.121 ; gain = 0.000 ; free physical = 1454 ; free virtual = 11197
+synth_design: Time (s): cpu = 00:00:49 ; elapsed = 00:00:55 . Memory (MB): peak = 2132.930 ; gain = 699.965 ; free physical = 2534 ; free virtual = 13144
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2132.930 ; gain = 0.000 ; free physical = 2534 ; free virtual = 13144
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint '/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.runs/synth_1/labkit.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file labkit_utilization_synth.rpt -pb labkit_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Sun Dec  1 15:58:10 2019...
+INFO: [Common 17-206] Exiting Vivado at Mon Dec  2 15:03:07 2019...
