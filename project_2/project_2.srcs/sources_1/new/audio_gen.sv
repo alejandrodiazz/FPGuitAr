@@ -29,8 +29,9 @@ module audio_gen(   input clk_100mhz,
                     output logic aud_pwm,
                     output logic aud_sd
     );  
-    parameter SAMPLE_COUNT = 2082;//gets approximately (will generate audio at approx 48 kHz sample rate.
-    
+    parameter SAMPLE_COUNT = 677;  // approximately (will generate audio at approx 48 kHz sample rate.
+                                    // 1354 = 65000000/48000KHz
+                                    // 677 = 65000000/96000KHz for a 128 sine table
     logic [15:0] sample_counter;
     logic [11:0] adc_data;
     logic [11:0] sampled_adc_data;
@@ -42,7 +43,7 @@ module audio_gen(   input clk_100mhz,
     logic pwm_val; //pwm signal (HI/LO)
     
     assign aud_sd = 1;
-    assign sample_trigger = (sample_counter == SAMPLE_COUNT);
+    assign sample_trigger = (sample_counter == SAMPLE_COUNT);   // rate at which the sine wave is toggled
 
     always_ff @(posedge clk_100mhz)begin
         if (sample_counter == SAMPLE_COUNT)begin
@@ -356,7 +357,7 @@ module sine_generator ( input clk_in, input rst_in, //clock and reset
     logic [31:0] phase;
     logic [7:0] amp;
     assign amp_out = {~amp[7],amp[6:0]};
-    sine_lut lut_1(.clk_in(clk_in), .phase_in(phase[31:26]), .amp_out(amp));
+    sine_lut lut_1(.clk_in(clk_in), .phase_in(phase[31:25]), .amp_out(amp)); // changed this to be 7 bits
     
     always_ff @(posedge clk_in)begin
         if (rst_in)begin
@@ -369,73 +370,137 @@ module sine_generator ( input clk_in, input rst_in, //clock and reset
 endmodule
 
 //6bit sine lookup, 8bit depth
-module sine_lut(input[5:0] phase_in, input clk_in, output logic[7:0] amp_out);
+module sine_lut(input[6:0] phase_in, input clk_in, output logic[7:0] amp_out);
   always_ff @(posedge clk_in)begin
     case(phase_in)
-      6'd0: amp_out<=8'd128;
-      6'd1: amp_out<=8'd140;
-      6'd2: amp_out<=8'd152;
-      6'd3: amp_out<=8'd165;
-      6'd4: amp_out<=8'd176;
-      6'd5: amp_out<=8'd188;
-      6'd6: amp_out<=8'd198;
-      6'd7: amp_out<=8'd208;
-      6'd8: amp_out<=8'd218;
-      6'd9: amp_out<=8'd226;
-      6'd10: amp_out<=8'd234;
-      6'd11: amp_out<=8'd240;
-      6'd12: amp_out<=8'd245;
-      6'd13: amp_out<=8'd250;
-      6'd14: amp_out<=8'd253;
-      6'd15: amp_out<=8'd254;
-      6'd16: amp_out<=8'd255;
-      6'd17: amp_out<=8'd254;
-      6'd18: amp_out<=8'd253;
-      6'd19: amp_out<=8'd250;
-      6'd20: amp_out<=8'd245;
-      6'd21: amp_out<=8'd240;
-      6'd22: amp_out<=8'd234;
-      6'd23: amp_out<=8'd226;
-      6'd24: amp_out<=8'd218;
-      6'd25: amp_out<=8'd208;
-      6'd26: amp_out<=8'd198;
-      6'd27: amp_out<=8'd188;
-      6'd28: amp_out<=8'd176;
-      6'd29: amp_out<=8'd165;
-      6'd30: amp_out<=8'd152;
-      6'd31: amp_out<=8'd140;
-      6'd32: amp_out<=8'd128;
-      6'd33: amp_out<=8'd115;
-      6'd34: amp_out<=8'd103;
-      6'd35: amp_out<=8'd90;
-      6'd36: amp_out<=8'd79;
-      6'd37: amp_out<=8'd67;
-      6'd38: amp_out<=8'd57;
-      6'd39: amp_out<=8'd47;
-      6'd40: amp_out<=8'd37;
-      6'd41: amp_out<=8'd29;
-      6'd42: amp_out<=8'd21;
-      6'd43: amp_out<=8'd15;
-      6'd44: amp_out<=8'd10;
-      6'd45: amp_out<=8'd5;
-      6'd46: amp_out<=8'd2;
-      6'd47: amp_out<=8'd1;
-      6'd48: amp_out<=8'd0;
-      6'd49: amp_out<=8'd1;
-      6'd50: amp_out<=8'd2;
-      6'd51: amp_out<=8'd5;
-      6'd52: amp_out<=8'd10;
-      6'd53: amp_out<=8'd15;
-      6'd54: amp_out<=8'd21;
-      6'd55: amp_out<=8'd29;
-      6'd56: amp_out<=8'd37;
-      6'd57: amp_out<=8'd47;
-      6'd58: amp_out<=8'd57;
-      6'd59: amp_out<=8'd67;
-      6'd60: amp_out<=8'd79;
-      6'd61: amp_out<=8'd90;
-      6'd62: amp_out<=8'd103;
-      6'd63: amp_out<=8'd115;
+        7'd0: amp_out <= 8'd101;
+        7'd1: amp_out <= 8'd75;
+        7'd2: amp_out <= 8'd52;
+        7'd3: amp_out <= 8'd32;
+        7'd4: amp_out <= 8'd17;
+        7'd5: amp_out <= 8'd6;
+        7'd6: amp_out <= 8'd1;
+        7'd7: amp_out <= 8'd1;
+        7'd8: amp_out <= 8'd5;
+        7'd9: amp_out <= 8'd14;
+        7'd10: amp_out <= 8'd27;
+        7'd11: amp_out <= 8'd42;
+        7'd12: amp_out <= 8'd58;
+        7'd13: amp_out <= 8'd76;
+        7'd14: amp_out <= 8'd92;
+        7'd15: amp_out <= 8'd107;
+        7'd16: amp_out <= 8'd120;
+        7'd17: amp_out <= 8'd130;
+        7'd18: amp_out <= 8'd137;
+        7'd19: amp_out <= 8'd140;
+        7'd20: amp_out <= 8'd140;
+        7'd21: amp_out <= 8'd137;
+        7'd22: amp_out <= 8'd132;
+        7'd23: amp_out <= 8'd126;
+        7'd24: amp_out <= 8'd119;
+        7'd25: amp_out <= 8'd111;
+        7'd26: amp_out <= 8'd105;
+        7'd27: amp_out <= 8'd100;
+        7'd28: amp_out <= 8'd96;
+        7'd29: amp_out <= 8'd95;
+        7'd30: amp_out <= 8'd97;
+        7'd31: amp_out <= 8'd101;
+        7'd32: amp_out <= 8'd107;
+        7'd33: amp_out <= 8'd114;
+        7'd34: amp_out <= 8'd123;
+        7'd35: amp_out <= 8'd132;
+        7'd36: amp_out <= 8'd141;
+        7'd37: amp_out <= 8'd148;
+        7'd38: amp_out <= 8'd155;
+        7'd39: amp_out <= 8'd159;
+        7'd40: amp_out <= 8'd160;
+        7'd41: amp_out <= 8'd160;
+        7'd42: amp_out <= 8'd157;
+        7'd43: amp_out <= 8'd152;
+        7'd44: amp_out <= 8'd145;
+        7'd45: amp_out <= 8'd138;
+        7'd46: amp_out <= 8'd131;
+        7'd47: amp_out <= 8'd124;
+        7'd48: amp_out <= 8'd119;
+        7'd49: amp_out <= 8'd116;
+        7'd50: amp_out <= 8'd116;
+        7'd51: amp_out <= 8'd119;
+        7'd52: amp_out <= 8'd125;
+        7'd53: amp_out <= 8'd135;
+        7'd54: amp_out <= 8'd147;
+        7'd55: amp_out <= 8'd162;
+        7'd56: amp_out <= 8'd179;
+        7'd57: amp_out <= 8'd196;
+        7'd58: amp_out <= 8'd213;
+        7'd59: amp_out <= 8'd228;
+        7'd60: amp_out <= 8'd241;
+        7'd61: amp_out <= 8'd250;
+        7'd62: amp_out <= 8'd255;
+        7'd63: amp_out <= 8'd255;
+        7'd64: amp_out <= 8'd255;
+        7'd65: amp_out <= 8'd255;
+        7'd66: amp_out <= 8'd250;
+        7'd67: amp_out <= 8'd241;
+        7'd68: amp_out <= 8'd228;
+        7'd69: amp_out <= 8'd213;
+        7'd70: amp_out <= 8'd196;
+        7'd71: amp_out <= 8'd179;
+        7'd72: amp_out <= 8'd162;
+        7'd73: amp_out <= 8'd147;
+        7'd74: amp_out <= 8'd135;
+        7'd75: amp_out <= 8'd125;
+        7'd76: amp_out <= 8'd119;
+        7'd77: amp_out <= 8'd116;
+        7'd78: amp_out <= 8'd116;
+        7'd79: amp_out <= 8'd119;
+        7'd80: amp_out <= 8'd124;
+        7'd81: amp_out <= 8'd131;
+        7'd82: amp_out <= 8'd138;
+        7'd83: amp_out <= 8'd145;
+        7'd84: amp_out <= 8'd152;
+        7'd85: amp_out <= 8'd157;
+        7'd86: amp_out <= 8'd160;
+        7'd87: amp_out <= 8'd160;
+        7'd88: amp_out <= 8'd159;
+        7'd89: amp_out <= 8'd155;
+        7'd90: amp_out <= 8'd148;
+        7'd91: amp_out <= 8'd141;
+        7'd92: amp_out <= 8'd132;
+        7'd93: amp_out <= 8'd123;
+        7'd94: amp_out <= 8'd114;
+        7'd95: amp_out <= 8'd107;
+        7'd96: amp_out <= 8'd101;
+        7'd97: amp_out <= 8'd97;
+        7'd98: amp_out <= 8'd95;
+        7'd99: amp_out <= 8'd96;
+        7'd100: amp_out <= 8'd100;
+        7'd101: amp_out <= 8'd105;
+        7'd102: amp_out <= 8'd111;
+        7'd103: amp_out <= 8'd119;
+        7'd104: amp_out <= 8'd126;
+        7'd105: amp_out <= 8'd132;
+        7'd106: amp_out <= 8'd137;
+        7'd107: amp_out <= 8'd140;
+        7'd108: amp_out <= 8'd140;
+        7'd109: amp_out <= 8'd137;
+        7'd110: amp_out <= 8'd130;
+        7'd111: amp_out <= 8'd120;
+        7'd112: amp_out <= 8'd107;
+        7'd113: amp_out <= 8'd92;
+        7'd114: amp_out <= 8'd76;
+        7'd115: amp_out <= 8'd58;
+        7'd116: amp_out <= 8'd42;
+        7'd117: amp_out <= 8'd27;
+        7'd118: amp_out <= 8'd14;
+        7'd119: amp_out <= 8'd5;
+        7'd120: amp_out <= 8'd1;
+        7'd121: amp_out <= 8'd1;
+        7'd122: amp_out <= 8'd6;
+        7'd123: amp_out <= 8'd17;
+        7'd124: amp_out <= 8'd32;
+        7'd125: amp_out <= 8'd52;
+        7'd126: amp_out <= 8'd75;
+        7'd127: amp_out <= 8'd101;
     endcase
   end
 endmodule

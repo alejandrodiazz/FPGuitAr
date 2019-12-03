@@ -22,31 +22,18 @@
 
 module hex_to_decimal(
     input reset,
-    input [10:0] hcount_in,
-    input [9:0]  vcount_in,
     input [16:0] score,
     input clk_in,
-    output [11:0] digit_pixels
+    output reg [3:0] di1,
+    output reg [3:0] di10,
+    output reg [3:0] di100,
+    output reg [3:0] di1000
     );
     
     logic [3:0] digit1000, digit100, digit10, digit1;
     logic [16:0] number;
     logic [3:0] state;
     
-    logic [3:0] di1000, di100, di10, di1;
-    
-    //IMAGE
-    wire [11:0] dig1, dig10, dig100, dig1000;  // output for digit pixel from module
-    picture_blob_digit  d1(.WIDTH(72),.HEIGHT(77),.pixel_clk_in(clk_in), .x_in(900),.y_in(50),
-        .hcount_in(hcount_in),.vcount_in(vcount_in), .pixel_out(dig1), .offset(0), .digit(di1)); 
-    picture_blob_digit  d10(.WIDTH(72),.HEIGHT(77),.pixel_clk_in(clk_in), .x_in(830),.y_in(50),
-        .hcount_in(hcount_in),.vcount_in(vcount_in), .pixel_out(dig10), .offset(0), .digit(di10)); 
-    picture_blob_digit  d100(.WIDTH(72),.HEIGHT(77),.pixel_clk_in(clk_in), .x_in(760),.y_in(50),
-        .hcount_in(hcount_in),.vcount_in(vcount_in), .pixel_out(dig100), .offset(0), .digit(di100)); 
-    picture_blob_digit  d1000(.WIDTH(72),.HEIGHT(77),.pixel_clk_in(clk_in), .x_in(690),.y_in(50),
-        .hcount_in(hcount_in),.vcount_in(vcount_in), .pixel_out(dig1000), .offset(0), .digit(di1000)); 
-
-    assign digit_pixels = dig1 | dig10 | dig100 | dig1000;
     always_ff @(posedge clk_in) begin
         if (reset) begin
             state <= 0;

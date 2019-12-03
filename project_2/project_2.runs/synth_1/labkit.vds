@@ -2,8 +2,8 @@
 # Vivado v2019.1.2 (64-bit)
 # SW Build 2615518 on Fri Aug  9 15:53:29 MDT 2019
 # IP Build 2614745 on Fri Aug  9 20:55:02 MDT 2019
-# Start of session at: Mon Dec  2 17:41:01 2019
-# Process ID: 31623
+# Start of session at: Tue Dec  3 17:45:05 2019
+# Process ID: 31999
 # Current directory: /afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.runs/synth_1
 # Command line: vivado -log labkit.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source labkit.tcl
 # Log file: /afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.runs/synth_1/labkit.vds
@@ -16,9 +16,9 @@ Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Device 21-403] Loading part xc7a100tcsg324-1
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 31642 
+INFO: Helper process launched with PID 32018 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 1806.395 ; gain = 153.527 ; free physical = 364 ; free virtual = 11028
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 1806.176 ; gain = 151.527 ; free physical = 1443 ; free virtual = 10310
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'labkit' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/top_level.sv:14]
 INFO: [Synth 8-6157] synthesizing module 'clk_wiz_65' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/clk_wizard_65.sv:66]
@@ -101,269 +101,269 @@ INFO: [Synth 8-6157] synthesizing module 'FPGuitAr_Hero' [/afs/athena.mit.edu/us
 	Parameter m bound to: 1 - type: integer 
 	Parameter n bound to: 2 - type: integer 
 INFO: [Synth 8-6157] synthesizing module 'audio_gen' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:25]
-	Parameter SAMPLE_COUNT bound to: 2082 - type: integer 
-INFO: [Synth 8-6157] synthesizing module 'play_notes' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:85]
-INFO: [Synth 8-6157] synthesizing module 'sine_generator' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:351]
+	Parameter SAMPLE_COUNT bound to: 677 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'play_notes' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:86]
+INFO: [Synth 8-6157] synthesizing module 'sine_generator' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:352]
 	Parameter PHASE_INCR bound to: 4921316 - type: integer 
-INFO: [Synth 8-6157] synthesizing module 'sine_lut' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:372]
-INFO: [Synth 8-6155] done synthesizing module 'sine_lut' (8#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:372]
-WARNING: [Synth 8-6014] Unused sequential element divider_reg was removed.  [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:363]
-INFO: [Synth 8-6155] done synthesizing module 'sine_generator' (9#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:351]
-INFO: [Synth 8-6157] synthesizing module 'sine_generator__parameterized0' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:351]
+INFO: [Synth 8-6157] synthesizing module 'sine_lut' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:373]
+INFO: [Synth 8-6155] done synthesizing module 'sine_lut' (8#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:373]
+WARNING: [Synth 8-6014] Unused sequential element divider_reg was removed.  [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:364]
+INFO: [Synth 8-6155] done synthesizing module 'sine_generator' (9#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:352]
+INFO: [Synth 8-6157] synthesizing module 'sine_generator__parameterized0' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:352]
 	Parameter PHASE_INCR bound to: 5213911 - type: integer 
-WARNING: [Synth 8-6014] Unused sequential element divider_reg was removed.  [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:363]
-INFO: [Synth 8-6155] done synthesizing module 'sine_generator__parameterized0' (9#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:351]
-INFO: [Synth 8-6157] synthesizing module 'sine_generator__parameterized1' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:351]
+WARNING: [Synth 8-6014] Unused sequential element divider_reg was removed.  [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:364]
+INFO: [Synth 8-6155] done synthesizing module 'sine_generator__parameterized0' (9#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:352]
+INFO: [Synth 8-6157] synthesizing module 'sine_generator__parameterized1' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:352]
 	Parameter PHASE_INCR bound to: 5524401 - type: integer 
-WARNING: [Synth 8-6014] Unused sequential element divider_reg was removed.  [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:363]
-INFO: [Synth 8-6155] done synthesizing module 'sine_generator__parameterized1' (9#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:351]
-INFO: [Synth 8-6157] synthesizing module 'sine_generator__parameterized2' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:351]
+WARNING: [Synth 8-6014] Unused sequential element divider_reg was removed.  [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:364]
+INFO: [Synth 8-6155] done synthesizing module 'sine_generator__parameterized1' (9#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:352]
+INFO: [Synth 8-6157] synthesizing module 'sine_generator__parameterized2' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:352]
 	Parameter PHASE_INCR bound to: 5852787 - type: integer 
-WARNING: [Synth 8-6014] Unused sequential element divider_reg was removed.  [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:363]
-INFO: [Synth 8-6155] done synthesizing module 'sine_generator__parameterized2' (9#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:351]
-INFO: [Synth 8-6157] synthesizing module 'sine_generator__parameterized3' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:351]
+WARNING: [Synth 8-6014] Unused sequential element divider_reg was removed.  [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:364]
+INFO: [Synth 8-6155] done synthesizing module 'sine_generator__parameterized2' (9#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:352]
+INFO: [Synth 8-6157] synthesizing module 'sine_generator__parameterized3' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:352]
 	Parameter PHASE_INCR bound to: 6200859 - type: integer 
-WARNING: [Synth 8-6014] Unused sequential element divider_reg was removed.  [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:363]
-INFO: [Synth 8-6155] done synthesizing module 'sine_generator__parameterized3' (9#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:351]
-INFO: [Synth 8-6157] synthesizing module 'sine_generator__parameterized4' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:351]
+WARNING: [Synth 8-6014] Unused sequential element divider_reg was removed.  [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:364]
+INFO: [Synth 8-6155] done synthesizing module 'sine_generator__parameterized3' (9#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:352]
+INFO: [Synth 8-6157] synthesizing module 'sine_generator__parameterized4' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:352]
 	Parameter PHASE_INCR bound to: 6569510 - type: integer 
-WARNING: [Synth 8-6014] Unused sequential element divider_reg was removed.  [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:363]
-INFO: [Synth 8-6155] done synthesizing module 'sine_generator__parameterized4' (9#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:351]
-INFO: [Synth 8-6157] synthesizing module 'sine_generator__parameterized5' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:351]
+WARNING: [Synth 8-6014] Unused sequential element divider_reg was removed.  [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:364]
+INFO: [Synth 8-6155] done synthesizing module 'sine_generator__parameterized4' (9#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:352]
+INFO: [Synth 8-6157] synthesizing module 'sine_generator__parameterized5' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:352]
 	Parameter PHASE_INCR bound to: 6959636 - type: integer 
-WARNING: [Synth 8-6014] Unused sequential element divider_reg was removed.  [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:363]
-INFO: [Synth 8-6155] done synthesizing module 'sine_generator__parameterized5' (9#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:351]
-INFO: [Synth 8-6157] synthesizing module 'sine_generator__parameterized6' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:351]
+WARNING: [Synth 8-6014] Unused sequential element divider_reg was removed.  [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:364]
+INFO: [Synth 8-6155] done synthesizing module 'sine_generator__parameterized5' (9#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:352]
+INFO: [Synth 8-6157] synthesizing module 'sine_generator__parameterized6' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:352]
 	Parameter PHASE_INCR bound to: 7373921 - type: integer 
-WARNING: [Synth 8-6014] Unused sequential element divider_reg was removed.  [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:363]
-INFO: [Synth 8-6155] done synthesizing module 'sine_generator__parameterized6' (9#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:351]
-INFO: [Synth 8-6157] synthesizing module 'sine_generator__parameterized7' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:351]
+WARNING: [Synth 8-6014] Unused sequential element divider_reg was removed.  [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:364]
+INFO: [Synth 8-6155] done synthesizing module 'sine_generator__parameterized6' (9#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:352]
+INFO: [Synth 8-6157] synthesizing module 'sine_generator__parameterized7' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:352]
 	Parameter PHASE_INCR bound to: 7812366 - type: integer 
-WARNING: [Synth 8-6014] Unused sequential element divider_reg was removed.  [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:363]
-INFO: [Synth 8-6155] done synthesizing module 'sine_generator__parameterized7' (9#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:351]
-INFO: [Synth 8-6157] synthesizing module 'sine_generator__parameterized8' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:351]
+WARNING: [Synth 8-6014] Unused sequential element divider_reg was removed.  [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:364]
+INFO: [Synth 8-6155] done synthesizing module 'sine_generator__parameterized7' (9#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:352]
+INFO: [Synth 8-6157] synthesizing module 'sine_generator__parameterized8' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:352]
 	Parameter PHASE_INCR bound to: 8276759 - type: integer 
-WARNING: [Synth 8-6014] Unused sequential element divider_reg was removed.  [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:363]
-INFO: [Synth 8-6155] done synthesizing module 'sine_generator__parameterized8' (9#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:351]
-INFO: [Synth 8-6157] synthesizing module 'sine_generator__parameterized9' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:351]
+WARNING: [Synth 8-6014] Unused sequential element divider_reg was removed.  [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:364]
+INFO: [Synth 8-6155] done synthesizing module 'sine_generator__parameterized8' (9#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:352]
+INFO: [Synth 8-6157] synthesizing module 'sine_generator__parameterized9' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:352]
 	Parameter PHASE_INCR bound to: 8768891 - type: integer 
-WARNING: [Synth 8-6014] Unused sequential element divider_reg was removed.  [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:363]
-INFO: [Synth 8-6155] done synthesizing module 'sine_generator__parameterized9' (9#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:351]
-INFO: [Synth 8-6157] synthesizing module 'sine_generator__parameterized10' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:351]
+WARNING: [Synth 8-6014] Unused sequential element divider_reg was removed.  [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:364]
+INFO: [Synth 8-6155] done synthesizing module 'sine_generator__parameterized9' (9#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:352]
+INFO: [Synth 8-6157] synthesizing module 'sine_generator__parameterized10' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:352]
 	Parameter PHASE_INCR bound to: 9290551 - type: integer 
-WARNING: [Synth 8-6014] Unused sequential element divider_reg was removed.  [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:363]
-INFO: [Synth 8-6155] done synthesizing module 'sine_generator__parameterized10' (9#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:351]
-INFO: [Synth 8-6157] synthesizing module 'sine_generator__parameterized11' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:351]
+WARNING: [Synth 8-6014] Unused sequential element divider_reg was removed.  [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:364]
+INFO: [Synth 8-6155] done synthesizing module 'sine_generator__parameterized10' (9#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:352]
+INFO: [Synth 8-6157] synthesizing module 'sine_generator__parameterized11' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:352]
 	Parameter PHASE_INCR bound to: 9842633 - type: integer 
-WARNING: [Synth 8-6014] Unused sequential element divider_reg was removed.  [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:363]
-INFO: [Synth 8-6155] done synthesizing module 'sine_generator__parameterized11' (9#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:351]
-INFO: [Synth 8-6157] synthesizing module 'sine_generator__parameterized12' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:351]
+WARNING: [Synth 8-6014] Unused sequential element divider_reg was removed.  [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:364]
+INFO: [Synth 8-6155] done synthesizing module 'sine_generator__parameterized11' (9#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:352]
+INFO: [Synth 8-6157] synthesizing module 'sine_generator__parameterized12' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:352]
 	Parameter PHASE_INCR bound to: 10427822 - type: integer 
-WARNING: [Synth 8-6014] Unused sequential element divider_reg was removed.  [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:363]
-INFO: [Synth 8-6155] done synthesizing module 'sine_generator__parameterized12' (9#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:351]
-INFO: [Synth 8-6157] synthesizing module 'sine_generator__parameterized13' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:351]
+WARNING: [Synth 8-6014] Unused sequential element divider_reg was removed.  [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:364]
+INFO: [Synth 8-6155] done synthesizing module 'sine_generator__parameterized12' (9#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:352]
+INFO: [Synth 8-6157] synthesizing module 'sine_generator__parameterized13' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:352]
 	Parameter PHASE_INCR bound to: 11047908 - type: integer 
-WARNING: [Synth 8-6014] Unused sequential element divider_reg was removed.  [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:363]
-INFO: [Synth 8-6155] done synthesizing module 'sine_generator__parameterized13' (9#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:351]
-INFO: [Synth 8-6157] synthesizing module 'sine_generator__parameterized14' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:351]
+WARNING: [Synth 8-6014] Unused sequential element divider_reg was removed.  [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:364]
+INFO: [Synth 8-6155] done synthesizing module 'sine_generator__parameterized13' (9#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:352]
+INFO: [Synth 8-6157] synthesizing module 'sine_generator__parameterized14' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:352]
 	Parameter PHASE_INCR bound to: 11704680 - type: integer 
-WARNING: [Synth 8-6014] Unused sequential element divider_reg was removed.  [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:363]
-INFO: [Synth 8-6155] done synthesizing module 'sine_generator__parameterized14' (9#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:351]
-INFO: [Synth 8-6157] synthesizing module 'sine_generator__parameterized15' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:351]
+WARNING: [Synth 8-6014] Unused sequential element divider_reg was removed.  [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:364]
+INFO: [Synth 8-6155] done synthesizing module 'sine_generator__parameterized14' (9#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:352]
+INFO: [Synth 8-6157] synthesizing module 'sine_generator__parameterized15' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:352]
 	Parameter PHASE_INCR bound to: 12400823 - type: integer 
-WARNING: [Synth 8-6014] Unused sequential element divider_reg was removed.  [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:363]
-INFO: [Synth 8-6155] done synthesizing module 'sine_generator__parameterized15' (9#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:351]
-INFO: [Synth 8-6157] synthesizing module 'sine_generator__parameterized16' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:351]
+WARNING: [Synth 8-6014] Unused sequential element divider_reg was removed.  [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:364]
+INFO: [Synth 8-6155] done synthesizing module 'sine_generator__parameterized15' (9#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:352]
+INFO: [Synth 8-6157] synthesizing module 'sine_generator__parameterized16' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:352]
 	Parameter PHASE_INCR bound to: 13138126 - type: integer 
-WARNING: [Synth 8-6014] Unused sequential element divider_reg was removed.  [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:363]
-INFO: [Synth 8-6155] done synthesizing module 'sine_generator__parameterized16' (9#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:351]
-INFO: [Synth 8-6157] synthesizing module 'sine_generator__parameterized17' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:351]
+WARNING: [Synth 8-6014] Unused sequential element divider_reg was removed.  [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:364]
+INFO: [Synth 8-6155] done synthesizing module 'sine_generator__parameterized16' (9#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:352]
+INFO: [Synth 8-6157] synthesizing module 'sine_generator__parameterized17' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:352]
 	Parameter PHASE_INCR bound to: 13919273 - type: integer 
-WARNING: [Synth 8-6014] Unused sequential element divider_reg was removed.  [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:363]
-INFO: [Synth 8-6155] done synthesizing module 'sine_generator__parameterized17' (9#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:351]
-INFO: [Synth 8-6157] synthesizing module 'sine_generator__parameterized18' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:351]
+WARNING: [Synth 8-6014] Unused sequential element divider_reg was removed.  [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:364]
+INFO: [Synth 8-6155] done synthesizing module 'sine_generator__parameterized17' (9#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:352]
+INFO: [Synth 8-6157] synthesizing module 'sine_generator__parameterized18' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:352]
 	Parameter PHASE_INCR bound to: 14746949 - type: integer 
-WARNING: [Synth 8-6014] Unused sequential element divider_reg was removed.  [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:363]
-INFO: [Synth 8-6155] done synthesizing module 'sine_generator__parameterized18' (9#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:351]
-INFO: [Synth 8-6157] synthesizing module 'sine_generator__parameterized19' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:351]
+WARNING: [Synth 8-6014] Unused sequential element divider_reg was removed.  [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:364]
+INFO: [Synth 8-6155] done synthesizing module 'sine_generator__parameterized18' (9#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:352]
+INFO: [Synth 8-6157] synthesizing module 'sine_generator__parameterized19' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:352]
 	Parameter PHASE_INCR bound to: 15623838 - type: integer 
-WARNING: [Synth 8-6014] Unused sequential element divider_reg was removed.  [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:363]
-INFO: [Synth 8-6155] done synthesizing module 'sine_generator__parameterized19' (9#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:351]
-INFO: [Synth 8-6157] synthesizing module 'sine_generator__parameterized20' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:351]
+WARNING: [Synth 8-6014] Unused sequential element divider_reg was removed.  [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:364]
+INFO: [Synth 8-6155] done synthesizing module 'sine_generator__parameterized19' (9#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:352]
+INFO: [Synth 8-6157] synthesizing module 'sine_generator__parameterized20' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:352]
 	Parameter PHASE_INCR bound to: 16553519 - type: integer 
-WARNING: [Synth 8-6014] Unused sequential element divider_reg was removed.  [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:363]
-INFO: [Synth 8-6155] done synthesizing module 'sine_generator__parameterized20' (9#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:351]
-INFO: [Synth 8-6157] synthesizing module 'sine_generator__parameterized21' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:351]
+WARNING: [Synth 8-6014] Unused sequential element divider_reg was removed.  [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:364]
+INFO: [Synth 8-6155] done synthesizing module 'sine_generator__parameterized20' (9#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:352]
+INFO: [Synth 8-6157] synthesizing module 'sine_generator__parameterized21' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:352]
 	Parameter PHASE_INCR bound to: 17537783 - type: integer 
-WARNING: [Synth 8-6014] Unused sequential element divider_reg was removed.  [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:363]
-INFO: [Synth 8-6155] done synthesizing module 'sine_generator__parameterized21' (9#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:351]
-INFO: [Synth 8-6157] synthesizing module 'sine_generator__parameterized22' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:351]
+WARNING: [Synth 8-6014] Unused sequential element divider_reg was removed.  [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:364]
+INFO: [Synth 8-6155] done synthesizing module 'sine_generator__parameterized21' (9#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:352]
+INFO: [Synth 8-6157] synthesizing module 'sine_generator__parameterized22' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:352]
 	Parameter PHASE_INCR bound to: 18580207 - type: integer 
-WARNING: [Synth 8-6014] Unused sequential element divider_reg was removed.  [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:363]
-INFO: [Synth 8-6155] done synthesizing module 'sine_generator__parameterized22' (9#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:351]
-INFO: [Synth 8-6157] synthesizing module 'sine_generator__parameterized23' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:351]
+WARNING: [Synth 8-6014] Unused sequential element divider_reg was removed.  [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:364]
+INFO: [Synth 8-6155] done synthesizing module 'sine_generator__parameterized22' (9#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:352]
+INFO: [Synth 8-6157] synthesizing module 'sine_generator__parameterized23' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:352]
 	Parameter PHASE_INCR bound to: 19685266 - type: integer 
-WARNING: [Synth 8-6014] Unused sequential element divider_reg was removed.  [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:363]
-INFO: [Synth 8-6155] done synthesizing module 'sine_generator__parameterized23' (9#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:351]
-INFO: [Synth 8-6157] synthesizing module 'sine_generator__parameterized24' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:351]
+WARNING: [Synth 8-6014] Unused sequential element divider_reg was removed.  [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:364]
+INFO: [Synth 8-6155] done synthesizing module 'sine_generator__parameterized23' (9#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:352]
+INFO: [Synth 8-6157] synthesizing module 'sine_generator__parameterized24' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:352]
 	Parameter PHASE_INCR bound to: 20855645 - type: integer 
-WARNING: [Synth 8-6014] Unused sequential element divider_reg was removed.  [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:363]
-INFO: [Synth 8-6155] done synthesizing module 'sine_generator__parameterized24' (9#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:351]
-INFO: [Synth 8-6157] synthesizing module 'sine_generator__parameterized25' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:351]
+WARNING: [Synth 8-6014] Unused sequential element divider_reg was removed.  [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:364]
+INFO: [Synth 8-6155] done synthesizing module 'sine_generator__parameterized24' (9#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:352]
+INFO: [Synth 8-6157] synthesizing module 'sine_generator__parameterized25' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:352]
 	Parameter PHASE_INCR bound to: 22095817 - type: integer 
-WARNING: [Synth 8-6014] Unused sequential element divider_reg was removed.  [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:363]
-INFO: [Synth 8-6155] done synthesizing module 'sine_generator__parameterized25' (9#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:351]
-INFO: [Synth 8-6157] synthesizing module 'sine_generator__parameterized26' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:351]
+WARNING: [Synth 8-6014] Unused sequential element divider_reg was removed.  [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:364]
+INFO: [Synth 8-6155] done synthesizing module 'sine_generator__parameterized25' (9#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:352]
+INFO: [Synth 8-6157] synthesizing module 'sine_generator__parameterized26' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:352]
 	Parameter PHASE_INCR bound to: 23410256 - type: integer 
-WARNING: [Synth 8-6014] Unused sequential element divider_reg was removed.  [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:363]
-INFO: [Synth 8-6155] done synthesizing module 'sine_generator__parameterized26' (9#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:351]
-INFO: [Synth 8-6157] synthesizing module 'sine_generator__parameterized27' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:351]
+WARNING: [Synth 8-6014] Unused sequential element divider_reg was removed.  [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:364]
+INFO: [Synth 8-6155] done synthesizing module 'sine_generator__parameterized26' (9#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:352]
+INFO: [Synth 8-6157] synthesizing module 'sine_generator__parameterized27' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:352]
 	Parameter PHASE_INCR bound to: 24801646 - type: integer 
-WARNING: [Synth 8-6014] Unused sequential element divider_reg was removed.  [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:363]
-INFO: [Synth 8-6155] done synthesizing module 'sine_generator__parameterized27' (9#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:351]
-INFO: [Synth 8-6157] synthesizing module 'sine_generator__parameterized28' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:351]
+WARNING: [Synth 8-6014] Unused sequential element divider_reg was removed.  [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:364]
+INFO: [Synth 8-6155] done synthesizing module 'sine_generator__parameterized27' (9#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:352]
+INFO: [Synth 8-6157] synthesizing module 'sine_generator__parameterized28' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:352]
 	Parameter PHASE_INCR bound to: 26276252 - type: integer 
-WARNING: [Synth 8-6014] Unused sequential element divider_reg was removed.  [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:363]
-INFO: [Synth 8-6155] done synthesizing module 'sine_generator__parameterized28' (9#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:351]
-INFO: [Synth 8-6157] synthesizing module 'sine_generator__parameterized29' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:351]
+WARNING: [Synth 8-6014] Unused sequential element divider_reg was removed.  [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:364]
+INFO: [Synth 8-6155] done synthesizing module 'sine_generator__parameterized28' (9#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:352]
+INFO: [Synth 8-6157] synthesizing module 'sine_generator__parameterized29' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:352]
 	Parameter PHASE_INCR bound to: 27839441 - type: integer 
-WARNING: [Synth 8-6014] Unused sequential element divider_reg was removed.  [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:363]
-INFO: [Synth 8-6155] done synthesizing module 'sine_generator__parameterized29' (9#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:351]
-INFO: [Synth 8-6157] synthesizing module 'sine_generator__parameterized30' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:351]
+WARNING: [Synth 8-6014] Unused sequential element divider_reg was removed.  [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:364]
+INFO: [Synth 8-6155] done synthesizing module 'sine_generator__parameterized29' (9#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:352]
+INFO: [Synth 8-6157] synthesizing module 'sine_generator__parameterized30' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:352]
 	Parameter PHASE_INCR bound to: 29494793 - type: integer 
-WARNING: [Synth 8-6014] Unused sequential element divider_reg was removed.  [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:363]
-INFO: [Synth 8-6155] done synthesizing module 'sine_generator__parameterized30' (9#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:351]
-INFO: [Synth 8-6157] synthesizing module 'sine_generator__parameterized31' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:351]
+WARNING: [Synth 8-6014] Unused sequential element divider_reg was removed.  [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:364]
+INFO: [Synth 8-6155] done synthesizing module 'sine_generator__parameterized30' (9#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:352]
+INFO: [Synth 8-6157] synthesizing module 'sine_generator__parameterized31' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:352]
 	Parameter PHASE_INCR bound to: 31248571 - type: integer 
-WARNING: [Synth 8-6014] Unused sequential element divider_reg was removed.  [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:363]
-INFO: [Synth 8-6155] done synthesizing module 'sine_generator__parameterized31' (9#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:351]
-INFO: [Synth 8-6157] synthesizing module 'sine_generator__parameterized32' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:351]
+WARNING: [Synth 8-6014] Unused sequential element divider_reg was removed.  [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:364]
+INFO: [Synth 8-6155] done synthesizing module 'sine_generator__parameterized31' (9#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:352]
+INFO: [Synth 8-6157] synthesizing module 'sine_generator__parameterized32' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:352]
 	Parameter PHASE_INCR bound to: 33106144 - type: integer 
-WARNING: [Synth 8-6014] Unused sequential element divider_reg was removed.  [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:363]
-INFO: [Synth 8-6155] done synthesizing module 'sine_generator__parameterized32' (9#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:351]
-INFO: [Synth 8-6157] synthesizing module 'sine_generator__parameterized33' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:351]
+WARNING: [Synth 8-6014] Unused sequential element divider_reg was removed.  [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:364]
+INFO: [Synth 8-6155] done synthesizing module 'sine_generator__parameterized32' (9#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:352]
+INFO: [Synth 8-6157] synthesizing module 'sine_generator__parameterized33' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:352]
 	Parameter PHASE_INCR bound to: 35075566 - type: integer 
-WARNING: [Synth 8-6014] Unused sequential element divider_reg was removed.  [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:363]
-INFO: [Synth 8-6155] done synthesizing module 'sine_generator__parameterized33' (9#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:351]
-INFO: [Synth 8-6157] synthesizing module 'sine_generator__parameterized34' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:351]
+WARNING: [Synth 8-6014] Unused sequential element divider_reg was removed.  [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:364]
+INFO: [Synth 8-6155] done synthesizing module 'sine_generator__parameterized33' (9#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:352]
+INFO: [Synth 8-6157] synthesizing module 'sine_generator__parameterized34' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:352]
 	Parameter PHASE_INCR bound to: 37160414 - type: integer 
-WARNING: [Synth 8-6014] Unused sequential element divider_reg was removed.  [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:363]
-INFO: [Synth 8-6155] done synthesizing module 'sine_generator__parameterized34' (9#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:351]
-INFO: [Synth 8-6157] synthesizing module 'sine_generator__parameterized35' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:351]
+WARNING: [Synth 8-6014] Unused sequential element divider_reg was removed.  [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:364]
+INFO: [Synth 8-6155] done synthesizing module 'sine_generator__parameterized34' (9#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:352]
+INFO: [Synth 8-6157] synthesizing module 'sine_generator__parameterized35' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:352]
 	Parameter PHASE_INCR bound to: 39370533 - type: integer 
-WARNING: [Synth 8-6014] Unused sequential element divider_reg was removed.  [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:363]
-INFO: [Synth 8-6155] done synthesizing module 'sine_generator__parameterized35' (9#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:351]
-INFO: [Synth 8-6157] synthesizing module 'sine_generator__parameterized36' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:351]
+WARNING: [Synth 8-6014] Unused sequential element divider_reg was removed.  [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:364]
+INFO: [Synth 8-6155] done synthesizing module 'sine_generator__parameterized35' (9#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:352]
+INFO: [Synth 8-6157] synthesizing module 'sine_generator__parameterized36' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:352]
 	Parameter PHASE_INCR bound to: 41711290 - type: integer 
-WARNING: [Synth 8-6014] Unused sequential element divider_reg was removed.  [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:363]
-INFO: [Synth 8-6155] done synthesizing module 'sine_generator__parameterized36' (9#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:351]
-INFO: [Synth 8-6157] synthesizing module 'sine_generator__parameterized37' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:351]
+WARNING: [Synth 8-6014] Unused sequential element divider_reg was removed.  [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:364]
+INFO: [Synth 8-6155] done synthesizing module 'sine_generator__parameterized36' (9#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:352]
+INFO: [Synth 8-6157] synthesizing module 'sine_generator__parameterized37' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:352]
 	Parameter PHASE_INCR bound to: 44191634 - type: integer 
-WARNING: [Synth 8-6014] Unused sequential element divider_reg was removed.  [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:363]
-INFO: [Synth 8-6155] done synthesizing module 'sine_generator__parameterized37' (9#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:351]
-INFO: [Synth 8-6157] synthesizing module 'sine_generator__parameterized38' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:351]
+WARNING: [Synth 8-6014] Unused sequential element divider_reg was removed.  [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:364]
+INFO: [Synth 8-6155] done synthesizing module 'sine_generator__parameterized37' (9#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:352]
+INFO: [Synth 8-6157] synthesizing module 'sine_generator__parameterized38' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:352]
 	Parameter PHASE_INCR bound to: 46819617 - type: integer 
-WARNING: [Synth 8-6014] Unused sequential element divider_reg was removed.  [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:363]
-INFO: [Synth 8-6155] done synthesizing module 'sine_generator__parameterized38' (9#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:351]
-INFO: [Synth 8-6157] synthesizing module 'sine_generator__parameterized39' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:351]
+WARNING: [Synth 8-6014] Unused sequential element divider_reg was removed.  [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:364]
+INFO: [Synth 8-6155] done synthesizing module 'sine_generator__parameterized38' (9#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:352]
+INFO: [Synth 8-6157] synthesizing module 'sine_generator__parameterized39' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:352]
 	Parameter PHASE_INCR bound to: 49604187 - type: integer 
-WARNING: [Synth 8-6014] Unused sequential element divider_reg was removed.  [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:363]
-INFO: [Synth 8-6155] done synthesizing module 'sine_generator__parameterized39' (9#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:351]
-INFO: [Synth 8-6157] synthesizing module 'sine_generator__parameterized40' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:351]
+WARNING: [Synth 8-6014] Unused sequential element divider_reg was removed.  [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:364]
+INFO: [Synth 8-6155] done synthesizing module 'sine_generator__parameterized39' (9#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:352]
+INFO: [Synth 8-6157] synthesizing module 'sine_generator__parameterized40' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:352]
 	Parameter PHASE_INCR bound to: 52553398 - type: integer 
-WARNING: [Synth 8-6014] Unused sequential element divider_reg was removed.  [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:363]
-INFO: [Synth 8-6155] done synthesizing module 'sine_generator__parameterized40' (9#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:351]
-INFO: [Synth 8-6157] synthesizing module 'sine_generator__parameterized41' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:351]
+WARNING: [Synth 8-6014] Unused sequential element divider_reg was removed.  [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:364]
+INFO: [Synth 8-6155] done synthesizing module 'sine_generator__parameterized40' (9#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:352]
+INFO: [Synth 8-6157] synthesizing module 'sine_generator__parameterized41' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:352]
 	Parameter PHASE_INCR bound to: 55677987 - type: integer 
-WARNING: [Synth 8-6014] Unused sequential element divider_reg was removed.  [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:363]
-INFO: [Synth 8-6155] done synthesizing module 'sine_generator__parameterized41' (9#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:351]
-INFO: [Synth 8-6157] synthesizing module 'sine_generator__parameterized42' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:351]
+WARNING: [Synth 8-6014] Unused sequential element divider_reg was removed.  [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:364]
+INFO: [Synth 8-6155] done synthesizing module 'sine_generator__parameterized41' (9#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:352]
+INFO: [Synth 8-6157] synthesizing module 'sine_generator__parameterized42' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:352]
 	Parameter PHASE_INCR bound to: 58988691 - type: integer 
-WARNING: [Synth 8-6014] Unused sequential element divider_reg was removed.  [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:363]
-INFO: [Synth 8-6155] done synthesizing module 'sine_generator__parameterized42' (9#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:351]
-INFO: [Synth 8-6157] synthesizing module 'sine_generator__parameterized43' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:351]
+WARNING: [Synth 8-6014] Unused sequential element divider_reg was removed.  [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:364]
+INFO: [Synth 8-6155] done synthesizing module 'sine_generator__parameterized42' (9#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:352]
+INFO: [Synth 8-6157] synthesizing module 'sine_generator__parameterized43' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:352]
 	Parameter PHASE_INCR bound to: 62497142 - type: integer 
-WARNING: [Synth 8-6014] Unused sequential element divider_reg was removed.  [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:363]
-INFO: [Synth 8-6155] done synthesizing module 'sine_generator__parameterized43' (9#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:351]
-INFO: [Synth 8-6157] synthesizing module 'sine_generator__parameterized44' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:351]
+WARNING: [Synth 8-6014] Unused sequential element divider_reg was removed.  [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:364]
+INFO: [Synth 8-6155] done synthesizing module 'sine_generator__parameterized43' (9#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:352]
+INFO: [Synth 8-6157] synthesizing module 'sine_generator__parameterized44' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:352]
 	Parameter PHASE_INCR bound to: 66213184 - type: integer 
-WARNING: [Synth 8-6014] Unused sequential element divider_reg was removed.  [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:363]
-INFO: [Synth 8-6155] done synthesizing module 'sine_generator__parameterized44' (9#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:351]
-INFO: [Synth 8-6157] synthesizing module 'sine_generator__parameterized45' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:351]
+WARNING: [Synth 8-6014] Unused sequential element divider_reg was removed.  [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:364]
+INFO: [Synth 8-6155] done synthesizing module 'sine_generator__parameterized44' (9#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:352]
+INFO: [Synth 8-6157] synthesizing module 'sine_generator__parameterized45' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:352]
 	Parameter PHASE_INCR bound to: 70150237 - type: integer 
-WARNING: [Synth 8-6014] Unused sequential element divider_reg was removed.  [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:363]
-INFO: [Synth 8-6155] done synthesizing module 'sine_generator__parameterized45' (9#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:351]
-INFO: [Synth 8-6157] synthesizing module 'sine_generator__parameterized46' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:351]
+WARNING: [Synth 8-6014] Unused sequential element divider_reg was removed.  [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:364]
+INFO: [Synth 8-6155] done synthesizing module 'sine_generator__parameterized45' (9#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:352]
+INFO: [Synth 8-6157] synthesizing module 'sine_generator__parameterized46' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:352]
 	Parameter PHASE_INCR bound to: 74321724 - type: integer 
-WARNING: [Synth 8-6014] Unused sequential element divider_reg was removed.  [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:363]
-INFO: [Synth 8-6155] done synthesizing module 'sine_generator__parameterized46' (9#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:351]
-INFO: [Synth 8-6157] synthesizing module 'sine_generator__parameterized47' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:351]
+WARNING: [Synth 8-6014] Unused sequential element divider_reg was removed.  [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:364]
+INFO: [Synth 8-6155] done synthesizing module 'sine_generator__parameterized46' (9#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:352]
+INFO: [Synth 8-6157] synthesizing module 'sine_generator__parameterized47' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:352]
 	Parameter PHASE_INCR bound to: 78741067 - type: integer 
-WARNING: [Synth 8-6014] Unused sequential element divider_reg was removed.  [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:363]
-INFO: [Synth 8-6155] done synthesizing module 'sine_generator__parameterized47' (9#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:351]
-INFO: [Synth 8-6157] synthesizing module 'sine_generator__parameterized48' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:351]
+WARNING: [Synth 8-6014] Unused sequential element divider_reg was removed.  [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:364]
+INFO: [Synth 8-6155] done synthesizing module 'sine_generator__parameterized47' (9#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:352]
+INFO: [Synth 8-6157] synthesizing module 'sine_generator__parameterized48' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:352]
 	Parameter PHASE_INCR bound to: 83423476 - type: integer 
-WARNING: [Synth 8-6014] Unused sequential element divider_reg was removed.  [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:363]
-INFO: [Synth 8-6155] done synthesizing module 'sine_generator__parameterized48' (9#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:351]
-INFO: [Synth 8-6157] synthesizing module 'sine_generator__parameterized49' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:351]
+WARNING: [Synth 8-6014] Unused sequential element divider_reg was removed.  [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:364]
+INFO: [Synth 8-6155] done synthesizing module 'sine_generator__parameterized48' (9#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:352]
+INFO: [Synth 8-6157] synthesizing module 'sine_generator__parameterized49' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:352]
 	Parameter PHASE_INCR bound to: 88384163 - type: integer 
-WARNING: [Synth 8-6014] Unused sequential element divider_reg was removed.  [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:363]
-INFO: [Synth 8-6155] done synthesizing module 'sine_generator__parameterized49' (9#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:351]
-INFO: [Synth 8-6157] synthesizing module 'sine_generator__parameterized50' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:351]
+WARNING: [Synth 8-6014] Unused sequential element divider_reg was removed.  [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:364]
+INFO: [Synth 8-6155] done synthesizing module 'sine_generator__parameterized49' (9#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:352]
+INFO: [Synth 8-6157] synthesizing module 'sine_generator__parameterized50' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:352]
 	Parameter PHASE_INCR bound to: 93639234 - type: integer 
-WARNING: [Synth 8-6014] Unused sequential element divider_reg was removed.  [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:363]
-INFO: [Synth 8-6155] done synthesizing module 'sine_generator__parameterized50' (9#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:351]
-INFO: [Synth 8-6157] synthesizing module 'sine_generator__parameterized51' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:351]
+WARNING: [Synth 8-6014] Unused sequential element divider_reg was removed.  [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:364]
+INFO: [Synth 8-6155] done synthesizing module 'sine_generator__parameterized50' (9#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:352]
+INFO: [Synth 8-6157] synthesizing module 'sine_generator__parameterized51' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:352]
 	Parameter PHASE_INCR bound to: 99207481 - type: integer 
-WARNING: [Synth 8-6014] Unused sequential element divider_reg was removed.  [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:363]
-INFO: [Synth 8-6155] done synthesizing module 'sine_generator__parameterized51' (9#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:351]
-INFO: [Synth 8-6157] synthesizing module 'sine_generator__parameterized52' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:351]
+WARNING: [Synth 8-6014] Unused sequential element divider_reg was removed.  [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:364]
+INFO: [Synth 8-6155] done synthesizing module 'sine_generator__parameterized51' (9#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:352]
+INFO: [Synth 8-6157] synthesizing module 'sine_generator__parameterized52' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:352]
 	Parameter PHASE_INCR bound to: 105106797 - type: integer 
-WARNING: [Synth 8-6014] Unused sequential element divider_reg was removed.  [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:363]
-INFO: [Synth 8-6155] done synthesizing module 'sine_generator__parameterized52' (9#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:351]
-INFO: [Synth 8-6157] synthesizing module 'sine_generator__parameterized53' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:351]
+WARNING: [Synth 8-6014] Unused sequential element divider_reg was removed.  [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:364]
+INFO: [Synth 8-6155] done synthesizing module 'sine_generator__parameterized52' (9#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:352]
+INFO: [Synth 8-6157] synthesizing module 'sine_generator__parameterized53' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:352]
 	Parameter PHASE_INCR bound to: 111356869 - type: integer 
-WARNING: [Synth 8-6014] Unused sequential element divider_reg was removed.  [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:363]
-INFO: [Synth 8-6155] done synthesizing module 'sine_generator__parameterized53' (9#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:351]
-INFO: [Synth 8-6157] synthesizing module 'sine_generator__parameterized54' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:351]
+WARNING: [Synth 8-6014] Unused sequential element divider_reg was removed.  [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:364]
+INFO: [Synth 8-6155] done synthesizing module 'sine_generator__parameterized53' (9#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:352]
+INFO: [Synth 8-6157] synthesizing module 'sine_generator__parameterized54' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:352]
 	Parameter PHASE_INCR bound to: 117978277 - type: integer 
-WARNING: [Synth 8-6014] Unused sequential element divider_reg was removed.  [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:363]
-INFO: [Synth 8-6155] done synthesizing module 'sine_generator__parameterized54' (9#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:351]
-INFO: [Synth 8-6157] synthesizing module 'sine_generator__parameterized55' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:351]
+WARNING: [Synth 8-6014] Unused sequential element divider_reg was removed.  [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:364]
+INFO: [Synth 8-6155] done synthesizing module 'sine_generator__parameterized54' (9#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:352]
+INFO: [Synth 8-6157] synthesizing module 'sine_generator__parameterized55' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:352]
 	Parameter PHASE_INCR bound to: 124993390 - type: integer 
-WARNING: [Synth 8-6014] Unused sequential element divider_reg was removed.  [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:363]
-INFO: [Synth 8-6155] done synthesizing module 'sine_generator__parameterized55' (9#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:351]
-INFO: [Synth 8-6157] synthesizing module 'sine_generator__parameterized56' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:351]
+WARNING: [Synth 8-6014] Unused sequential element divider_reg was removed.  [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:364]
+INFO: [Synth 8-6155] done synthesizing module 'sine_generator__parameterized55' (9#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:352]
+INFO: [Synth 8-6157] synthesizing module 'sine_generator__parameterized56' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:352]
 	Parameter PHASE_INCR bound to: 132426368 - type: integer 
-WARNING: [Synth 8-6014] Unused sequential element divider_reg was removed.  [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:363]
-INFO: [Synth 8-6155] done synthesizing module 'sine_generator__parameterized56' (9#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:351]
-INFO: [Synth 8-6157] synthesizing module 'sine_generator__parameterized57' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:351]
+WARNING: [Synth 8-6014] Unused sequential element divider_reg was removed.  [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:364]
+INFO: [Synth 8-6155] done synthesizing module 'sine_generator__parameterized56' (9#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:352]
+INFO: [Synth 8-6157] synthesizing module 'sine_generator__parameterized57' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:352]
 	Parameter PHASE_INCR bound to: 140300475 - type: integer 
-WARNING: [Synth 8-6014] Unused sequential element divider_reg was removed.  [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:363]
-INFO: [Synth 8-6155] done synthesizing module 'sine_generator__parameterized57' (9#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:351]
-INFO: [Synth 8-6157] synthesizing module 'sine_generator__parameterized58' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:351]
+WARNING: [Synth 8-6014] Unused sequential element divider_reg was removed.  [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:364]
+INFO: [Synth 8-6155] done synthesizing module 'sine_generator__parameterized57' (9#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:352]
+INFO: [Synth 8-6157] synthesizing module 'sine_generator__parameterized58' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:352]
 	Parameter PHASE_INCR bound to: 148643449 - type: integer 
-WARNING: [Synth 8-6014] Unused sequential element divider_reg was removed.  [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:363]
-INFO: [Synth 8-6155] done synthesizing module 'sine_generator__parameterized58' (9#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:351]
-INFO: [Synth 8-6157] synthesizing module 'sine_generator__parameterized59' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:351]
+WARNING: [Synth 8-6014] Unused sequential element divider_reg was removed.  [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:364]
+INFO: [Synth 8-6155] done synthesizing module 'sine_generator__parameterized58' (9#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:352]
+INFO: [Synth 8-6157] synthesizing module 'sine_generator__parameterized59' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:352]
 	Parameter PHASE_INCR bound to: 157482134 - type: integer 
-WARNING: [Synth 8-6014] Unused sequential element divider_reg was removed.  [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:363]
-INFO: [Synth 8-6155] done synthesizing module 'sine_generator__parameterized59' (9#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:351]
-INFO: [Synth 8-6155] done synthesizing module 'play_notes' (10#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:85]
-INFO: [Synth 8-6157] synthesizing module 'volume_control' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:328]
-INFO: [Synth 8-6155] done synthesizing module 'volume_control' (11#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:328]
-INFO: [Synth 8-6157] synthesizing module 'pwm' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:335]
-INFO: [Synth 8-6155] done synthesizing module 'pwm' (12#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:335]
-WARNING: [Synth 8-3848] Net sampled_adc_data in module/entity audio_gen does not have driver. [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:36]
+WARNING: [Synth 8-6014] Unused sequential element divider_reg was removed.  [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:364]
+INFO: [Synth 8-6155] done synthesizing module 'sine_generator__parameterized59' (9#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:352]
+INFO: [Synth 8-6155] done synthesizing module 'play_notes' (10#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:86]
+INFO: [Synth 8-6157] synthesizing module 'volume_control' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:329]
+INFO: [Synth 8-6155] done synthesizing module 'volume_control' (11#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:329]
+INFO: [Synth 8-6157] synthesizing module 'pwm' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:336]
+INFO: [Synth 8-6155] done synthesizing module 'pwm' (12#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:336]
+WARNING: [Synth 8-3848] Net sampled_adc_data in module/entity audio_gen does not have driver. [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:37]
 INFO: [Synth 8-6155] done synthesizing module 'audio_gen' (13#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv:25]
 INFO: [Synth 8-6157] synthesizing module 'hex_to_decimal' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/hex_to_decimal.sv:23]
+INFO: [Synth 8-6155] done synthesizing module 'hex_to_decimal' (14#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/hex_to_decimal.sv:23]
 INFO: [Synth 8-6157] synthesizing module 'picture_blob_digit' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/picture_blob.sv:28]
-INFO: [Synth 8-6157] synthesizing module 'image_rom' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.runs/synth_1/.Xil/Vivado-31623-eecs-digital-207/realtime/image_rom_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'image_rom' (14#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.runs/synth_1/.Xil/Vivado-31623-eecs-digital-207/realtime/image_rom_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'image_rom_map' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.runs/synth_1/.Xil/Vivado-31623-eecs-digital-207/realtime/image_rom_map_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'image_rom_map' (15#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.runs/synth_1/.Xil/Vivado-31623-eecs-digital-207/realtime/image_rom_map_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'picture_blob_digit' (16#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/picture_blob.sv:28]
-INFO: [Synth 8-6155] done synthesizing module 'hex_to_decimal' (17#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/hex_to_decimal.sv:23]
+INFO: [Synth 8-6157] synthesizing module 'image_rom' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.runs/synth_1/.Xil/Vivado-31999-eecs-digital-207/realtime/image_rom_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'image_rom' (15#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.runs/synth_1/.Xil/Vivado-31999-eecs-digital-207/realtime/image_rom_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'image_rom_map' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.runs/synth_1/.Xil/Vivado-31999-eecs-digital-207/realtime/image_rom_map_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'image_rom_map' (16#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.runs/synth_1/.Xil/Vivado-31999-eecs-digital-207/realtime/image_rom_map_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'picture_blob_digit' (17#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/picture_blob.sv:28]
 INFO: [Synth 8-6157] synthesizing module 'blob' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/top_level.sv:120]
 INFO: [Synth 8-6155] done synthesizing module 'blob' (18#1) [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/top_level.sv:120]
 INFO: [Synth 8-6157] synthesizing module 'beat_generator' [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/beat_generator.sv:23]
@@ -429,7 +429,7 @@ WARNING: [Synth 8-3331] design FPGuitAr_Hero has unconnected port pspeed_in[2]
 WARNING: [Synth 8-3331] design FPGuitAr_Hero has unconnected port pspeed_in[1]
 WARNING: [Synth 8-3331] design FPGuitAr_Hero has unconnected port pspeed_in[0]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1886.117 ; gain = 233.250 ; free physical = 352 ; free virtual = 11015
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:05 . Memory (MB): peak = 1886.898 ; gain = 232.250 ; free physical = 1425 ; free virtual = 10295
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -442,10 +442,10 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 1903.926 ; gain = 251.059 ; free physical = 361 ; free virtual = 11024
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 1904.707 ; gain = 250.059 ; free physical = 1436 ; free virtual = 10305
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 1903.926 ; gain = 251.059 ; free physical = 361 ; free virtual = 11024
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 1904.707 ; gain = 250.059 ; free physical = 1436 ; free virtual = 10305
 ---------------------------------------------------------------------------------
 INFO: [Netlist 29-17] Analyzing 1 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -453,34 +453,22 @@ INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/ip/image_rom_1/image_rom/image_rom_in_context.xdc] for cell 'pg/hd/d1/rom1'
-Finished Parsing XDC File [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/ip/image_rom_1/image_rom/image_rom_in_context.xdc] for cell 'pg/hd/d1/rom1'
-Parsing XDC File [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/ip/image_rom_1/image_rom/image_rom_in_context.xdc] for cell 'pg/hd/d10/rom1'
-Finished Parsing XDC File [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/ip/image_rom_1/image_rom/image_rom_in_context.xdc] for cell 'pg/hd/d10/rom1'
-Parsing XDC File [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/ip/image_rom_1/image_rom/image_rom_in_context.xdc] for cell 'pg/hd/d100/rom1'
-Finished Parsing XDC File [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/ip/image_rom_1/image_rom/image_rom_in_context.xdc] for cell 'pg/hd/d100/rom1'
-Parsing XDC File [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/ip/image_rom_1/image_rom/image_rom_in_context.xdc] for cell 'pg/hd/d1000/rom1'
-Finished Parsing XDC File [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/ip/image_rom_1/image_rom/image_rom_in_context.xdc] for cell 'pg/hd/d1000/rom1'
-Parsing XDC File [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/ip/image_rom_1/image_rom/image_rom_in_context.xdc] for cell 'pg/d0/rom1'
-Finished Parsing XDC File [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/ip/image_rom_1/image_rom/image_rom_in_context.xdc] for cell 'pg/d0/rom1'
 Parsing XDC File [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/ip/image_rom_1/image_rom/image_rom_in_context.xdc] for cell 'pg/d1/rom1'
 Finished Parsing XDC File [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/ip/image_rom_1/image_rom/image_rom_in_context.xdc] for cell 'pg/d1/rom1'
-Parsing XDC File [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/ip/image_rom_1/image_rom/image_rom_in_context.xdc] for cell 'pg/d2/rom1'
-Finished Parsing XDC File [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/ip/image_rom_1/image_rom/image_rom_in_context.xdc] for cell 'pg/d2/rom1'
-Parsing XDC File [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/ip/image_rom_map_1/image_rom_map/image_rom_map_in_context.xdc] for cell 'pg/hd/d1/rcm'
-Finished Parsing XDC File [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/ip/image_rom_map_1/image_rom_map/image_rom_map_in_context.xdc] for cell 'pg/hd/d1/rcm'
-Parsing XDC File [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/ip/image_rom_map_1/image_rom_map/image_rom_map_in_context.xdc] for cell 'pg/hd/d10/rcm'
-Finished Parsing XDC File [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/ip/image_rom_map_1/image_rom_map/image_rom_map_in_context.xdc] for cell 'pg/hd/d10/rcm'
-Parsing XDC File [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/ip/image_rom_map_1/image_rom_map/image_rom_map_in_context.xdc] for cell 'pg/hd/d100/rcm'
-Finished Parsing XDC File [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/ip/image_rom_map_1/image_rom_map/image_rom_map_in_context.xdc] for cell 'pg/hd/d100/rcm'
-Parsing XDC File [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/ip/image_rom_map_1/image_rom_map/image_rom_map_in_context.xdc] for cell 'pg/hd/d1000/rcm'
-Finished Parsing XDC File [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/ip/image_rom_map_1/image_rom_map/image_rom_map_in_context.xdc] for cell 'pg/hd/d1000/rcm'
-Parsing XDC File [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/ip/image_rom_map_1/image_rom_map/image_rom_map_in_context.xdc] for cell 'pg/d0/rcm'
-Finished Parsing XDC File [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/ip/image_rom_map_1/image_rom_map/image_rom_map_in_context.xdc] for cell 'pg/d0/rcm'
+Parsing XDC File [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/ip/image_rom_1/image_rom/image_rom_in_context.xdc] for cell 'pg/d10/rom1'
+Finished Parsing XDC File [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/ip/image_rom_1/image_rom/image_rom_in_context.xdc] for cell 'pg/d10/rom1'
+Parsing XDC File [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/ip/image_rom_1/image_rom/image_rom_in_context.xdc] for cell 'pg/d100/rom1'
+Finished Parsing XDC File [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/ip/image_rom_1/image_rom/image_rom_in_context.xdc] for cell 'pg/d100/rom1'
+Parsing XDC File [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/ip/image_rom_1/image_rom/image_rom_in_context.xdc] for cell 'pg/d1000/rom1'
+Finished Parsing XDC File [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/ip/image_rom_1/image_rom/image_rom_in_context.xdc] for cell 'pg/d1000/rom1'
 Parsing XDC File [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/ip/image_rom_map_1/image_rom_map/image_rom_map_in_context.xdc] for cell 'pg/d1/rcm'
 Finished Parsing XDC File [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/ip/image_rom_map_1/image_rom_map/image_rom_map_in_context.xdc] for cell 'pg/d1/rcm'
-Parsing XDC File [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/ip/image_rom_map_1/image_rom_map/image_rom_map_in_context.xdc] for cell 'pg/d2/rcm'
-Finished Parsing XDC File [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/ip/image_rom_map_1/image_rom_map/image_rom_map_in_context.xdc] for cell 'pg/d2/rcm'
+Parsing XDC File [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/ip/image_rom_map_1/image_rom_map/image_rom_map_in_context.xdc] for cell 'pg/d10/rcm'
+Finished Parsing XDC File [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/ip/image_rom_map_1/image_rom_map/image_rom_map_in_context.xdc] for cell 'pg/d10/rcm'
+Parsing XDC File [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/ip/image_rom_map_1/image_rom_map/image_rom_map_in_context.xdc] for cell 'pg/d100/rcm'
+Finished Parsing XDC File [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/ip/image_rom_map_1/image_rom_map/image_rom_map_in_context.xdc] for cell 'pg/d100/rcm'
+Parsing XDC File [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/ip/image_rom_map_1/image_rom_map/image_rom_map_in_context.xdc] for cell 'pg/d1000/rcm'
+Finished Parsing XDC File [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/ip/image_rom_map_1/image_rom_map/image_rom_map_in_context.xdc] for cell 'pg/d1000/rcm'
 Parsing XDC File [/afs/athena.mit.edu/user/a/d/addiaz15/Downloads/nexys4_ddr_lab3.xdc]
 WARNING: [Vivado 12-584] No ports matched 'ja[0]'. [/afs/athena.mit.edu/user/a/d/addiaz15/Downloads/nexys4_ddr_lab3.xdc:101]
 WARNING: [Vivado 12-584] No ports matched 'ja[1]'. [/afs/athena.mit.edu/user/a/d/addiaz15/Downloads/nexys4_ddr_lab3.xdc:102]
@@ -505,54 +493,42 @@ Resolution: To avoid this warning, move constraints listed in [.Xil/labkit_propI
 INFO: [Timing 38-2] Deriving generated clocks
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2089.551 ; gain = 0.000 ; free physical = 283 ; free virtual = 10899
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2092.301 ; gain = 0.000 ; free physical = 1314 ; free virtual = 10184
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.03 . Memory (MB): peak = 2089.551 ; gain = 0.000 ; free physical = 282 ; free virtual = 10899
-WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'pg/d0/rcm' at clock pin 'clka' is different from the actual clock period '15.385', this can lead to different synthesis results.
-WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'pg/d0/rom1' at clock pin 'clka' is different from the actual clock period '15.385', this can lead to different synthesis results.
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.03 . Memory (MB): peak = 2092.301 ; gain = 0.000 ; free physical = 1314 ; free virtual = 10184
 WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'pg/d1/rcm' at clock pin 'clka' is different from the actual clock period '15.385', this can lead to different synthesis results.
 WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'pg/d1/rom1' at clock pin 'clka' is different from the actual clock period '15.385', this can lead to different synthesis results.
-WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'pg/d2/rcm' at clock pin 'clka' is different from the actual clock period '15.385', this can lead to different synthesis results.
-WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'pg/d2/rom1' at clock pin 'clka' is different from the actual clock period '15.385', this can lead to different synthesis results.
-WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'pg/hd/d1/rcm' at clock pin 'clka' is different from the actual clock period '15.385', this can lead to different synthesis results.
-WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'pg/hd/d1/rom1' at clock pin 'clka' is different from the actual clock period '15.385', this can lead to different synthesis results.
-WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'pg/hd/d10/rcm' at clock pin 'clka' is different from the actual clock period '15.385', this can lead to different synthesis results.
-WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'pg/hd/d10/rom1' at clock pin 'clka' is different from the actual clock period '15.385', this can lead to different synthesis results.
-WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'pg/hd/d100/rcm' at clock pin 'clka' is different from the actual clock period '15.385', this can lead to different synthesis results.
-WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'pg/hd/d100/rom1' at clock pin 'clka' is different from the actual clock period '15.385', this can lead to different synthesis results.
-WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'pg/hd/d1000/rcm' at clock pin 'clka' is different from the actual clock period '15.385', this can lead to different synthesis results.
-WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'pg/hd/d1000/rom1' at clock pin 'clka' is different from the actual clock period '15.385', this can lead to different synthesis results.
+WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'pg/d10/rcm' at clock pin 'clka' is different from the actual clock period '15.385', this can lead to different synthesis results.
+WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'pg/d10/rom1' at clock pin 'clka' is different from the actual clock period '15.385', this can lead to different synthesis results.
+WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'pg/d100/rcm' at clock pin 'clka' is different from the actual clock period '15.385', this can lead to different synthesis results.
+WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'pg/d100/rom1' at clock pin 'clka' is different from the actual clock period '15.385', this can lead to different synthesis results.
+WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'pg/d1000/rcm' at clock pin 'clka' is different from the actual clock period '15.385', this can lead to different synthesis results.
+WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'pg/d1000/rom1' at clock pin 'clka' is different from the actual clock period '15.385', this can lead to different synthesis results.
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:09 ; elapsed = 00:00:12 . Memory (MB): peak = 2089.551 ; gain = 436.684 ; free physical = 382 ; free virtual = 10999
+Finished Constraint Validation : Time (s): cpu = 00:00:09 ; elapsed = 00:00:12 . Memory (MB): peak = 2092.301 ; gain = 437.652 ; free physical = 1413 ; free virtual = 10282
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:09 ; elapsed = 00:00:12 . Memory (MB): peak = 2089.551 ; gain = 436.684 ; free physical = 382 ; free virtual = 10998
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:09 ; elapsed = 00:00:12 . Memory (MB): peak = 2092.301 ; gain = 437.652 ; free physical = 1413 ; free virtual = 10282
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
-Applied set_property DONT_TOUCH = true for pg/hd/d1/rom1. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for pg/hd/d10/rom1. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for pg/hd/d100/rom1. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for pg/hd/d1000/rom1. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for pg/d0/rom1. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for pg/d1/rom1. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for pg/d2/rom1. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for pg/hd/d1/rcm. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for pg/hd/d10/rcm. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for pg/hd/d100/rcm. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for pg/hd/d1000/rcm. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for pg/d0/rcm. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for pg/d10/rom1. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for pg/d100/rom1. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for pg/d1000/rom1. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for pg/d1/rcm. (constraint file  auto generated constraint, line ).
-Applied set_property DONT_TOUCH = true for pg/d2/rcm. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for pg/d10/rcm. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for pg/d100/rcm. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for pg/d1000/rcm. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:09 ; elapsed = 00:00:12 . Memory (MB): peak = 2089.551 ; gain = 436.684 ; free physical = 382 ; free virtual = 10998
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:09 ; elapsed = 00:00:12 . Memory (MB): peak = 2092.301 ; gain = 437.652 ; free physical = 1412 ; free virtual = 10282
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'hex_to_decimal'
 INFO: [Synth 8-5546] ROM "x0" won't be mapped to RAM because it is too sparse
@@ -587,7 +563,7 @@ INFO: [Synth 8-5546] ROM "x28" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "x29" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "x30" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "x31" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/FPGuitAr_Hero.sv:362]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/FPGuitAr_Hero.sv:387]
 INFO: [Synth 8-802] inferred FSM for state register 'game_state_reg' in module 'FPGuitAr_Hero'
 INFO: [Synth 8-5544] ROM "bpm" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
 ---------------------------------------------------------------------------------------------------
@@ -609,7 +585,7 @@ WARNING: [Synth 8-327] inferring latch for variable 'pixel_out_reg' [/afs/athena
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'game_state_reg' using encoding 'one-hot' in module 'FPGuitAr_Hero'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:12 ; elapsed = 00:00:15 . Memory (MB): peak = 2089.551 ; gain = 436.684 ; free physical = 368 ; free virtual = 10987
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:12 ; elapsed = 00:00:16 . Memory (MB): peak = 2092.301 ; gain = 437.652 ; free physical = 1401 ; free virtual = 10274
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -626,12 +602,12 @@ Detailed RTL Component Info :
 	   2 Input     17 Bit       Adders := 4     
 	  62 Input     17 Bit       Adders := 1     
 	   2 Input     16 Bit       Adders := 1     
-	   3 Input     16 Bit       Adders := 7     
+	   3 Input     16 Bit       Adders := 4     
 	  61 Input     12 Bit       Adders := 1     
-	   3 Input     12 Bit       Adders := 42    
-	   2 Input     11 Bit       Adders := 46    
-	   3 Input     11 Bit       Adders := 170   
-	   2 Input     10 Bit       Adders := 205   
+	   3 Input     12 Bit       Adders := 39    
+	   2 Input     11 Bit       Adders := 43    
+	   3 Input     11 Bit       Adders := 167   
+	   2 Input     10 Bit       Adders := 202   
 	   2 Input      8 Bit       Adders := 2     
 	   2 Input      7 Bit       Adders := 1     
 	   2 Input      5 Bit       Adders := 1     
@@ -643,18 +619,21 @@ Detailed RTL Component Info :
 	               26 Bit    Registers := 1     
 	               21 Bit    Registers := 2     
 	               17 Bit    Registers := 2     
-	               16 Bit    Registers := 8     
-	               12 Bit    Registers := 44    
+	               16 Bit    Registers := 5     
+	               12 Bit    Registers := 41    
 	               11 Bit    Registers := 35    
-	               10 Bit    Registers := 37    
+	               10 Bit    Registers := 41    
+	                9 Bit    Registers := 4     
 	                8 Bit    Registers := 125   
-	                7 Bit    Registers := 3     
+	                7 Bit    Registers := 4     
 	                6 Bit    Registers := 1     
 	                5 Bit    Registers := 1     
-	                4 Bit    Registers := 9     
+	                4 Bit    Registers := 12    
 	                3 Bit    Registers := 33    
-	                2 Bit    Registers := 2     
+	                2 Bit    Registers := 3     
 	                1 Bit    Registers := 20    
++---ROMs : 
+	                              ROMs := 61    
 +---Muxes : 
 	   2 Input     61 Bit        Muxes := 3     
 	   3 Input     61 Bit        Muxes := 1     
@@ -663,23 +642,27 @@ Detailed RTL Component Info :
 	   8 Input     26 Bit        Muxes := 1     
 	   2 Input     21 Bit        Muxes := 2     
 	   2 Input     17 Bit        Muxes := 4     
-	   2 Input     12 Bit        Muxes := 171   
+	   2 Input     12 Bit        Muxes := 168   
 	   4 Input     12 Bit        Muxes := 1     
 	   7 Input     12 Bit        Muxes := 1     
 	   5 Input     12 Bit        Muxes := 1     
 	   3 Input     12 Bit        Muxes := 1     
 	   2 Input     11 Bit        Muxes := 4     
-	   2 Input     10 Bit        Muxes := 42    
+	   2 Input     10 Bit        Muxes := 46    
+	   3 Input     10 Bit        Muxes := 4     
+	   3 Input      9 Bit        Muxes := 3     
+	   2 Input      9 Bit        Muxes := 6     
 	   8 Input      8 Bit        Muxes := 1     
-	   2 Input      8 Bit        Muxes := 61    
+	   2 Input      8 Bit        Muxes := 63    
+	   2 Input      7 Bit        Muxes := 1     
 	   4 Input      6 Bit        Muxes := 1     
-	   5 Input      4 Bit        Muxes := 1     
-	   2 Input      4 Bit        Muxes := 5     
+	   2 Input      4 Bit        Muxes := 4     
 	   4 Input      3 Bit        Muxes := 1     
 	   2 Input      3 Bit        Muxes := 1     
-	   2 Input      2 Bit        Muxes := 7     
-	   2 Input      1 Bit        Muxes := 85    
-	   3 Input      1 Bit        Muxes := 13    
+	   2 Input      2 Bit        Muxes := 2     
+	   4 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 90    
+	   3 Input      1 Bit        Muxes := 12    
 	   4 Input      1 Bit        Muxes := 5     
 	   6 Input      1 Bit        Muxes := 32    
 	  62 Input      1 Bit        Muxes := 1     
@@ -729,6 +712,8 @@ Module sine_lut
 Detailed RTL Component Info : 
 +---Registers : 
 	                8 Bit    Registers := 1     
++---ROMs : 
+	                              ROMs := 1     
 Module play_notes 
 Detailed RTL Component Info : 
 +---Adders : 
@@ -750,6 +735,19 @@ Detailed RTL Component Info :
 	   2 Input     16 Bit       Adders := 1     
 +---Registers : 
 	               16 Bit    Registers := 1     
+Module hex_to_decimal 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     17 Bit       Adders := 4     
+	   2 Input      4 Bit       Adders := 4     
++---Registers : 
+	               17 Bit    Registers := 1     
+	                4 Bit    Registers := 8     
++---Muxes : 
+	   2 Input     17 Bit        Muxes := 4     
+	   2 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 11    
+	   3 Input      1 Bit        Muxes := 1     
 Module picture_blob_digit__xdcDup__1 
 Detailed RTL Component Info : 
 +---Adders : 
@@ -777,58 +775,6 @@ Detailed RTL Component Info :
 +---Muxes : 
 	   2 Input     12 Bit        Muxes := 1     
 Module picture_blob_digit__xdcDup__3 
-Detailed RTL Component Info : 
-+---Adders : 
-	   3 Input     16 Bit       Adders := 1     
-	   3 Input     12 Bit       Adders := 1     
-	   3 Input     11 Bit       Adders := 1     
-	   2 Input     11 Bit       Adders := 1     
-	   2 Input     10 Bit       Adders := 1     
-+---Registers : 
-	               16 Bit    Registers := 1     
-	               12 Bit    Registers := 1     
-+---Muxes : 
-	   2 Input     12 Bit        Muxes := 1     
-Module picture_blob_digit__xdcDup__4 
-Detailed RTL Component Info : 
-+---Adders : 
-	   3 Input     16 Bit       Adders := 1     
-	   3 Input     12 Bit       Adders := 1     
-	   3 Input     11 Bit       Adders := 1     
-	   2 Input     11 Bit       Adders := 1     
-	   2 Input     10 Bit       Adders := 1     
-+---Registers : 
-	               16 Bit    Registers := 1     
-	               12 Bit    Registers := 1     
-+---Muxes : 
-	   2 Input     12 Bit        Muxes := 1     
-Module hex_to_decimal 
-Detailed RTL Component Info : 
-+---Adders : 
-	   2 Input     17 Bit       Adders := 4     
-	   2 Input      4 Bit       Adders := 4     
-+---Registers : 
-	               17 Bit    Registers := 1     
-	                4 Bit    Registers := 8     
-+---Muxes : 
-	   2 Input     17 Bit        Muxes := 4     
-	   2 Input      2 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 11    
-	   3 Input      1 Bit        Muxes := 1     
-Module picture_blob_digit__xdcDup__5 
-Detailed RTL Component Info : 
-+---Adders : 
-	   3 Input     16 Bit       Adders := 1     
-	   3 Input     12 Bit       Adders := 1     
-	   3 Input     11 Bit       Adders := 1     
-	   2 Input     11 Bit       Adders := 1     
-	   2 Input     10 Bit       Adders := 1     
-+---Registers : 
-	               16 Bit    Registers := 1     
-	               12 Bit    Registers := 1     
-+---Muxes : 
-	   2 Input     12 Bit        Muxes := 1     
-Module picture_blob_digit__xdcDup__6 
 Detailed RTL Component Info : 
 +---Adders : 
 	   3 Input     16 Bit       Adders := 1     
@@ -937,9 +883,12 @@ Detailed RTL Component Info :
 	               17 Bit    Registers := 1     
 	               12 Bit    Registers := 1     
 	               11 Bit    Registers := 2     
-	               10 Bit    Registers := 3     
+	               10 Bit    Registers := 7     
+	                9 Bit    Registers := 4     
 	                8 Bit    Registers := 1     
-	                4 Bit    Registers := 1     
+	                7 Bit    Registers := 1     
+	                4 Bit    Registers := 4     
+	                2 Bit    Registers := 1     
 	                1 Bit    Registers := 2     
 +---Muxes : 
 	   2 Input     61 Bit        Muxes := 3     
@@ -948,14 +897,19 @@ Detailed RTL Component Info :
 	   2 Input     21 Bit        Muxes := 2     
 	   2 Input     12 Bit        Muxes := 1     
 	   2 Input     11 Bit        Muxes := 4     
-	   2 Input     10 Bit        Muxes := 10    
-	   5 Input      4 Bit        Muxes := 1     
-	   2 Input      4 Bit        Muxes := 2     
+	   2 Input     10 Bit        Muxes := 14    
+	   3 Input     10 Bit        Muxes := 4     
+	   3 Input      9 Bit        Muxes := 3     
+	   2 Input      9 Bit        Muxes := 6     
+	   2 Input      8 Bit        Muxes := 2     
+	   2 Input      7 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 1     
 	   2 Input      3 Bit        Muxes := 1     
-	   2 Input      2 Bit        Muxes := 6     
-	   2 Input      1 Bit        Muxes := 17    
+	   2 Input      2 Bit        Muxes := 1     
+	   4 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 22    
 	   5 Input      1 Bit        Muxes := 1     
-	   3 Input      1 Bit        Muxes := 9     
+	   3 Input      1 Bit        Muxes := 8     
 ---------------------------------------------------------------------------------
 Finished RTL Hierarchical Component Statistics
 ---------------------------------------------------------------------------------
@@ -972,34 +926,22 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 Warning: Parallel synthesis criteria is not met 
-DSP Report: Generating DSP d1/image_addr_reg, operation Mode is: C+A*(B:0x2d4).
-DSP Report: register d1/image_addr_reg is absorbed into DSP d1/image_addr_reg.
-DSP Report: operator d1/image_addr0 is absorbed into DSP d1/image_addr_reg.
-DSP Report: operator d1/image_addr1 is absorbed into DSP d1/image_addr_reg.
-DSP Report: Generating DSP d10/image_addr_reg, operation Mode is: C+A*(B:0x2d4).
-DSP Report: register d10/image_addr_reg is absorbed into DSP d10/image_addr_reg.
-DSP Report: operator d10/image_addr0 is absorbed into DSP d10/image_addr_reg.
-DSP Report: operator d10/image_addr1 is absorbed into DSP d10/image_addr_reg.
-DSP Report: Generating DSP d100/image_addr_reg, operation Mode is: C+A*(B:0x2d4).
-DSP Report: register d100/image_addr_reg is absorbed into DSP d100/image_addr_reg.
-DSP Report: operator d100/image_addr0 is absorbed into DSP d100/image_addr_reg.
-DSP Report: operator d100/image_addr1 is absorbed into DSP d100/image_addr_reg.
-DSP Report: Generating DSP d1000/image_addr_reg, operation Mode is: C+A*(B:0x2d4).
-DSP Report: register d1000/image_addr_reg is absorbed into DSP d1000/image_addr_reg.
-DSP Report: operator d1000/image_addr0 is absorbed into DSP d1000/image_addr_reg.
-DSP Report: operator d1000/image_addr1 is absorbed into DSP d1000/image_addr_reg.
-DSP Report: Generating DSP d0/image_addr_reg, operation Mode is: C+A*(B:0x2d4).
-DSP Report: register d0/image_addr_reg is absorbed into DSP d0/image_addr_reg.
-DSP Report: operator d0/image_addr0 is absorbed into DSP d0/image_addr_reg.
-DSP Report: operator d0/image_addr1 is absorbed into DSP d0/image_addr_reg.
-DSP Report: Generating DSP d1/image_addr_reg, operation Mode is: C+A*(B:0x2d4).
-DSP Report: register d1/image_addr_reg is absorbed into DSP d1/image_addr_reg.
-DSP Report: operator d1/image_addr0 is absorbed into DSP d1/image_addr_reg.
-DSP Report: operator d1/image_addr1 is absorbed into DSP d1/image_addr_reg.
-DSP Report: Generating DSP d2/image_addr_reg, operation Mode is: C+A*(B:0x2d4).
-DSP Report: register d2/image_addr_reg is absorbed into DSP d2/image_addr_reg.
-DSP Report: operator d2/image_addr0 is absorbed into DSP d2/image_addr_reg.
-DSP Report: operator d2/image_addr1 is absorbed into DSP d2/image_addr_reg.
+DSP Report: Generating DSP image_addr_reg, operation Mode is: C+A*(B:0x2d4).
+DSP Report: register image_addr_reg is absorbed into DSP image_addr_reg.
+DSP Report: operator image_addr0 is absorbed into DSP image_addr_reg.
+DSP Report: operator image_addr1 is absorbed into DSP image_addr_reg.
+DSP Report: Generating DSP image_addr_reg, operation Mode is: C+A*(B:0x2d4).
+DSP Report: register image_addr_reg is absorbed into DSP image_addr_reg.
+DSP Report: operator image_addr0 is absorbed into DSP image_addr_reg.
+DSP Report: operator image_addr1 is absorbed into DSP image_addr_reg.
+DSP Report: Generating DSP image_addr_reg, operation Mode is: C+A*(B:0x2d4).
+DSP Report: register image_addr_reg is absorbed into DSP image_addr_reg.
+DSP Report: operator image_addr0 is absorbed into DSP image_addr_reg.
+DSP Report: operator image_addr1 is absorbed into DSP image_addr_reg.
+DSP Report: Generating DSP image_addr_reg, operation Mode is: C+A*(B:0x2d4).
+DSP Report: register image_addr_reg is absorbed into DSP image_addr_reg.
+DSP Report: operator image_addr0 is absorbed into DSP image_addr_reg.
+DSP Report: operator image_addr1 is absorbed into DSP image_addr_reg.
 WARNING: [Synth 8-3917] design labkit has port dp driven by constant 1
 WARNING: [Synth 8-3331] design note_blob has unconnected port pixel_clk_in
 WARNING: [Synth 8-3331] design blob has unconnected port pixel_clk_in
@@ -1044,51 +986,53 @@ WARNING: [Synth 8-3331] design FPGuitAr_Hero has unconnected port pspeed_in[3]
 WARNING: [Synth 8-3331] design FPGuitAr_Hero has unconnected port pspeed_in[2]
 WARNING: [Synth 8-3331] design FPGuitAr_Hero has unconnected port pspeed_in[1]
 WARNING: [Synth 8-3331] design FPGuitAr_Hero has unconnected port pspeed_in[0]
-INFO: [Synth 8-3886] merging instance 'pg/d2/digit_selector_reg[0]' (FDE) to 'pg/d2/digit_selector_reg[8]'
-INFO: [Synth 8-3886] merging instance 'pg/d2/digit_selector_reg[1]' (FDE) to 'pg/d2/digit_selector_reg[8]'
-INFO: [Synth 8-3886] merging instance 'pg/d2/digit_selector_reg[2]' (FDE) to 'pg/d2/digit_selector_reg[8]'
-INFO: [Synth 8-3886] merging instance 'pg/d2/digit_selector_reg[3]' (FDE) to 'pg/d2/digit_selector_reg[8]'
-INFO: [Synth 8-3886] merging instance 'pg/d2/digit_selector_reg[4]' (FDE) to 'pg/d2/digit_selector_reg[7]'
-INFO: [Synth 8-3886] merging instance 'pg/d2/digit_selector_reg[5]' (FDE) to 'pg/d2/digit_selector_reg[8]'
-INFO: [Synth 8-3886] merging instance 'pg/d2/digit_selector_reg[6]' (FDE) to 'pg/d2/digit_selector_reg[8]'
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (pg/\d2/digit_selector_reg[7] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (pg/\d2/digit_selector_reg[8] )
-INFO: [Synth 8-3886] merging instance 'pg/d1/digit_selector_reg[0]' (FDE) to 'pg/d1/digit_selector_reg[7]'
-INFO: [Synth 8-3886] merging instance 'pg/d1/digit_selector_reg[1]' (FDE) to 'pg/d1/digit_selector_reg[7]'
-INFO: [Synth 8-3886] merging instance 'pg/d1/digit_selector_reg[2]' (FDE) to 'pg/d1/digit_selector_reg[7]'
-INFO: [Synth 8-3886] merging instance 'pg/d1/digit_selector_reg[3]' (FDE) to 'pg/d1/digit_selector_reg[6]'
-INFO: [Synth 8-3886] merging instance 'pg/d1/digit_selector_reg[4]' (FDE) to 'pg/d1/digit_selector_reg[7]'
-INFO: [Synth 8-3886] merging instance 'pg/d1/digit_selector_reg[5]' (FDE) to 'pg/d1/digit_selector_reg[7]'
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (pg/\d1/digit_selector_reg[6] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (pg/\d1/digit_selector_reg[7] )
-INFO: [Synth 8-3886] merging instance 'pg/d0/digit_selector_reg[0]' (FDE) to 'pg/d0/digit_selector_reg[1]'
-INFO: [Synth 8-3886] merging instance 'pg/d0/digit_selector_reg[1]' (FDE) to 'pg/d0/digit_selector_reg[2]'
-INFO: [Synth 8-3886] merging instance 'pg/d0/digit_selector_reg[2]' (FDE) to 'pg/d0/digit_selector_reg[3]'
-INFO: [Synth 8-3886] merging instance 'pg/d0/digit_selector_reg[3]' (FDE) to 'pg/d0/digit_selector_reg[4]'
-INFO: [Synth 8-3886] merging instance 'pg/d0/digit_selector_reg[4]' (FDE) to 'pg/d0/digit_selector_reg[5]'
-INFO: [Synth 8-3886] merging instance 'pg/d0/digit_selector_reg[5]' (FDE) to 'pg/d0/digit_selector_reg[6]'
-INFO: [Synth 8-3886] merging instance 'pg/d0/digit_selector_reg[6]' (FDE) to 'pg/d0/digit_selector_reg[7]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (pg/\d0/digit_selector_reg[7] )
-INFO: [Synth 8-3886] merging instance 'pg/music/music_out_reg[9]' (FDE) to 'pg/music/music_out_reg[29]'
-INFO: [Synth 8-3886] merging instance 'pg/music/music_out_reg[0]' (FDE) to 'pg/music/music_out_reg[29]'
-INFO: [Synth 8-3886] merging instance 'pg/music/music_out_reg[10]' (FDE) to 'pg/music/music_out_reg[29]'
-INFO: [Synth 8-3886] merging instance 'pg/music/music_out_reg[1]' (FDE) to 'pg/music/music_out_reg[29]'
-INFO: [Synth 8-3886] merging instance 'pg/music/music_out_reg[29]' (FDE) to 'pg/music/music_out_reg[20]'
-INFO: [Synth 8-3886] merging instance 'pg/music/music_out_reg[20]' (FDE) to 'pg/music/music_out_reg[17]'
-INFO: [Synth 8-3886] merging instance 'pg/music/music_out_reg[11]' (FDE) to 'pg/music/music_out_reg[17]'
-INFO: [Synth 8-3886] merging instance 'pg/music/music_out_reg[2]' (FDE) to 'pg/music/music_out_reg[17]'
-INFO: [Synth 8-3886] merging instance 'pg/hd/d1/digit_selector_reg[0]' (FDE) to 'pg/hd/d1/digit_selector_reg[2]'
-INFO: [Synth 8-3886] merging instance 'pg/hd/d1/digit_selector_reg[1]' (FDE) to 'pg/hd/d1/digit_selector_reg[2]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (pg/hd/\d1/digit_selector_reg[2] )
-INFO: [Synth 8-3886] merging instance 'pg/hd/d1000/digit_selector_reg[0]' (FDE) to 'pg/hd/d1000/digit_selector_reg[2]'
-INFO: [Synth 8-3886] merging instance 'pg/hd/d1000/digit_selector_reg[1]' (FDE) to 'pg/hd/d1000/digit_selector_reg[2]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (pg/hd/\d1000/digit_selector_reg[2] )
-INFO: [Synth 8-3886] merging instance 'pg/hd/d100/digit_selector_reg[0]' (FDE) to 'pg/hd/d100/digit_selector_reg[2]'
-INFO: [Synth 8-3886] merging instance 'pg/hd/d100/digit_selector_reg[1]' (FDE) to 'pg/hd/d100/digit_selector_reg[2]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (pg/hd/\d100/digit_selector_reg[2] )
-INFO: [Synth 8-3886] merging instance 'pg/hd/d10/digit_selector_reg[0]' (FDE) to 'pg/hd/d10/digit_selector_reg[2]'
-INFO: [Synth 8-3886] merging instance 'pg/hd/d10/digit_selector_reg[1]' (FDE) to 'pg/hd/d10/digit_selector_reg[2]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (pg/hd/\d10/digit_selector_reg[2] )
+INFO: [Synth 8-3886] merging instance 'pg/d1/digit_selector_reg[0]' (FDE) to 'pg/d1/digit_selector_reg[2]'
+INFO: [Synth 8-3886] merging instance 'pg/d1/digit_selector_reg[1]' (FDE) to 'pg/d1/digit_selector_reg[2]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (pg/d1/\digit_selector_reg[2] )
+INFO: [Synth 8-3886] merging instance 'pg/d1000/digit_selector_reg[0]' (FDE) to 'pg/d1000/digit_selector_reg[2]'
+INFO: [Synth 8-3886] merging instance 'pg/d1000/digit_selector_reg[1]' (FDE) to 'pg/d1000/digit_selector_reg[2]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (pg/d1000/\digit_selector_reg[2] )
+INFO: [Synth 8-3886] merging instance 'pg/d100/digit_selector_reg[0]' (FDE) to 'pg/d100/digit_selector_reg[2]'
+INFO: [Synth 8-3886] merging instance 'pg/d100/digit_selector_reg[1]' (FDE) to 'pg/d100/digit_selector_reg[2]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (pg/d100/\digit_selector_reg[2] )
+INFO: [Synth 8-3886] merging instance 'pg/d10/digit_selector_reg[0]' (FDE) to 'pg/d10/digit_selector_reg[2]'
+INFO: [Synth 8-3886] merging instance 'pg/d10/digit_selector_reg[1]' (FDE) to 'pg/d10/digit_selector_reg[2]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (pg/d10/\digit_selector_reg[2] )
+INFO: [Synth 8-3886] merging instance 'pg/music/music_out_reg[9]' (FDE) to 'pg/music/music_out_reg[0]'
+INFO: [Synth 8-3886] merging instance 'pg/music/music_out_reg[0]' (FDE) to 'pg/music/music_out_reg[1]'
+INFO: [Synth 8-3886] merging instance 'pg/music/music_out_reg[10]' (FDE) to 'pg/music/music_out_reg[1]'
+INFO: [Synth 8-3886] merging instance 'pg/music/music_out_reg[1]' (FDE) to 'pg/music/music_out_reg[2]'
+INFO: [Synth 8-3886] merging instance 'pg/music/music_out_reg[29]' (FDE) to 'pg/music/music_out_reg[2]'
+INFO: [Synth 8-3886] merging instance 'pg/music/music_out_reg[20]' (FDE) to 'pg/music/music_out_reg[2]'
+INFO: [Synth 8-3886] merging instance 'pg/music/music_out_reg[11]' (FDE) to 'pg/music/music_out_reg[2]'
+INFO: [Synth 8-3886] merging instance 'pg/music/music_out_reg[2]' (FDE) to 'pg/music/music_out_reg[3]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (pg/audio1/i_17/\myrec/tonet87/phase_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (pg/audio1/i_13/\myrec/tonet77/phase_reg[1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (pg/audio1/i_11/\myrec/tonet73/phase_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (pg/audio1/i_121/\myrec/tonet55/phase_reg[1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (pg/audio1/i_1/\myrec/tonet1760/phase_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (pg/audio1/i_115/\myrec/tonet1479/phase_reg[6] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (pg/audio1/i_113/\myrec/tonet1396/phase_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (pg/audio1/i_103/\myrec/tonet1046/phase_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (pg/audio1/i_99/\myrec/tonet932/phase_reg[1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (pg/audio1/i_95/\myrec/tonet830/phase_reg[1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (pg/audio1/i_91/\myrec/tonet739/phase_reg[5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (pg/audio1/i_89/\myrec/tonet698/phase_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (pg/audio1/i_83/\myrec/tonet587/phase_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (pg/audio1/i_77/\myrec/tonet493/phase_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (pg/audio1/i_75/\myrec/tonet466/phase_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (pg/audio1/i_71/\myrec/tonet415/phase_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (pg/audio1/i_69/\myrec/tonet392/phase_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (pg/audio1/i_67/\myrec/tonet369/phase_reg[4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (pg/audio1/i_59/\myrec/tonet293/phase_reg[1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (pg/audio1/i_57/\myrec/tonet277/phase_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (pg/audio1/i_55/\myrec/tonet261/phase_reg[3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (pg/audio1/i_49/\myrec/tonet220/phase_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (pg/audio1/i_41/\myrec/tonet174/phase_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (pg/audio1/i_35/\myrec/tonet146/phase_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (pg/audio1/i_31/\myrec/tonet130/phase_reg[2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (pg/audio1/i_29/\myrec/tonet123/phase_reg[1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (pg/audio1/i_27/\myrec/tonet116/phase_reg[0] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (pg/notegen/\notepos/x_pos_reg[0] )
 INFO: [Synth 8-3886] merging instance 'pg/notegen/note_color_reg[0]' (FDSE) to 'pg/notegen/note_color_reg[1]'
 INFO: [Synth 8-3886] merging instance 'pg/notegen/note_color_reg[1]' (FDSE) to 'pg/notegen/note_color_reg[2]'
@@ -1154,11 +1098,46 @@ INFO: [Synth 8-3886] merging instance 'pg/notegen/ncolor27_reg[0]' (FDE) to 'pg/
 INFO: [Synth 8-3886] merging instance 'pg/notegen/ncolor27_reg[1]' (FDE) to 'pg/notegen/ncolor27_reg[2]'
 INFO: [Synth 8-3886] merging instance 'pg/notegen/ncolor27_reg[2]' (FDE) to 'pg/notegen/ncolor27_reg[3]'
 INFO: [Synth 8-3886] merging instance 'pg/notegen/ncolor27_reg[4]' (FDE) to 'pg/notegen/ncolor27_reg[5]'
+INFO: [Synth 8-3886] merging instance 'pg/notegen/ncolor27_reg[5]' (FDE) to 'pg/notegen/ncolor27_reg[6]'
+INFO: [Synth 8-3886] merging instance 'pg/notegen/ncolor27_reg[6]' (FDE) to 'pg/notegen/ncolor27_reg[7]'
+INFO: [Synth 8-3886] merging instance 'pg/notegen/ncolor27_reg[8]' (FDE) to 'pg/notegen/ncolor27_reg[9]'
+INFO: [Synth 8-3886] merging instance 'pg/notegen/ncolor27_reg[9]' (FDE) to 'pg/notegen/ncolor27_reg[10]'
+INFO: [Synth 8-3886] merging instance 'pg/notegen/ncolor27_reg[10]' (FDE) to 'pg/notegen/ncolor27_reg[11]'
+INFO: [Synth 8-3886] merging instance 'pg/notegen/x26_reg[0]' (FDE) to 'pg/notegen/x26_reg[10]'
+INFO: [Synth 8-3886] merging instance 'pg/notegen/ncolor26_reg[0]' (FDE) to 'pg/notegen/ncolor26_reg[1]'
+INFO: [Synth 8-3886] merging instance 'pg/notegen/ncolor26_reg[1]' (FDE) to 'pg/notegen/ncolor26_reg[2]'
+INFO: [Synth 8-3886] merging instance 'pg/notegen/ncolor26_reg[2]' (FDE) to 'pg/notegen/ncolor26_reg[3]'
+INFO: [Synth 8-3886] merging instance 'pg/notegen/ncolor26_reg[4]' (FDE) to 'pg/notegen/ncolor26_reg[5]'
+INFO: [Synth 8-3886] merging instance 'pg/notegen/ncolor26_reg[5]' (FDE) to 'pg/notegen/ncolor26_reg[6]'
+INFO: [Synth 8-3886] merging instance 'pg/notegen/ncolor26_reg[6]' (FDE) to 'pg/notegen/ncolor26_reg[7]'
+INFO: [Synth 8-3886] merging instance 'pg/notegen/ncolor26_reg[8]' (FDE) to 'pg/notegen/ncolor26_reg[9]'
+INFO: [Synth 8-3886] merging instance 'pg/notegen/ncolor26_reg[9]' (FDE) to 'pg/notegen/ncolor26_reg[10]'
+INFO: [Synth 8-3886] merging instance 'pg/notegen/ncolor26_reg[10]' (FDE) to 'pg/notegen/ncolor26_reg[11]'
+INFO: [Synth 8-3886] merging instance 'pg/notegen/x25_reg[0]' (FDE) to 'pg/notegen/x25_reg[10]'
+INFO: [Synth 8-3886] merging instance 'pg/notegen/ncolor25_reg[0]' (FDE) to 'pg/notegen/ncolor25_reg[1]'
+INFO: [Synth 8-3886] merging instance 'pg/notegen/ncolor25_reg[1]' (FDE) to 'pg/notegen/ncolor25_reg[2]'
+INFO: [Synth 8-3886] merging instance 'pg/notegen/ncolor25_reg[2]' (FDE) to 'pg/notegen/ncolor25_reg[3]'
+INFO: [Synth 8-3886] merging instance 'pg/notegen/ncolor25_reg[4]' (FDE) to 'pg/notegen/ncolor25_reg[5]'
 INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (pg/\bpm_reg[2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (pg/\dig1x_reg[6] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (pg/\dig1x_reg[9] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (pg/\dig1y_reg[5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (pg/\dig1y_reg[8] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (pg/\dig1000x_reg[8] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (pg/\dig1000x_reg[9] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (pg/\dig1000y_reg[4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (pg/\dig1000y_reg[7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (pg/\dig100x_reg[8] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (pg/\dig100x_reg[9] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (pg/\dig100y_reg[5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (pg/\dig100y_reg[8] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (pg/\dig10x_reg[6] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (pg/\dig10x_reg[9] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (pg/\dig10y_reg[4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (pg/\dig10y_reg[8] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (pg/\hand2_y_reg[8] )
 INFO: [Synth 8-3333] propagating constant 1 across sequential element (pg/\hand2_y_reg[9] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (pg/\song_reg[2] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (pg/music/\music_out_reg[7] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (pg/notegen/\curr_note_length_reg[2] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (pg/notegen/\nlen0_reg[2] )
@@ -1290,7 +1269,7 @@ WARNING: [Synth 8-3332] Sequential element (pixel_out_reg[11]) is unused and wil
 WARNING: [Synth 8-3332] Sequential element (pixel_out_reg[7]) is unused and will be removed from module note_blob.
 WARNING: [Synth 8-3332] Sequential element (pixel_out_reg[3]) is unused and will be removed from module note_blob.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:33 ; elapsed = 00:00:39 . Memory (MB): peak = 2089.551 ; gain = 436.684 ; free physical = 306 ; free virtual = 10944
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:32 ; elapsed = 00:00:37 . Memory (MB): peak = 2092.301 ; gain = 437.652 ; free physical = 1332 ; free virtual = 10222
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -1300,69 +1279,68 @@ ROM:
 +---------------+-------------------------+---------------+----------------+
 |Module Name    | RTL Object              | Depth x Width | Implemented As | 
 +---------------+-------------------------+---------------+----------------+
-|sine_lut       | amp_out                 | 64x8          | LUT            | 
 |note_positions | x_pos                   | 64x10         | LUT            | 
-|play_notes     | tonet1760/lut_1/amp_out | 64x8          | LUT            | 
-|play_notes     | tonet58/lut_1/amp_out   | 64x8          | LUT            | 
-|play_notes     | tonet61/lut_1/amp_out   | 64x8          | LUT            | 
-|play_notes     | tonet65/lut_1/amp_out   | 64x8          | LUT            | 
-|play_notes     | tonet69/lut_1/amp_out   | 64x8          | LUT            | 
-|play_notes     | tonet73/lut_1/amp_out   | 64x8          | LUT            | 
-|play_notes     | tonet77/lut_1/amp_out   | 64x8          | LUT            | 
-|play_notes     | tonet82/lut_1/amp_out   | 64x8          | LUT            | 
-|play_notes     | tonet87/lut_1/amp_out   | 64x8          | LUT            | 
-|play_notes     | tonet92/lut_1/amp_out   | 64x8          | LUT            | 
-|play_notes     | tonet98/lut_1/amp_out   | 64x8          | LUT            | 
-|play_notes     | tonet103/lut_1/amp_out  | 64x8          | LUT            | 
-|play_notes     | tonet110/lut_1/amp_out  | 64x8          | LUT            | 
-|play_notes     | tonet116/lut_1/amp_out  | 64x8          | LUT            | 
-|play_notes     | tonet123/lut_1/amp_out  | 64x8          | LUT            | 
-|play_notes     | tonet130/lut_1/amp_out  | 64x8          | LUT            | 
-|play_notes     | tonet138/lut_1/amp_out  | 64x8          | LUT            | 
-|play_notes     | tonet146/lut_1/amp_out  | 64x8          | LUT            | 
-|play_notes     | tonet155/lut_1/amp_out  | 64x8          | LUT            | 
-|play_notes     | tonet164/lut_1/amp_out  | 64x8          | LUT            | 
-|play_notes     | tonet174/lut_1/amp_out  | 64x8          | LUT            | 
-|play_notes     | tonet185/lut_1/amp_out  | 64x8          | LUT            | 
-|play_notes     | tonet196/lut_1/amp_out  | 64x8          | LUT            | 
-|play_notes     | tonet207/lut_1/amp_out  | 64x8          | LUT            | 
-|play_notes     | tonet220/lut_1/amp_out  | 64x8          | LUT            | 
-|play_notes     | tonet233/lut_1/amp_out  | 64x8          | LUT            | 
-|play_notes     | tonet246/lut_1/amp_out  | 64x8          | LUT            | 
-|play_notes     | tonet261/lut_1/amp_out  | 64x8          | LUT            | 
-|play_notes     | tonet277/lut_1/amp_out  | 64x8          | LUT            | 
-|play_notes     | tonet293/lut_1/amp_out  | 64x8          | LUT            | 
-|play_notes     | tonet311/lut_1/amp_out  | 64x8          | LUT            | 
-|play_notes     | tonet329/lut_1/amp_out  | 64x8          | LUT            | 
-|play_notes     | tonet349/lut_1/amp_out  | 64x8          | LUT            | 
-|play_notes     | tonet369/lut_1/amp_out  | 64x8          | LUT            | 
-|play_notes     | tonet392/lut_1/amp_out  | 64x8          | LUT            | 
-|play_notes     | tonet415/lut_1/amp_out  | 64x8          | LUT            | 
-|play_notes     | tonet440/lut_1/amp_out  | 64x8          | LUT            | 
-|play_notes     | tonet466/lut_1/amp_out  | 64x8          | LUT            | 
-|play_notes     | tonet493/lut_1/amp_out  | 64x8          | LUT            | 
-|play_notes     | tonet523/lut_1/amp_out  | 64x8          | LUT            | 
-|play_notes     | tonet554/lut_1/amp_out  | 64x8          | LUT            | 
-|play_notes     | tonet587/lut_1/amp_out  | 64x8          | LUT            | 
-|play_notes     | tonet622/lut_1/amp_out  | 64x8          | LUT            | 
-|play_notes     | tonet659/lut_1/amp_out  | 64x8          | LUT            | 
-|play_notes     | tonet698/lut_1/amp_out  | 64x8          | LUT            | 
-|play_notes     | tonet739/lut_1/amp_out  | 64x8          | LUT            | 
-|play_notes     | tonet783/lut_1/amp_out  | 64x8          | LUT            | 
-|play_notes     | tonet830/lut_1/amp_out  | 64x8          | LUT            | 
-|play_notes     | tonet880/lut_1/amp_out  | 64x8          | LUT            | 
-|play_notes     | tonet932/lut_1/amp_out  | 64x8          | LUT            | 
-|play_notes     | tonet987/lut_1/amp_out  | 64x8          | LUT            | 
-|play_notes     | tonet1046/lut_1/amp_out | 64x8          | LUT            | 
-|play_notes     | tonet1108/lut_1/amp_out | 64x8          | LUT            | 
-|play_notes     | tonet1174/lut_1/amp_out | 64x8          | LUT            | 
-|play_notes     | tonet1244/lut_1/amp_out | 64x8          | LUT            | 
-|play_notes     | tonet1318/lut_1/amp_out | 64x8          | LUT            | 
-|play_notes     | tonet1396/lut_1/amp_out | 64x8          | LUT            | 
-|play_notes     | tonet1479/lut_1/amp_out | 64x8          | LUT            | 
-|play_notes     | tonet1567/lut_1/amp_out | 64x8          | LUT            | 
-|play_notes     | tonet1661/lut_1/amp_out | 64x8          | LUT            | 
-|play_notes     | tonet55/lut_1/amp_out   | 64x8          | LUT            | 
+|play_notes     | tonet1760/lut_1/amp_out | 128x8         | Block RAM      | 
+|play_notes     | tonet58/lut_1/amp_out   | 128x8         | Block RAM      | 
+|play_notes     | tonet61/lut_1/amp_out   | 128x8         | Block RAM      | 
+|play_notes     | tonet65/lut_1/amp_out   | 128x8         | Block RAM      | 
+|play_notes     | tonet69/lut_1/amp_out   | 128x8         | Block RAM      | 
+|play_notes     | tonet73/lut_1/amp_out   | 128x8         | Block RAM      | 
+|play_notes     | tonet77/lut_1/amp_out   | 128x8         | Block RAM      | 
+|play_notes     | tonet82/lut_1/amp_out   | 128x8         | Block RAM      | 
+|play_notes     | tonet87/lut_1/amp_out   | 128x8         | Block RAM      | 
+|play_notes     | tonet92/lut_1/amp_out   | 128x8         | Block RAM      | 
+|play_notes     | tonet98/lut_1/amp_out   | 128x8         | Block RAM      | 
+|play_notes     | tonet103/lut_1/amp_out  | 128x8         | Block RAM      | 
+|play_notes     | tonet110/lut_1/amp_out  | 128x8         | Block RAM      | 
+|play_notes     | tonet116/lut_1/amp_out  | 128x8         | Block RAM      | 
+|play_notes     | tonet123/lut_1/amp_out  | 128x8         | Block RAM      | 
+|play_notes     | tonet130/lut_1/amp_out  | 128x8         | Block RAM      | 
+|play_notes     | tonet138/lut_1/amp_out  | 128x8         | Block RAM      | 
+|play_notes     | tonet146/lut_1/amp_out  | 128x8         | Block RAM      | 
+|play_notes     | tonet155/lut_1/amp_out  | 128x8         | Block RAM      | 
+|play_notes     | tonet164/lut_1/amp_out  | 128x8         | Block RAM      | 
+|play_notes     | tonet174/lut_1/amp_out  | 128x8         | Block RAM      | 
+|play_notes     | tonet185/lut_1/amp_out  | 128x8         | Block RAM      | 
+|play_notes     | tonet196/lut_1/amp_out  | 128x8         | Block RAM      | 
+|play_notes     | tonet207/lut_1/amp_out  | 128x8         | Block RAM      | 
+|play_notes     | tonet220/lut_1/amp_out  | 128x8         | Block RAM      | 
+|play_notes     | tonet233/lut_1/amp_out  | 128x8         | Block RAM      | 
+|play_notes     | tonet246/lut_1/amp_out  | 128x8         | Block RAM      | 
+|play_notes     | tonet261/lut_1/amp_out  | 128x8         | Block RAM      | 
+|play_notes     | tonet277/lut_1/amp_out  | 128x8         | Block RAM      | 
+|play_notes     | tonet293/lut_1/amp_out  | 128x8         | Block RAM      | 
+|play_notes     | tonet311/lut_1/amp_out  | 128x8         | Block RAM      | 
+|play_notes     | tonet329/lut_1/amp_out  | 128x8         | Block RAM      | 
+|play_notes     | tonet349/lut_1/amp_out  | 128x8         | Block RAM      | 
+|play_notes     | tonet369/lut_1/amp_out  | 128x8         | Block RAM      | 
+|play_notes     | tonet392/lut_1/amp_out  | 128x8         | Block RAM      | 
+|play_notes     | tonet415/lut_1/amp_out  | 128x8         | Block RAM      | 
+|play_notes     | tonet440/lut_1/amp_out  | 128x8         | Block RAM      | 
+|play_notes     | tonet466/lut_1/amp_out  | 128x8         | Block RAM      | 
+|play_notes     | tonet493/lut_1/amp_out  | 128x8         | Block RAM      | 
+|play_notes     | tonet523/lut_1/amp_out  | 128x8         | Block RAM      | 
+|play_notes     | tonet554/lut_1/amp_out  | 128x8         | Block RAM      | 
+|play_notes     | tonet587/lut_1/amp_out  | 128x8         | Block RAM      | 
+|play_notes     | tonet622/lut_1/amp_out  | 128x8         | Block RAM      | 
+|play_notes     | tonet659/lut_1/amp_out  | 128x8         | Block RAM      | 
+|play_notes     | tonet698/lut_1/amp_out  | 128x8         | Block RAM      | 
+|play_notes     | tonet739/lut_1/amp_out  | 128x8         | Block RAM      | 
+|play_notes     | tonet783/lut_1/amp_out  | 128x8         | Block RAM      | 
+|play_notes     | tonet830/lut_1/amp_out  | 128x8         | Block RAM      | 
+|play_notes     | tonet880/lut_1/amp_out  | 128x8         | Block RAM      | 
+|play_notes     | tonet932/lut_1/amp_out  | 128x8         | Block RAM      | 
+|play_notes     | tonet987/lut_1/amp_out  | 128x8         | Block RAM      | 
+|play_notes     | tonet1046/lut_1/amp_out | 128x8         | Block RAM      | 
+|play_notes     | tonet1108/lut_1/amp_out | 128x8         | Block RAM      | 
+|play_notes     | tonet1174/lut_1/amp_out | 128x8         | Block RAM      | 
+|play_notes     | tonet1244/lut_1/amp_out | 128x8         | Block RAM      | 
+|play_notes     | tonet1318/lut_1/amp_out | 128x8         | Block RAM      | 
+|play_notes     | tonet1396/lut_1/amp_out | 128x8         | Block RAM      | 
+|play_notes     | tonet1479/lut_1/amp_out | 128x8         | Block RAM      | 
+|play_notes     | tonet1567/lut_1/amp_out | 128x8         | Block RAM      | 
+|play_notes     | tonet1661/lut_1/amp_out | 128x8         | Block RAM      | 
+|play_notes     | tonet55/lut_1/amp_out   | 128x8         | Block RAM      | 
 |note_generator | notepos/x_pos           | 64x10         | LUT            | 
 +---------------+-------------------------+---------------+----------------+
 
@@ -1375,15 +1353,73 @@ DSP: Preliminary Mapping  Report (see note below)
 |picture_blob_digit | C+A*(B:0x2d4) | 16     | 10     | 16     | -      | 16     | 0    | 0    | 0    | -    | -     | 0    | 1    | 
 |picture_blob_digit | C+A*(B:0x2d4) | 16     | 10     | 16     | -      | 16     | 0    | 0    | 0    | -    | -     | 0    | 1    | 
 |picture_blob_digit | C+A*(B:0x2d4) | 16     | 10     | 16     | -      | 16     | 0    | 0    | 0    | -    | -     | 0    | 1    | 
-|picture_blob_digit | C+A*(B:0x2d4) | 16     | 10     | 16     | -      | 16     | 0    | 0    | 0    | -    | -     | 0    | 1    | 
-|picture_blob_digit | C+A*(B:0x2d4) | 16     | 10     | 16     | -      | 16     | 0    | 0    | 0    | -    | -     | 0    | 1    | 
-|picture_blob_digit | C+A*(B:0x2d4) | 16     | 10     | 16     | -      | 16     | 0    | 0    | 0    | -    | -     | 0    | 1    | 
 +-------------------+---------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
 
 Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
 ---------------------------------------------------------------------------------
 Finished ROM, RAM, DSP and Shift Register Reporting
 ---------------------------------------------------------------------------------
+INFO: [Synth 8-6837] The timing for the instance pg/audio1/i_2/i_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance pg/audio1/i_4/i_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance pg/audio1/i_6/i_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance pg/audio1/i_8/i_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance pg/audio1/i_10/i_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance pg/audio1/i_12/i_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance pg/audio1/i_14/i_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance pg/audio1/i_16/i_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance pg/audio1/i_18/i_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance pg/audio1/i_20/i_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance pg/audio1/i_22/i_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance pg/audio1/i_24/i_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance pg/audio1/i_26/i_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance pg/audio1/i_28/i_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance pg/audio1/i_30/i_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance pg/audio1/i_32/i_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance pg/audio1/i_34/i_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance pg/audio1/i_36/i_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance pg/audio1/i_38/i_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance pg/audio1/i_40/i_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance pg/audio1/i_42/i_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance pg/audio1/i_44/i_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance pg/audio1/i_46/i_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance pg/audio1/i_48/i_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance pg/audio1/i_50/i_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance pg/audio1/i_52/i_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance pg/audio1/i_54/i_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance pg/audio1/i_56/i_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance pg/audio1/i_58/i_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance pg/audio1/i_60/i_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance pg/audio1/i_62/i_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance pg/audio1/i_64/i_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance pg/audio1/i_66/i_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance pg/audio1/i_68/i_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance pg/audio1/i_70/i_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance pg/audio1/i_72/i_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance pg/audio1/i_74/i_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance pg/audio1/i_76/i_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance pg/audio1/i_78/i_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance pg/audio1/i_80/i_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance pg/audio1/i_82/i_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance pg/audio1/i_84/i_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance pg/audio1/i_86/i_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance pg/audio1/i_88/i_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance pg/audio1/i_90/i_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance pg/audio1/i_92/i_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance pg/audio1/i_94/i_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance pg/audio1/i_96/i_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance pg/audio1/i_98/i_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance pg/audio1/i_100/i_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance pg/audio1/i_102/i_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance pg/audio1/i_104/i_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance pg/audio1/i_106/i_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance pg/audio1/i_108/i_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance pg/audio1/i_110/i_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance pg/audio1/i_112/i_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance pg/audio1/i_114/i_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance pg/audio1/i_116/i_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance pg/audio1/i_118/i_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance pg/audio1/i_120/i_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance pg/audio1/i_122/i_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 
 Report RTL Partitions: 
 +-+--------------+------------+----------+
@@ -1394,13 +1430,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:39 ; elapsed = 00:00:45 . Memory (MB): peak = 2089.551 ; gain = 436.684 ; free physical = 175 ; free virtual = 10808
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:38 ; elapsed = 00:00:43 . Memory (MB): peak = 2092.301 ; gain = 437.652 ; free physical = 1201 ; free virtual = 10091
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:43 ; elapsed = 00:00:49 . Memory (MB): peak = 2089.551 ; gain = 436.684 ; free physical = 187 ; free virtual = 10776
+Finished Timing Optimization : Time (s): cpu = 00:00:42 ; elapsed = 00:00:48 . Memory (MB): peak = 2095.297 ; gain = 440.648 ; free physical = 1171 ; free virtual = 10061
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1412,7 +1448,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:47 ; elapsed = 00:00:53 . Memory (MB): peak = 2121.906 ; gain = 469.039 ; free physical = 208 ; free virtual = 10771
+Finished Technology Mapping : Time (s): cpu = 00:00:47 ; elapsed = 00:00:53 . Memory (MB): peak = 2129.820 ; gain = 475.172 ; free physical = 1168 ; free virtual = 10058
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1432,72 +1468,11 @@ Finished Flattening Before IO Insertion
 ---------------------------------------------------------------------------------
 Start Final Netlist Cleanup
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-5365] Flop pg/audio1/myrec/tonet1760/lut_1/amp_out_reg[7] is being inverted and renamed to pg/audio1/myrec/tonet1760/lut_1/amp_out_reg[7]_inv.
-INFO: [Synth 8-5365] Flop pg/audio1/myrec/tonet58/lut_1/amp_out_reg[7] is being inverted and renamed to pg/audio1/myrec/tonet58/lut_1/amp_out_reg[7]_inv.
-INFO: [Synth 8-5365] Flop pg/audio1/myrec/tonet61/lut_1/amp_out_reg[7] is being inverted and renamed to pg/audio1/myrec/tonet61/lut_1/amp_out_reg[7]_inv.
-INFO: [Synth 8-5365] Flop pg/audio1/myrec/tonet65/lut_1/amp_out_reg[7] is being inverted and renamed to pg/audio1/myrec/tonet65/lut_1/amp_out_reg[7]_inv.
-INFO: [Synth 8-5365] Flop pg/audio1/myrec/tonet69/lut_1/amp_out_reg[7] is being inverted and renamed to pg/audio1/myrec/tonet69/lut_1/amp_out_reg[7]_inv.
-INFO: [Synth 8-5365] Flop pg/audio1/myrec/tonet73/lut_1/amp_out_reg[7] is being inverted and renamed to pg/audio1/myrec/tonet73/lut_1/amp_out_reg[7]_inv.
-INFO: [Synth 8-5365] Flop pg/audio1/myrec/tonet77/lut_1/amp_out_reg[7] is being inverted and renamed to pg/audio1/myrec/tonet77/lut_1/amp_out_reg[7]_inv.
-INFO: [Synth 8-5365] Flop pg/audio1/myrec/tonet82/lut_1/amp_out_reg[7] is being inverted and renamed to pg/audio1/myrec/tonet82/lut_1/amp_out_reg[7]_inv.
-INFO: [Synth 8-5365] Flop pg/audio1/myrec/tonet87/lut_1/amp_out_reg[7] is being inverted and renamed to pg/audio1/myrec/tonet87/lut_1/amp_out_reg[7]_inv.
-INFO: [Synth 8-5365] Flop pg/audio1/myrec/tonet92/lut_1/amp_out_reg[7] is being inverted and renamed to pg/audio1/myrec/tonet92/lut_1/amp_out_reg[7]_inv.
-INFO: [Synth 8-5365] Flop pg/audio1/myrec/tonet98/lut_1/amp_out_reg[7] is being inverted and renamed to pg/audio1/myrec/tonet98/lut_1/amp_out_reg[7]_inv.
-INFO: [Synth 8-5365] Flop pg/audio1/myrec/tonet103/lut_1/amp_out_reg[7] is being inverted and renamed to pg/audio1/myrec/tonet103/lut_1/amp_out_reg[7]_inv.
-INFO: [Synth 8-5365] Flop pg/audio1/myrec/tonet110/lut_1/amp_out_reg[7] is being inverted and renamed to pg/audio1/myrec/tonet110/lut_1/amp_out_reg[7]_inv.
-INFO: [Synth 8-5365] Flop pg/audio1/myrec/tonet116/lut_1/amp_out_reg[7] is being inverted and renamed to pg/audio1/myrec/tonet116/lut_1/amp_out_reg[7]_inv.
-INFO: [Synth 8-5365] Flop pg/audio1/myrec/tonet123/lut_1/amp_out_reg[7] is being inverted and renamed to pg/audio1/myrec/tonet123/lut_1/amp_out_reg[7]_inv.
-INFO: [Synth 8-5365] Flop pg/audio1/myrec/tonet130/lut_1/amp_out_reg[7] is being inverted and renamed to pg/audio1/myrec/tonet130/lut_1/amp_out_reg[7]_inv.
-INFO: [Synth 8-5365] Flop pg/audio1/myrec/tonet138/lut_1/amp_out_reg[7] is being inverted and renamed to pg/audio1/myrec/tonet138/lut_1/amp_out_reg[7]_inv.
-INFO: [Synth 8-5365] Flop pg/audio1/myrec/tonet146/lut_1/amp_out_reg[7] is being inverted and renamed to pg/audio1/myrec/tonet146/lut_1/amp_out_reg[7]_inv.
-INFO: [Synth 8-5365] Flop pg/audio1/myrec/tonet155/lut_1/amp_out_reg[7] is being inverted and renamed to pg/audio1/myrec/tonet155/lut_1/amp_out_reg[7]_inv.
-INFO: [Synth 8-5365] Flop pg/audio1/myrec/tonet164/lut_1/amp_out_reg[7] is being inverted and renamed to pg/audio1/myrec/tonet164/lut_1/amp_out_reg[7]_inv.
-INFO: [Synth 8-5365] Flop pg/audio1/myrec/tonet174/lut_1/amp_out_reg[7] is being inverted and renamed to pg/audio1/myrec/tonet174/lut_1/amp_out_reg[7]_inv.
-INFO: [Synth 8-5365] Flop pg/audio1/myrec/tonet185/lut_1/amp_out_reg[7] is being inverted and renamed to pg/audio1/myrec/tonet185/lut_1/amp_out_reg[7]_inv.
-INFO: [Synth 8-5365] Flop pg/audio1/myrec/tonet196/lut_1/amp_out_reg[7] is being inverted and renamed to pg/audio1/myrec/tonet196/lut_1/amp_out_reg[7]_inv.
-INFO: [Synth 8-5365] Flop pg/audio1/myrec/tonet207/lut_1/amp_out_reg[7] is being inverted and renamed to pg/audio1/myrec/tonet207/lut_1/amp_out_reg[7]_inv.
-INFO: [Synth 8-5365] Flop pg/audio1/myrec/tonet220/lut_1/amp_out_reg[7] is being inverted and renamed to pg/audio1/myrec/tonet220/lut_1/amp_out_reg[7]_inv.
-INFO: [Synth 8-5365] Flop pg/audio1/myrec/tonet233/lut_1/amp_out_reg[7] is being inverted and renamed to pg/audio1/myrec/tonet233/lut_1/amp_out_reg[7]_inv.
-INFO: [Synth 8-5365] Flop pg/audio1/myrec/tonet246/lut_1/amp_out_reg[7] is being inverted and renamed to pg/audio1/myrec/tonet246/lut_1/amp_out_reg[7]_inv.
-INFO: [Synth 8-5365] Flop pg/audio1/myrec/tonet261/lut_1/amp_out_reg[7] is being inverted and renamed to pg/audio1/myrec/tonet261/lut_1/amp_out_reg[7]_inv.
-INFO: [Synth 8-5365] Flop pg/audio1/myrec/tonet277/lut_1/amp_out_reg[7] is being inverted and renamed to pg/audio1/myrec/tonet277/lut_1/amp_out_reg[7]_inv.
-INFO: [Synth 8-5365] Flop pg/audio1/myrec/tonet293/lut_1/amp_out_reg[7] is being inverted and renamed to pg/audio1/myrec/tonet293/lut_1/amp_out_reg[7]_inv.
-INFO: [Synth 8-5365] Flop pg/audio1/myrec/tonet311/lut_1/amp_out_reg[7] is being inverted and renamed to pg/audio1/myrec/tonet311/lut_1/amp_out_reg[7]_inv.
-INFO: [Synth 8-5365] Flop pg/audio1/myrec/tonet329/lut_1/amp_out_reg[7] is being inverted and renamed to pg/audio1/myrec/tonet329/lut_1/amp_out_reg[7]_inv.
-INFO: [Synth 8-5365] Flop pg/audio1/myrec/tonet349/lut_1/amp_out_reg[7] is being inverted and renamed to pg/audio1/myrec/tonet349/lut_1/amp_out_reg[7]_inv.
-INFO: [Synth 8-5365] Flop pg/audio1/myrec/tonet369/lut_1/amp_out_reg[7] is being inverted and renamed to pg/audio1/myrec/tonet369/lut_1/amp_out_reg[7]_inv.
-INFO: [Synth 8-5365] Flop pg/audio1/myrec/tonet392/lut_1/amp_out_reg[7] is being inverted and renamed to pg/audio1/myrec/tonet392/lut_1/amp_out_reg[7]_inv.
-INFO: [Synth 8-5365] Flop pg/audio1/myrec/tonet415/lut_1/amp_out_reg[7] is being inverted and renamed to pg/audio1/myrec/tonet415/lut_1/amp_out_reg[7]_inv.
-INFO: [Synth 8-5365] Flop pg/audio1/myrec/tonet440/lut_1/amp_out_reg[7] is being inverted and renamed to pg/audio1/myrec/tonet440/lut_1/amp_out_reg[7]_inv.
-INFO: [Synth 8-5365] Flop pg/audio1/myrec/tonet466/lut_1/amp_out_reg[7] is being inverted and renamed to pg/audio1/myrec/tonet466/lut_1/amp_out_reg[7]_inv.
-INFO: [Synth 8-5365] Flop pg/audio1/myrec/tonet493/lut_1/amp_out_reg[7] is being inverted and renamed to pg/audio1/myrec/tonet493/lut_1/amp_out_reg[7]_inv.
-INFO: [Synth 8-5365] Flop pg/audio1/myrec/tonet523/lut_1/amp_out_reg[7] is being inverted and renamed to pg/audio1/myrec/tonet523/lut_1/amp_out_reg[7]_inv.
-INFO: [Synth 8-5365] Flop pg/audio1/myrec/tonet554/lut_1/amp_out_reg[7] is being inverted and renamed to pg/audio1/myrec/tonet554/lut_1/amp_out_reg[7]_inv.
-INFO: [Synth 8-5365] Flop pg/audio1/myrec/tonet587/lut_1/amp_out_reg[7] is being inverted and renamed to pg/audio1/myrec/tonet587/lut_1/amp_out_reg[7]_inv.
-INFO: [Synth 8-5365] Flop pg/audio1/myrec/tonet622/lut_1/amp_out_reg[7] is being inverted and renamed to pg/audio1/myrec/tonet622/lut_1/amp_out_reg[7]_inv.
-INFO: [Synth 8-5365] Flop pg/audio1/myrec/tonet659/lut_1/amp_out_reg[7] is being inverted and renamed to pg/audio1/myrec/tonet659/lut_1/amp_out_reg[7]_inv.
-INFO: [Synth 8-5365] Flop pg/audio1/myrec/tonet698/lut_1/amp_out_reg[7] is being inverted and renamed to pg/audio1/myrec/tonet698/lut_1/amp_out_reg[7]_inv.
-INFO: [Synth 8-5365] Flop pg/audio1/myrec/tonet739/lut_1/amp_out_reg[7] is being inverted and renamed to pg/audio1/myrec/tonet739/lut_1/amp_out_reg[7]_inv.
-INFO: [Synth 8-5365] Flop pg/audio1/myrec/tonet783/lut_1/amp_out_reg[7] is being inverted and renamed to pg/audio1/myrec/tonet783/lut_1/amp_out_reg[7]_inv.
-INFO: [Synth 8-5365] Flop pg/audio1/myrec/tonet830/lut_1/amp_out_reg[7] is being inverted and renamed to pg/audio1/myrec/tonet830/lut_1/amp_out_reg[7]_inv.
-INFO: [Synth 8-5365] Flop pg/audio1/myrec/tonet880/lut_1/amp_out_reg[7] is being inverted and renamed to pg/audio1/myrec/tonet880/lut_1/amp_out_reg[7]_inv.
-INFO: [Synth 8-5365] Flop pg/audio1/myrec/tonet932/lut_1/amp_out_reg[7] is being inverted and renamed to pg/audio1/myrec/tonet932/lut_1/amp_out_reg[7]_inv.
-INFO: [Synth 8-5365] Flop pg/audio1/myrec/tonet987/lut_1/amp_out_reg[7] is being inverted and renamed to pg/audio1/myrec/tonet987/lut_1/amp_out_reg[7]_inv.
-INFO: [Synth 8-5365] Flop pg/audio1/myrec/tonet1046/lut_1/amp_out_reg[7] is being inverted and renamed to pg/audio1/myrec/tonet1046/lut_1/amp_out_reg[7]_inv.
-INFO: [Synth 8-5365] Flop pg/audio1/myrec/tonet1108/lut_1/amp_out_reg[7] is being inverted and renamed to pg/audio1/myrec/tonet1108/lut_1/amp_out_reg[7]_inv.
-INFO: [Synth 8-5365] Flop pg/audio1/myrec/tonet1174/lut_1/amp_out_reg[7] is being inverted and renamed to pg/audio1/myrec/tonet1174/lut_1/amp_out_reg[7]_inv.
-INFO: [Synth 8-5365] Flop pg/audio1/myrec/tonet1244/lut_1/amp_out_reg[7] is being inverted and renamed to pg/audio1/myrec/tonet1244/lut_1/amp_out_reg[7]_inv.
-INFO: [Synth 8-5365] Flop pg/audio1/myrec/tonet1318/lut_1/amp_out_reg[7] is being inverted and renamed to pg/audio1/myrec/tonet1318/lut_1/amp_out_reg[7]_inv.
-INFO: [Synth 8-5365] Flop pg/audio1/myrec/tonet1396/lut_1/amp_out_reg[7] is being inverted and renamed to pg/audio1/myrec/tonet1396/lut_1/amp_out_reg[7]_inv.
-INFO: [Synth 8-5365] Flop pg/audio1/myrec/tonet1479/lut_1/amp_out_reg[7] is being inverted and renamed to pg/audio1/myrec/tonet1479/lut_1/amp_out_reg[7]_inv.
-INFO: [Synth 8-5365] Flop pg/audio1/myrec/tonet1567/lut_1/amp_out_reg[7] is being inverted and renamed to pg/audio1/myrec/tonet1567/lut_1/amp_out_reg[7]_inv.
-INFO: [Synth 8-5365] Flop pg/audio1/myrec/tonet1661/lut_1/amp_out_reg[7] is being inverted and renamed to pg/audio1/myrec/tonet1661/lut_1/amp_out_reg[7]_inv.
-INFO: [Synth 8-5365] Flop pg/audio1/myrec/tonet55/lut_1/amp_out_reg[7] is being inverted and renamed to pg/audio1/myrec/tonet55/lut_1/amp_out_reg[7]_inv.
 ---------------------------------------------------------------------------------
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:49 ; elapsed = 00:00:55 . Memory (MB): peak = 2121.910 ; gain = 469.043 ; free physical = 207 ; free virtual = 10770
+Finished IO Insertion : Time (s): cpu = 00:00:48 ; elapsed = 00:00:55 . Memory (MB): peak = 2129.824 ; gain = 475.176 ; free physical = 1166 ; free virtual = 10056
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -1510,7 +1485,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:49 ; elapsed = 00:00:55 . Memory (MB): peak = 2121.910 ; gain = 469.043 ; free physical = 207 ; free virtual = 10770
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:49 ; elapsed = 00:00:55 . Memory (MB): peak = 2129.824 ; gain = 475.176 ; free physical = 1166 ; free virtual = 10056
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1522,25 +1497,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:50 ; elapsed = 00:00:56 . Memory (MB): peak = 2121.910 ; gain = 469.043 ; free physical = 205 ; free virtual = 10768
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:50 ; elapsed = 00:00:56 . Memory (MB): peak = 2129.824 ; gain = 475.176 ; free physical = 1165 ; free virtual = 10055
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:50 ; elapsed = 00:00:56 . Memory (MB): peak = 2121.910 ; gain = 469.043 ; free physical = 205 ; free virtual = 10768
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:50 ; elapsed = 00:00:56 . Memory (MB): peak = 2129.824 ; gain = 475.176 ; free physical = 1165 ; free virtual = 10055
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:50 ; elapsed = 00:00:56 . Memory (MB): peak = 2121.910 ; gain = 469.043 ; free physical = 205 ; free virtual = 10768
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:50 ; elapsed = 00:00:56 . Memory (MB): peak = 2129.824 ; gain = 475.176 ; free physical = 1165 ; free virtual = 10055
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:50 ; elapsed = 00:00:56 . Memory (MB): peak = 2121.910 ; gain = 469.043 ; free physical = 205 ; free virtual = 10768
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:50 ; elapsed = 00:00:56 . Memory (MB): peak = 2129.824 ; gain = 475.176 ; free physical = 1164 ; free virtual = 10054
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -1550,217 +1525,149 @@ Report BlackBoxes:
 +------+--------------+----------+
 |      |BlackBox name |Instances |
 +------+--------------+----------+
-|1     |image_rom     |         7|
-|2     |image_rom_map |         7|
+|1     |image_rom     |         4|
+|2     |image_rom_map |         4|
 +------+--------------+----------+
 
 Report Cell Usage: 
-+------+------------------+------+
-|      |Cell              |Count |
-+------+------------------+------+
-|1     |image_rom         |     1|
-|2     |image_rom__10     |     1|
-|3     |image_rom__11     |     1|
-|4     |image_rom__12     |     1|
-|5     |image_rom__7      |     1|
-|6     |image_rom__8      |     1|
-|7     |image_rom__9      |     1|
-|8     |image_rom_map     |     1|
-|9     |image_rom_map__10 |     1|
-|10    |image_rom_map__11 |     1|
-|11    |image_rom_map__12 |     1|
-|12    |image_rom_map__7  |     1|
-|13    |image_rom_map__8  |     1|
-|14    |image_rom_map__9  |     1|
-|15    |BUFG              |     2|
-|16    |CARRY4            |  1475|
-|17    |DSP48E1           |     7|
-|18    |LUT1              |  1103|
-|19    |LUT2              |  1414|
-|20    |LUT3              |   844|
-|21    |LUT4              |  1304|
-|22    |LUT5              |   583|
-|23    |LUT6              |  1266|
-|24    |MMCME2_ADV        |     1|
-|25    |MUXF7             |     4|
-|26    |MUXF8             |     1|
-|27    |FDRE              |  4142|
-|28    |FDSE              |   162|
-|29    |IBUF              |    14|
-|30    |OBUF              |    37|
-|31    |OBUFT             |    17|
-+------+------------------+------+
++------+-----------------+------+
+|      |Cell             |Count |
++------+-----------------+------+
+|1     |image_rom        |     1|
+|2     |image_rom__4     |     1|
+|3     |image_rom__5     |     1|
+|4     |image_rom__6     |     1|
+|5     |image_rom_map    |     1|
+|6     |image_rom_map__4 |     1|
+|7     |image_rom_map__5 |     1|
+|8     |image_rom_map__6 |     1|
+|9     |BUFG             |     2|
+|10    |CARRY4           |  1995|
+|11    |DSP48E1          |     4|
+|12    |LUT1             |  1944|
+|13    |LUT2             |  1975|
+|14    |LUT3             |   889|
+|15    |LUT4             |  1286|
+|16    |LUT5             |   577|
+|17    |LUT6             |   736|
+|18    |MMCME2_ADV       |     1|
+|19    |MUXF7            |     4|
+|20    |MUXF8            |     1|
+|21    |RAMB18E1_1       |    30|
+|22    |RAMB18E1_2       |     1|
+|23    |FDRE             |  3636|
+|24    |FDSE             |   186|
+|25    |IBUF             |    14|
+|26    |OBUF             |    37|
+|27    |OBUFT            |    17|
++------+-----------------+------+
 
 Report Instance Areas: 
 +------+---------------------+--------------------------------+------+
 |      |Instance             |Module                          |Cells |
 +------+---------------------+--------------------------------+------+
-|1     |top                  |                                | 12488|
+|1     |top                  |                                | 13399|
 |2     |  clkdivider         |clk_wiz_65                      |     4|
-|3     |  db1                |debounce                        |    37|
+|3     |  db1                |debounce                        |   525|
 |4     |  display            |display_8hex                    |    45|
-|5     |  pg                 |FPGuitAr_Hero                   |  9732|
-|6     |    audio1           |audio_gen                       |  5405|
-|7     |      myrec          |play_notes                      |  5364|
-|8     |        tonet103     |sine_generator__parameterized10 |    69|
-|9     |          lut_1      |sine_lut_59                     |    16|
-|10    |        tonet1046    |sine_generator__parameterized50 |    66|
-|11    |          lut_1      |sine_lut_58                     |    16|
-|12    |        tonet110     |sine_generator__parameterized11 |    69|
-|13    |          lut_1      |sine_lut_57                     |    16|
-|14    |        tonet1108    |sine_generator__parameterized51 |    71|
-|15    |          lut_1      |sine_lut_56                     |    16|
-|16    |        tonet116     |sine_generator__parameterized12 |    70|
-|17    |          lut_1      |sine_lut_55                     |    16|
-|18    |        tonet1174    |sine_generator__parameterized52 |    71|
-|19    |          lut_1      |sine_lut_54                     |    16|
-|20    |        tonet123     |sine_generator__parameterized13 |    65|
-|21    |          lut_1      |sine_lut_53                     |    16|
-|22    |        tonet1244    |sine_generator__parameterized53 |    70|
-|23    |          lut_1      |sine_lut_52                     |    16|
-|24    |        tonet130     |sine_generator__parameterized14 |    64|
-|25    |          lut_1      |sine_lut_51                     |    16|
-|26    |        tonet1318    |sine_generator__parameterized54 |    67|
-|27    |          lut_1      |sine_lut_50                     |    16|
-|28    |        tonet138     |sine_generator__parameterized15 |    71|
-|29    |          lut_1      |sine_lut_49                     |    16|
-|30    |        tonet1396    |sine_generator__parameterized55 |    74|
-|31    |          lut_1      |sine_lut_48                     |    16|
-|32    |        tonet146     |sine_generator__parameterized16 |    67|
-|33    |          lut_1      |sine_lut_47                     |    16|
-|34    |        tonet1479    |sine_generator__parameterized56 |    60|
-|35    |          lut_1      |sine_lut_46                     |    16|
-|36    |        tonet155     |sine_generator__parameterized17 |    66|
-|37    |          lut_1      |sine_lut_45                     |    16|
-|38    |        tonet1567    |sine_generator__parameterized57 |    70|
-|39    |          lut_1      |sine_lut_44                     |    16|
-|40    |        tonet164     |sine_generator__parameterized18 |    65|
-|41    |          lut_1      |sine_lut_43                     |    16|
-|42    |        tonet1661    |sine_generator__parameterized58 |    76|
-|43    |          lut_1      |sine_lut_42                     |    16|
-|44    |        tonet174     |sine_generator__parameterized19 |    70|
-|45    |          lut_1      |sine_lut_41                     |    16|
-|46    |        tonet1760    |sine_generator__parameterized59 |    70|
-|47    |          lut_1      |sine_lut_40                     |    16|
-|48    |        tonet185     |sine_generator__parameterized20 |    71|
-|49    |          lut_1      |sine_lut_39                     |    16|
-|50    |        tonet196     |sine_generator__parameterized21 |    71|
-|51    |          lut_1      |sine_lut_38                     |    16|
-|52    |        tonet207     |sine_generator__parameterized22 |    70|
-|53    |          lut_1      |sine_lut_37                     |    16|
-|54    |        tonet220     |sine_generator__parameterized23 |    68|
-|55    |          lut_1      |sine_lut_36                     |    16|
-|56    |        tonet233     |sine_generator__parameterized24 |    72|
-|57    |          lut_1      |sine_lut_35                     |    16|
-|58    |        tonet246     |sine_generator__parameterized25 |    68|
-|59    |          lut_1      |sine_lut_34                     |    16|
-|60    |        tonet261     |sine_generator__parameterized26 |    62|
-|61    |          lut_1      |sine_lut_33                     |    16|
-|62    |        tonet277     |sine_generator__parameterized27 |    70|
-|63    |          lut_1      |sine_lut_32                     |    16|
-|64    |        tonet293     |sine_generator__parameterized28 |    66|
-|65    |          lut_1      |sine_lut_31                     |    16|
-|66    |        tonet311     |sine_generator__parameterized29 |    69|
-|67    |          lut_1      |sine_lut_30                     |    16|
-|68    |        tonet329     |sine_generator__parameterized30 |    65|
-|69    |          lut_1      |sine_lut_29                     |    16|
-|70    |        tonet349     |sine_generator__parameterized31 |    71|
-|71    |          lut_1      |sine_lut_28                     |    16|
-|72    |        tonet369     |sine_generator__parameterized32 |    62|
-|73    |          lut_1      |sine_lut_27                     |    16|
-|74    |        tonet392     |sine_generator__parameterized33 |    70|
-|75    |          lut_1      |sine_lut_26                     |    16|
-|76    |        tonet415     |sine_generator__parameterized34 |    69|
-|77    |          lut_1      |sine_lut_25                     |    16|
-|78    |        tonet440     |sine_generator__parameterized35 |    70|
-|79    |          lut_1      |sine_lut_24                     |    16|
-|80    |        tonet466     |sine_generator__parameterized36 |    71|
-|81    |          lut_1      |sine_lut_23                     |    16|
-|82    |        tonet493     |sine_generator__parameterized37 |    67|
-|83    |          lut_1      |sine_lut_22                     |    16|
-|84    |        tonet523     |sine_generator__parameterized38 |    67|
-|85    |          lut_1      |sine_lut_21                     |    16|
-|86    |        tonet55      |sine_generator                  |    66|
-|87    |          lut_1      |sine_lut_20                     |    16|
-|88    |        tonet554     |sine_generator__parameterized39 |    72|
-|89    |          lut_1      |sine_lut_19                     |    16|
-|90    |        tonet58      |sine_generator__parameterized0  |    71|
-|91    |          lut_1      |sine_lut_18                     |    16|
-|92    |        tonet587     |sine_generator__parameterized40 |    69|
-|93    |          lut_1      |sine_lut_17                     |    16|
-|94    |        tonet61      |sine_generator__parameterized1  |    67|
-|95    |          lut_1      |sine_lut_16                     |    16|
-|96    |        tonet622     |sine_generator__parameterized41 |    67|
-|97    |          lut_1      |sine_lut_15                     |    16|
-|98    |        tonet65      |sine_generator__parameterized2  |    69|
-|99    |          lut_1      |sine_lut_14                     |    16|
-|100   |        tonet659     |sine_generator__parameterized42 |    66|
-|101   |          lut_1      |sine_lut_13                     |    16|
-|102   |        tonet69      |sine_generator__parameterized3  |    70|
-|103   |          lut_1      |sine_lut_12                     |    16|
-|104   |        tonet698     |sine_generator__parameterized43 |    70|
-|105   |          lut_1      |sine_lut_11                     |    16|
-|106   |        tonet73      |sine_generator__parameterized4  |    66|
-|107   |          lut_1      |sine_lut_10                     |    16|
-|108   |        tonet739     |sine_generator__parameterized44 |    61|
-|109   |          lut_1      |sine_lut_9                      |    16|
-|110   |        tonet77      |sine_generator__parameterized5  |    63|
-|111   |          lut_1      |sine_lut_8                      |    16|
-|112   |        tonet783     |sine_generator__parameterized45 |    69|
-|113   |          lut_1      |sine_lut_7                      |    16|
-|114   |        tonet82      |sine_generator__parameterized6  |    64|
-|115   |          lut_1      |sine_lut_6                      |    16|
-|116   |        tonet830     |sine_generator__parameterized46 |    68|
-|117   |          lut_1      |sine_lut_5                      |    16|
-|118   |        tonet87      |sine_generator__parameterized7  |    68|
-|119   |          lut_1      |sine_lut_4                      |    16|
-|120   |        tonet880     |sine_generator__parameterized47 |    71|
-|121   |          lut_1      |sine_lut_3                      |    16|
-|122   |        tonet92      |sine_generator__parameterized8  |    70|
-|123   |          lut_1      |sine_lut_2                      |    16|
-|124   |        tonet932     |sine_generator__parameterized48 |    69|
-|125   |          lut_1      |sine_lut_1                      |    16|
-|126   |        tonet98      |sine_generator__parameterized9  |    70|
-|127   |          lut_1      |sine_lut_0                      |    16|
-|128   |        tonet987     |sine_generator__parameterized49 |    67|
-|129   |          lut_1      |sine_lut                        |    16|
-|130   |      nolabel_line72 |pwm                             |    20|
-|131   |    d0               |picture_blob_digit__xdcDup__5   |    28|
-|132   |    d1               |picture_blob_digit__xdcDup__6   |    28|
-|133   |    d2               |picture_blob_digit              |    44|
-|134   |    hd               |hex_to_decimal                  |   410|
-|135   |      d1             |picture_blob_digit__xdcDup__1   |    54|
-|136   |      d10            |picture_blob_digit__xdcDup__2   |    53|
-|137   |      d100           |picture_blob_digit__xdcDup__3   |    55|
-|138   |      d1000          |picture_blob_digit__xdcDup__4   |    53|
-|139   |    meter1           |beat_generator                  |   124|
-|140   |    music            |music_lookup                    |    40|
-|141   |    notegen          |note_generator                  |  2921|
-|142   |      notepos        |note_positions                  |    19|
-|143   |  xvga1              |xvga                            |  2569|
+|5     |  pg                 |FPGuitAr_Hero                   | 10007|
+|6     |    audio1           |audio_gen                       |  5739|
+|7     |      myrec          |play_notes                      |  5698|
+|8     |        tonet103     |sine_generator__parameterized10 |    73|
+|9     |        tonet1046    |sine_generator__parameterized50 |    69|
+|10    |        tonet110     |sine_generator__parameterized11 |    73|
+|11    |        tonet1108    |sine_generator__parameterized51 |    77|
+|12    |        tonet116     |sine_generator__parameterized12 |    77|
+|13    |        tonet1174    |sine_generator__parameterized52 |    77|
+|14    |        tonet123     |sine_generator__parameterized13 |    68|
+|15    |        tonet1244    |sine_generator__parameterized53 |    75|
+|16    |        tonet130     |sine_generator__parameterized14 |    67|
+|17    |        tonet1318    |sine_generator__parameterized54 |    69|
+|18    |        tonet138     |sine_generator__parameterized15 |    77|
+|19    |        tonet1396    |sine_generator__parameterized55 |    85|
+|20    |        tonet146     |sine_generator__parameterized16 |    71|
+|21    |        tonet1479    |sine_generator__parameterized56 |    63|
+|22    |        tonet155     |sine_generator__parameterized17 |    67|
+|23    |        tonet1567    |sine_generator__parameterized57 |    79|
+|24    |        tonet164     |sine_generator__parameterized18 |    65|
+|25    |        tonet1661    |sine_generator__parameterized58 |    77|
+|26    |        tonet174     |sine_generator__parameterized19 |    77|
+|27    |        tonet1760    |sine_generator__parameterized59 |    77|
+|28    |        tonet185     |sine_generator__parameterized20 |    77|
+|29    |        tonet196     |sine_generator__parameterized21 |    77|
+|30    |        tonet207     |sine_generator__parameterized22 |    75|
+|31    |        tonet220     |sine_generator__parameterized23 |    73|
+|32    |        tonet233     |sine_generator__parameterized24 |    79|
+|33    |        tonet246     |sine_generator__parameterized25 |    71|
+|34    |        tonet261     |sine_generator__parameterized26 |    65|
+|35    |        tonet277     |sine_generator__parameterized27 |    77|
+|36    |        tonet293     |sine_generator__parameterized28 |    70|
+|37    |        tonet311     |sine_generator__parameterized29 |    73|
+|38    |        tonet329     |sine_generator__parameterized30 |    65|
+|39    |        tonet349     |sine_generator__parameterized31 |    77|
+|40    |        tonet369     |sine_generator__parameterized32 |    65|
+|41    |        tonet392     |sine_generator__parameterized33 |    77|
+|42    |        tonet415     |sine_generator__parameterized34 |    75|
+|43    |        tonet440     |sine_generator__parameterized35 |    75|
+|44    |        tonet466     |sine_generator__parameterized36 |    79|
+|45    |        tonet493     |sine_generator__parameterized37 |    71|
+|46    |        tonet523     |sine_generator__parameterized38 |    69|
+|47    |        tonet55      |sine_generator                  |    70|
+|48    |        tonet554     |sine_generator__parameterized39 |    79|
+|49    |        tonet58      |sine_generator__parameterized0  |    77|
+|50    |        tonet587     |sine_generator__parameterized40 |    75|
+|51    |        tonet61      |sine_generator__parameterized1  |    69|
+|52    |        tonet622     |sine_generator__parameterized41 |    69|
+|53    |        tonet65      |sine_generator__parameterized2  |    73|
+|54    |        tonet659     |sine_generator__parameterized42 |    67|
+|55    |        tonet69      |sine_generator__parameterized3  |    75|
+|56    |        tonet698     |sine_generator__parameterized43 |    77|
+|57    |        tonet73      |sine_generator__parameterized4  |    69|
+|58    |        tonet739     |sine_generator__parameterized44 |    64|
+|59    |        tonet77      |sine_generator__parameterized5  |    64|
+|60    |        tonet783     |sine_generator__parameterized45 |    73|
+|61    |        tonet82      |sine_generator__parameterized6  |    63|
+|62    |        tonet830     |sine_generator__parameterized46 |    74|
+|63    |        tonet87      |sine_generator__parameterized7  |    73|
+|64    |        tonet880     |sine_generator__parameterized47 |    77|
+|65    |        tonet92      |sine_generator__parameterized8  |    75|
+|66    |        tonet932     |sine_generator__parameterized48 |    76|
+|67    |        tonet98      |sine_generator__parameterized9  |    75|
+|68    |        tonet987     |sine_generator__parameterized49 |    69|
+|69    |      nolabel_line73 |pwm                             |    20|
+|70    |    d1               |picture_blob_digit__xdcDup__1   |    59|
+|71    |    d10              |picture_blob_digit__xdcDup__2   |    53|
+|72    |    d100             |picture_blob_digit__xdcDup__3   |    58|
+|73    |    d1000            |picture_blob_digit              |    57|
+|74    |    hd               |hex_to_decimal                  |   192|
+|75    |    meter1           |beat_generator                  |   127|
+|76    |    music            |music_lookup                    |    40|
+|77    |    notegen          |note_generator                  |  2913|
+|78    |      notepos        |note_positions                  |    19|
+|79    |  xvga1              |xvga                            |  2686|
 +------+---------------------+--------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:50 ; elapsed = 00:00:56 . Memory (MB): peak = 2121.910 ; gain = 469.043 ; free physical = 205 ; free virtual = 10768
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:50 ; elapsed = 00:00:56 . Memory (MB): peak = 2129.824 ; gain = 475.176 ; free physical = 1164 ; free virtual = 10054
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 141 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:47 ; elapsed = 00:00:53 . Memory (MB): peak = 2121.910 ; gain = 283.418 ; free physical = 263 ; free virtual = 10827
-Synthesis Optimization Complete : Time (s): cpu = 00:00:50 ; elapsed = 00:00:56 . Memory (MB): peak = 2121.914 ; gain = 469.043 ; free physical = 277 ; free virtual = 10840
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:47 ; elapsed = 00:00:53 . Memory (MB): peak = 2129.824 ; gain = 287.582 ; free physical = 1226 ; free virtual = 10116
+Synthesis Optimization Complete : Time (s): cpu = 00:00:50 ; elapsed = 00:00:56 . Memory (MB): peak = 2129.828 ; gain = 475.176 ; free physical = 1239 ; free virtual = 10129
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 1488 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 2036 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2153.926 ; gain = 0.000 ; free physical = 214 ; free virtual = 10777
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2161.840 ; gain = 0.000 ; free physical = 1181 ; free virtual = 10071
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-436 Infos, 280 Warnings, 0 Critical Warnings and 0 Errors encountered.
+473 Infos, 274 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:55 ; elapsed = 00:01:01 . Memory (MB): peak = 2153.926 ; gain = 719.387 ; free physical = 327 ; free virtual = 10889
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2153.926 ; gain = 0.000 ; free physical = 327 ; free virtual = 10889
+synth_design: Time (s): cpu = 00:00:55 ; elapsed = 00:01:01 . Memory (MB): peak = 2161.840 ; gain = 727.457 ; free physical = 1297 ; free virtual = 10186
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2161.840 ; gain = 0.000 ; free physical = 1297 ; free virtual = 10186
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint '/afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.runs/synth_1/labkit.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file labkit_utilization_synth.rpt -pb labkit_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Mon Dec  2 17:42:12 2019...
+INFO: [Common 17-206] Exiting Vivado at Tue Dec  3 17:46:17 2019...

@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.1.2 (lin64) Build 2615518 Fri Aug  9 15:53:29 MDT 2019
-| Date         : Mon Dec  2 17:44:05 2019
+| Date         : Tue Dec  3 17:47:58 2019
 | Host         : eecs-digital-207 running 64-bit Ubuntu 14.04.6 LTS
 | Command      : report_methodology -file labkit_methodology_drc_routed.rpt -pb labkit_methodology_drc_routed.pb -rpx labkit_methodology_drc_routed.rpx
 | Design       : labkit
@@ -23,12 +23,23 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max violations: <unlimited>
-             Violations found: 0
-+------+----------+-------------+------------+
-| Rule | Severity | Description | Violations |
-+------+----------+-------------+------------+
-+------+----------+-------------+------------+
+             Violations found: 2
++---------+----------+--------------------------------------------+------------+
+| Rule    | Severity | Description                                | Violations |
++---------+----------+--------------------------------------------+------------+
+| SYNTH-6 | Warning  | Timing of a block RAM might be sub-optimal | 2          |
++---------+----------+--------------------------------------------+------------+
 
 2. REPORT DETAILS
 -----------------
+SYNTH-6#1 Warning
+Timing of a block RAM might be sub-optimal  
+The timing for the instance d24_reg[6]_i_1, implemented as a block RAM, might be sub-optimal as no output register was merged into the block
+Related violations: <none>
+
+SYNTH-6#2 Warning
+Timing of a block RAM might be sub-optimal  
+The timing for the instance d30_reg[6]_i_1, implemented as a block RAM, might be sub-optimal as no output register was merged into the block
+Related violations: <none>
+
 

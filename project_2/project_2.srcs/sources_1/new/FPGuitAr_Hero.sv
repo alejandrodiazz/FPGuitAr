@@ -60,18 +60,33 @@ module FPGuitAr_Hero (
                 .aud_pwm(aud_pwm), .aud_sd(aud_sd)); // CHANGE running on 65MHz clock
    
    // SCORE PIXELS
-   wire [11:0] digit_pixels;             
-   hex_to_decimal hd(.reset(reset_in), .vcount_in(vcount_in), .hcount_in(hcount_in), .score(score),
-            .clk_in(vclock_in), .digit_pixels(digit_pixels) );
+   logic [3:0] di1, di10, di100, di1000;          
+   hex_to_decimal hd(.reset(reset_in), .score(score),.clk_in(vclock_in), 
+        .di1(di1), .di10(di10), .di100(di100), .di1000(di1000) );
+            
+   //SCORE IMAGE
+    logic [9:0] dig1x, dig10x, dig100x, dig1000x;
+    logic [8:0] dig1y, dig10y, dig100y, dig1000y;
+    logic [3:0] num1, num10, num100, num1000; 
+    wire [11:0] dig1, dig10, dig100, dig1000;  // output for digit pixel from module
+    picture_blob_digit  d1(.WIDTH(72),.HEIGHT(77),.pixel_clk_in(vclock_in), .x_in(dig1x),.y_in(dig1y),
+        .hcount_in(hcount_in),.vcount_in(vcount_in),.pixel_out(dig1),.offset(0), .digit(num1)); 
+    picture_blob_digit  d10(.WIDTH(72),.HEIGHT(77),.pixel_clk_in(vclock_in), .x_in(dig10x),.y_in(dig10y),
+        .hcount_in(hcount_in),.vcount_in(vcount_in),.pixel_out(dig10),.offset(0), .digit(num10)); 
+    picture_blob_digit  d100(.WIDTH(72),.HEIGHT(77),.pixel_clk_in(vclock_in), .x_in(dig100x),.y_in(dig100y),
+        .hcount_in(hcount_in),.vcount_in(vcount_in),.pixel_out(dig100),.offset(0), .digit(num100)); 
+    picture_blob_digit  d1000(.WIDTH(72),.HEIGHT(77),.pixel_clk_in(vclock_in), .x_in(dig1000x),.y_in(dig1000y),
+        .hcount_in(hcount_in),.vcount_in(vcount_in),.pixel_out(dig1000),.offset(0), .digit(num1000)); 
+
    
    // DEMO INTRO PIXELS         
-    wire [11:0] dpixel0, dpixel1, dpixel2; //dpixel3; //dpixel4, dpixel5, dpixel6;  // output for digit pixel from module
-    picture_blob_digit  d0(.WIDTH(72),.HEIGHT(77),.pixel_clk_in(vclock_in), .x_in(600),.y_in(50),
-        .hcount_in(hcount_in),.vcount_in(vcount_in), .pixel_out(dpixel0), .offset(0), .digit(0));
-    picture_blob_digit  d1(.WIDTH(72),.HEIGHT(77),.pixel_clk_in(vclock_in), .x_in(600),.y_in(150),
-        .hcount_in(hcount_in),.vcount_in(vcount_in), .pixel_out(dpixel1), .offset(0), .digit(1));
-    picture_blob_digit  d2(.WIDTH(72),.HEIGHT(77),.pixel_clk_in(vclock_in), .x_in(600),.y_in(250),
-        .hcount_in(hcount_in),.vcount_in(vcount_in), .pixel_out(dpixel2), .offset(0), .digit(2));
+//    wire [11:0] dpixel0, dpixel1; //dpixel2; //dpixel3; //dpixel4, dpixel5, dpixel6;  // output for digit pixel from module
+//    picture_blob_digit  d0(.WIDTH(72),.HEIGHT(77),.pixel_clk_in(vclock_in), .x_in(600),.y_in(50),
+//        .hcount_in(hcount_in),.vcount_in(vcount_in), .pixel_out(dpixel0), .offset(0), .digit(0));
+//    picture_blob_digit  d2(.WIDTH(72),.HEIGHT(77),.pixel_clk_in(vclock_in), .x_in(600),.y_in(150),
+//        .hcount_in(hcount_in),.vcount_in(vcount_in), .pixel_out(dpixel1), .offset(0), .digit(1));
+//    picture_blob_digit  d2(.WIDTH(72),.HEIGHT(77),.pixel_clk_in(vclock_in), .x_in(600),.y_in(250),
+//        .hcount_in(hcount_in),.vcount_in(vcount_in), .pixel_out(dpixel2), .offset(0), .digit(2));
 //    picture_blob_digit  d3(.WIDTH(72),.HEIGHT(77),.pixel_clk_in(vclock_in), .x_in(600),.y_in(350),
 //        .hcount_in(hcount_in),.vcount_in(vcount_in), .pixel_out(dpixel3), .offset(0), .digit(3));
 //    picture_blob_digit  d4(.WIDTH(72),.HEIGHT(77),.pixel_clk_in(vclock_in), .x_in(600),.y_in(450),
@@ -121,6 +136,7 @@ module FPGuitAr_Hero (
    logic[3:0] c;
    
    logic [6:0] beat; // up to 127 beats
+   logic [6:0] old_beat; // up to 127 beats
    logic reset_beat;
    logic [26:0] bpm;
    logic [35:0] music_out;
@@ -158,18 +174,21 @@ module FPGuitAr_Hero (
 //        end
         
         // MOVING HANDS
-        if( (game_state == 0) || reset_in) begin                      // reset values on a reset
-            hand1_x <= 400; hand1_y <= 600;                    // reset hands
+        if( (game_state == 0) || reset_in) begin                // reset values on a reset
+            hand1_x <= 400; hand1_y <= 600;                     // reset hands
             hand2_x <= 720; hand2_y <= 600;
             notes <= 0;
             score <= 0;
             game_state <= 1;
             button_click_counter <= 0;
         end else if (game_state == 1) begin
-            alpha_pixel <= hand1_pixel | dpixel0 | dpixel1 | dpixel2; //| dpixel3; //| dpixel4 | dpixel5 | dpixel6;
+            dig1x <= 700; dig10x <= 700; dig100x <= 700; dig1000x <= 700;
+            dig1y <= 50; dig10y <= 150; dig100y <= 250; dig1000y <= 350;
+            num1 <= 0; num10<= 1; num100 <= 2; num1000<= 3; 
+            alpha_pixel <= hand1_pixel | dig1 | dig10 | dig100 | dig1000;     // | dpixel2; //| dpixel3; //| dpixel4 | dpixel5 | dpixel6;
             reset_beat <= 1;
             
-            if(button_click_counter == 200)begin
+            if(button_click_counter == 150)begin
                 game_state <= 2;    // goes to next menu if button is selected
                 hand1_x <= 200; hand1_y <= 600;  // reset hands (probably won't overlap with hand movement)
                 score <= 0;
@@ -179,8 +198,8 @@ module FPGuitAr_Hero (
                 menu_array <= 0;
                 if(menu_array[0] == 1)begin button_click_counter <= button_click_counter + 1;      song <= 0; end
                 else if(menu_array[1] == 1)begin button_click_counter <= button_click_counter + 1; song <= 1; end
-                else if(menu_array[2] == 1)begin button_click_counter <= button_click_counter + 1; song <= 3; end
-//                else if(menu_array[3] == 1)begin button_click_counter <= button_click_counter + 1; song <= 3; end
+                else if(menu_array[2] == 1)begin button_click_counter <= button_click_counter + 1; song <= 2; end
+                else if(menu_array[3] == 1)begin button_click_counter <= button_click_counter + 1; song <= 3; end
 //                else if(menu_array[4] == 1)begin button_click_counter <= button_click_counter + 1; song <= 4; end
 //                else if(menu_array[5] == 1)begin button_click_counter <= button_click_counter + 1; song <= 5; end
 //                else if(menu_array[6] == 1)begin button_click_counter <= button_click_counter + 1; song <= 6; end
@@ -188,9 +207,10 @@ module FPGuitAr_Hero (
             end
             
             if(hand1_pixel != 0) begin          // checks for hand button intersect
-                if(dpixel0 != 0)  menu_array[0] <= 1;
-                if(dpixel1 != 0)  menu_array[1] <= 1;
-                if(dpixel2 != 0)  menu_array[2] <= 1;
+                if(dig1 != 0)  menu_array[0] <= 1;
+                if(dig10 != 0)  menu_array[1] <= 1;
+                if(dig100 != 0)  menu_array[2] <= 1;
+                if(dig1000 != 0)  menu_array[3] <= 1;
 //                menu_array[3] <= (dpixel3 != 0)? 1:0;
 //                menu_array[4] <= (dpixel4 != 0)? 1:0;
 //                menu_array[5] <= (dpixel5 != 0)? 1:0;
@@ -232,8 +252,12 @@ module FPGuitAr_Hero (
             
         end else if(game_state == 2) begin
             reset_beat <= 0;    // end reset beat pulse
+            // digit pixels
+            dig1x <= 900; dig10x <= 830; dig100x <= 760; dig1000x <= 690;
+            dig1y <= 50; dig10y <= 50; dig100y <= 50; dig1000y <= 50;
+            num1 <= di1; num10<= di10; num100 <= di100; num1000<= di1000; 
             // PIXELS
-            alpha_pixel <= note_pixels | hand1_pixel | hand2_pixel | digit_pixels;
+            alpha_pixel <= note_pixels | hand1_pixel | hand2_pixel | dig1 | dig10 | dig100 | dig1000;;
             // SPEED
             case(speed)
                 3'd0: bpm <= 65000000;
@@ -246,7 +270,8 @@ module FPGuitAr_Hero (
                 3'd7: bpm <= 7000000;
             endcase
             
-            if(beat == 127) begin // GO BACK to START
+            old_beat<=beat;
+            if( (beat == 127) && (old_beat == 126) ) begin // GO BACK to START
                 game_state <= 0;
             end 
             

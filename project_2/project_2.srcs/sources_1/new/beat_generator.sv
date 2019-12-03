@@ -32,7 +32,7 @@ module beat_generator(
     always_ff @ (posedge clk_in) begin
         if( reset ) begin                   // reset values
             counter <= 0; 
-            beat <= 0;  
+            beat <= 127;  
         end else begin
             if(counter == bpm) begin        // if bpm is reached then increment beat
                 beat <= beat + 1;
