@@ -40,9 +40,9 @@
 ##          
 ##
 
-#generating empty music rows
-##for i in range(0, 128):
-##    print("7'd" + str(i) + ": music_out<= {6'd0, 3'd0, 6'd0, 3'd0, 6'd0, 3'd0, 6'd0, 3'd0};")
+# generating empty music rows
+for i in range(0, 512):
+    print("9'd" + str(i) + ": music_out<= {6'd0, 3'd0, 6'd0, 3'd0, 6'd0, 3'd0, 6'd0, 3'd0};")
 
 
 # generating chromatic music rows
@@ -80,10 +80,10 @@
 ##          " <= 0; nlen" + str(i) + " <= note_length; ncolor" + str(i) +
 ##          " <= note_color; end")
 
-
-for i in range(32):
-    print( "y" + str(i) + " <= y" + str(i) + " < 770? y" + str(i) +
-           " + 1: 780;")
+##
+##for i in range(32):
+##    print( "y" + str(i) + " <= y" + str(i) + " < 770? y" + str(i) +
+##           " + 1: 780;")
     
     
           

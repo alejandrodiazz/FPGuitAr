@@ -1,0 +1,2 @@
+alph_image_rom.v,verilog,xil_defaultlib,../../../../project_2.srcs/sources_1/ip/alph_image_rom/sim/alph_image_rom.v,
+glbl.v,Verilog,xil_defaultlib,glbl.v

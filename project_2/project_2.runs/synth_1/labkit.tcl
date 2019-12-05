@@ -17,6 +17,8 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
+set_param xicom.use_bs_reader 1
+set_param chipscope.maxJobs 2
 create_project -in_memory -part xc7a100tcsg324-1
 
 set_param project.singleFileAddWarning.threshold 0
@@ -35,6 +37,8 @@ add_files /afs/athena.mit.edu/user/a/d/addiaz15/Downloads/ds_image.coe
 add_files /afs/athena.mit.edu/user/a/d/addiaz15/Downloads/ds_color_map.coe
 add_files /afs/athena.mit.edu/user/a/d/addiaz15/Downloads/image.coe
 add_files /afs/athena.mit.edu/user/a/d/addiaz15/Downloads/color_red.coe
+add_files /afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/alph_image.coe
+add_files /afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/alph_map_red.coe
 read_verilog -library xil_defaultlib -sv {
   /afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/FPGuitAr_Hero.sv
   /afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv
@@ -52,6 +56,12 @@ set_property used_in_implementation false [get_files -all /afs/athena.mit.edu/us
 
 read_ip -quiet /afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/ip/image_rom_map_1/image_rom_map.xci
 set_property used_in_implementation false [get_files -all /afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/ip/image_rom_map_1/image_rom_map_ooc.xdc]
+
+read_ip -quiet /afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/ip/alph_image_rom/alph_image_rom.xci
+set_property used_in_implementation false [get_files -all /afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/ip/alph_image_rom/alph_image_rom_ooc.xdc]
+
+read_ip -quiet /afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/ip/alph_map_red_rom/alph_map_red_rom.xci
+set_property used_in_implementation false [get_files -all /afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/ip/alph_map_red_rom/alph_map_red_rom_ooc.xdc]
 
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the

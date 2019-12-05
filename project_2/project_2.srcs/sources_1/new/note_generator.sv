@@ -25,7 +25,7 @@ module note_generator(
     input clk_in,
     input [10:0] hcount_in, // horizontal index of current pixel (0..1023)
     input [9:0]  vcount_in, // vertical index of current pixel (0..767)
-    input [6:0] beat,
+    input [8:0] beat,
     input [26:0] bpm,
     input [35:0] music_out,
     output reg [11:0] pixel,
@@ -87,7 +87,7 @@ module note_generator(
     note_blob note31(.width(note_width), .height(nlen31), .color(ncolor31), .pixel_clk_in(clk_in),.x_in(x31),.y_in(y31),.hcount_in(hcount_in),.vcount_in(vcount_in), .pixel_out(npixel31));
 
     
-    logic [6:0] old_beat;
+    logic [8:0] old_beat;
     logic [1:0] note_state;
     logic outputting;
     logic [4:0] note_buffer;

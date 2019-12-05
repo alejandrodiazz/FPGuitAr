@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.1.2 (lin64) Build 2615518 Fri Aug  9 15:53:29 MDT 2019
-| Date         : Thu Dec  5 09:47:47 2019
+| Date         : Thu Dec  5 15:40:43 2019
 | Host         : eecs-digital-207 running 64-bit Ubuntu 14.04.6 LTS
 | Command      : report_methodology -file labkit_methodology_drc_routed.rpt -pb labkit_methodology_drc_routed.pb -rpx labkit_methodology_drc_routed.rpx
 | Design       : labkit
@@ -23,23 +23,130 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max violations: <unlimited>
-             Violations found: 2
-+---------+----------+--------------------------------------------+------------+
-| Rule    | Severity | Description                                | Violations |
-+---------+----------+--------------------------------------------+------------+
-| SYNTH-6 | Warning  | Timing of a block RAM might be sub-optimal | 2          |
-+---------+----------+--------------------------------------------+------------+
+             Violations found: 23
++----------+----------+--------------------------+------------+
+| Rule     | Severity | Description              | Violations |
++----------+----------+--------------------------+------------+
+| SYNTH-9  | Warning  | Small multiplier         | 16         |
+| SYNTH-12 | Warning  | DSP input not registered | 1          |
+| SYNTH-13 | Warning  | combinational multiplier | 6          |
++----------+----------+--------------------------+------------+
 
 2. REPORT DETAILS
 -----------------
-SYNTH-6#1 Warning
-Timing of a block RAM might be sub-optimal  
-The timing for the instance d14_reg[6]_i_1, implemented as a block RAM, might be sub-optimal as no output register was merged into the block
+SYNTH-9#1 Warning
+Small multiplier  
+Detected multiplier at pg/a0/image_addr_reg_i_13 of size 6x4, it is implemented as LUTs due to its small size. To force the multiplier onto a DSP block, use the USE_DSP48 attribute.
 Related violations: <none>
 
-SYNTH-6#2 Warning
-Timing of a block RAM might be sub-optimal  
-The timing for the instance d34_reg[6]_i_1, implemented as a block RAM, might be sub-optimal as no output register was merged into the block
+SYNTH-9#2 Warning
+Small multiplier  
+Detected multiplier at pg/a0/image_addr_reg_i_14 of size 6x4, it is implemented as LUTs due to its small size. To force the multiplier onto a DSP block, use the USE_DSP48 attribute.
+Related violations: <none>
+
+SYNTH-9#3 Warning
+Small multiplier  
+Detected multiplier at pg/a1/image_addr_reg_i_13 of size 6x4, it is implemented as LUTs due to its small size. To force the multiplier onto a DSP block, use the USE_DSP48 attribute.
+Related violations: <none>
+
+SYNTH-9#4 Warning
+Small multiplier  
+Detected multiplier at pg/a1/image_addr_reg_i_14 of size 6x4, it is implemented as LUTs due to its small size. To force the multiplier onto a DSP block, use the USE_DSP48 attribute.
+Related violations: <none>
+
+SYNTH-9#5 Warning
+Small multiplier  
+Detected multiplier at pg/a11/digit_selector0_inferred__0/i_ of size 6x4, it is implemented as LUTs due to its small size. To force the multiplier onto a DSP block, use the USE_DSP48 attribute.
+Related violations: <none>
+
+SYNTH-9#6 Warning
+Small multiplier  
+Detected multiplier at pg/a2/image_addr_reg_i_14 of size 6x4, it is implemented as LUTs due to its small size. To force the multiplier onto a DSP block, use the USE_DSP48 attribute.
+Related violations: <none>
+
+SYNTH-9#7 Warning
+Small multiplier  
+Detected multiplier at pg/a3/image_addr_reg_i_13 of size 6x4, it is implemented as LUTs due to its small size. To force the multiplier onto a DSP block, use the USE_DSP48 attribute.
+Related violations: <none>
+
+SYNTH-9#8 Warning
+Small multiplier  
+Detected multiplier at pg/a3/image_addr_reg_i_14 of size 6x4, it is implemented as LUTs due to its small size. To force the multiplier onto a DSP block, use the USE_DSP48 attribute.
+Related violations: <none>
+
+SYNTH-9#9 Warning
+Small multiplier  
+Detected multiplier at pg/a4/image_addr_reg_i_13 of size 6x4, it is implemented as LUTs due to its small size. To force the multiplier onto a DSP block, use the USE_DSP48 attribute.
+Related violations: <none>
+
+SYNTH-9#10 Warning
+Small multiplier  
+Detected multiplier at pg/a4/image_addr_reg_i_14 of size 6x4, it is implemented as LUTs due to its small size. To force the multiplier onto a DSP block, use the USE_DSP48 attribute.
+Related violations: <none>
+
+SYNTH-9#11 Warning
+Small multiplier  
+Detected multiplier at pg/a5/image_addr_reg_i_13 of size 6x4, it is implemented as LUTs due to its small size. To force the multiplier onto a DSP block, use the USE_DSP48 attribute.
+Related violations: <none>
+
+SYNTH-9#12 Warning
+Small multiplier  
+Detected multiplier at pg/a5/image_addr_reg_i_14 of size 6x4, it is implemented as LUTs due to its small size. To force the multiplier onto a DSP block, use the USE_DSP48 attribute.
+Related violations: <none>
+
+SYNTH-9#13 Warning
+Small multiplier  
+Detected multiplier at pg/a6/image_addr_reg_i_13 of size 6x4, it is implemented as LUTs due to its small size. To force the multiplier onto a DSP block, use the USE_DSP48 attribute.
+Related violations: <none>
+
+SYNTH-9#14 Warning
+Small multiplier  
+Detected multiplier at pg/a6/image_addr_reg_i_14 of size 6x4, it is implemented as LUTs due to its small size. To force the multiplier onto a DSP block, use the USE_DSP48 attribute.
+Related violations: <none>
+
+SYNTH-9#15 Warning
+Small multiplier  
+Detected multiplier at pg/a7/digit_selector_reg[5]_i_1 of size 6x4, it is implemented as LUTs due to its small size. To force the multiplier onto a DSP block, use the USE_DSP48 attribute.
+Related violations: <none>
+
+SYNTH-9#16 Warning
+Small multiplier  
+Detected multiplier at pg/a9/digit_selector0_inferred__0/i_ of size 6x4, it is implemented as LUTs due to its small size. To force the multiplier onto a DSP block, use the USE_DSP48 attribute.
+Related violations: <none>
+
+SYNTH-12#1 Warning
+DSP input not registered  
+DSP instance pg/a8/image_addr_reg is not fully pipelined on the input side. AREG/BREG/CREG/DREG are not used.
+Related violations: <none>
+
+SYNTH-13#1 Warning
+combinational multiplier  
+Detected combinational multiplier in DSP instance pg/a0/image_addr1.
+Related violations: <none>
+
+SYNTH-13#2 Warning
+combinational multiplier  
+Detected combinational multiplier in DSP instance pg/a1/image_addr1.
+Related violations: <none>
+
+SYNTH-13#3 Warning
+combinational multiplier  
+Detected combinational multiplier in DSP instance pg/a3/image_addr1.
+Related violations: <none>
+
+SYNTH-13#4 Warning
+combinational multiplier  
+Detected combinational multiplier in DSP instance pg/a4/image_addr1.
+Related violations: <none>
+
+SYNTH-13#5 Warning
+combinational multiplier  
+Detected combinational multiplier in DSP instance pg/a5/image_addr1.
+Related violations: <none>
+
+SYNTH-13#6 Warning
+combinational multiplier  
+Detected combinational multiplier in DSP instance pg/a8/image_addr1.
 Related violations: <none>
 
 

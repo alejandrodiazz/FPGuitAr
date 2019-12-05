@@ -24,7 +24,7 @@ module beat_generator(
     input reset,
     input clk_in,
     input [26:0] bpm,
-    output reg [6:0] beat
+    output reg [8:0] beat
     );
     
     logic [26:0] counter;
@@ -32,7 +32,7 @@ module beat_generator(
     always_ff @ (posedge clk_in) begin
         if( reset ) begin                   // reset values
             counter <= 0; 
-            beat <= 127;  
+            beat <= 511;  
         end else begin
             if(counter == bpm) begin        // if bpm is reached then increment beat
                 beat <= beat + 1;

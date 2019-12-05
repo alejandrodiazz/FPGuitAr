@@ -13,8 +13,11 @@ default_nettype none;
 
 module labkit(
    input clk_100mhz,
+   input [7:0] ja,
+   input [2:0] jb,
    input[15:0] sw,
    input btnc, btnu, btnl, btnr, btnd,
+   output jbclk,
    output[3:0] vga_r,
    output[3:0] vga_b,
    output[3:0] vga_g,
@@ -59,6 +62,29 @@ module labkit(
     // btnc button is user reset
     wire reset;
     debounce db1(.reset_in(reset),.clock_in(clk_65mhz),.noisy_in(btnc),.clean_out(reset));
+    
+    // ################################### SARAH SARAH SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSs
+    
+    //Synchronize inputs
+//    logic [7:0] cam_pixel;
+//    logic cam_pclk, cam_vsync, cam_href;
+//    sync_8bit pix_sync(.clk(clk_65mhz),.in(ja),.out(cam_pixel));
+//    sync_1bit pclk_sync(.clk(clk_65mhz),.in(jb[0]),.out(cam_pclk));
+//    sync_1bit vsync_sync(.clk(clk_65mhz),.in(jb[1]),.out(cam_vsync));
+//    sync_1bit href_sync(.clk(clk_65mhz),.in(jb[2]),.out(cam_href));
+
+    //Camera interface and image processing
+    logic [8:0] x_A, y_A; //x, y coordinates of detected object; x up to 320, y up to 240
+    logic [8:0] x_B, y_B;
+    logic [8:0] x_C, y_C;
+    logic [8:0] x_D, y_D;
+    logic is_A, is_B, is_C, is_D; //binary values representing whether an object is present in the scene or not
+//    image_processing my_img(    .clk(clk_65mhz),.rst(reset),.pixel(cam_pixel),.pclk(cam_pclk),.vsync(cam_vsync),.href(cam_href),.xclk(jbclk),
+//                                .x_A_filtered(x_A),.y_A_filtered(y_A),.x_B_filtered(x_B),.y_B_filtered(y_B),
+//                                .x_C_filtered(x_C),.y_C_filtered(y_C),.x_D_filtered(x_D),.y_D_filtered(y_D),
+//                                .is_A(is_A),.is_B(is_B),.is_C(is_C),.is_D(is_D));
+    
+    // #######################################
    
     // UP and DOWN buttons for pong paddle
     wire up,down;
@@ -67,7 +93,9 @@ module labkit(
 
     wire phsync,pvsync,pblank;
 //    logic clk_100 = clk_100mhz; 
-    FPGuitAr_Hero pg(.vclock_in(clk_65mhz),.clk_100(clk_65mhz), .reset_in(reset), .btnu(btnu),.btnd(btnd),.btnr(btnr), .btnl(btnl), 
+    FPGuitAr_Hero pg( .x_A(x_A), .y_A(y_A), .x_B(x_B), .y_B(y_B), .x_C(x_C), .y_C(y_C), .x_D(x_D), .y_D(y_D),
+                .is_A(is_A),.is_B(is_B),.is_C(is_C),.is_D(is_D),
+                .vclock_in(clk_65mhz),.clk_100(clk_65mhz), .reset_in(reset), .btnu(btnu),.btnd(btnd),.btnr(btnr), .btnl(btnl), 
                 .pspeed_in(sw[15:12]), .hcount_in(hcount),.vcount_in(vcount), .hsync_in(hsync),.vsync_in(vsync),
                 .blank_in(blank),.phsync_out(phsync),.pvsync_out(pvsync),.pblank_out(pblank),.pixel_out(pixel), .hex_disp(data), 
                 .sw(sw), .aud_pwm(aud_pwm), .aud_sd(aud_sd), .led(led));
@@ -124,10 +152,13 @@ module blob
     input pixel_clk_in,
     input [10:0] x_in,hcount_in,
     input [9:0] y_in,vcount_in,
+    input off,
     output logic [11:0] pixel_out);
 
    always_comb begin
-      if ((hcount_in >= x_in && hcount_in < (x_in+width)) &&
+      if (off) begin
+        pixel_out = 0;
+      end else if ((hcount_in >= x_in && hcount_in < (x_in+width)) &&
 	 (vcount_in >= y_in && vcount_in < (y_in+height)))
 	  pixel_out = color;
       else pixel_out = 0;
