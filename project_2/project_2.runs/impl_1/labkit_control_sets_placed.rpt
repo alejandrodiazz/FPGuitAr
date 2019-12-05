@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.1.2 (lin64) Build 2615518 Fri Aug  9 15:53:29 MDT 2019
-| Date         : Tue Dec  3 17:47:20 2019
+| Date         : Thu Dec  5 09:47:09 2019
 | Host         : eecs-digital-207 running 64-bit Ubuntu 14.04.6 LTS
 | Command      : report_control_sets -verbose -file labkit_control_sets_placed.rpt
 | Design       : labkit
@@ -27,7 +27,7 @@ Table of Contents
 |    Minimum number of control sets                        |   171 |
 |    Addition due to synthesis replication                 |     0 |
 |    Addition due to physical synthesis replication        |     0 |
-| Unused register locations in slices containing registers |   426 |
+| Unused register locations in slices containing registers |   416 |
 +----------------------------------------------------------+-------+
 * Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
 ** Run report_qor_suggestions for automated merging and remapping suggestions
@@ -40,12 +40,12 @@ Table of Contents
 |       Fanout       | Count |
 +--------------------+-------+
 | Total control sets |   171 |
-| >= 0 to < 4        |     2 |
+| >= 0 to < 4        |     1 |
 | >= 4 to < 6        |    13 |
 | >= 6 to < 8        |     1 |
-| >= 8 to < 10       |    69 |
-| >= 10 to < 12      |    35 |
-| >= 12 to < 14      |     1 |
+| >= 8 to < 10       |    68 |
+| >= 10 to < 12      |    36 |
+| >= 12 to < 14      |     2 |
 | >= 14 to < 16      |    33 |
 | >= 16              |    17 |
 +--------------------+-------+
@@ -58,192 +58,192 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |             115 |           61 |
+| No           | No                    | No                     |             111 |           58 |
 | No           | No                    | Yes                    |               0 |            0 |
-| No           | Yes                   | No                     |             702 |          274 |
-| Yes          | No                    | No                     |             550 |          222 |
+| No           | Yes                   | No                     |             697 |          282 |
+| Yes          | No                    | No                     |             560 |          220 |
 | Yes          | No                    | Yes                    |               0 |            0 |
-| Yes          | Yes                   | No                     |            2487 |          709 |
+| Yes          | Yes                   | No                     |            2496 |          696 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 
 4. Detailed Control Set Information
 -----------------------------------
 
-+----------------------+-------------------------------------------------+-------------------------------------------------+------------------+----------------+
-|     Clock Signal     |                  Enable Signal                  |                 Set/Reset Signal                | Slice Load Count | Bel Load Count |
-+----------------------+-------------------------------------------------+-------------------------------------------------+------------------+----------------+
-|  clkdivider/clk_out1 | db1/new_input_i_1_n_0                           |                                                 |                1 |              1 |
-|  clkdivider/clk_out1 | pg/old_beat[6]_i_1_n_0                          | pg/bpm[4]_i_1_n_0                               |                1 |              1 |
-|  clkdivider/clk_out1 | pg/hd/digit100[3]_i_1_n_0                       | pg/hd/digit1[3]_i_1_n_0                         |                1 |              4 |
-|  clkdivider/clk_out1 |                                                 | xvga1/hcount_out_reg[10]_rep_0                  |                4 |              4 |
-|  clkdivider/clk_out1 |                                                 | xvga1/hcount_out_reg[10]_rep_3                  |                4 |              4 |
-|  clkdivider/clk_out1 |                                                 | xvga1/hcount_out_reg[10]_rep_6                  |                4 |              4 |
-|  clkdivider/clk_out1 |                                                 | xvga1/hcount_out_reg[10]_rep_9                  |                4 |              4 |
-|  clkdivider/clk_out1 | pg/old_beat[6]_i_1_n_0                          | pg/bpm[23]_i_1_n_0                              |                1 |              4 |
-|  clkdivider/clk_out1 | pg/hd/digit1000[3]_i_1_n_0                      | pg/hd/digit1[3]_i_1_n_0                         |                1 |              4 |
-|  clkdivider/clk_out1 | pg/hd/digit10[3]_i_1_n_0                        | pg/hd/digit1[3]_i_1_n_0                         |                1 |              4 |
-|  clkdivider/clk_out1 | pg/hd/digit1[3]_i_2_n_0                         | pg/hd/digit1[3]_i_1_n_0                         |                1 |              4 |
-|  clkdivider/clk_out1 | pg/hand1_counter[20]_i_2_n_0                    | pg/notegen/pixel_reg[7]_0                       |                2 |              4 |
-|  clkdivider/clk_out1 | pg/hand1_counter[20]_i_2_n_0                    | pg/notegen/pixel_reg[3]_0                       |                1 |              4 |
-|  clkdivider/clk_out1 | pg/hand1_counter[20]_i_2_n_0                    | pg/notegen/pixel_reg[11]_2                      |                2 |              4 |
-|  clkdivider/clk_out1 | pg/notegen/note_buffer                          | db1/reset                                       |                2 |              5 |
-|  clkdivider/clk_out1 | pg/meter1/beat_reg[6]_i_1_n_3                   | pg/reset_beat                                   |                5 |              7 |
-|  clkdivider/clk_out1 |                                                 | pg/audio1/myrec/d55[7]_i_1_n_0                  |                2 |              8 |
-|  clkdivider/clk_out1 |                                                 | pg/audio1/myrec/d53[7]_i_1_n_0                  |                2 |              8 |
-|  clkdivider/clk_out1 |                                                 | pg/audio1/myrec/d54[7]_i_1_n_0                  |                2 |              8 |
-|  clkdivider/clk_out1 |                                                 | pg/audio1/myrec/d58[7]_i_1_n_0                  |                4 |              8 |
-|  clkdivider/clk_out1 |                                                 | pg/audio1/myrec/d56[7]_i_1_n_0                  |                4 |              8 |
-|  clkdivider/clk_out1 |                                                 | pg/audio1/myrec/d57[7]_i_1_n_0                  |                3 |              8 |
-|  clkdivider/clk_out1 |                                                 | pg/music/music_out[28]_i_1_n_0                  |                5 |              8 |
-|  clkdivider/clk_out1 |                                                 | pg/audio1/myrec/d52[7]_i_1_n_0                  |                3 |              8 |
-|  clkdivider/clk_out1 |                                                 | pg/audio1/myrec/d51[7]_i_1_n_0                  |                4 |              8 |
-|  clkdivider/clk_out1 |                                                 | pg/audio1/myrec/d50[7]_i_1_n_0                  |                3 |              8 |
-|  clkdivider/clk_out1 |                                                 | pg/audio1/myrec/d4[7]_i_1_n_0                   |                2 |              8 |
-|  clkdivider/clk_out1 |                                                 | pg/audio1/myrec/d49[7]_i_1_n_0                  |                4 |              8 |
-|  clkdivider/clk_out1 |                                                 | pg/audio1/myrec/d48[7]_i_1_n_0                  |                4 |              8 |
-|  clkdivider/clk_out1 |                                                 | pg/audio1/myrec/d47[7]_i_1_n_0                  |                3 |              8 |
-|  clkdivider/clk_out1 |                                                 | pg/audio1/myrec/d59[7]_i_1_n_0                  |                2 |              8 |
-|  clkdivider/clk_out1 |                                                 | pg/audio1/myrec/d5[7]_i_1_n_0                   |                3 |              8 |
-|  clkdivider/clk_out1 |                                                 | pg/audio1/myrec/d60[7]_i_1_n_0                  |                3 |              8 |
-|  clkdivider/clk_out1 |                                                 | pg/audio1/myrec/d6[7]_i_1_n_0                   |                2 |              8 |
-|  clkdivider/clk_out1 |                                                 | pg/audio1/myrec/d7[7]_i_1_n_0                   |                3 |              8 |
-|  clkdivider/clk_out1 |                                                 | pg/audio1/myrec/d8[7]_i_1_n_0                   |                1 |              8 |
-|  clkdivider/clk_out1 |                                                 | pg/audio1/myrec/d9[7]_i_1_n_0                   |                3 |              8 |
-|  clkdivider/clk_out1 | xvga1/hcount_out_reg[10]_rep_4[0]               |                                                 |                2 |              8 |
-|  clkdivider/clk_out1 | xvga1/hcount_out_reg[10]_rep_7[0]               |                                                 |                2 |              8 |
-|  clkdivider/clk_out1 | xvga1/hcount_out_reg[10]_rep_10[0]              |                                                 |                2 |              8 |
-|  clkdivider/clk_out1 | xvga1/E[0]                                      |                                                 |                2 |              8 |
-|  clkdivider/clk_out1 | pg/button_click_counter[7]_i_2_n_0              | pg/button_click_counter[7]_i_1_n_0              |                3 |              8 |
-|  clkdivider/clk_out1 | pg/notegen/note_num                             |                                                 |                5 |              8 |
-|  clkdivider/clk_out1 |                                                 | pg/audio1/myrec/d18[7]_i_1_n_0                  |                4 |              8 |
-|  clkdivider/clk_out1 |                                                 | pg/audio1/myrec/d26[7]_i_1_n_0                  |                3 |              8 |
-|  clkdivider/clk_out1 |                                                 | pg/audio1/myrec/d25[7]_i_1_n_0                  |                2 |              8 |
-|  clkdivider/clk_out1 |                                                 | pg/audio1/myrec/d24[7]_i_1_n_0                  |                4 |              8 |
-|  clkdivider/clk_out1 |                                                 | pg/audio1/myrec/d23[7]_i_1_n_0                  |                1 |              8 |
-|  clkdivider/clk_out1 |                                                 | pg/audio1/myrec/d0[7]_i_1_n_0                   |                3 |              8 |
-|  clkdivider/clk_out1 |                                                 | pg/audio1/myrec/d22[7]_i_1_n_0                  |                3 |              8 |
-|  clkdivider/clk_out1 |                                                 | pg/audio1/myrec/d21[7]_i_1_n_0                  |                2 |              8 |
-|  clkdivider/clk_out1 |                                                 | pg/audio1/myrec/d20[7]_i_1_n_0                  |                4 |              8 |
-|  clkdivider/clk_out1 |                                                 | pg/audio1/myrec/d1[7]_i_1_n_0                   |                2 |              8 |
-|  clkdivider/clk_out1 |                                                 | pg/audio1/myrec/d19[7]_i_1_n_0                  |                3 |              8 |
-|  clkdivider/clk_out1 |                                                 | pg/audio1/myrec/d27[7]_i_1_n_0                  |                4 |              8 |
-|  clkdivider/clk_out1 |                                                 | pg/audio1/myrec/d10[7]_i_1_n_0                  |                3 |              8 |
-|  clkdivider/clk_out1 |                                                 | pg/audio1/myrec/d17[7]_i_1_n_0                  |                3 |              8 |
-|  clkdivider/clk_out1 |                                                 | pg/audio1/myrec/d16[7]_i_1_n_0                  |                4 |              8 |
-|  clkdivider/clk_out1 |                                                 | pg/audio1/myrec/d14[7]_i_1_n_0                  |                3 |              8 |
-|  clkdivider/clk_out1 |                                                 | pg/audio1/myrec/d13[7]_i_1_n_0                  |                2 |              8 |
-|  clkdivider/clk_out1 |                                                 | pg/audio1/myrec/d11[7]_i_1_n_0                  |                3 |              8 |
-|  clkdivider/clk_out1 |                                                 | pg/audio1/myrec/d46[7]_i_1_n_0                  |                2 |              8 |
-|  clkdivider/clk_out1 |                                                 | pg/audio1/myrec/d12[7]_i_1_n_0                  |                3 |              8 |
-|  clkdivider/clk_out1 |                                                 | pg/audio1/myrec/d15[7]_i_1_n_0                  |                3 |              8 |
-|  clkdivider/clk_out1 |                                                 | pg/audio1/myrec/d36[7]_i_1_n_0                  |                2 |              8 |
-|  clkdivider/clk_out1 |                                                 | pg/audio1/myrec/d45[7]_i_1_n_0                  |                3 |              8 |
-|  clkdivider/clk_out1 |                                                 | pg/audio1/myrec/d44[7]_i_1_n_0                  |                4 |              8 |
-|  clkdivider/clk_out1 |                                                 | pg/audio1/myrec/d43[7]_i_1_n_0                  |                3 |              8 |
-|  clkdivider/clk_out1 |                                                 | pg/audio1/myrec/d42[7]_i_1_n_0                  |                4 |              8 |
-|  clkdivider/clk_out1 |                                                 | pg/audio1/myrec/d41[7]_i_1_n_0                  |                5 |              8 |
-|  clkdivider/clk_out1 |                                                 | pg/audio1/myrec/d40[7]_i_1_n_0                  |                3 |              8 |
-|  clkdivider/clk_out1 |                                                 | pg/audio1/myrec/d3[7]_i_1_n_0                   |                2 |              8 |
-|  clkdivider/clk_out1 |                                                 | pg/audio1/myrec/d39[7]_i_1_n_0                  |                2 |              8 |
-|  clkdivider/clk_out1 |                                                 | pg/audio1/myrec/d38[7]_i_1_n_0                  |                2 |              8 |
-|  clkdivider/clk_out1 |                                                 | pg/audio1/myrec/d37[7]_i_1_n_0                  |                2 |              8 |
-|  clkdivider/clk_out1 |                                                 | pg/audio1/myrec/d35[7]_i_1_n_0                  |                3 |              8 |
-|  clkdivider/clk_out1 |                                                 | pg/audio1/myrec/d34[7]_i_1_n_0                  |                2 |              8 |
-|  clkdivider/clk_out1 |                                                 | pg/audio1/myrec/d33[7]_i_1_n_0                  |                2 |              8 |
-|  clkdivider/clk_out1 |                                                 | pg/audio1/myrec/d32[7]_i_1_n_0                  |                2 |              8 |
-|  clkdivider/clk_out1 |                                                 | pg/audio1/myrec/d31[7]_i_1_n_0                  |                3 |              8 |
-|  clkdivider/clk_out1 |                                                 | pg/audio1/myrec/d30[7]_i_1_n_0                  |                4 |              8 |
-|  clkdivider/clk_out1 |                                                 | pg/audio1/myrec/d2[7]_i_1_n_0                   |                4 |              8 |
-|  clkdivider/clk_out1 |                                                 | pg/audio1/myrec/d29[7]_i_1_n_0                  |                4 |              8 |
-|  clkdivider/clk_out1 |                                                 | pg/audio1/myrec/d28[7]_i_1_n_0                  |                4 |              8 |
-|  clkdivider/clk_out1 | pg/notegen/notepos/x_pos[9]_i_1_n_0             |                                                 |                4 |              9 |
-|  clkdivider/clk_out1 | pg/notegen/y15                                  | pg/notegen/y15[9]_i_1_n_0                       |                3 |             10 |
-|  clkdivider/clk_out1 | pg/notegen/y22                                  | pg/notegen/y22[9]_i_1_n_0                       |                3 |             10 |
-|  clkdivider/clk_out1 | pg/notegen/y21                                  | pg/notegen/y21[9]_i_1_n_0                       |                4 |             10 |
-|  clkdivider/clk_out1 | pg/notegen/y20                                  | pg/notegen/y20[9]_i_1_n_0                       |                3 |             10 |
-|  clkdivider/clk_out1 | pg/notegen/y2                                   | pg/notegen/y2[9]_i_1_n_0                        |                3 |             10 |
-|  clkdivider/clk_out1 | pg/notegen/y19                                  | pg/notegen/y19[9]_i_1_n_0                       |                3 |             10 |
-|  clkdivider/clk_out1 | pg/notegen/y18                                  | pg/notegen/y18[9]_i_1_n_0                       |                2 |             10 |
-|  clkdivider/clk_out1 | pg/notegen/y17                                  | pg/notegen/y17[9]_i_1_n_0                       |                3 |             10 |
-|  clkdivider/clk_out1 | pg/notegen/y16                                  | pg/notegen/y16[9]_i_1_n_0                       |                3 |             10 |
-|  clkdivider/clk_out1 | pg/notegen/y23                                  | pg/notegen/y23[9]_i_1_n_0                       |                3 |             10 |
-|  clkdivider/clk_out1 | pg/notegen/y14                                  | pg/notegen/y14[9]_i_1_n_0                       |                4 |             10 |
-|  clkdivider/clk_out1 | pg/notegen/y13                                  | pg/notegen/y13[9]_i_1_n_0                       |                3 |             10 |
-|  clkdivider/clk_out1 | pg/notegen/y0                                   | pg/notegen/y0[9]_i_1_n_0                        |                3 |             10 |
-|  clkdivider/clk_out1 | pg/notegen/y1                                   | pg/notegen/y1[9]_i_1_n_0                        |                5 |             10 |
-|  clkdivider/clk_out1 | pg/notegen/y10                                  | pg/notegen/y10[9]_i_1_n_0                       |                5 |             10 |
-|  clkdivider/clk_out1 | pg/notegen/y11                                  | pg/notegen/y11[9]_i_1_n_0                       |                4 |             10 |
-|  clkdivider/clk_out1 | pg/notegen/y12                                  | pg/notegen/y12[9]_i_1_n_0                       |                3 |             10 |
-|  clkdivider/clk_out1 | pg/notegen/y4                                   | pg/notegen/y4[9]_i_1_n_0                        |                3 |             10 |
-|  clkdivider/clk_out1 | pg/hand1_y                                      | pg/hand1_x0                                     |                5 |             10 |
-|  clkdivider/clk_out1 | pg/notegen/y9                                   | pg/notegen/y9[9]_i_1_n_0                        |                4 |             10 |
-|  clkdivider/clk_out1 | pg/notegen/y8                                   | pg/notegen/y8[9]_i_1_n_0                        |                3 |             10 |
-|  clkdivider/clk_out1 | pg/notegen/y7                                   | pg/notegen/y7[9]_i_1_n_0                        |                3 |             10 |
-|  clkdivider/clk_out1 | pg/notegen/y6                                   | pg/notegen/y6[9]_i_1_n_0                        |                5 |             10 |
-|  clkdivider/clk_out1 | pg/notegen/y5                                   | pg/notegen/y5[9]_i_1_n_0                        |                3 |             10 |
-|  clkdivider/clk_out1 | pg/notegen/y24                                  | pg/notegen/y24[9]_i_1_n_0                       |                4 |             10 |
-|  clkdivider/clk_out1 | pg/notegen/y31                                  | pg/notegen/y31[9]_i_1_n_0                       |                4 |             10 |
-|  clkdivider/clk_out1 | pg/notegen/y30                                  | pg/notegen/y30[9]_i_1_n_0                       |                3 |             10 |
-|  clkdivider/clk_out1 | pg/notegen/y3                                   | pg/notegen/y3[9]_i_1_n_0                        |                3 |             10 |
-|  clkdivider/clk_out1 | pg/notegen/y29                                  | pg/notegen/y29[9]_i_1_n_0                       |                3 |             10 |
-|  clkdivider/clk_out1 | pg/notegen/y28                                  | pg/notegen/y28[9]_i_1_n_0                       |                4 |             10 |
-|  clkdivider/clk_out1 | pg/notegen/y27                                  | pg/notegen/y27[9]_i_1_n_0                       |                4 |             10 |
-|  clkdivider/clk_out1 | pg/notegen/y26                                  | pg/notegen/y26[9]_i_1_n_0                       |                3 |             10 |
-|  clkdivider/clk_out1 | pg/notegen/y25                                  | pg/notegen/y25[9]_i_1_n_0                       |                2 |             10 |
-|  clkdivider/clk_out1 | pg/hand2_x[10]_i_1_n_0                          | pg/hand1_x0                                     |                4 |             11 |
-|  clkdivider/clk_out1 | pg/hand1_x[10]_i_2_n_0                          | pg/hand1_x0                                     |                6 |             11 |
-|  clkdivider/clk_out1 |                                                 | xvga1/hcount_out_reg[10]_rep_13                 |                4 |             12 |
-|  clkdivider/clk_out1 | pg/notegen/nlen11[1]_i_1_n_0                    |                                                 |                6 |             14 |
-|  clkdivider/clk_out1 | pg/notegen/nlen8[1]_i_1_n_0                     |                                                 |                6 |             14 |
-|  clkdivider/clk_out1 | pg/notegen/nlen0[1]_i_1_n_0                     |                                                 |                6 |             14 |
-|  clkdivider/clk_out1 | pg/notegen/nlen10[1]_i_1_n_0                    |                                                 |                5 |             14 |
-|  clkdivider/clk_out1 | pg/notegen/nlen12[1]_i_1_n_0                    |                                                 |                5 |             14 |
-|  clkdivider/clk_out1 | pg/notegen/nlen13[1]_i_1_n_0                    |                                                 |                6 |             14 |
-|  clkdivider/clk_out1 | pg/notegen/nlen14[1]_i_1_n_0                    |                                                 |                6 |             14 |
-|  clkdivider/clk_out1 | pg/notegen/nlen15[1]_i_1_n_0                    |                                                 |                6 |             14 |
-|  clkdivider/clk_out1 | pg/notegen/nlen16[1]_i_1_n_0                    |                                                 |                8 |             14 |
-|  clkdivider/clk_out1 | pg/notegen/nlen17[1]_i_1_n_0                    |                                                 |                5 |             14 |
-|  clkdivider/clk_out1 | pg/notegen/nlen18[1]_i_1_n_0                    |                                                 |                5 |             14 |
-|  clkdivider/clk_out1 | pg/notegen/nlen19[1]_i_1_n_0                    |                                                 |                6 |             14 |
-|  clkdivider/clk_out1 | pg/notegen/nlen1[1]_i_1_n_0                     |                                                 |                6 |             14 |
-|  clkdivider/clk_out1 | pg/notegen/nlen20[1]_i_1_n_0                    |                                                 |                5 |             14 |
-|  clkdivider/clk_out1 | pg/notegen/nlen21[1]_i_1_n_0                    |                                                 |                6 |             14 |
-|  clkdivider/clk_out1 | pg/notegen/nlen22[1]_i_1_n_0                    |                                                 |                5 |             14 |
-|  clkdivider/clk_out1 | pg/notegen/nlen23[1]_i_1_n_0                    |                                                 |                5 |             14 |
-|  clkdivider/clk_out1 | pg/notegen/nlen25[1]_i_1_n_0                    |                                                 |                5 |             14 |
-|  clkdivider/clk_out1 | pg/notegen/nlen9[1]_i_1_n_0                     |                                                 |                5 |             14 |
-|  clkdivider/clk_out1 | pg/notegen/nlen7[1]_i_1_n_0                     |                                                 |                6 |             14 |
-|  clkdivider/clk_out1 | pg/notegen/nlen6[1]_i_1_n_0                     |                                                 |                7 |             14 |
-|  clkdivider/clk_out1 | pg/notegen/nlen5[1]_i_1_n_0                     |                                                 |                6 |             14 |
-|  clkdivider/clk_out1 | pg/notegen/nlen4[1]_i_1_n_0                     |                                                 |                6 |             14 |
-|  clkdivider/clk_out1 | pg/notegen/nlen3[1]_i_1_n_0                     |                                                 |                7 |             14 |
-|  clkdivider/clk_out1 | pg/notegen/nlen31[1]_i_1_n_0                    |                                                 |                5 |             14 |
-|  clkdivider/clk_out1 | pg/notegen/nlen2[1]_i_1_n_0                     |                                                 |                6 |             14 |
-|  clkdivider/clk_out1 | pg/notegen/nlen29[1]_i_1_n_0                    |                                                 |                5 |             14 |
-|  clkdivider/clk_out1 | pg/notegen/nlen28[1]_i_1_n_0                    |                                                 |                6 |             14 |
-|  clkdivider/clk_out1 | pg/notegen/nlen27[1]_i_1_n_0                    |                                                 |                7 |             14 |
-|  clkdivider/clk_out1 | pg/notegen/nlen30[1]_i_1_n_0                    |                                                 |                5 |             14 |
-|  clkdivider/clk_out1 | pg/notegen/nlen26[1]_i_1_n_0                    |                                                 |                5 |             14 |
-|  clkdivider/clk_out1 | pg/notegen/nlen24[1]_i_1_n_0                    |                                                 |                5 |             14 |
-|  clkdivider/clk_out1 |                                                 | pg/audio1/myrec/tonet1567/sample_counter_reg[5] |                4 |             15 |
-|  clkdivider/clk_out1 | pg/hd/di1[3]_i_1_n_0                            |                                                 |                6 |             16 |
-|  clkdivider/clk_out1 | pg/hd/number[16]_i_1_n_0                        |                                                 |                9 |             17 |
-|  clkdivider/clk_out1 | pg/score[16]_i_2_n_0                            | pg/score[16]_i_1_n_0                            |                5 |             17 |
-|  clkdivider/clk_out1 | pg/num1[3]_i_2_n_0                              | pg/num1[3]_i_1_n_0                              |                7 |             18 |
-|  clkdivider/clk_out1 | pg/old_beat[6]_i_1_n_0                          |                                                 |                6 |             19 |
-|  clkdivider/clk_out1 | db1/count                                       | db1/new_input_i_1_n_0                           |                5 |             20 |
-|  clkdivider/clk_out1 | pg/old_beat[6]_i_1_n_0                          | pg/hand2_counter[20]_i_1_n_0                    |                5 |             21 |
-|  clkdivider/clk_out1 | pg/hand1_counter[20]_i_2_n_0                    | pg/hand1_counter[20]_i_1_n_0                    |                7 |             21 |
-|  clkdivider/clk_out1 |                                                 | db1/reset                                       |                8 |             22 |
-|  clkdivider/clk_out1 | xvga1/hreset                                    | xvga1/vcount_out0                               |               12 |             25 |
-|  clkdivider/clk_out1 |                                                 | xvga1/hreset                                    |               16 |             26 |
-|  clkdivider/clk_out1 |                                                 | db1/clean_out_reg_61                            |                7 |             27 |
-|  clkdivider/clk_out1 |                                                 | pg/meter1/counter[0]_i_1_n_0                    |                7 |             27 |
-|  clkdivider/clk_out1 | pg/notes[60]_i_1_n_0                            | pg/hand1_x0                                     |               40 |             61 |
-|  clkdivider/clk_out1 |                                                 | pg/n_array[60]_i_1_n_0                          |               29 |             61 |
-|  clkdivider/clk_out1 |                                                 |                                                 |               61 |            115 |
-|  clkdivider/clk_out1 | pg/audio1/myrec/tonet1567/sample_counter_reg[5] | db1/reset                                       |              484 |           1899 |
-+----------------------+-------------------------------------------------+-------------------------------------------------+------------------+----------------+
++----------------------+--------------------------------------------------+--------------------------------------------------+------------------+----------------+
+|     Clock Signal     |                   Enable Signal                  |                 Set/Reset Signal                 | Slice Load Count | Bel Load Count |
++----------------------+--------------------------------------------------+--------------------------------------------------+------------------+----------------+
+|  clkdivider/clk_out1 | db1/new_input_i_1_n_0                            |                                                  |                1 |              1 |
+|  clkdivider/clk_out1 | pg/hd/digit1000[3]_i_1_n_0                       | pg/hd/digit1[3]_i_1_n_0                          |                1 |              4 |
+|  clkdivider/clk_out1 | db1/clean_out_reg_62                             | pg/notegen/pixel_reg[7]_4                        |                2 |              4 |
+|  clkdivider/clk_out1 |                                                  | xvga1/hcount_out_reg[10]_10                      |                4 |              4 |
+|  clkdivider/clk_out1 |                                                  | xvga1/hcount_out_reg[10]_3                       |                4 |              4 |
+|  clkdivider/clk_out1 |                                                  | xvga1/hcount_out_reg[10]_5                       |                4 |              4 |
+|  clkdivider/clk_out1 |                                                  | xvga1/hcount_out_reg[10]_8                       |                4 |              4 |
+|  clkdivider/clk_out1 | db1/clean_out_reg_62                             | pg/notegen/FSM_sequential_game_state_reg[1]      |                1 |              4 |
+|  clkdivider/clk_out1 | db1/clean_out_reg_62                             | pg/notegen/FSM_sequential_game_state_reg[0]      |                2 |              4 |
+|  clkdivider/clk_out1 | pg/hd/digit100[3]_i_1_n_0                        | pg/hd/digit1[3]_i_1_n_0                          |                1 |              4 |
+|  clkdivider/clk_out1 | pg/hd/digit10[3]_i_1_n_0                         | pg/hd/digit1[3]_i_1_n_0                          |                1 |              4 |
+|  clkdivider/clk_out1 | pg/hd/digit1[3]_i_2_n_0                          | pg/hd/digit1[3]_i_1_n_0                          |                1 |              4 |
+|  clkdivider/clk_out1 | pg/dig1x[8]_i_2_n_0                              | pg/dig1x[8]_i_1_n_0                              |                4 |              5 |
+|  clkdivider/clk_out1 | pg/notegen/note_buffer                           | db1/reset                                        |                2 |              5 |
+|  clkdivider/clk_out1 | pg/meter1/beat_reg[6]_i_1_n_3                    | pg/reset_beat_reg_n_0                            |                4 |              7 |
+|  clkdivider/clk_out1 |                                                  | pg/audio1/myrec/d54[7]_i_1_n_0                   |                2 |              8 |
+|  clkdivider/clk_out1 |                                                  | pg/audio1/myrec/d52[7]_i_1_n_0                   |                3 |              8 |
+|  clkdivider/clk_out1 |                                                  | pg/audio1/myrec/d53[7]_i_1_n_0                   |                3 |              8 |
+|  clkdivider/clk_out1 |                                                  | pg/audio1/myrec/d57[7]_i_1_n_0                   |                3 |              8 |
+|  clkdivider/clk_out1 |                                                  | pg/audio1/myrec/d55[7]_i_1_n_0                   |                2 |              8 |
+|  clkdivider/clk_out1 |                                                  | pg/audio1/myrec/d56[7]_i_1_n_0                   |                3 |              8 |
+|  clkdivider/clk_out1 |                                                  | pg/audio1/myrec/d9[7]_i_1_n_0                    |                2 |              8 |
+|  clkdivider/clk_out1 |                                                  | pg/audio1/myrec/d51[7]_i_1_n_0                   |                6 |              8 |
+|  clkdivider/clk_out1 |                                                  | pg/audio1/myrec/d50[7]_i_1_n_0                   |                3 |              8 |
+|  clkdivider/clk_out1 |                                                  | pg/audio1/myrec/d4[7]_i_1_n_0                    |                3 |              8 |
+|  clkdivider/clk_out1 |                                                  | pg/audio1/myrec/d49[7]_i_1_n_0                   |                2 |              8 |
+|  clkdivider/clk_out1 |                                                  | pg/audio1/myrec/d48[7]_i_1_n_0                   |                3 |              8 |
+|  clkdivider/clk_out1 |                                                  | pg/audio1/myrec/d47[7]_i_1_n_0                   |                3 |              8 |
+|  clkdivider/clk_out1 |                                                  | pg/audio1/myrec/d46[7]_i_1_n_0                   |                2 |              8 |
+|  clkdivider/clk_out1 |                                                  | pg/audio1/myrec/d58[7]_i_1_n_0                   |                5 |              8 |
+|  clkdivider/clk_out1 |                                                  | pg/audio1/myrec/d59[7]_i_1_n_0                   |                3 |              8 |
+|  clkdivider/clk_out1 |                                                  | pg/audio1/myrec/d5[7]_i_1_n_0                    |                3 |              8 |
+|  clkdivider/clk_out1 |                                                  | pg/audio1/myrec/d60[7]_i_1_n_0                   |                2 |              8 |
+|  clkdivider/clk_out1 |                                                  | pg/audio1/myrec/d6[7]_i_1_n_0                    |                3 |              8 |
+|  clkdivider/clk_out1 |                                                  | pg/audio1/myrec/d7[7]_i_1_n_0                    |                4 |              8 |
+|  clkdivider/clk_out1 |                                                  | pg/audio1/myrec/d8[7]_i_1_n_0                    |                3 |              8 |
+|  clkdivider/clk_out1 | xvga1/hcount_out_reg[10]_9[0]                    |                                                  |                3 |              8 |
+|  clkdivider/clk_out1 | xvga1/hcount_out_reg[10]_6[0]                    |                                                  |                3 |              8 |
+|  clkdivider/clk_out1 |                                                  | pg/music/music_out[28]_i_1_n_0                   |                4 |              8 |
+|  clkdivider/clk_out1 | xvga1/E[0]                                       |                                                  |                3 |              8 |
+|  clkdivider/clk_out1 | pg/d1000/digit_selector[10]_i_1__2_n_0           |                                                  |                2 |              8 |
+|  clkdivider/clk_out1 | pg/notegen/note_num                              |                                                  |                3 |              8 |
+|  clkdivider/clk_out1 |                                                  | pg/audio1/myrec/d18[7]_i_1_n_0                   |                3 |              8 |
+|  clkdivider/clk_out1 |                                                  | pg/audio1/myrec/d26[7]_i_1_n_0                   |                1 |              8 |
+|  clkdivider/clk_out1 |                                                  | pg/audio1/myrec/d25[7]_i_1_n_0                   |                2 |              8 |
+|  clkdivider/clk_out1 |                                                  | pg/audio1/myrec/d24[7]_i_1_n_0                   |                4 |              8 |
+|  clkdivider/clk_out1 |                                                  | pg/audio1/myrec/d23[7]_i_1_n_0                   |                2 |              8 |
+|  clkdivider/clk_out1 |                                                  | pg/audio1/myrec/d22[7]_i_1_n_0                   |                2 |              8 |
+|  clkdivider/clk_out1 |                                                  | pg/audio1/myrec/d21[7]_i_1_n_0                   |                2 |              8 |
+|  clkdivider/clk_out1 |                                                  | pg/audio1/myrec/d20[7]_i_1_n_0                   |                4 |              8 |
+|  clkdivider/clk_out1 |                                                  | pg/audio1/myrec/d1[7]_i_1_n_0                    |                2 |              8 |
+|  clkdivider/clk_out1 |                                                  | pg/audio1/myrec/d19[7]_i_1_n_0                   |                4 |              8 |
+|  clkdivider/clk_out1 |                                                  | pg/audio1/myrec/d0[7]_i_1_n_0                    |                4 |              8 |
+|  clkdivider/clk_out1 |                                                  | pg/audio1/myrec/d27[7]_i_1_n_0                   |                1 |              8 |
+|  clkdivider/clk_out1 |                                                  | pg/audio1/myrec/d17[7]_i_1_n_0                   |                5 |              8 |
+|  clkdivider/clk_out1 |                                                  | pg/audio1/myrec/d16[7]_i_1_n_0                   |                4 |              8 |
+|  clkdivider/clk_out1 |                                                  | pg/audio1/myrec/d10[7]_i_1_n_0                   |                4 |              8 |
+|  clkdivider/clk_out1 |                                                  | pg/audio1/myrec/d14[7]_i_1_n_0                   |                3 |              8 |
+|  clkdivider/clk_out1 |                                                  | pg/audio1/myrec/d13[7]_i_1_n_0                   |                3 |              8 |
+|  clkdivider/clk_out1 |                                                  | pg/audio1/myrec/d15[7]_i_1_n_0                   |                2 |              8 |
+|  clkdivider/clk_out1 |                                                  | pg/audio1/myrec/d12[7]_i_1_n_0                   |                3 |              8 |
+|  clkdivider/clk_out1 |                                                  | pg/audio1/myrec/d11[7]_i_1_n_0                   |                3 |              8 |
+|  clkdivider/clk_out1 |                                                  | pg/audio1/myrec/d45[7]_i_1_n_0                   |                3 |              8 |
+|  clkdivider/clk_out1 |                                                  | pg/audio1/myrec/d36[7]_i_1_n_0                   |                6 |              8 |
+|  clkdivider/clk_out1 |                                                  | pg/audio1/myrec/d44[7]_i_1_n_0                   |                3 |              8 |
+|  clkdivider/clk_out1 |                                                  | pg/audio1/myrec/d43[7]_i_1_n_0                   |                2 |              8 |
+|  clkdivider/clk_out1 |                                                  | pg/audio1/myrec/d42[7]_i_1_n_0                   |                3 |              8 |
+|  clkdivider/clk_out1 |                                                  | pg/audio1/myrec/d41[7]_i_1_n_0                   |                3 |              8 |
+|  clkdivider/clk_out1 |                                                  | pg/audio1/myrec/d40[7]_i_1_n_0                   |                3 |              8 |
+|  clkdivider/clk_out1 |                                                  | pg/audio1/myrec/d3[7]_i_1_n_0                    |                3 |              8 |
+|  clkdivider/clk_out1 |                                                  | pg/audio1/myrec/d39[7]_i_1_n_0                   |                4 |              8 |
+|  clkdivider/clk_out1 |                                                  | pg/audio1/myrec/d38[7]_i_1_n_0                   |                2 |              8 |
+|  clkdivider/clk_out1 |                                                  | pg/audio1/myrec/d37[7]_i_1_n_0                   |                5 |              8 |
+|  clkdivider/clk_out1 |                                                  | pg/audio1/myrec/d35[7]_i_1_n_0                   |                4 |              8 |
+|  clkdivider/clk_out1 |                                                  | pg/audio1/myrec/d34[7]_i_1_n_0                   |                3 |              8 |
+|  clkdivider/clk_out1 |                                                  | pg/audio1/myrec/d33[7]_i_1_n_0                   |                5 |              8 |
+|  clkdivider/clk_out1 |                                                  | pg/audio1/myrec/d32[7]_i_1_n_0                   |                4 |              8 |
+|  clkdivider/clk_out1 |                                                  | pg/audio1/myrec/d31[7]_i_1_n_0                   |                3 |              8 |
+|  clkdivider/clk_out1 |                                                  | pg/audio1/myrec/d30[7]_i_1_n_0                   |                3 |              8 |
+|  clkdivider/clk_out1 |                                                  | pg/audio1/myrec/d2[7]_i_1_n_0                    |                3 |              8 |
+|  clkdivider/clk_out1 |                                                  | pg/audio1/myrec/d29[7]_i_1_n_0                   |                3 |              8 |
+|  clkdivider/clk_out1 |                                                  | pg/audio1/myrec/d28[7]_i_1_n_0                   |                4 |              8 |
+|  clkdivider/clk_out1 | pg/notegen/notepos/x_pos[9]_i_1_n_0              |                                                  |                3 |              9 |
+|  clkdivider/clk_out1 | pg/notegen/y16                                   | pg/notegen/y16[9]_i_1_n_0                        |                4 |             10 |
+|  clkdivider/clk_out1 | pg/hand1_y[9]_i_1_n_0                            | pg/hand1_x0                                      |                5 |             10 |
+|  clkdivider/clk_out1 | pg/notegen/y23                                   | pg/notegen/y23[9]_i_1_n_0                        |                3 |             10 |
+|  clkdivider/clk_out1 | pg/notegen/y22                                   | pg/notegen/y22[9]_i_1_n_0                        |                3 |             10 |
+|  clkdivider/clk_out1 | pg/notegen/y21                                   | pg/notegen/y21[9]_i_1_n_0                        |                3 |             10 |
+|  clkdivider/clk_out1 | pg/notegen/y20                                   | pg/notegen/y20[9]_i_1_n_0                        |                2 |             10 |
+|  clkdivider/clk_out1 | pg/notegen/y2                                    | pg/notegen/y2[9]_i_1_n_0                         |                3 |             10 |
+|  clkdivider/clk_out1 | pg/notegen/y19                                   | pg/notegen/y19[9]_i_1_n_0                        |                3 |             10 |
+|  clkdivider/clk_out1 | pg/notegen/y18                                   | pg/notegen/y18[9]_i_1_n_0                        |                3 |             10 |
+|  clkdivider/clk_out1 | pg/notegen/y17                                   | pg/notegen/y17[9]_i_1_n_0                        |                3 |             10 |
+|  clkdivider/clk_out1 | pg/notegen/y24                                   | pg/notegen/y24[9]_i_1_n_0                        |                2 |             10 |
+|  clkdivider/clk_out1 | pg/notegen/y15                                   | pg/notegen/y15[9]_i_1_n_0                        |                4 |             10 |
+|  clkdivider/clk_out1 | pg/notegen/y14                                   | pg/notegen/y14[9]_i_1_n_0                        |                3 |             10 |
+|  clkdivider/clk_out1 | pg/notegen/y13                                   | pg/notegen/y13[9]_i_1_n_0                        |                2 |             10 |
+|  clkdivider/clk_out1 | pg/notegen/y0                                    | pg/notegen/y0[9]_i_1_n_0                         |                2 |             10 |
+|  clkdivider/clk_out1 | pg/notegen/y1                                    | pg/notegen/y1[9]_i_1_n_0                         |                4 |             10 |
+|  clkdivider/clk_out1 | pg/notegen/y10                                   | pg/notegen/y10[9]_i_1_n_0                        |                3 |             10 |
+|  clkdivider/clk_out1 | pg/notegen/y11                                   | pg/notegen/y11[9]_i_1_n_0                        |                3 |             10 |
+|  clkdivider/clk_out1 | pg/notegen/y12                                   | pg/notegen/y12[9]_i_1_n_0                        |                3 |             10 |
+|  clkdivider/clk_out1 | pg/notegen/y26                                   | pg/notegen/y26[9]_i_1_n_0                        |                3 |             10 |
+|  clkdivider/clk_out1 | pg/button_click_counter[9]_i_2_n_0               | pg/hand1_x0                                      |                3 |             10 |
+|  clkdivider/clk_out1 | pg/notegen/y9                                    | pg/notegen/y9[9]_i_1_n_0                         |                3 |             10 |
+|  clkdivider/clk_out1 | pg/notegen/y8                                    | pg/notegen/y8[9]_i_1_n_0                         |                4 |             10 |
+|  clkdivider/clk_out1 | pg/notegen/y7                                    | pg/notegen/y7[9]_i_1_n_0                         |                4 |             10 |
+|  clkdivider/clk_out1 | pg/notegen/y6                                    | pg/notegen/y6[9]_i_1_n_0                         |                2 |             10 |
+|  clkdivider/clk_out1 | pg/notegen/y5                                    | pg/notegen/y5[9]_i_1_n_0                         |                3 |             10 |
+|  clkdivider/clk_out1 | pg/notegen/y4                                    | pg/notegen/y4[9]_i_1_n_0                         |                3 |             10 |
+|  clkdivider/clk_out1 | pg/notegen/y31                                   | pg/notegen/y31[9]_i_1_n_0                        |                3 |             10 |
+|  clkdivider/clk_out1 | pg/notegen/y30                                   | pg/notegen/y30[9]_i_1_n_0                        |                2 |             10 |
+|  clkdivider/clk_out1 | pg/notegen/y3                                    | pg/notegen/y3[9]_i_1_n_0                         |                4 |             10 |
+|  clkdivider/clk_out1 | pg/notegen/y29                                   | pg/notegen/y29[9]_i_1_n_0                        |                2 |             10 |
+|  clkdivider/clk_out1 | pg/notegen/y28                                   | pg/notegen/y28[9]_i_1_n_0                        |                6 |             10 |
+|  clkdivider/clk_out1 | pg/notegen/y27                                   | pg/notegen/y27[9]_i_1_n_0                        |                3 |             10 |
+|  clkdivider/clk_out1 | pg/notegen/y25                                   | pg/notegen/y25[9]_i_1_n_0                        |                2 |             10 |
+|  clkdivider/clk_out1 | pg/hand2_x[10]_i_1_n_0                           | pg/hand1_x0                                      |                4 |             11 |
+|  clkdivider/clk_out1 | pg/hand1_x[10]_i_1_n_0                           | pg/hand1_x0                                      |                6 |             11 |
+|  clkdivider/clk_out1 |                                                  | xvga1/hcount_out_reg[10]_80                      |                4 |             12 |
+|  clkdivider/clk_out1 | db1/clean_out_reg_62                             |                                                  |                6 |             12 |
+|  clkdivider/clk_out1 | pg/notegen/nlen11[1]_i_1_n_0                     |                                                  |                6 |             14 |
+|  clkdivider/clk_out1 | pg/notegen/nlen8[1]_i_1_n_0                      |                                                  |                5 |             14 |
+|  clkdivider/clk_out1 | pg/notegen/nlen0[1]_i_1_n_0                      |                                                  |                5 |             14 |
+|  clkdivider/clk_out1 | pg/notegen/nlen10[1]_i_1_n_0                     |                                                  |                6 |             14 |
+|  clkdivider/clk_out1 | pg/notegen/nlen12[1]_i_1_n_0                     |                                                  |                5 |             14 |
+|  clkdivider/clk_out1 | pg/notegen/nlen13[1]_i_1_n_0                     |                                                  |                8 |             14 |
+|  clkdivider/clk_out1 | pg/notegen/nlen14[1]_i_1_n_0                     |                                                  |                5 |             14 |
+|  clkdivider/clk_out1 | pg/notegen/nlen15[1]_i_1_n_0                     |                                                  |                5 |             14 |
+|  clkdivider/clk_out1 | pg/notegen/nlen16[1]_i_1_n_0                     |                                                  |                5 |             14 |
+|  clkdivider/clk_out1 | pg/notegen/nlen17[1]_i_1_n_0                     |                                                  |                5 |             14 |
+|  clkdivider/clk_out1 | pg/notegen/nlen18[1]_i_1_n_0                     |                                                  |                4 |             14 |
+|  clkdivider/clk_out1 | pg/notegen/nlen19[1]_i_1_n_0                     |                                                  |                5 |             14 |
+|  clkdivider/clk_out1 | pg/notegen/nlen1[1]_i_1_n_0                      |                                                  |                5 |             14 |
+|  clkdivider/clk_out1 | pg/notegen/nlen20[1]_i_1_n_0                     |                                                  |                5 |             14 |
+|  clkdivider/clk_out1 | pg/notegen/nlen21[1]_i_1_n_0                     |                                                  |                5 |             14 |
+|  clkdivider/clk_out1 | pg/notegen/nlen22[1]_i_1_n_0                     |                                                  |                7 |             14 |
+|  clkdivider/clk_out1 | pg/notegen/nlen23[1]_i_1_n_0                     |                                                  |                6 |             14 |
+|  clkdivider/clk_out1 | pg/notegen/nlen25[1]_i_1_n_0                     |                                                  |                5 |             14 |
+|  clkdivider/clk_out1 | pg/notegen/nlen26[1]_i_1_n_0                     |                                                  |                5 |             14 |
+|  clkdivider/clk_out1 | pg/notegen/nlen27[1]_i_1_n_0                     |                                                  |                5 |             14 |
+|  clkdivider/clk_out1 | pg/notegen/nlen28[1]_i_1_n_0                     |                                                  |                6 |             14 |
+|  clkdivider/clk_out1 | pg/notegen/nlen29[1]_i_1_n_0                     |                                                  |                6 |             14 |
+|  clkdivider/clk_out1 | pg/notegen/nlen2[1]_i_1_n_0                      |                                                  |                5 |             14 |
+|  clkdivider/clk_out1 | pg/notegen/nlen30[1]_i_1_n_0                     |                                                  |                6 |             14 |
+|  clkdivider/clk_out1 | pg/notegen/nlen31[1]_i_1_n_0                     |                                                  |                6 |             14 |
+|  clkdivider/clk_out1 | pg/notegen/nlen3[1]_i_1_n_0                      |                                                  |                5 |             14 |
+|  clkdivider/clk_out1 | pg/notegen/nlen4[1]_i_1_n_0                      |                                                  |                5 |             14 |
+|  clkdivider/clk_out1 | pg/notegen/nlen5[1]_i_1_n_0                      |                                                  |                5 |             14 |
+|  clkdivider/clk_out1 | pg/notegen/nlen24[1]_i_1_n_0                     |                                                  |                5 |             14 |
+|  clkdivider/clk_out1 | pg/notegen/nlen9[1]_i_1_n_0                      |                                                  |                6 |             14 |
+|  clkdivider/clk_out1 | pg/notegen/nlen6[1]_i_1_n_0                      |                                                  |                5 |             14 |
+|  clkdivider/clk_out1 | pg/notegen/nlen7[1]_i_1_n_0                      |                                                  |                6 |             14 |
+|  clkdivider/clk_out1 |                                                  | pg/audio1/myrec/tonet1567/sample_counter_reg[13] |                4 |             15 |
+|  clkdivider/clk_out1 | pg/reset_beat9_out                               | pg/num1[3]_i_1_n_0                               |                9 |             16 |
+|  clkdivider/clk_out1 | pg/hd/di1[3]_i_1_n_0                             |                                                  |                9 |             16 |
+|  clkdivider/clk_out1 | pg/hd/number[16]_i_1_n_0                         |                                                  |                7 |             17 |
+|  clkdivider/clk_out1 | pg/score[16]_i_2_n_0                             | pg/score[16]_i_1_n_0                             |                5 |             17 |
+|  clkdivider/clk_out1 | pg/bpm                                           |                                                  |                7 |             17 |
+|  clkdivider/clk_out1 | db1/count                                        | db1/new_input_i_1_n_0                            |                5 |             20 |
+|  clkdivider/clk_out1 | pg/hand1_counter[20]_i_2_n_0                     | pg/hand1_counter[20]_i_1_n_0                     |                5 |             21 |
+|  clkdivider/clk_out1 | pg/bpm                                           | pg/hand2_counter[20]_i_1_n_0                     |                4 |             21 |
+|  clkdivider/clk_out1 |                                                  | xvga1/hreset                                     |               10 |             21 |
+|  clkdivider/clk_out1 |                                                  | db1/reset                                        |               10 |             22 |
+|  clkdivider/clk_out1 |                                                  | db1/clean_out_reg_61                             |                7 |             27 |
+|  clkdivider/clk_out1 |                                                  | pg/meter1/counter[0]_i_1_n_0                     |                7 |             27 |
+|  clkdivider/clk_out1 | xvga1/hreset                                     | xvga1/vcount_out0                                |               15 |             34 |
+|  clkdivider/clk_out1 | pg/notes[60]_i_1_n_0                             | pg/hand1_x0                                      |               35 |             61 |
+|  clkdivider/clk_out1 |                                                  | pg/n_array[60]_i_1_n_0                           |               30 |             61 |
+|  clkdivider/clk_out1 |                                                  |                                                  |               58 |            111 |
+|  clkdivider/clk_out1 | pg/audio1/myrec/tonet1567/sample_counter_reg[13] | db1/reset                                        |              484 |           1899 |
++----------------------+--------------------------------------------------+--------------------------------------------------+------------------+----------------+
 
 

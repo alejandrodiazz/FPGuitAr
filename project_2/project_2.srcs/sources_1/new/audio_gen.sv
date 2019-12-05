@@ -23,7 +23,7 @@
 //Top level module (should not need to change except to uncomment ADC module)
 
 module audio_gen(   input clk_100mhz,
-                    input [15:0] sw,
+                    input [1:0] volume,
                     input reset,
                     input [60:0] notes,
                     output logic aud_pwm,
@@ -68,7 +68,7 @@ module audio_gen(   input clk_100mhz,
     play_notes myrec( .clk_in(clk_100mhz),.rst_in(reset),.ready_in(sample_trigger),
                         .mic_in(sampled_adc_data[11:4]), .data_out(recorder_data), .notes(notes));   
                                                                                             
-    volume_control vc (.vol_in(sw[15:13]),
+    volume_control vc (.vol_in(volume),
                        .signal_in(recorder_data), .signal_out(vol_out));
     pwm (.clk_in(clk_100mhz), .rst_in(reset), .level_in({~vol_out[7],vol_out[6:0]}), .pwm_out(pwm_val));
     assign aud_pwm = pwm_val?1'bZ:1'b0; 
