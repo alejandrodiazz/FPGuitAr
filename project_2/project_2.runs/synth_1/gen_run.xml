@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1575578255">
+<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1575665970">
   <File Type="VDS-TIMING-PB" Name="labkit_timing_summary_synth.pb"/>
   <File Type="VDS-TIMINGSUMMARY" Name="labkit_timing_summary_synth.rpt"/>
   <File Type="RDS-DCP" Name="labkit.dcp"/>
@@ -125,6 +125,30 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PPRDIR/../alph2_image.coe">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../alph2_map_red.coe">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../num_100by11_image.coe">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../num_100by11_map_red.coe">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
       <Option Name="TopModule" Val="labkit"/>
@@ -153,8 +177,8 @@
     <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2019"/>
     <Step Id="synth_design"/>
   </Strategy>
-  <BlockFileSet Type="BlockSrcs" Name="alph_map_red_rom"/>
   <BlockFileSet Type="BlockSrcs" Name="alph_image_rom"/>
   <BlockFileSet Type="BlockSrcs" Name="image_rom_map"/>
+  <BlockFileSet Type="BlockSrcs" Name="alph_map_red_rom"/>
   <BlockFileSet Type="BlockSrcs" Name="image_rom"/>
 </GenRun>

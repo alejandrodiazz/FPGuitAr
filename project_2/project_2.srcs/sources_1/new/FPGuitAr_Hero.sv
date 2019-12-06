@@ -77,18 +77,20 @@ module FPGuitAr_Hero (
         .di1(di1), .di10(di10), .di100(di100), .di1000(di1000) );
             
    //SCORE IMAGE
+    logic [3:0] num_offset = 3;
+    logic [7:0] num_width, num_height;
     logic [9:0] dig1x, dig10x, dig100x, dig1000x;
     logic [8:0] dig1y, dig10y, dig100y, dig1000y;
     logic [3:0] num1, num10, num100, num1000; 
     wire [11:0] dig1, dig10, dig100, dig1000;  // output for digit pixel from module
-//    picture_blob_digit  d1(.WIDTH(72),.HEIGHT(77),.pixel_clk_in(vclock_in), .x_in(dig1x),.y_in(dig1y),
-//        .hcount_in(hcount_in),.vcount_in(vcount_in),.pixel_out(dig1),.offset(0), .digit(num1)); 
-//    picture_blob_digit  d10(.WIDTH(72),.HEIGHT(77),.pixel_clk_in(vclock_in), .x_in(dig10x),.y_in(dig10y),
-//        .hcount_in(hcount_in),.vcount_in(vcount_in),.pixel_out(dig10),.offset(0), .digit(num10)); 
-//    picture_blob_digit  d100(.WIDTH(72),.HEIGHT(77),.pixel_clk_in(vclock_in), .x_in(dig100x),.y_in(dig100y),
-//        .hcount_in(hcount_in),.vcount_in(vcount_in),.pixel_out(dig100),.offset(0), .digit(num100)); 
-    picture_blob_digit  d1000(.WIDTH(72),.HEIGHT(77),.pixel_clk_in(vclock_in), .x_in(dig1000x),.y_in(dig1000y),
-        .hcount_in(hcount_in),.vcount_in(vcount_in),.pixel_out(dig1000),.offset(0), .digit(num1000)); 
+    picture_blob_digit  d1(.WIDTH(num_width),.HEIGHT(num_height),.pixel_clk_in(vclock_in), .x_in(dig1x),.y_in(dig1y),
+        .hcount_in(hcount_in),.vcount_in(vcount_in),.pixel_out(dig1),.offset(num_offset), .digit(num1)); 
+    picture_blob_digit  d10(.WIDTH(num_width),.HEIGHT(num_height),.pixel_clk_in(vclock_in), .x_in(dig10x),.y_in(dig10y),
+        .hcount_in(hcount_in),.vcount_in(vcount_in),.pixel_out(dig10),.offset(num_offset), .digit(num10)); 
+    picture_blob_digit  d100(.WIDTH(num_width),.HEIGHT(num_height),.pixel_clk_in(vclock_in), .x_in(dig100x),.y_in(dig100y),
+        .hcount_in(hcount_in),.vcount_in(vcount_in),.pixel_out(dig100),.offset(num_offset), .digit(num100)); 
+    picture_blob_digit  d1000(.WIDTH(num_width),.HEIGHT(num_height),.pixel_clk_in(vclock_in), .x_in(dig1000x),.y_in(dig1000y),
+        .hcount_in(hcount_in),.vcount_in(vcount_in),.pixel_out(dig1000),.offset(num_offset), .digit(num1000)); 
     
     // ALPHABET PIXELS
     logic [7:0] alph_offset;
@@ -119,12 +121,17 @@ module FPGuitAr_Hero (
             3'd2: begin alph_width <= 48; alph_height <= 56; end
             3'd3: begin alph_width <= 96; alph_height <= 112; end
         endcase
+        case(num_offset)
+            3'd2: begin num_width <= 40; num_height <= 44; end
+            3'd3: begin num_width <= 80; num_height <= 88; end
+            3'd4: begin num_width <= 160; num_height <= 176; end
+        endcase
     end
         
    // Hands
    logic [10:0] hand1_x, hand2_x, hand3_x, hand4_x;     // location of hand on screen 
    logic [9:0]  hand1_y, hand2_y, hand3_y, hand4_y;
-   logic [10:0] h_x = 80;      // hand dimensions
+   logic [10:0] h_x = 150;      // hand dimensions
    logic [9:0] h_y = 5;
    wire [11:0] hand1_pixel, hand2_pixel, hand3_pixel, hand4_pixel;  // output for puck pixel from module
    blob hand1(.width(h_x), .height(h_y), .off(0),.color(12'h00F), .pixel_clk_in(vclock_in), .x_in(hand1_x),.y_in(hand1_y),.hcount_in(hcount_in), .vcount_in(vcount_in), .pixel_out(hand1_pixel)); 
@@ -348,7 +355,7 @@ module FPGuitAr_Hero (
             alph_offset <= 2;
             
             // DIGIT PIXELS
-            dig1x <= 900; dig10x <= 830; dig100x <= 760; dig1000x <= 690;
+            dig1x <= 900; dig10x <= 820; dig100x <= 740; dig1000x <= 660;
             dig1y <= 50; dig10y <= 50; dig100y <= 50; dig1000y <= 50;
             num1 <= di1; num10<= di10; num100 <= di100; num1000<= di1000; 
             // PIXELS
@@ -357,10 +364,10 @@ module FPGuitAr_Hero (
                     dig1 | dig10 | dig100 | dig1000;
             // SPEED
             case(speed)
-                3'd0: bpm <= 40000000;
-                3'd1: bpm <= 20000000;
-                3'd2: bpm <= 13000000;
-                3'd3: bpm <= 8000000;
+                3'd0: bpm <= 15000000;
+                3'd1: bpm <= 10000000;
+                3'd2: bpm <= 8000000;
+                3'd3: bpm <= 6000000;
             endcase
             
             old_beat<=beat;
@@ -501,7 +508,7 @@ module FPGuitAr_Hero (
             ly7<= 180;ly8<= 180; ly9<= 180; ly10<= 180; ly11<= 180;
             alph_offset <= 3;
             // DIGIT DISPLAY
-            dig1x <= 570; dig10x <= 500; dig100x <= 430; dig1000x <= 360;
+            dig1x <= 580; dig10x <= 500; dig100x <= 420; dig1000x <= 340;
             dig1y <= 340; dig10y <= 340; dig100y <= 340; dig1000y <= 340;
             num1 <= di1; num10<= di10; num100 <= di100; num1000<= di1000;   // display final score
             alpha_pixel <= dig1 | dig10 | dig100 | dig1000 | alph7 | alph8 | alph9 | alph10 | alph11;   // | dpixel2; //| dpixel3; //| dpixel4 | dpixel5 | dpixel6;

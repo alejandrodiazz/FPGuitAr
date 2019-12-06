@@ -38,8 +38,8 @@ module picture_blob_digit
    logic[10:0] digit_selector;
    logic[9:0] w;              // static parameters of dimensions
    logic[9:0] h;
-   assign w = 724;
-   assign h = 77;
+   assign w = 100;
+   assign h = 11;
    logic [15:0] image_addr;   // num of bits for 256*240 ROM
    logic [7:0] image_bits, red_mapped, green_mapped, blue_mapped;
 
@@ -59,8 +59,8 @@ module picture_blob_digit
      
      if ((hcount_in >= x_in && hcount_in < (x_in+WIDTH)) &&
           (vcount_in >= y_in && vcount_in < (y_in+HEIGHT))) begin
-          digit_selector <= digit * 72;
-          image_addr <= ((hcount_in-x_in + digit_selector+4 ) << offset) + ((vcount_in-y_in)<<offset) * w; // INTRODUCED left shifting ########
+          digit_selector <= digit * 10;
+          image_addr <= (digit_selector+( (hcount_in-x_in + 2) >> offset ) ) + ((vcount_in-y_in)>>offset) * w; // INTRODUCED left shifting ########
           // use MSB 4 bits
           pixel_out <= {red_mapped[7:4], red_mapped[7:4], red_mapped[7:4]}; // greyscale
           //    pixel_out <= {red_mapped[7:4], 8'h0}; // only red hues

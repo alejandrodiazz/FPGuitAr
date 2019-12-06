@@ -39,6 +39,10 @@ add_files /afs/athena.mit.edu/user/a/d/addiaz15/Downloads/image.coe
 add_files /afs/athena.mit.edu/user/a/d/addiaz15/Downloads/color_red.coe
 add_files /afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/alph_image.coe
 add_files /afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/alph_map_red.coe
+add_files /afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/alph2_image.coe
+add_files /afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/alph2_map_red.coe
+add_files /afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/num_100by11_image.coe
+add_files /afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/num_100by11_map_red.coe
 read_verilog -library xil_defaultlib -sv {
   /afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/FPGuitAr_Hero.sv
   /afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/audio_gen.sv

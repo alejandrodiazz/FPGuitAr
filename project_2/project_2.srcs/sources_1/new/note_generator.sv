@@ -51,7 +51,7 @@ module note_generator(
         ncolor10, ncolor11, ncolor12, ncolor13, ncolor14, ncolor15, ncolor16, ncolor17, ncolor18, ncolor19, 
         ncolor20, ncolor21, ncolor22, ncolor23, ncolor24, ncolor25, ncolor26, ncolor27, ncolor28, ncolor29, 
         ncolor30, ncolor31;
-    parameter note_width = 10;        // fixed note width
+    parameter note_width = 9;        // fixed note width
     
     note_blob note0(.width(note_width), .height(nlen0), .color(ncolor0), .pixel_clk_in(clk_in),.x_in(x0),.y_in(y0),.hcount_in(hcount_in),.vcount_in(vcount_in), .pixel_out(npixel0));
     note_blob note1(.width(note_width), .height(nlen1), .color(ncolor1), .pixel_clk_in(clk_in),.x_in(x1),.y_in(y1),.hcount_in(hcount_in),.vcount_in(vcount_in), .pixel_out(npixel1));
