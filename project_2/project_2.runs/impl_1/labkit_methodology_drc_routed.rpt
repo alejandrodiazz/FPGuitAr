@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.1.2 (lin64) Build 2615518 Fri Aug  9 15:53:29 MDT 2019
-| Date         : Thu Dec  5 15:40:43 2019
+| Date         : Fri Dec  6 16:28:35 2019
 | Host         : eecs-digital-207 running 64-bit Ubuntu 14.04.6 LTS
 | Command      : report_methodology -file labkit_methodology_drc_routed.rpt -pb labkit_methodology_drc_routed.pb -rpx labkit_methodology_drc_routed.rpx
 | Design       : labkit
@@ -23,13 +23,13 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max violations: <unlimited>
-             Violations found: 23
+             Violations found: 27
 +----------+----------+--------------------------+------------+
 | Rule     | Severity | Description              | Violations |
 +----------+----------+--------------------------+------------+
 | SYNTH-9  | Warning  | Small multiplier         | 16         |
-| SYNTH-12 | Warning  | DSP input not registered | 1          |
-| SYNTH-13 | Warning  | combinational multiplier | 6          |
+| SYNTH-12 | Warning  | DSP input not registered | 3          |
+| SYNTH-13 | Warning  | combinational multiplier | 8          |
 +----------+----------+--------------------------+------------+
 
 2. REPORT DETAILS
@@ -116,37 +116,57 @@ Related violations: <none>
 
 SYNTH-12#1 Warning
 DSP input not registered  
+DSP instance pg/a10/image_addr_reg is not fully pipelined on the input side. AREG/BREG/CREG/DREG are not used.
+Related violations: <none>
+
+SYNTH-12#2 Warning
+DSP input not registered  
+DSP instance pg/a11/image_addr_reg is not fully pipelined on the input side. AREG/BREG/CREG/DREG are not used.
+Related violations: <none>
+
+SYNTH-12#3 Warning
+DSP input not registered  
 DSP instance pg/a8/image_addr_reg is not fully pipelined on the input side. AREG/BREG/CREG/DREG are not used.
 Related violations: <none>
 
 SYNTH-13#1 Warning
 combinational multiplier  
-Detected combinational multiplier in DSP instance pg/a0/image_addr1.
+Detected combinational multiplier in DSP instance pg/a10/image_addr1.
 Related violations: <none>
 
 SYNTH-13#2 Warning
 combinational multiplier  
-Detected combinational multiplier in DSP instance pg/a1/image_addr1.
+Detected combinational multiplier in DSP instance pg/a11/image_addr1.
 Related violations: <none>
 
 SYNTH-13#3 Warning
 combinational multiplier  
-Detected combinational multiplier in DSP instance pg/a3/image_addr1.
+Detected combinational multiplier in DSP instance pg/a6/image_addr1.
 Related violations: <none>
 
 SYNTH-13#4 Warning
 combinational multiplier  
-Detected combinational multiplier in DSP instance pg/a4/image_addr1.
+Detected combinational multiplier in DSP instance pg/a8/image_addr1.
 Related violations: <none>
 
 SYNTH-13#5 Warning
 combinational multiplier  
-Detected combinational multiplier in DSP instance pg/a5/image_addr1.
+Detected combinational multiplier in DSP instance pg/d10/image_addr1.
 Related violations: <none>
 
 SYNTH-13#6 Warning
 combinational multiplier  
-Detected combinational multiplier in DSP instance pg/a8/image_addr1.
+Detected combinational multiplier in DSP instance pg/d100/image_addr1.
+Related violations: <none>
+
+SYNTH-13#7 Warning
+combinational multiplier  
+Detected combinational multiplier in DSP instance pg/d1000/image_addr1.
+Related violations: <none>
+
+SYNTH-13#8 Warning
+combinational multiplier  
+Detected combinational multiplier in DSP instance pg/d1__0/image_addr1.
 Related violations: <none>
 
 

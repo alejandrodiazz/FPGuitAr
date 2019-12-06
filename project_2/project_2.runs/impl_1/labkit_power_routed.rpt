@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2019.1.2 (lin64) Build 2615518 Fri Aug  9 15:53:29 MDT 2019
-| Date             : Thu Dec  5 15:40:46 2019
+| Date             : Fri Dec  6 16:28:39 2019
 | Host             : eecs-digital-207 running 64-bit Ubuntu 14.04.6 LTS
 | Command          : report_power -file labkit_power_routed.rpt -pb labkit_power_summary_routed.pb -rpx labkit_power_routed.rpx
 | Design           : labkit
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.289        |
+| Total On-Chip Power (W)  | 0.305        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.188        |
-| Device Static (W)        | 0.101        |
+| Dynamic (W)              | 0.201        |
+| Device Static (W)        | 0.104        |
 | Effective TJA (C/W)      | 4.6          |
-| Max Ambient (C)          | 83.7         |
-| Junction Temperature (C) | 26.3         |
+| Max Ambient (C)          | 83.6         |
+| Junction Temperature (C) | 26.4         |
 | Confidence Level         | Low          |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -52,20 +52,20 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Clocks         |     0.010 |        5 |       --- |             --- |
-| Slice Logic    |     0.008 |    15088 |       --- |             --- |
-|   LUT as Logic |     0.006 |     7399 |     63400 |           11.67 |
-|   CARRY4       |     0.002 |     2229 |     15850 |           14.06 |
-|   Register     |    <0.001 |     3897 |    126800 |            3.07 |
-|   F7/F8 Muxes  |    <0.001 |       40 |     63400 |            0.06 |
-|   Others       |     0.000 |      227 |       --- |             --- |
-| Signals        |     0.009 |    11622 |       --- |             --- |
-| Block RAM      |     0.026 |     63.5 |       135 |           47.04 |
+| Clocks         |     0.013 |        5 |       --- |             --- |
+| Slice Logic    |     0.009 |    15864 |       --- |             --- |
+|   LUT as Logic |     0.006 |     7787 |     63400 |           12.28 |
+|   CARRY4       |     0.002 |     2253 |     15850 |           14.21 |
+|   Register     |    <0.001 |     3981 |    126800 |            3.14 |
+|   F7/F8 Muxes  |    <0.001 |      161 |     63400 |            0.25 |
+|   Others       |     0.000 |      374 |       --- |             --- |
+| Signals        |     0.012 |    12481 |       --- |             --- |
+| Block RAM      |     0.033 |    117.5 |       135 |           87.04 |
 | MMCM           |     0.122 |        1 |         6 |           16.67 |
-| DSPs           |     0.004 |       25 |       240 |           10.42 |
-| I/O            |     0.008 |       72 |       210 |           34.29 |
-| Static Power   |     0.101 |          |           |                 |
-| Total          |     0.289 |          |           |                 |
+| DSPs           |     0.005 |       32 |       240 |           13.33 |
+| I/O            |     0.007 |       72 |       210 |           34.29 |
+| Static Power   |     0.104 |          |           |                 |
+| Total          |     0.305 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -75,7 +75,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.074 |       0.056 |      0.017 |
+| Vccint    |       1.000 |     0.088 |       0.069 |      0.019 |
 | Vccaux    |       1.800 |     0.086 |       0.068 |      0.018 |
 | Vcco33    |       3.300 |     0.006 |       0.002 |      0.004 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
@@ -84,7 +84,7 @@ Table of Contents
 | Vcco135   |       1.350 |     0.000 |       0.000 |      0.000 |
 | Vcco12    |       1.200 |     0.000 |       0.000 |      0.000 |
 | Vccaux_io |       1.800 |     0.000 |       0.000 |      0.000 |
-| Vccbram   |       1.000 |     0.004 |       0.002 |      0.002 |
+| Vccbram   |       1.000 |     0.006 |       0.003 |      0.003 |
 | MGTAVcc   |       1.000 |     0.000 |       0.000 |      0.000 |
 | MGTAVtt   |       1.200 |     0.000 |       0.000 |      0.000 |
 | Vccadc    |       1.800 |     0.020 |       0.000 |      0.020 |
@@ -146,9 +146,9 @@ Table of Contents
 +--------------+-----------+
 | Name         | Power (W) |
 +--------------+-----------+
-| labkit       |     0.188 |
+| labkit       |     0.201 |
 |   clkdivider |     0.122 |
-|   pg         |     0.051 |
+|   pg         |     0.064 |
 |     a0       |     0.003 |
 |       rcm    |     0.001 |
 |     a1       |     0.003 |
@@ -161,25 +161,34 @@ Table of Contents
 |       rcm    |     0.001 |
 |     a3       |     0.003 |
 |       rcm    |     0.001 |
-|     a4       |     0.002 |
+|     a4       |     0.003 |
 |       rcm    |     0.001 |
 |     a5       |     0.003 |
 |       rcm    |     0.001 |
 |     a6       |     0.003 |
 |       rcm    |     0.001 |
-|     a7       |     0.002 |
+|     a7       |     0.003 |
 |       rcm    |     0.001 |
 |     a8       |     0.002 |
 |       rcm    |     0.001 |
-|     a9       |     0.002 |
+|     a9       |     0.003 |
 |       rcm    |     0.001 |
-|     audio1   |     0.009 |
-|       myrec  |     0.006 |
-|     d1000    |     0.005 |
+|     audio1   |     0.010 |
+|       myrec  |     0.008 |
+|     d10      |     0.003 |
+|       rcm    |     0.001 |
+|       rom1   |     0.001 |
+|     d100     |     0.005 |
 |       rcm    |     0.001 |
 |       rom1   |     0.002 |
+|     d1000    |     0.003 |
+|       rcm    |     0.001 |
+|       rom1   |     0.001 |
+|     d1__0    |     0.003 |
+|       rcm    |     0.001 |
+|       rom1   |     0.001 |
 |     notegen  |     0.005 |
-|   xvga1      |     0.007 |
+|   xvga1      |     0.008 |
 +--------------+-----------+
 
 
