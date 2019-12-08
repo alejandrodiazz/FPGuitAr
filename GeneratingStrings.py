@@ -41,8 +41,13 @@
 ##
 
 # generating empty music rows
+meas = 0
 for i in range(0, 512):
-    print("9'd" + str(i) + ": music_out<= {6'd0, 3'd0, 6'd0, 3'd0, 6'd0, 3'd0, 6'd0, 3'd0};")
+    if (i % 16) != 0:
+        print("9'd" + str(i) + ": music_out<= {6'd0, 3'd0, 6'd0, 3'd0, 6'd0, 3'd0, 6'd0, 3'd0};")
+    else:
+        meas+= 1
+        print("9'd" + str(i) + ": music_out<= {6'd0, 3'd0, 6'd0, 3'd0, 6'd0, 3'd0, 6'd0, 3'd0}; // MEASURE " + str(meas))
 
 
 # generating chromatic music rows

@@ -182,36 +182,42 @@ module note_blob
             
     always_comb begin
         case(height) 
-            3'd0: begin
+            3'd0: begin  //16th note
                 if ((hcount_in >= x_in && hcount_in < (x_in+width)) &&
                 (vcount_in >= y_in && vcount_in < (y_in+ 9'b000011000)))
                 pixel_out = color;
                 else pixel_out = 0;
-            end //16th note
-            3'd1: begin
+            end 
+            3'd1: begin // 8th note
                 if ((hcount_in >= x_in && hcount_in < (x_in+width)) &&
                 (vcount_in >= y_in && vcount_in < (y_in+ 9'b000110000)))
                 pixel_out = color;
                 else pixel_out = 0;
-            end  // 8th note
-            3'd2: begin
+            end  
+            3'd2: begin // 1/4th note
                 if ((hcount_in >= x_in && hcount_in < (x_in+width)) &&
                 (vcount_in >= y_in && vcount_in < (y_in+ 9'b001100000)))
                 pixel_out = color;
                 else pixel_out = 0;
-            end // 1/4th note
-            3'd3: begin
+            end 
+            3'd3: begin // 1/2 note
                 if ((hcount_in >= x_in && hcount_in < (x_in+width)) &&
                 (vcount_in >= y_in && vcount_in < (y_in+9'b011000000)))
                 pixel_out = color;
                 else pixel_out = 0;
-            end // 1/2 note
-            3'd4: begin
+            end 
+            3'd4: begin // whole note
                 if ((hcount_in >= x_in && hcount_in < (x_in+width)) &&
                 (vcount_in >= y_in && vcount_in < (y_in+9'b110000000)))
                 pixel_out = color;
                 else pixel_out = 0;
-            end // whole note
+            end 
+            3'd5: begin // dotted 8th
+                if ((hcount_in >= x_in && hcount_in < (x_in+width)) &&
+                (vcount_in >= y_in && vcount_in < (y_in+9'b001001000)))
+                pixel_out = color;
+                else pixel_out = 0;
+            end 
             
 //            3'd0: note_length <= 9'b000011000;  //16th note
 //            3'd1: note_length <= 9'b000110000;  // 8th note

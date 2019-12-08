@@ -155,7 +155,7 @@ module FPGuitAr_Hero (
    logic [11:0] note_pixels;
    logic [23:0] testing;
    logic pixel_step;
-   logic add_to_score;
+   logic [3:0] add_to_score;
    logic [3:0] song;
    logic [2:0] speed;
    beat_generator meter1(.reset(reset_beat), .clk_in(vclock_in), .bpm(bpm), .beat(beat));
@@ -379,8 +379,8 @@ module FPGuitAr_Hero (
             if((vcount_in == 1) && (hcount_in == 1)) begin      // EVERY FRAME check flags
                 n_array <= 0;                                   // reset all flags
                 notes <= n_array;                               // shift flags into notes being played
-                if(add_to_score) begin                            // add to score based on note intersections
-                    score <= score + n_array[0] + n_array[1] + n_array[2] + n_array[3] + n_array[4] 
+                if(add_to_score > 0) begin // add to score based on note intersections
+                    score <= (score + n_array[0] + n_array[1] + n_array[2] + n_array[3] + n_array[4] 
                         + n_array[5] + n_array[6] + n_array[7] + n_array[8] + n_array[9] + n_array[10] 
                         + n_array[11] + n_array[12] + n_array[13] + n_array[14] + n_array[15] + n_array[16] 
                         + n_array[17] + n_array[18] + n_array[19] + n_array[20] + n_array[21] + n_array[22] 
@@ -390,12 +390,12 @@ module FPGuitAr_Hero (
                         + n_array[41] + n_array[42] + n_array[43] + n_array[44] + n_array[45] + n_array[46] 
                         + n_array[47] + n_array[48] + n_array[49] + n_array[50] + n_array[51] + n_array[52] 
                         + n_array[53] + n_array[54] + n_array[55] + n_array[56] + n_array[57] + n_array[58] 
-                        + n_array[59] + n_array[60];
+                        + n_array[59] + n_array[60]) ;
                     add_to_score <= 0;    
                 end
             end else begin
                 if (pixel_step) begin
-                    add_to_score <= 1;
+                    add_to_score <= add_to_score + 1;
                 end
                 if( (hand1_pixel != 0) || (hand2_pixel != 0) || (hand3_pixel != 0) || (hand4_pixel != 0) ) begin        // if hand pixels are being drawn
                     if(note_pixels != 0) begin                              // if note pixels are being drawn
