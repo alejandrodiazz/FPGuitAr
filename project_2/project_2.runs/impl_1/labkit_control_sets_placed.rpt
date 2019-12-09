@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.1.2 (lin64) Build 2615518 Fri Aug  9 15:53:29 MDT 2019
-| Date         : Fri Dec  6 16:27:52 2019
+| Date         : Mon Dec  9 15:37:02 2019
 | Host         : eecs-digital-207 running 64-bit Ubuntu 14.04.6 LTS
 | Command      : report_control_sets -verbose -file labkit_control_sets_placed.rpt
 | Design       : labkit
@@ -23,11 +23,11 @@ Table of Contents
 +----------------------------------------------------------+-------+
 |                          Status                          | Count |
 +----------------------------------------------------------+-------+
-| Total control sets                                       |   188 |
-|    Minimum number of control sets                        |   188 |
+| Total control sets                                       |   234 |
+|    Minimum number of control sets                        |   234 |
 |    Addition due to synthesis replication                 |     0 |
 |    Addition due to physical synthesis replication        |     0 |
-| Unused register locations in slices containing registers |   523 |
+| Unused register locations in slices containing registers |   713 |
 +----------------------------------------------------------+-------+
 * Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
 ** Run report_qor_suggestions for automated merging and remapping suggestions
@@ -39,15 +39,15 @@ Table of Contents
 +--------------------+-------+
 |       Fanout       | Count |
 +--------------------+-------+
-| Total control sets |   188 |
-| >= 0 to < 4        |     8 |
-| >= 4 to < 6        |    22 |
-| >= 6 to < 8        |     3 |
-| >= 8 to < 10       |    65 |
-| >= 10 to < 12      |    38 |
-| >= 12 to < 14      |     3 |
-| >= 14 to < 16      |    33 |
-| >= 16              |    16 |
+| Total control sets |   234 |
+| >= 0 to < 4        |    39 |
+| >= 4 to < 6        |    25 |
+| >= 6 to < 8        |     5 |
+| >= 8 to < 10       |    70 |
+| >= 10 to < 12      |    35 |
+| >= 12 to < 14      |     2 |
+| >= 14 to < 16      |    34 |
+| >= 16              |    24 |
 +--------------------+-------+
 * Control sets can be remapped at either synth_design or opt_design
 
@@ -58,209 +58,255 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |             170 |           98 |
+| No           | No                    | No                     |            6934 |         1477 |
 | No           | No                    | Yes                    |               0 |            0 |
-| No           | Yes                   | No                     |             765 |          331 |
-| Yes          | No                    | No                     |             564 |          240 |
+| No           | Yes                   | No                     |             849 |          306 |
+| Yes          | No                    | No                     |             805 |          302 |
 | Yes          | No                    | Yes                    |               0 |            0 |
-| Yes          | Yes                   | No                     |            2482 |          715 |
+| Yes          | Yes                   | No                     |            2675 |          729 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 
 4. Detailed Control Set Information
 -----------------------------------
 
-+-----------------------+--------------------------------------------------+--------------------------------------------------+------------------+----------------+
-|      Clock Signal     |                   Enable Signal                  |                 Set/Reset Signal                 | Slice Load Count | Bel Load Count |
-+-----------------------+--------------------------------------------------+--------------------------------------------------+------------------+----------------+
-|  clkdivider/clk_65mhz | xvga1/hcount_out_reg[10]_121[0]                  |                                                  |                1 |              1 |
-|  clkdivider/clk_65mhz | xvga1/hcount_out_reg[10]_113[0]                  |                                                  |                1 |              1 |
-|  clkdivider/clk_65mhz | pg/hand1_counter[20]_i_2_n_0                     |                                                  |                1 |              1 |
-|  clkdivider/clk_65mhz | pg/reset_beat9_out                               | pg/ly6[9]_i_1_n_0                                |                1 |              2 |
-|  clkdivider/clk_65mhz | pg/bpm                                           | pg/ly6[9]_i_1_n_0                                |                1 |              2 |
-|  clkdivider/clk_65mhz |                                                  | display/p_0_in__0[0]                             |                2 |              2 |
-|  clkdivider/clk_65mhz |                                                  | display/strobe_out[2]_i_1_n_0                    |                1 |              3 |
-|  clkdivider/clk_65mhz |                                                  | display/p_0_in__0[2]                             |                2 |              3 |
-|  clkdivider/clk_65mhz |                                                  | xvga1/hcount_out_reg[10]_71                      |                4 |              4 |
-|  clkdivider/clk_65mhz | pg/hd/digit100[3]_i_1_n_0                        | pg/hd/digit1[3]_i_1_n_0                          |                1 |              4 |
-|  clkdivider/clk_65mhz | pg/hd/digit1[3]_i_2_n_0                          | pg/hd/digit1[3]_i_1_n_0                          |                1 |              4 |
-|  clkdivider/clk_65mhz | pg/hd/digit10[3]_i_1_n_0                         | pg/hd/digit1[3]_i_1_n_0                          |                1 |              4 |
-|  clkdivider/clk_65mhz |                                                  | xvga1/hcount_out_reg[10]_100                     |                2 |              4 |
-|  clkdivider/clk_65mhz |                                                  | xvga1/hcount_out_reg[10]_103                     |                4 |              4 |
-|  clkdivider/clk_65mhz |                                                  | xvga1/hcount_out_reg[10]_105                     |                2 |              4 |
-|  clkdivider/clk_65mhz |                                                  | xvga1/hcount_out_reg[10]_110                     |                2 |              4 |
-|  clkdivider/clk_65mhz |                                                  | xvga1/hcount_out_reg[10]_115                     |                2 |              4 |
-|  clkdivider/clk_65mhz |                                                  | xvga1/hcount_out_reg[10]_118                     |                2 |              4 |
-|  clkdivider/clk_65mhz | pg/hd/digit1000[3]_i_1_n_0                       | pg/hd/digit1[3]_i_1_n_0                          |                1 |              4 |
-|  clkdivider/clk_65mhz |                                                  | xvga1/hcount_out_reg[10]_73                      |                4 |              4 |
-|  clkdivider/clk_65mhz |                                                  | xvga1/hcount_out_reg[10]_76                      |                4 |              4 |
-|  clkdivider/clk_65mhz |                                                  | xvga1/hcount_out_reg[10]_79                      |                4 |              4 |
-|  clkdivider/clk_65mhz |                                                  | xvga1/hcount_out_reg[10]_82                      |                1 |              4 |
-|  clkdivider/clk_65mhz |                                                  | xvga1/hcount_out_reg[10]_85                      |                3 |              4 |
-|  clkdivider/clk_65mhz |                                                  | xvga1/hcount_out_reg[10]_88                      |                3 |              4 |
-|  clkdivider/clk_65mhz |                                                  | xvga1/hcount_out_reg[10]_91                      |                3 |              4 |
-|  clkdivider/clk_65mhz |                                                  | xvga1/hcount_out_reg[10]_94                      |                3 |              4 |
-|  clkdivider/clk_65mhz |                                                  | xvga1/hcount_out_reg[10]_97                      |                2 |              4 |
-|  clkdivider/clk_65mhz | pg/notegen/note_buffer                           | db1/reset                                        |                1 |              5 |
-|  clkdivider/clk_65mhz | xvga1/E[0]                                       |                                                  |                2 |              5 |
-|  clkdivider/clk_65mhz | pg/meter1/E[0]                                   | pg/hand1_x0                                      |                3 |              6 |
-|  clkdivider/clk_65mhz | pg/lx7                                           |                                                  |                3 |              6 |
-|  clkdivider/clk_65mhz | pg/l1[0]_i_1_n_0                                 |                                                  |                6 |              7 |
-|  clkdivider/clk_65mhz |                                                  | pg/audio1/myrec/d23[7]_i_1_n_0                   |                3 |              8 |
-|  clkdivider/clk_65mhz |                                                  | pg/audio1/myrec/d20[7]_i_1_n_0                   |                2 |              8 |
-|  clkdivider/clk_65mhz |                                                  | pg/audio1/myrec/d24[7]_i_1_n_0                   |                3 |              8 |
-|  clkdivider/clk_65mhz |                                                  | pg/audio1/myrec/d25[7]_i_1_n_0                   |                3 |              8 |
-|  clkdivider/clk_65mhz |                                                  | pg/audio1/myrec/d26[7]_i_1_n_0                   |                3 |              8 |
-|  clkdivider/clk_65mhz |                                                  | pg/audio1/myrec/d27[7]_i_1_n_0                   |                3 |              8 |
-|  clkdivider/clk_65mhz |                                                  | pg/audio1/myrec/d28[7]_i_1_n_0                   |                6 |              8 |
-|  clkdivider/clk_65mhz |                                                  | pg/audio1/myrec/d29[7]_i_1_n_0                   |                3 |              8 |
-|  clkdivider/clk_65mhz |                                                  | pg/audio1/myrec/d2[7]_i_1_n_0                    |                3 |              8 |
-|  clkdivider/clk_65mhz |                                                  | pg/audio1/myrec/d30[7]_i_1_n_0                   |                2 |              8 |
-|  clkdivider/clk_65mhz |                                                  | pg/audio1/myrec/d31[7]_i_1_n_0                   |                3 |              8 |
-|  clkdivider/clk_65mhz |                                                  | pg/audio1/myrec/d32[7]_i_1_n_0                   |                3 |              8 |
-|  clkdivider/clk_65mhz |                                                  | pg/audio1/myrec/d10[7]_i_1_n_0                   |                6 |              8 |
-|  clkdivider/clk_65mhz |                                                  | pg/audio1/myrec/d0[7]_i_1_n_0                    |                3 |              8 |
-|  clkdivider/clk_65mhz |                                                  | pg/audio1/myrec/d22[7]_i_1_n_0                   |                3 |              8 |
-|  clkdivider/clk_65mhz |                                                  | pg/audio1/myrec/d21[7]_i_1_n_0                   |                3 |              8 |
-|  clkdivider/clk_65mhz |                                                  | pg/audio1/myrec/d34[7]_i_1_n_0                   |                3 |              8 |
-|  clkdivider/clk_65mhz |                                                  | pg/audio1/myrec/d1[7]_i_1_n_0                    |                3 |              8 |
-|  clkdivider/clk_65mhz |                                                  | pg/audio1/myrec/d19[7]_i_1_n_0                   |                3 |              8 |
-|  clkdivider/clk_65mhz |                                                  | pg/audio1/myrec/d18[7]_i_1_n_0                   |                4 |              8 |
-|  clkdivider/clk_65mhz |                                                  | pg/audio1/myrec/d17[7]_i_1_n_0                   |                3 |              8 |
-|  clkdivider/clk_65mhz |                                                  | pg/audio1/myrec/d16[7]_i_1_n_0                   |                2 |              8 |
-|  clkdivider/clk_65mhz |                                                  | pg/audio1/myrec/d14[7]_i_1_n_0                   |                3 |              8 |
-|  clkdivider/clk_65mhz |                                                  | pg/audio1/myrec/d13[7]_i_1_n_0                   |                4 |              8 |
-|  clkdivider/clk_65mhz |                                                  | pg/audio1/myrec/d15[7]_i_1_n_0                   |                3 |              8 |
-|  clkdivider/clk_65mhz |                                                  | pg/audio1/myrec/d11[7]_i_1_n_0                   |                3 |              8 |
-|  clkdivider/clk_65mhz |                                                  | pg/audio1/myrec/d12[7]_i_1_n_0                   |                3 |              8 |
-|  clkdivider/clk_65mhz |                                                  | pg/audio1/myrec/d33[7]_i_1_n_0                   |                4 |              8 |
-|  clkdivider/clk_65mhz | pg/notegen/note_num                              |                                                  |                2 |              8 |
-|  clkdivider/clk_65mhz |                                                  | pg/audio1/myrec/d43[7]_i_1_n_0                   |                3 |              8 |
-|  clkdivider/clk_65mhz |                                                  | pg/audio1/myrec/d50[7]_i_1_n_0                   |                1 |              8 |
-|  clkdivider/clk_65mhz |                                                  | pg/audio1/myrec/d4[7]_i_1_n_0                    |                4 |              8 |
-|  clkdivider/clk_65mhz |                                                  | pg/audio1/myrec/d49[7]_i_1_n_0                   |                2 |              8 |
-|  clkdivider/clk_65mhz |                                                  | pg/audio1/myrec/d48[7]_i_1_n_0                   |                3 |              8 |
-|  clkdivider/clk_65mhz |                                                  | pg/audio1/myrec/d47[7]_i_1_n_0                   |                3 |              8 |
-|  clkdivider/clk_65mhz |                                                  | pg/audio1/myrec/d46[7]_i_1_n_0                   |                3 |              8 |
-|  clkdivider/clk_65mhz |                                                  | pg/audio1/myrec/d45[7]_i_1_n_0                   |                4 |              8 |
-|  clkdivider/clk_65mhz |                                                  | pg/audio1/myrec/d44[7]_i_1_n_0                   |                3 |              8 |
-|  clkdivider/clk_65mhz |                                                  | pg/audio1/myrec/d51[7]_i_1_n_0                   |                4 |              8 |
-|  clkdivider/clk_65mhz |                                                  | pg/audio1/myrec/d42[7]_i_1_n_0                   |                3 |              8 |
-|  clkdivider/clk_65mhz |                                                  | pg/audio1/myrec/d37[7]_i_1_n_0                   |                3 |              8 |
-|  clkdivider/clk_65mhz |                                                  | pg/audio1/myrec/d41[7]_i_1_n_0                   |                5 |              8 |
-|  clkdivider/clk_65mhz |                                                  | pg/audio1/myrec/d38[7]_i_1_n_0                   |                4 |              8 |
-|  clkdivider/clk_65mhz |                                                  | pg/audio1/myrec/d40[7]_i_1_n_0                   |                3 |              8 |
-|  clkdivider/clk_65mhz |                                                  | pg/audio1/myrec/d3[7]_i_1_n_0                    |                3 |              8 |
-|  clkdivider/clk_65mhz |                                                  | pg/audio1/myrec/d39[7]_i_1_n_0                   |                3 |              8 |
-|  clkdivider/clk_65mhz |                                                  | pg/audio1/myrec/d59[7]_i_1_n_0                   |                2 |              8 |
-|  clkdivider/clk_65mhz |                                                  | pg/audio1/myrec/d8[7]_i_1_n_0                    |                2 |              8 |
-|  clkdivider/clk_65mhz |                                                  | pg/audio1/myrec/d9[7]_i_1_n_0                    |                3 |              8 |
-|  clkdivider/clk_65mhz |                                                  | pg/audio1/myrec/d7[7]_i_1_n_0                    |                2 |              8 |
-|  clkdivider/clk_65mhz |                                                  | pg/audio1/myrec/d6[7]_i_1_n_0                    |                2 |              8 |
-|  clkdivider/clk_65mhz |                                                  | pg/audio1/myrec/d36[7]_i_1_n_0                   |                5 |              8 |
-|  clkdivider/clk_65mhz |                                                  | pg/audio1/myrec/d60[7]_i_1_n_0                   |                3 |              8 |
-|  clkdivider/clk_65mhz |                                                  | pg/audio1/myrec/d5[7]_i_1_n_0                    |                3 |              8 |
-|  clkdivider/clk_65mhz |                                                  | pg/audio1/myrec/d58[7]_i_1_n_0                   |                2 |              8 |
-|  clkdivider/clk_65mhz |                                                  | pg/audio1/myrec/d57[7]_i_1_n_0                   |                3 |              8 |
-|  clkdivider/clk_65mhz |                                                  | pg/audio1/myrec/d56[7]_i_1_n_0                   |                3 |              8 |
-|  clkdivider/clk_65mhz |                                                  | pg/audio1/myrec/d55[7]_i_1_n_0                   |                3 |              8 |
-|  clkdivider/clk_65mhz |                                                  | pg/audio1/myrec/d54[7]_i_1_n_0                   |                1 |              8 |
-|  clkdivider/clk_65mhz |                                                  | pg/audio1/myrec/d53[7]_i_1_n_0                   |                3 |              8 |
-|  clkdivider/clk_65mhz |                                                  | pg/audio1/myrec/d35[7]_i_1_n_0                   |                6 |              8 |
-|  clkdivider/clk_65mhz |                                                  | pg/audio1/myrec/d52[7]_i_1_n_0                   |                3 |              8 |
-|  clkdivider/clk_65mhz | pg/meter1/counter0_carry__1_n_3                  | pg/reset_beat_reg_n_0                            |                7 |              9 |
-|  clkdivider/clk_65mhz | pg/notegen/notepos/x_pos[9]_i_1_n_0              |                                                  |                3 |              9 |
-|  clkdivider/clk_65mhz | pg/old_beat                                      |                                                  |                2 |              9 |
-|  clkdivider/clk_65mhz | pg/notegen/y18                                   | db1/clean_out_reg_14[0]                          |                2 |             10 |
-|  clkdivider/clk_65mhz | pg/notegen/y26                                   | db1/clean_out_reg_6[0]                           |                6 |             10 |
-|  clkdivider/clk_65mhz | pg/notegen/y25                                   | db1/clean_out_reg_7[0]                           |                6 |             10 |
-|  clkdivider/clk_65mhz | pg/notegen/y24                                   | db1/clean_out_reg_8[0]                           |                2 |             10 |
-|  clkdivider/clk_65mhz | pg/notegen/y23                                   | db1/clean_out_reg_9[0]                           |                4 |             10 |
-|  clkdivider/clk_65mhz | pg/notegen/y22                                   | db1/clean_out_reg_10[0]                          |                3 |             10 |
-|  clkdivider/clk_65mhz | pg/notegen/y21                                   | db1/clean_out_reg_11[0]                          |                5 |             10 |
-|  clkdivider/clk_65mhz | pg/notegen/y20                                   | db1/clean_out_reg_12[0]                          |                3 |             10 |
-|  clkdivider/clk_65mhz | pg/notegen/y2                                    | db1/clean_out_reg_30[0]                          |                4 |             10 |
-|  clkdivider/clk_65mhz | pg/notegen/y19                                   | db1/clean_out_reg_13[0]                          |                3 |             10 |
-|  clkdivider/clk_65mhz | pg/notegen/y10                                   | db1/clean_out_reg_22[0]                          |                2 |             10 |
-|  clkdivider/clk_65mhz | pg/notegen/y17                                   | db1/clean_out_reg_15[0]                          |                3 |             10 |
-|  clkdivider/clk_65mhz | pg/notegen/y16                                   | db1/clean_out_reg_16[0]                          |                4 |             10 |
-|  clkdivider/clk_65mhz | pg/notegen/y15                                   | db1/clean_out_reg_17[0]                          |                3 |             10 |
-|  clkdivider/clk_65mhz | pg/notegen/y13                                   | db1/clean_out_reg_19[0]                          |                3 |             10 |
-|  clkdivider/clk_65mhz | pg/notegen/y14                                   | db1/clean_out_reg_18[0]                          |                2 |             10 |
-|  clkdivider/clk_65mhz | pg/notegen/y0                                    | db1/SS[0]                                        |                5 |             10 |
-|  clkdivider/clk_65mhz | pg/notegen/y1                                    | db1/clean_out_reg_31[0]                          |                4 |             10 |
-|  clkdivider/clk_65mhz | pg/notegen/y12                                   | db1/clean_out_reg_20[0]                          |                5 |             10 |
-|  clkdivider/clk_65mhz | pg/notegen/y11                                   | db1/clean_out_reg_21[0]                          |                2 |             10 |
-|  clkdivider/clk_65mhz | pg/notegen/y9                                    | db1/clean_out_reg_23[0]                          |                3 |             10 |
-|  clkdivider/clk_65mhz |                                                  | pg/music/music_out[28]_i_1_n_0                   |                6 |             10 |
-|  clkdivider/clk_65mhz | pg/hand1_y[9]_i_1_n_0                            | pg/hand1_x0                                      |                4 |             10 |
-|  clkdivider/clk_65mhz | pg/button_click_counter[9]_i_1_n_0               | pg/hand1_x0                                      |                3 |             10 |
-|  clkdivider/clk_65mhz | pg/notegen/y27                                   | db1/clean_out_reg_5[0]                           |                4 |             10 |
-|  clkdivider/clk_65mhz | pg/notegen/y8                                    | db1/clean_out_reg_24[0]                          |                4 |             10 |
-|  clkdivider/clk_65mhz | pg/notegen/y7                                    | db1/clean_out_reg_25[0]                          |                6 |             10 |
-|  clkdivider/clk_65mhz | pg/notegen/y6                                    | db1/clean_out_reg_26[0]                          |                2 |             10 |
-|  clkdivider/clk_65mhz | pg/notegen/y5                                    | db1/clean_out_reg_27[0]                          |                4 |             10 |
-|  clkdivider/clk_65mhz | pg/notegen/y4                                    | db1/clean_out_reg_28[0]                          |                2 |             10 |
-|  clkdivider/clk_65mhz | pg/notegen/y31                                   | db1/clean_out_reg_1[0]                           |                4 |             10 |
-|  clkdivider/clk_65mhz | pg/notegen/y30                                   | db1/clean_out_reg_2[0]                           |                3 |             10 |
-|  clkdivider/clk_65mhz | pg/notegen/y3                                    | db1/clean_out_reg_29[0]                          |                3 |             10 |
-|  clkdivider/clk_65mhz | pg/notegen/y29                                   | db1/clean_out_reg_3[0]                           |                2 |             10 |
-|  clkdivider/clk_65mhz | pg/notegen/y28                                   | db1/clean_out_reg_4[0]                           |                4 |             10 |
-|  clkdivider/clk_65mhz | pg/bpm                                           |                                                  |                5 |             11 |
-|  clkdivider/clk_65mhz | pg/hand1_x[10]_i_1_n_0                           | pg/hand1_x0                                      |                6 |             11 |
-|  clkdivider/clk_65mhz | pg/hand2_x[10]_i_2_n_0                           | pg/hand1_x0                                      |                4 |             11 |
-|  clkdivider/clk_65mhz | pg/alpha_pixel[11]_i_1_n_0                       |                                                  |                4 |             12 |
-|  clkdivider/clk_65mhz |                                                  | xvga1/hcount_out_reg[10]_126                     |                2 |             12 |
-|  clkdivider/clk_65mhz | pg/dig1000x[1]_i_1_n_0                           |                                                  |                8 |             13 |
-|  clkdivider/clk_65mhz | pg/notegen/nlen18[1]_i_1_n_0                     |                                                  |                5 |             14 |
-|  clkdivider/clk_65mhz | pg/notegen/nlen8[1]_i_1_n_0                      |                                                  |                6 |             14 |
-|  clkdivider/clk_65mhz | pg/notegen/nlen0[1]_i_1_n_0                      |                                                  |                7 |             14 |
-|  clkdivider/clk_65mhz | pg/notegen/nlen10[1]_i_1_n_0                     |                                                  |                5 |             14 |
-|  clkdivider/clk_65mhz | pg/notegen/nlen11[1]_i_1_n_0                     |                                                  |                5 |             14 |
-|  clkdivider/clk_65mhz | pg/notegen/nlen12[1]_i_1_n_0                     |                                                  |                7 |             14 |
-|  clkdivider/clk_65mhz | pg/notegen/nlen13[1]_i_1_n_0                     |                                                  |                5 |             14 |
-|  clkdivider/clk_65mhz | pg/notegen/nlen14[1]_i_1_n_0                     |                                                  |                5 |             14 |
-|  clkdivider/clk_65mhz | pg/notegen/nlen15[1]_i_1_n_0                     |                                                  |                5 |             14 |
-|  clkdivider/clk_65mhz | pg/notegen/nlen16[1]_i_1_n_0                     |                                                  |                8 |             14 |
-|  clkdivider/clk_65mhz | pg/notegen/nlen17[1]_i_1_n_0                     |                                                  |                5 |             14 |
-|  clkdivider/clk_65mhz | pg/notegen/nlen19[1]_i_1_n_0                     |                                                  |                5 |             14 |
-|  clkdivider/clk_65mhz | pg/notegen/nlen1[1]_i_1_n_0                      |                                                  |                8 |             14 |
-|  clkdivider/clk_65mhz | pg/notegen/nlen20[1]_i_1_n_0                     |                                                  |                6 |             14 |
-|  clkdivider/clk_65mhz | pg/notegen/nlen21[1]_i_1_n_0                     |                                                  |                6 |             14 |
-|  clkdivider/clk_65mhz | pg/notegen/nlen22[1]_i_1_n_0                     |                                                  |                5 |             14 |
-|  clkdivider/clk_65mhz | pg/notegen/nlen23[1]_i_1_n_0                     |                                                  |                6 |             14 |
-|  clkdivider/clk_65mhz | pg/notegen/nlen25[1]_i_1_n_0                     |                                                  |                6 |             14 |
-|  clkdivider/clk_65mhz | pg/notegen/nlen26[1]_i_1_n_0                     |                                                  |                5 |             14 |
-|  clkdivider/clk_65mhz | pg/notegen/nlen27[1]_i_1_n_0                     |                                                  |                5 |             14 |
-|  clkdivider/clk_65mhz | pg/notegen/nlen28[1]_i_1_n_0                     |                                                  |                7 |             14 |
-|  clkdivider/clk_65mhz | pg/notegen/nlen29[1]_i_1_n_0                     |                                                  |                6 |             14 |
-|  clkdivider/clk_65mhz | pg/notegen/nlen2[1]_i_1_n_0                      |                                                  |                7 |             14 |
-|  clkdivider/clk_65mhz | pg/notegen/nlen30[1]_i_1_n_0                     |                                                  |                5 |             14 |
-|  clkdivider/clk_65mhz | pg/notegen/nlen31[1]_i_1_n_0                     |                                                  |                5 |             14 |
-|  clkdivider/clk_65mhz | pg/notegen/nlen3[1]_i_1_n_0                      |                                                  |                5 |             14 |
-|  clkdivider/clk_65mhz | pg/notegen/nlen4[1]_i_1_n_0                      |                                                  |                7 |             14 |
-|  clkdivider/clk_65mhz | pg/notegen/nlen5[1]_i_1_n_0                      |                                                  |                5 |             14 |
-|  clkdivider/clk_65mhz | pg/notegen/nlen6[1]_i_1_n_0                      |                                                  |                6 |             14 |
-|  clkdivider/clk_65mhz | pg/notegen/nlen7[1]_i_1_n_0                      |                                                  |                6 |             14 |
-|  clkdivider/clk_65mhz | pg/notegen/nlen9[1]_i_1_n_0                      |                                                  |                6 |             14 |
-|  clkdivider/clk_65mhz | pg/notegen/nlen24[1]_i_1_n_0                     |                                                  |                7 |             14 |
-|  clkdivider/clk_65mhz |                                                  | pg/audio1/myrec/tonet1567/sample_counter_reg[11] |                4 |             15 |
-|  clkdivider/clk_65mhz | pg/hd/di1[3]_i_1_n_0                             |                                                  |                8 |             16 |
-|  clkdivider/clk_65mhz | pg/num1[3]_i_2_n_0                               | pg/num1[3]_i_1_n_0                               |               12 |             16 |
-|  clkdivider/clk_65mhz | pg/hd/number[16]_i_1_n_0                         |                                                  |                7 |             17 |
-|  clkdivider/clk_65mhz | pg/score[16]_i_1_n_0                             | pg/hand1_x0                                      |                6 |             17 |
-|  clkdivider/clk_65mhz | db1/count                                        | db1/count[0]_i_1__0_n_0                          |                5 |             20 |
-|  clkdivider/clk_65mhz | pg/hand1_counter[20]_i_2_n_0                     | pg/hand1_counter[20]_i_1_n_0                     |                5 |             20 |
-|  clkdivider/clk_65mhz | pg/old_beat                                      | pg/hand2_counter[20]_i_1_n_0                     |                5 |             21 |
-|  clkdivider/clk_65mhz |                                                  | db1/reset                                        |               11 |             22 |
-|  clkdivider/clk_65mhz | xvga1/hreset                                     | xvga1/vcount_out0                                |               17 |             26 |
-|  clkdivider/clk_65mhz |                                                  | db1/clean_out_reg_0                              |                7 |             27 |
-|  clkdivider/clk_65mhz |                                                  | pg/meter1/counter[0]_i_1_n_0                     |                7 |             27 |
-|  clkdivider/clk_65mhz |                                                  | xvga1/hreset                                     |               21 |             31 |
-|  clkdivider/clk_65mhz | pg/notes[60]_i_1_n_0                             | pg/hand1_x0                                      |               35 |             61 |
-|  clkdivider/clk_65mhz |                                                  | pg/n_array[60]_i_1_n_0                           |               33 |             61 |
-|  clkdivider/clk_65mhz |                                                  |                                                  |               98 |            170 |
-|  clkdivider/clk_65mhz | pg/audio1/myrec/tonet1567/sample_counter_reg[11] | db1/reset                                        |              484 |           1899 |
-+-----------------------+--------------------------------------------------+--------------------------------------------------+------------------+----------------+
++--------------------------------------------------+--------------------------------------------------+--------------------------------------------------+------------------+----------------+
+|                   Clock Signal                   |                   Enable Signal                  |                 Set/Reset Signal                 | Slice Load Count | Bel Load Count |
++--------------------------------------------------+--------------------------------------------------+--------------------------------------------------+------------------+----------------+
+|  clkdivider/clk_65mhz                            | xvga1/hcount_out_reg[10]_rep_42[0]               |                                                  |                1 |              1 |
+|  clkdivider/clk_65mhz                            | xvga1/hcount_out_reg[10]_rep_50[0]               |                                                  |                1 |              1 |
+|  clkdivider/clk_65mhz                            |                                                  | display/strobe_out[1]_i_1_n_0                    |                1 |              2 |
+|  clkdivider/clk_65mhz                            |                                                  | display/strobe_out[6]_i_1_n_0                    |                2 |              2 |
+|  clkdivider/clk_65mhz                            |                                                  | display/p_0_in[0]                                |                2 |              2 |
+|  clkdivider/clk_65mhz                            | pg/bpm                                           | pg/ly6[9]_i_1_n_0                                |                1 |              2 |
+|  clkdivider/clk_65mhz                            | pg/reset_beat1_out                               | pg/ly6[9]_i_1_n_0                                |                1 |              2 |
+|  pg/notegen/note5/pixel_out_reg[11]_i_2__4_n_0   |                                                  |                                                  |                1 |              3 |
+|  pg/notegen/note15/pixel_out_reg[11]_i_2__14_n_0 |                                                  |                                                  |                1 |              3 |
+|  pg/notegen/note6/pixel_out_reg[11]_i_2__5_n_0   |                                                  |                                                  |                1 |              3 |
+|  pg/notegen/note10/pixel_out_reg[11]_i_2__9_n_0  |                                                  |                                                  |                3 |              3 |
+|  pg/notegen/note7/pixel_out_reg[11]_i_2__6_n_0   |                                                  |                                                  |                2 |              3 |
+|  pg/notegen/note8/pixel_out_reg[11]_i_2__7_n_0   |                                                  |                                                  |                2 |              3 |
+|  pg/notegen/note9/pixel_out_reg[11]_i_2__8_n_0   |                                                  |                                                  |                2 |              3 |
+|  pg/notegen/note11/pixel_out_reg[11]_i_2__10_n_0 |                                                  |                                                  |                2 |              3 |
+|  pg/notegen/note12/pixel_out_reg[11]_i_2__11_n_0 |                                                  |                                                  |                1 |              3 |
+|  pg/notegen/note13/pixel_out_reg[11]_i_2__12_n_0 |                                                  |                                                  |                1 |              3 |
+|  pg/notegen/note14/pixel_out_reg[11]_i_2__13_n_0 |                                                  |                                                  |                1 |              3 |
+|  pg/notegen/note16/pixel_out_reg[11]_i_2__15_n_0 |                                                  |                                                  |                1 |              3 |
+|  pg/notegen/note0/pixel_out_reg[11]_i_2_n_0      |                                                  |                                                  |                1 |              3 |
+|  pg/notegen/note31/pixel_out_reg[11]_i_2__30_n_0 |                                                  |                                                  |                1 |              3 |
+|  pg/notegen/note17/pixel_out_reg[11]_i_2__16_n_0 |                                                  |                                                  |                1 |              3 |
+|  pg/notegen/note18/pixel_out_reg[11]_i_2__17_n_0 |                                                  |                                                  |                2 |              3 |
+|  pg/notegen/note19/pixel_out_reg[11]_i_2__18_n_0 |                                                  |                                                  |                1 |              3 |
+|  pg/notegen/note2/pixel_out_reg[11]_i_2__1_n_0   |                                                  |                                                  |                1 |              3 |
+|  pg/notegen/note20/pixel_out_reg[11]_i_2__19_n_0 |                                                  |                                                  |                2 |              3 |
+|  pg/notegen/note21/pixel_out_reg[11]_i_2__20_n_0 |                                                  |                                                  |                1 |              3 |
+|  pg/notegen/note22/pixel_out_reg[11]_i_2__21_n_0 |                                                  |                                                  |                1 |              3 |
+|  pg/notegen/note23/pixel_out_reg[11]_i_2__22_n_0 |                                                  |                                                  |                1 |              3 |
+|  pg/notegen/note24/pixel_out_reg[11]_i_2__23_n_0 |                                                  |                                                  |                1 |              3 |
+|  pg/notegen/note25/pixel_out_reg[11]_i_2__24_n_0 |                                                  |                                                  |                2 |              3 |
+|  pg/notegen/note4/pixel_out_reg[11]_i_2__3_n_0   |                                                  |                                                  |                2 |              3 |
+|  pg/notegen/note30/pixel_out_reg[11]_i_2__29_n_0 |                                                  |                                                  |                1 |              3 |
+|  pg/notegen/note3/pixel_out_reg[11]_i_2__2_n_0   |                                                  |                                                  |                1 |              3 |
+|  pg/notegen/note29/pixel_out_reg[11]_i_2__28_n_0 |                                                  |                                                  |                1 |              3 |
+|  pg/notegen/note28/pixel_out_reg[11]_i_2__27_n_0 |                                                  |                                                  |                2 |              3 |
+|  pg/notegen/note1/pixel_out_reg[11]_i_2__0_n_0   |                                                  |                                                  |                2 |              3 |
+|  pg/notegen/note26/pixel_out_reg[11]_i_2__25_n_0 |                                                  |                                                  |                1 |              3 |
+|  pg/notegen/note27/pixel_out_reg[11]_i_2__26_n_0 |                                                  |                                                  |                2 |              3 |
+|  clkdivider/clk_65mhz                            |                                                  | xvga1/hcount_out_reg[10]_rep_32                  |                2 |              4 |
+|  clkdivider/clk_65mhz                            | pg/hand1_x[9]_i_2_n_0                            | pg/hand1_x[9]_i_1_n_0                            |                1 |              4 |
+|  clkdivider/clk_65mhz                            |                                                  | xvga1/hcount_out_reg[10]_rep_0                   |                2 |              4 |
+|  clkdivider/clk_65mhz                            |                                                  | xvga1/hcount_out_reg[10]_rep_11                  |                2 |              4 |
+|  clkdivider/clk_65mhz                            |                                                  | xvga1/hcount_out_reg[10]_rep_14                  |                2 |              4 |
+|  clkdivider/clk_65mhz                            |                                                  | xvga1/hcount_out_reg[10]_rep_17                  |                2 |              4 |
+|  clkdivider/clk_65mhz                            |                                                  | xvga1/hcount_out_reg[10]_rep_2                   |                1 |              4 |
+|  clkdivider/clk_65mhz                            |                                                  | xvga1/hcount_out_reg[10]_rep_20                  |                2 |              4 |
+|  clkdivider/clk_65mhz                            |                                                  | xvga1/hcount_out_reg[10]_rep_23                  |                1 |              4 |
+|  clkdivider/clk_65mhz                            |                                                  | xvga1/hcount_out_reg[10]_rep_26                  |                1 |              4 |
+|  clkdivider/clk_65mhz                            |                                                  | xvga1/hcount_out_reg[10]_rep_29                  |                3 |              4 |
+|  clkdivider/clk_65mhz                            |                                                  | xvga1/hcount_out_reg[10]_rep_34                  |                2 |              4 |
+|  clkdivider/clk_65mhz                            |                                                  | xvga1/hcount_out_reg[10]_rep_39                  |                1 |              4 |
+|  clkdivider/clk_65mhz                            |                                                  | xvga1/hcount_out_reg[10]_rep_44                  |                2 |              4 |
+|  clkdivider/clk_65mhz                            |                                                  | xvga1/hcount_out_reg[10]_rep_47                  |                1 |              4 |
+|  clkdivider/clk_65mhz                            |                                                  | xvga1/hcount_out_reg[10]_rep_5                   |                2 |              4 |
+|  clkdivider/clk_65mhz                            |                                                  | xvga1/hcount_out_reg[10]_rep_8                   |                1 |              4 |
+|  clkdivider/clk_65mhz                            | pg/hd/digit1000[3]_i_1_n_0                       | pg/hd/digit1[3]_i_1_n_0                          |                1 |              4 |
+|  clkdivider/clk_65mhz                            | pg/hd/digit100[3]_i_1_n_0                        | pg/hd/digit1[3]_i_1_n_0                          |                1 |              4 |
+|  clkdivider/clk_65mhz                            | pg/hd/digit10[3]_i_1_n_0                         | pg/hd/digit1[3]_i_1_n_0                          |                1 |              4 |
+|  clkdivider/clk_65mhz                            | pg/hd/digit1[3]_i_2_n_0                          | pg/hd/digit1[3]_i_1_n_0                          |                1 |              4 |
+|  clkdivider/clk_65mhz                            | pg/notegen/E[0]                                  | pg/add_to_score[3]_i_1_n_0                       |                1 |              4 |
+|  cam_pclk_BUFG                                   | my_img/pixel_data_out[7]_i_1_n_0                 |                                                  |                3 |              5 |
+|  clkdivider/clk_65mhz                            | pg/notegen/note_buffer                           | db1/reset                                        |                1 |              5 |
+|  clkdivider/clk_65mhz                            | xvga1/E[0]                                       |                                                  |                2 |              5 |
+|  clkdivider/clk_65mhz                            | pg/lx7                                           |                                                  |                2 |              6 |
+|  clkdivider/clk_65mhz                            | pg/meter1/E[0]                                   | pg/hand1_x1                                      |                3 |              6 |
+|  clkdivider/clk_65mhz                            | pg/l1[0]_i_1_n_0                                 |                                                  |                2 |              7 |
+|  clkdivider/clk_65mhz                            | pg/hand1_y[9]_i_1_n_0                            | pg/hand1_x1                                      |                2 |              7 |
+|  cam_pclk_BUFG                                   | my_img/pixel_data_out[15]_i_1_n_0                |                                                  |                3 |              7 |
+|  clkdivider/clk_65mhz                            |                                                  | pg/audio1/myrec/d28[7]_i_1_n_0                   |                2 |              8 |
+|  clkdivider/clk_65mhz                            |                                                  | pg/audio1/myrec/d20[7]_i_1_n_0                   |                2 |              8 |
+|  clkdivider/clk_65mhz                            |                                                  | pg/audio1/myrec/d21[7]_i_1_n_0                   |                4 |              8 |
+|  clkdivider/clk_65mhz                            |                                                  | pg/audio1/myrec/d22[7]_i_1_n_0                   |                2 |              8 |
+|  clkdivider/clk_65mhz                            |                                                  | pg/audio1/myrec/d23[7]_i_1_n_0                   |                4 |              8 |
+|  clkdivider/clk_65mhz                            |                                                  | pg/audio1/myrec/d24[7]_i_1_n_0                   |                1 |              8 |
+|  clkdivider/clk_65mhz                            |                                                  | pg/audio1/myrec/d25[7]_i_1_n_0                   |                2 |              8 |
+|  clkdivider/clk_65mhz                            |                                                  | pg/audio1/myrec/d26[7]_i_1_n_0                   |                3 |              8 |
+|  clkdivider/clk_65mhz                            |                                                  | pg/audio1/myrec/d27[7]_i_1_n_0                   |                3 |              8 |
+|  clkdivider/clk_65mhz                            |                                                  | pg/audio1/myrec/d31[7]_i_1_n_0                   |                3 |              8 |
+|  clkdivider/clk_65mhz                            |                                                  | pg/audio1/myrec/d29[7]_i_1_n_0                   |                3 |              8 |
+|  clkdivider/clk_65mhz                            |                                                  | pg/audio1/myrec/d2[7]_i_1_n_0                    |                3 |              8 |
+|  clkdivider/clk_65mhz                            |                                                  | pg/audio1/myrec/d30[7]_i_1_n_0                   |                3 |              8 |
+|  clkdivider/clk_65mhz                            |                                                  | pg/audio1/myrec/d33[7]_i_1_n_0                   |                1 |              8 |
+|  clkdivider/clk_65mhz                            |                                                  | pg/audio1/myrec/d1[7]_i_1_n_0                    |                2 |              8 |
+|  clkdivider/clk_65mhz                            |                                                  | pg/audio1/myrec/d19[7]_i_1_n_0                   |                2 |              8 |
+|  clkdivider/clk_65mhz                            |                                                  | pg/audio1/myrec/d18[7]_i_1_n_0                   |                3 |              8 |
+|  clkdivider/clk_65mhz                            |                                                  | pg/audio1/myrec/d17[7]_i_1_n_0                   |                2 |              8 |
+|  clkdivider/clk_65mhz                            |                                                  | pg/audio1/myrec/d16[7]_i_1_n_0                   |                2 |              8 |
+|  clkdivider/clk_65mhz                            |                                                  | pg/audio1/myrec/d15[7]_i_1_n_0                   |                2 |              8 |
+|  clkdivider/clk_65mhz                            |                                                  | pg/audio1/myrec/d14[7]_i_1_n_0                   |                2 |              8 |
+|  clkdivider/clk_65mhz                            |                                                  | pg/audio1/myrec/d13[7]_i_1_n_0                   |                2 |              8 |
+|  clkdivider/clk_65mhz                            |                                                  | pg/audio1/myrec/d12[7]_i_1_n_0                   |                2 |              8 |
+|  clkdivider/clk_65mhz                            |                                                  | pg/audio1/myrec/d11[7]_i_1_n_0                   |                3 |              8 |
+|  clkdivider/clk_65mhz                            |                                                  | pg/audio1/myrec/d10[7]_i_1_n_0                   |                3 |              8 |
+|  clkdivider/clk_65mhz                            |                                                  | pg/audio1/myrec/d0[7]_i_1_n_0                    |                3 |              8 |
+|  clkdivider/clk_65mhz                            | pg/final_beat[8]_i_1_n_0                         |                                                  |                2 |              8 |
+|  clkdivider/clk_65mhz                            | my_img/track_A/sel                               | my_img/track_A/y_in                              |                3 |              8 |
+|  clkdivider/clk_65mhz                            |                                                  | pg/audio1/myrec/d47[7]_i_1_n_0                   |                3 |              8 |
+|  clkdivider/clk_65mhz                            |                                                  | pg/audio1/myrec/d52[7]_i_1_n_0                   |                2 |              8 |
+|  clkdivider/clk_65mhz                            |                                                  | pg/audio1/myrec/d51[7]_i_1_n_0                   |                2 |              8 |
+|  clkdivider/clk_65mhz                            |                                                  | pg/audio1/myrec/d50[7]_i_1_n_0                   |                1 |              8 |
+|  clkdivider/clk_65mhz                            |                                                  | pg/audio1/myrec/d4[7]_i_1_n_0                    |                4 |              8 |
+|  clkdivider/clk_65mhz                            |                                                  | pg/audio1/myrec/d49[7]_i_1_n_0                   |                2 |              8 |
+|  clkdivider/clk_65mhz                            |                                                  | pg/audio1/myrec/d48[7]_i_1_n_0                   |                2 |              8 |
+|  clkdivider/clk_65mhz                            |                                                  | pg/audio1/myrec/d35[7]_i_1_n_0                   |                2 |              8 |
+|  clkdivider/clk_65mhz                            |                                                  | pg/audio1/myrec/d36[7]_i_1_n_0                   |                2 |              8 |
+|  clkdivider/clk_65mhz                            |                                                  | pg/audio1/myrec/d37[7]_i_1_n_0                   |                3 |              8 |
+|  clkdivider/clk_65mhz                            |                                                  | pg/audio1/myrec/d38[7]_i_1_n_0                   |                4 |              8 |
+|  clkdivider/clk_65mhz                            |                                                  | pg/audio1/myrec/d32[7]_i_1_n_0                   |                4 |              8 |
+|  clkdivider/clk_65mhz                            |                                                  | pg/audio1/myrec/d39[7]_i_1_n_0                   |                3 |              8 |
+|  clkdivider/clk_65mhz                            |                                                  | pg/audio1/myrec/d46[7]_i_1_n_0                   |                4 |              8 |
+|  clkdivider/clk_65mhz                            |                                                  | pg/audio1/myrec/d45[7]_i_1_n_0                   |                2 |              8 |
+|  clkdivider/clk_65mhz                            |                                                  | pg/audio1/myrec/d44[7]_i_1_n_0                   |                2 |              8 |
+|  clkdivider/clk_65mhz                            |                                                  | pg/audio1/myrec/d43[7]_i_1_n_0                   |                4 |              8 |
+|  clkdivider/clk_65mhz                            |                                                  | pg/audio1/myrec/d3[7]_i_1_n_0                    |                2 |              8 |
+|  clkdivider/clk_65mhz                            |                                                  | pg/audio1/myrec/d40[7]_i_1_n_0                   |                3 |              8 |
+|  clkdivider/clk_65mhz                            |                                                  | pg/audio1/myrec/d41[7]_i_1_n_0                   |                3 |              8 |
+|  clkdivider/clk_65mhz                            |                                                  | pg/audio1/myrec/d42[7]_i_1_n_0                   |                3 |              8 |
+|  clkdivider/clk_65mhz                            |                                                  | pg/audio1/myrec/d54[7]_i_1_n_0                   |                3 |              8 |
+|  clkdivider/clk_65mhz                            |                                                  | pg/audio1/myrec/d9[7]_i_1_n_0                    |                2 |              8 |
+|  clkdivider/clk_65mhz                            |                                                  | pg/audio1/myrec/d8[7]_i_1_n_0                    |                4 |              8 |
+|  clkdivider/clk_65mhz                            |                                                  | pg/audio1/myrec/d7[7]_i_1_n_0                    |                2 |              8 |
+|  clkdivider/clk_65mhz                            |                                                  | pg/audio1/myrec/d53[7]_i_1_n_0                   |                1 |              8 |
+|  clkdivider/clk_65mhz                            |                                                  | pg/audio1/myrec/d34[7]_i_1_n_0                   |                1 |              8 |
+|  clkdivider/clk_65mhz                            |                                                  | pg/audio1/myrec/d6[7]_i_1_n_0                    |                3 |              8 |
+|  clkdivider/clk_65mhz                            |                                                  | pg/audio1/myrec/d60[7]_i_1_n_0                   |                2 |              8 |
+|  clkdivider/clk_65mhz                            |                                                  | pg/audio1/myrec/d5[7]_i_1_n_0                    |                4 |              8 |
+|  clkdivider/clk_65mhz                            |                                                  | pg/audio1/myrec/d55[7]_i_1_n_0                   |                3 |              8 |
+|  clkdivider/clk_65mhz                            |                                                  | pg/audio1/myrec/d56[7]_i_1_n_0                   |                4 |              8 |
+|  clkdivider/clk_65mhz                            |                                                  | pg/audio1/myrec/d57[7]_i_1_n_0                   |                4 |              8 |
+|  clkdivider/clk_65mhz                            |                                                  | pg/audio1/myrec/d58[7]_i_1_n_0                   |                5 |              8 |
+|  clkdivider/clk_65mhz                            |                                                  | pg/audio1/myrec/d59[7]_i_1_n_0                   |                3 |              8 |
+|  clkdivider/clk_65mhz                            |                                                  | my_img/track_C/x_in                              |                2 |              9 |
+|  clkdivider/clk_65mhz                            |                                                  | my_img/track_B/x_in                              |                2 |              9 |
+|  clkdivider/clk_65mhz                            |                                                  | my_img/track_A/x_in                              |                3 |              9 |
+|  clkdivider/clk_65mhz                            | pg/old_beat                                      |                                                  |                4 |              9 |
+|  clkdivider/clk_65mhz                            | pg/notegen/notepos/x_pos[9]_i_1_n_0              |                                                  |                3 |              9 |
+|  clkdivider/clk_65mhz                            |                                                  | my_img/track_D/x_in                              |                2 |              9 |
+|  clkdivider/clk_65mhz                            | pg/notegen/note_num                              |                                                  |                5 |              9 |
+|  clkdivider/clk_65mhz                            | pg/notegen/y17                                   | pg/notegen/y17[9]_i_1_n_0                        |                4 |             10 |
+|  clkdivider/clk_65mhz                            | pg/notegen/y18                                   | pg/notegen/y18[9]_i_1_n_0                        |                2 |             10 |
+|  clkdivider/clk_65mhz                            | pg/notegen/y19                                   | pg/notegen/y19[9]_i_1_n_0                        |                3 |             10 |
+|  clkdivider/clk_65mhz                            | pg/notegen/y2                                    | pg/notegen/y2[9]_i_1_n_0                         |                3 |             10 |
+|  clkdivider/clk_65mhz                            | pg/notegen/y20                                   | pg/notegen/y20[9]_i_1_n_0                        |                4 |             10 |
+|  clkdivider/clk_65mhz                            | pg/notegen/y21                                   | pg/notegen/y21[9]_i_1_n_0                        |                3 |             10 |
+|  clkdivider/clk_65mhz                            | pg/notegen/y24                                   | pg/notegen/y24[9]_i_1_n_0                        |                3 |             10 |
+|  clkdivider/clk_65mhz                            | pg/notegen/y22                                   | pg/notegen/y22[9]_i_1_n_0                        |                3 |             10 |
+|  clkdivider/clk_65mhz                            | pg/notegen/y23                                   | pg/notegen/y23[9]_i_1_n_0                        |                3 |             10 |
+|  clkdivider/clk_65mhz                            | pg/notegen/y16                                   | pg/notegen/y16[9]_i_1_n_0                        |                2 |             10 |
+|  clkdivider/clk_65mhz                            | pg/notegen/y15                                   | pg/notegen/y15[9]_i_1_n_0                        |                3 |             10 |
+|  clkdivider/clk_65mhz                            | pg/notegen/y0                                    | pg/notegen/y0[9]_i_1_n_0                         |                2 |             10 |
+|  clkdivider/clk_65mhz                            | pg/notegen/y14                                   | pg/notegen/y14[9]_i_1_n_0                        |                2 |             10 |
+|  clkdivider/clk_65mhz                            | pg/notegen/y1                                    | pg/notegen/y1[9]_i_1_n_0                         |                3 |             10 |
+|  clkdivider/clk_65mhz                            | pg/notegen/y10                                   | pg/notegen/y10[9]_i_1_n_0                        |                3 |             10 |
+|  clkdivider/clk_65mhz                            | pg/notegen/y11                                   | pg/notegen/y11[9]_i_1_n_0                        |                3 |             10 |
+|  clkdivider/clk_65mhz                            | pg/notegen/y12                                   | pg/notegen/y12[9]_i_1_n_0                        |                2 |             10 |
+|  clkdivider/clk_65mhz                            | pg/notegen/y13                                   | pg/notegen/y13[9]_i_1_n_0                        |                3 |             10 |
+|  clkdivider/clk_65mhz                            | pg/notegen/y6                                    | pg/notegen/y6[9]_i_1_n_0                         |                3 |             10 |
+|  clkdivider/clk_65mhz                            |                                                  | my_img/my_hsv/_inferred__5/i__n_0                |                3 |             10 |
+|  clkdivider/clk_65mhz                            | pg/button_click_counter[9]_i_1_n_0               | pg/hand1_x1                                      |                3 |             10 |
+|  clkdivider/clk_65mhz                            | pg/notegen/y9                                    | pg/notegen/y9[9]_i_1_n_0                         |                3 |             10 |
+|  clkdivider/clk_65mhz                            | pg/notegen/y8                                    | pg/notegen/y8[9]_i_1_n_0                         |                3 |             10 |
+|  clkdivider/clk_65mhz                            | pg/notegen/y7                                    | pg/notegen/y7[9]_i_1_n_0                         |                3 |             10 |
+|  clkdivider/clk_65mhz                            | pg/notegen/y25                                   | pg/notegen/y25[9]_i_1_n_0                        |                2 |             10 |
+|  clkdivider/clk_65mhz                            | pg/notegen/y5                                    | pg/notegen/y5[9]_i_1_n_0                         |                2 |             10 |
+|  clkdivider/clk_65mhz                            | pg/notegen/y4                                    | pg/notegen/y4[9]_i_1_n_0                         |                3 |             10 |
+|  clkdivider/clk_65mhz                            | pg/notegen/y31                                   | pg/notegen/y31[9]_i_1_n_0                        |                3 |             10 |
+|  clkdivider/clk_65mhz                            | pg/notegen/y30                                   | pg/notegen/y30[9]_i_1_n_0                        |                3 |             10 |
+|  clkdivider/clk_65mhz                            | pg/notegen/y3                                    | pg/notegen/y3[9]_i_1_n_0                         |                3 |             10 |
+|  clkdivider/clk_65mhz                            | pg/notegen/y29                                   | pg/notegen/y29[9]_i_1_n_0                        |                4 |             10 |
+|  clkdivider/clk_65mhz                            | pg/notegen/y28                                   | pg/notegen/y28[9]_i_1_n_0                        |                4 |             10 |
+|  clkdivider/clk_65mhz                            | pg/notegen/y27                                   | pg/notegen/y27[9]_i_1_n_0                        |                3 |             10 |
+|  clkdivider/clk_65mhz                            | pg/notegen/y26                                   | pg/notegen/y26[9]_i_1_n_0                        |                3 |             10 |
+|  clkdivider/clk_65mhz                            | pg/bpm                                           |                                                  |                5 |             11 |
+|  clkdivider/clk_65mhz                            | pg/alpha_pixel[11]_i_1_n_0                       |                                                  |                3 |             12 |
+|  clkdivider/clk_65mhz                            | pg/dig10x[8]_i_1_n_0                             |                                                  |                5 |             13 |
+|  clkdivider/clk_65mhz                            | pg/notegen/nlen6[2]_i_1_n_0                      |                                                  |                8 |             15 |
+|  clkdivider/clk_65mhz                            |                                                  | pg/audio1/myrec/tonet1567/sample_counter_reg[11] |                4 |             15 |
+|  clkdivider/clk_65mhz                            | pg/notegen/nlen15[2]_i_1_n_0                     |                                                  |                6 |             15 |
+|  clkdivider/clk_65mhz                            | pg/notegen/nlen22[2]_i_1_n_0                     |                                                  |                5 |             15 |
+|  clkdivider/clk_65mhz                            | pg/notegen/nlen21[2]_i_1_n_0                     |                                                  |                5 |             15 |
+|  clkdivider/clk_65mhz                            | pg/notegen/nlen20[2]_i_1_n_0                     |                                                  |                5 |             15 |
+|  clkdivider/clk_65mhz                            | pg/notegen/nlen1[2]_i_1_n_0                      |                                                  |                6 |             15 |
+|  clkdivider/clk_65mhz                            | pg/notegen/nlen19[2]_i_1_n_0                     |                                                  |                6 |             15 |
+|  clkdivider/clk_65mhz                            | pg/notegen/nlen18[2]_i_1_n_0                     |                                                  |                5 |             15 |
+|  clkdivider/clk_65mhz                            | pg/notegen/nlen17[2]_i_1_n_0                     |                                                  |                5 |             15 |
+|  clkdivider/clk_65mhz                            | pg/notegen/nlen16[2]_i_1_n_0                     |                                                  |                6 |             15 |
+|  clkdivider/clk_65mhz                            | pg/notegen/nlen8[2]_i_1_n_0                      |                                                  |                6 |             15 |
+|  clkdivider/clk_65mhz                            | pg/notegen/nlen14[2]_i_1_n_0                     |                                                  |                6 |             15 |
+|  clkdivider/clk_65mhz                            | pg/notegen/nlen13[2]_i_1_n_0                     |                                                  |                6 |             15 |
+|  clkdivider/clk_65mhz                            | pg/notegen/nlen12[2]_i_1_n_0                     |                                                  |                5 |             15 |
+|  clkdivider/clk_65mhz                            | pg/notegen/nlen11[2]_i_1_n_0                     |                                                  |                5 |             15 |
+|  clkdivider/clk_65mhz                            | pg/notegen/nlen10[2]_i_1_n_0                     |                                                  |                9 |             15 |
+|  clkdivider/clk_65mhz                            | pg/notegen/nlen0[2]_i_1_n_0                      |                                                  |                5 |             15 |
+|  clkdivider/clk_65mhz                            | pg/meter1/counter0_carry__1_n_3                  | pg/reset_beat_reg_n_0                            |                9 |             15 |
+|  clkdivider/clk_65mhz                            | pg/notegen/nlen31[2]_i_1_n_0                     |                                                  |                5 |             15 |
+|  clkdivider/clk_65mhz                            | pg/notegen/nlen9[2]_i_1_n_0                      |                                                  |                5 |             15 |
+|  clkdivider/clk_65mhz                            | pg/notegen/nlen23[2]_i_1_n_0                     |                                                  |                7 |             15 |
+|  clkdivider/clk_65mhz                            | pg/notegen/nlen7[2]_i_1_n_0                      |                                                  |                5 |             15 |
+|  clkdivider/clk_65mhz                            | pg/notegen/nlen5[2]_i_1_n_0                      |                                                  |                6 |             15 |
+|  clkdivider/clk_65mhz                            | pg/notegen/nlen4[2]_i_1_n_0                      |                                                  |                6 |             15 |
+|  clkdivider/clk_65mhz                            | pg/notegen/nlen3[2]_i_1_n_0                      |                                                  |                6 |             15 |
+|  clkdivider/clk_65mhz                            | pg/notegen/nlen30[2]_i_1_n_0                     |                                                  |                5 |             15 |
+|  clkdivider/clk_65mhz                            | pg/notegen/nlen2[2]_i_1_n_0                      |                                                  |                5 |             15 |
+|  clkdivider/clk_65mhz                            | pg/notegen/nlen29[2]_i_1_n_0                     |                                                  |                6 |             15 |
+|  clkdivider/clk_65mhz                            | pg/notegen/nlen28[2]_i_1_n_0                     |                                                  |                5 |             15 |
+|  clkdivider/clk_65mhz                            | pg/notegen/nlen27[2]_i_1_n_0                     |                                                  |                6 |             15 |
+|  clkdivider/clk_65mhz                            | pg/notegen/nlen26[2]_i_1_n_0                     |                                                  |                7 |             15 |
+|  clkdivider/clk_65mhz                            | pg/notegen/nlen25[2]_i_1_n_0                     |                                                  |                5 |             15 |
+|  clkdivider/clk_65mhz                            | pg/notegen/nlen24[2]_i_1_n_0                     |                                                  |                4 |             15 |
+|  clkdivider/clk_65mhz                            | pg/hd/di1[3]_i_1_n_0                             |                                                  |                6 |             16 |
+|  clkdivider/clk_65mhz                            |                                                  | my_img/pixel_addr_out[16]_i_1_n_0                |                5 |             16 |
+|  clkdivider/clk_65mhz                            | pg/num1[3]_i_2_n_0                               | pg/num1[3]_i_1_n_0                               |                6 |             16 |
+|  clkdivider/clk_65mhz                            | pg/hd/number[16]_i_1_n_0                         |                                                  |               10 |             17 |
+|  cam_pclk_BUFG                                   | my_img/my_camera/pixel_valid_out                 | my_img/my_camera/frame_done_out                  |                5 |             17 |
+|  clkdivider/clk_65mhz                            | pg/score[16]_i_1_n_0                             | pg/hand1_x1                                      |                4 |             17 |
+|  cam_pclk_BUFG                                   |                                                  |                                                  |               11 |             17 |
+|  clkdivider/clk_65mhz                            | db1/count                                        | db1/count[0]_i_1__0_n_0                          |                5 |             20 |
+|  clkdivider/clk_65mhz                            |                                                  | pg/meter1/counter[0]_i_1_n_0                     |                7 |             27 |
+|  clkdivider/clk_65mhz                            |                                                  | db1/clean_out_reg_0                              |                7 |             27 |
+|  clkdivider/clk_65mhz                            | xvga1/hreset                                     | xvga1/vcount_out0                                |               11 |             28 |
+|  clkdivider/clk_65mhz                            | pg/hand4_x[9]_i_1_n_0                            | pg/hand1_x1                                      |               12 |             30 |
+|  clkdivider/clk_65mhz                            |                                                  | xvga1/hreset                                     |               19 |             33 |
+|  clkdivider/clk_65mhz                            | my_img/track_B/eroded_delay_reg_n_0              | my_img/track_A/y_in                              |               11 |             41 |
+|  clkdivider/clk_65mhz                            | my_img/track_C/eroded_delay_reg_n_0              | my_img/track_A/y_in                              |               11 |             41 |
+|  clkdivider/clk_65mhz                            | my_img/track_D/eroded_delay_reg_n_0              | my_img/track_A/y_in                              |               11 |             41 |
+|  clkdivider/clk_65mhz                            | my_img/track_A/y_in                              |                                                  |               23 |             48 |
+|  clkdivider/clk_65mhz                            |                                                  | pg/n_array[60]_i_1_n_0                           |               35 |             61 |
+|  clkdivider/clk_65mhz                            | xvga1/FSM_onehot_game_state_reg[3][0]            | pg/hand1_x1                                      |               30 |             61 |
+|  clkdivider/clk_65mhz                            | my_img/track_A/eroded_delay                      | my_img/track_A/y_in                              |               17 |             65 |
+|  clkdivider/clk_65mhz                            |                                                  | db1/reset                                        |               23 |             66 |
+|  clkdivider/clk_65mhz                            | db1/E[0]                                         |                                                  |               40 |            141 |
+|  clkdivider/clk_65mhz                            | pg/audio1/myrec/tonet1567/sample_counter_reg[11] | db1/reset                                        |              484 |           1899 |
+|  clkdivider/clk_65mhz                            |                                                  |                                                  |             1421 |           6824 |
++--------------------------------------------------+--------------------------------------------------+--------------------------------------------------+------------------+----------------+
 
 

@@ -81,6 +81,9 @@ set rc [catch {
   read_ip -quiet /afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/ip/image_rom_map_1/image_rom_map.xci
   read_ip -quiet /afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/ip/alph_image_rom/alph_image_rom.xci
   read_ip -quiet /afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/ip/alph_map_red_rom/alph_map_red_rom.xci
+  read_ip -quiet /afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0.xci
+  read_ip -quiet /afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/ip/div_gen_0/div_gen_0.xci
+  read_ip -quiet /afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/ip/div_gen_1/div_gen_1.xci
   read_xdc /afs/athena.mit.edu/user/a/d/addiaz15/Downloads/nexys4_ddr_lab3.xdc
   link_design -top labkit -part xc7a100tcsg324-1
   close_msg_db -file init_design.pb

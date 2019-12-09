@@ -22,7 +22,7 @@
 
 //Top level module (should not need to change except to uncomment ADC module)
 
-module audio_gen(   input clk_100mhz,
+module audio_gen(   input clk,
                     input [1:0] volume,
                     input reset,
                     input [60:0] notes,
@@ -45,7 +45,7 @@ module audio_gen(   input clk_100mhz,
     assign aud_sd = 1;
     assign sample_trigger = (sample_counter == SAMPLE_COUNT);   // rate at which the sine wave is toggled
 
-    always_ff @(posedge clk_100mhz)begin
+    always_ff @(posedge clk)begin
         if (sample_counter == SAMPLE_COUNT)begin
             sample_counter <= 16'b0;
         end else begin
@@ -58,19 +58,19 @@ module audio_gen(   input clk_100mhz,
     end
 
     //ADC uncomment when activating!
-    //xadc_wiz_0 my_adc ( .dclk_in(clk_100mhz), .daddr_in(8'h13), //read from 0x13 for a
+    //xadc_wiz_0 my_adc ( .dclk_in(clk), .daddr_in(8'h13), //read from 0x13 for a
     //                    .vauxn3(vauxn3),.vauxp3(vauxp3),
     //                    .vp_in(1),.vn_in(1),
     //                    .di_in(16'b0),
     //                    .do_out(adc_data),.drdy_out(adc_ready),
     //                    .den_in(1), .dwe_in(0));
  
-    play_notes myrec( .clk_in(clk_100mhz),.rst_in(reset),.ready_in(sample_trigger),
+    play_notes myrec( .clk_in(clk),.rst_in(reset),.ready_in(sample_trigger),
                         .mic_in(sampled_adc_data[11:4]), .data_out(recorder_data), .notes(notes));   
                                                                                             
     volume_control vc (.vol_in(volume),
                        .signal_in(recorder_data), .signal_out(vol_out));
-    pwm (.clk_in(clk_100mhz), .rst_in(reset), .level_in({~vol_out[7],vol_out[6:0]}), .pwm_out(pwm_val));
+    pwm (.clk_in(clk), .rst_in(reset), .level_in({~vol_out[7],vol_out[6:0]}), .pwm_out(pwm_val));
     assign aud_pwm = pwm_val?1'bZ:1'b0; 
     
 endmodule

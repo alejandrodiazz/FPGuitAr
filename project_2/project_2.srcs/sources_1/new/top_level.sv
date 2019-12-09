@@ -1,141 +1,101 @@
-
 `timescale 1ns / 1ps
 default_nettype none;
+
 //////////////////////////////////////////////////////////////////////////////////
 //
-// Updated 8/10/2019 Lab 3
-// Updated 8/12/2018 V2.lab5c
-// Create Date: 10/1/2019 V1.0
-// Design Name: Lab 3, all significant changes in picture_blob and pong_game ########
-// Module Name: labkit
+// FPGuitAr Hero
+// 6.111 Final Project Fall 2019
+// Sarah Spector and Alejandro Diaz
 //
 //////////////////////////////////////////////////////////////////////////////////
 
 module labkit(
-   input clk_100mhz,
-   input [7:0] ja,
-   input [2:0] jb,
-   input[15:0] sw,
-   input btnc, btnu, btnl, btnr, btnd,
-   output jbclk,
-   output[3:0] vga_r,
-   output[3:0] vga_b,
-   output[3:0] vga_g,
-   output vga_hs,
-   output vga_vs,
-   output led16_b, led16_g, led16_r,
-   output led17_b, led17_g, led17_r,
-   output[15:0] led,
-   output ca, cb, cc, cd, ce, cf, cg, dp,   // segments a-g, dp
-   output[7:0] an,                          // Display location 0-7
-   output logic aud_pwm,
-   output logic aud_sd
-   );
+    input clk_100mhz,
+    input [7:0] ja,
+    input [2:0] jb,
+    input [15:0] sw,
+    input btnc, btnu, btnl, btnr, btnd,
+   
+    output jbclk,
+    output [3:0] vga_r,
+    output [3:0] vga_b,
+    output [3:0] vga_g,
+    output vga_hs,
+    output vga_vs,
+    output ca, cb, cc, cd, ce, cf, cg, dp,   // segments a-g, dp
+    output [7:0] an,                         // Display location 0-7
+    output logic aud_pwm,
+    output logic aud_sd
+    );
 
-    // create 65mhz system clock, happens to match 1024 x 768 XVGA timing
+    //Create 65mhz system clock
+    logic clk_65mhz;
     clk_wiz_65 clkdivider(.clk_in1(clk_100mhz), .clk_out1(clk_65mhz));
-
-    wire [31:0] data;      //  instantiate 7-segment display; display (8) 4-bit hex
-    wire [6:0] segments;
-    assign {cg, cf, ce, cd, cc, cb, ca} = segments[6:0];
-    display_8hex display(.clk_in(clk_65mhz),.data_in(data), .seg_out(segments), .strobe_out(an));
-    //assign seg[6:0] = segments;
-    assign  dp = 1'b1;  // turn off the period
-
-//    assign led = sw;                        // turn leds on
-    //assign data = {28'h0123456, sw[3:0]};   // display 0123456 + sw[3:0]
-    assign led16_r = btnl;                  // left button -> red led
-    assign led16_g = btnc;                  // center button -> green led
-    assign led16_b = btnr;                  // right button -> blue led
-    assign led17_r = btnl;
-    assign led17_g = btnc;
-    assign led17_b = btnr;
-
-    wire [10:0] hcount;    // pixel on current line
-    wire [9:0] vcount;     // line number
-    wire hsync, vsync;
-    wire [11:0] pixel;
-    reg [11:0] rgb;    
-    xvga xvga1(.vclock_in(clk_65mhz),.hcount_out(hcount),.vcount_out(vcount),
-          .hsync_out(hsync),.vsync_out(vsync),.blank_out(blank));
-
-    // btnc button is user reset
-    wire reset;
+    
+    //btnc button is user reset
+    logic reset;
     debounce db1(.reset_in(reset),.clock_in(clk_65mhz),.noisy_in(btnc),.clean_out(reset));
     
-    // ################################### SARAH SARAH SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSs
+    //Instantiate 7-segment display; display (8) 4-bit hex
+    logic [31:0] data;      
+    logic [6:0] segments;
+    assign {cg, cf, ce, cd, cc, cb, ca} = segments[6:0];
+    display_8hex display(.clk_in(clk_65mhz),.data_in(data), .seg_out(segments), .strobe_out(an));
+    assign  dp = 1'b1;  // turn off the period
     
+    //VGA display setup
+    logic [10:0] hcount;    // pixel on current line
+    logic [9:0] vcount;     // line number
+    logic hsync, vsync, blank;
+    logic [11:0] pixel;
+    logic [11:0] rgb;    
+    xvga xvga1(.vclock_in(clk_65mhz),.hcount_out(hcount),.vcount_out(vcount),
+          .hsync_out(hsync),.vsync_out(vsync),.blank_out(blank));
+    
+    
+    //IMAGE PROCESSING SARAH
+        
     //Synchronize inputs
-//    logic [7:0] cam_pixel;
-//    logic cam_pclk, cam_vsync, cam_href;
-//    sync_8bit pix_sync(.clk(clk_65mhz),.in(ja),.out(cam_pixel));
-//    sync_1bit pclk_sync(.clk(clk_65mhz),.in(jb[0]),.out(cam_pclk));
-//    sync_1bit vsync_sync(.clk(clk_65mhz),.in(jb[1]),.out(cam_vsync));
-//    sync_1bit href_sync(.clk(clk_65mhz),.in(jb[2]),.out(cam_href));
+    logic [7:0] cam_pixel;
+    logic cam_pclk, cam_vsync, cam_href;
+    sync_8bit pix_sync(.clk(clk_65mhz),.in(ja),.out(cam_pixel));
+    sync_1bit pclk_sync(.clk(clk_65mhz),.in(jb[0]),.out(cam_pclk));
+    sync_1bit vsync_sync(.clk(clk_65mhz),.in(jb[1]),.out(cam_vsync));
+    sync_1bit href_sync(.clk(clk_65mhz),.in(jb[2]),.out(cam_href));
 
     //Camera interface and image processing
-    logic [8:0] x_A, y_A; //x, y coordinates of detected object; x up to 320, y up to 240
-    logic [8:0] x_B, y_B;
-    logic [8:0] x_C, y_C;
-    logic [8:0] x_D, y_D;
+    logic [9:0] x_A, y_A; //x, y coordinates of detected object; x up to 320, y up to 240
+    logic [9:0] x_B, y_B;
+    logic [9:0] x_C, y_C;
+    logic [9:0] x_D, y_D;
     logic is_A, is_B, is_C, is_D; //binary values representing whether an object is present in the scene or not
-//    image_processing my_img(    .clk(clk_65mhz),.rst(reset),.pixel(cam_pixel),.pclk(cam_pclk),.vsync(cam_vsync),.href(cam_href),.xclk(jbclk),
-//                                .x_A_filtered(x_A),.y_A_filtered(y_A),.x_B_filtered(x_B),.y_B_filtered(y_B),
-//                                .x_C_filtered(x_C),.y_C_filtered(y_C),.x_D_filtered(x_D),.y_D_filtered(y_D),
-//                                .is_A(is_A),.is_B(is_B),.is_C(is_C),.is_D(is_D));
+    image_processing my_img(    .clk(clk_65mhz),.rst(reset),.pixel(cam_pixel),.pclk(cam_pclk),.vsync(cam_vsync),.href(cam_href),.xclk(jbclk),
+                                .x_A_filtered(x_A),.y_A_filtered(y_A),.x_B_filtered(x_B),.y_B_filtered(y_B),
+                                .x_C_filtered(x_C),.y_C_filtered(y_C),.x_D_filtered(x_D),.y_D_filtered(y_D),
+                                .is_A(is_A),.is_B(is_B),.is_C(is_C),.is_D(is_D));
     
-    // #######################################
-   
-    // UP and DOWN buttons for pong paddle
-    wire up,down;
-    debounce db2(.reset_in(reset),.clock_in(clk_65mhz),.noisy_in(btnu),.clean_out(up));
-    debounce db3(.reset_in(reset),.clock_in(clk_65mhz),.noisy_in(btnd),.clean_out(down));
+    
+    //GAME LOGIC, GUI, AUDIO
+    FPGuitAr_Hero pg(   .x_A(x_A), .y_A(y_A), .x_B(x_B), .y_B(y_B), .x_C(x_C), .y_C(y_C), .x_D(x_D), .y_D(y_D),
+                        .is_A(is_A),.is_B(is_B),.is_C(is_C),.is_D(is_D),
+                        .vclock_in(clk_65mhz),.reset_in(reset), .btnu(btnu),.btnd(btnd),.btnr(btnr), .btnl(btnl), 
+                        .hcount_in(hcount),.vcount_in(vcount), .hsync_in(hsync),.vsync_in(vsync),
+                        .blank_in(blank),.pixel_out(pixel), .hex_disp(data), 
+                        .sw(sw), .aud_pwm(aud_pwm), .aud_sd(aud_sd));
 
-    wire phsync,pvsync,pblank;
-//    logic clk_100 = clk_100mhz; 
-    FPGuitAr_Hero pg( .x_A(x_A), .y_A(y_A), .x_B(x_B), .y_B(y_B), .x_C(x_C), .y_C(y_C), .x_D(x_D), .y_D(y_D),
-                .is_A(is_A),.is_B(is_B),.is_C(is_C),.is_D(is_D),
-                .vclock_in(clk_65mhz),.clk_100(clk_65mhz), .reset_in(reset), .btnu(btnu),.btnd(btnd),.btnr(btnr), .btnl(btnl), 
-                .pspeed_in(sw[15:12]), .hcount_in(hcount),.vcount_in(vcount), .hsync_in(hsync),.vsync_in(vsync),
-                .blank_in(blank),.phsync_out(phsync),.pvsync_out(pvsync),.pblank_out(pblank),.pixel_out(pixel), .hex_disp(data), 
-                .sw(sw), .aud_pwm(aud_pwm), .aud_sd(aud_sd), .led(led));
-
-    wire border = (hcount==0 | hcount==1023 | vcount==0 | vcount==767 |
-                   hcount == 512 | vcount == 384);
-
+    //Setup VGA Display
     reg b,hs,vs;
     always_ff @(posedge clk_65mhz) begin
-      if (sw[1:0] == 2'b01) begin
-         // 1 pixel outline of visible area (white)
          hs <= hsync;
          vs <= vsync;
          b <= blank;
-         rgb <= {12{border}};
-      end else if (sw[1:0] == 2'b10) begin
-         // color bars
-         hs <= hsync;
-         vs <= vsync;
-         b <= blank;
-         rgb <= {{4{hcount[8]}}, {4{hcount[7]}}, {4{hcount[6]}}} ;
-      end else begin
-         // default: pong
-         hs <= phsync;
-         vs <= pvsync;
-         b <= pblank;
          rgb <= pixel;
-      end
     end
-
-//    assign rgb = sw[0] ? {12{border}} : pixel ; //{{4{hcount[7]}}, {4{hcount[6]}}, {4{hcount[5]}}};
-
-    // the following lines are required for the Nexys4 VGA circuit - do not change
     assign vga_r = ~b ? rgb[11:8]: 0;
     assign vga_g = ~b ? rgb[7:4] : 0;
     assign vga_b = ~b ? rgb[3:0] : 0;
-
     assign vga_hs = ~hs;
     assign vga_vs = ~vs;
-//    ila_0  myila(.clk(clk_65mhz),.probe0(hsync),.probe1(hcount),.probe2(pixel)); // instantiate ila
 
 endmodule
 
@@ -168,7 +128,7 @@ endmodule
 
 //////////////////////////////////////////////////////////////////////
 //
-// blob: generate rectangle on screen
+// note blob: generate rectangle on screen
 //
 //////////////////////////////////////////////////////////////////////
 module note_blob
@@ -226,30 +186,6 @@ module note_blob
 //            3'd4: note_length <= 9'b110000000;  // whole note
         endcase      
    end
-endmodule
-
-
-//module red_coe(
-//    input clka,
-//    input [7:0] addra, 
-//    output logic [7:0] douta);
-    
-//    assign douta = addra;
-    
-//endmodule
-
-
-
-module synchronize #(parameter NSYNC = 3)  // number of sync flops.  must be >= 2
-                   (input clk,in,
-                    output reg out);
-
-  reg [NSYNC-2:0] sync;
-
-  always_ff @ (posedge clk)
-  begin
-    {out,sync} <= {sync[NSYNC-2:0],in};
-  end
 endmodule
 
 ///////////////////////////////////////////////////////////////////////////////

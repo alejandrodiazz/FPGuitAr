@@ -3,7 +3,7 @@
 // Camera interface and image processing module
 //
 // IP required:
-// -blk_mem_gen_0 is a simple dual port BRAM, port A is 16 bit wide and 76800 bits deep
+// -blk_mem_gen_1 is a simple dual port BRAM, port A is 16 bit wide and 76800 bits deep
 // -div_gen_0 is a divider, radix 2, unsigned, 16/16
 // -div_gen_1 is a divider, radix 2, unsigned, 24/17
 //
@@ -18,10 +18,10 @@ module image_processing(
     input href,
 
     output xclk,
-    output logic [8:0] x_A_filtered, y_A_filtered,
-    output logic [8:0] x_B_filtered, y_B_filtered,
-    output logic [8:0] x_C_filtered, y_C_filtered,
-    output logic [8:0] x_D_filtered, y_D_filtered,
+    output logic [9:0] x_A_filtered, y_A_filtered,
+    output logic [9:0] x_B_filtered, y_B_filtered,
+    output logic [9:0] x_C_filtered, y_C_filtered,
+    output logic [9:0] x_D_filtered, y_D_filtered,
     output logic is_A, is_B, is_C, is_D
     );
 
@@ -30,22 +30,26 @@ module image_processing(
     //A = blue
     parameter hue_lower_boundA = 160; //lower bound on hue values
     parameter hue_upper_boundA = 170; //upper bound on hue values
-    parameter pix_thresh_A = 175; //num pixels (post-processing) to be considered valid object
+    parameter pix_thresh_A = 190; //num pixels (post-processing) to be considered valid object
+    parameter decay_A = 4'd8; //for IIR filter: number between 0 (less filtering) and 16 (more filtering)
     
     //B = green
     parameter hue_lower_boundB = 70;
     parameter hue_upper_boundB = 80;
-    parameter pix_thresh_B = 25;
+    parameter pix_thresh_B = 20;
+    parameter decay_B = 4'd11;
     
     //C = red
-    parameter hue_lower_boundC = 5;      
-    parameter hue_upper_boundC = 10;
-    parameter pix_thresh_C = 115;
+    parameter hue_lower_boundC = 6;      
+    parameter hue_upper_boundC = 12;
+    parameter pix_thresh_C = 110;
+    parameter decay_C = 4'd11;
     
     //D = purple
-    parameter hue_lower_boundD = 185;    
+    parameter hue_lower_boundD = 185;
     parameter hue_upper_boundD = 200;
-    parameter pix_thresh_D = 125;
+    parameter pix_thresh_D = 80;
+    parameter decay_D = 4'd11;
 
 
     //CAMERA INTERFACE
@@ -149,16 +153,28 @@ module image_processing(
     assign x_avg_B_flipped = 32'd320 - x_avg_B;
     assign x_avg_C_flipped = 32'd320 - x_avg_C;
     assign x_avg_D_flipped = 32'd320 - x_avg_D;
+
+    //Multiply all coords by 3 to fill screen
+    logic [9:0] x_A_mult, x_B_mult, x_C_mult, x_D_mult;
+    logic [9:0] y_A_mult, y_B_mult, y_C_mult, y_D_mult;
+    assign x_A_mult = x_avg_A_flipped * 3;
+    assign x_B_mult = x_avg_B_flipped * 3;
+    assign x_C_mult = x_avg_C_flipped * 3;
+    assign x_D_mult = x_avg_D_flipped * 3;
+    assign y_A_mult = y_avg_A * 3;
+    assign y_B_mult = y_avg_B * 3;
+    assign y_C_mult = y_avg_C * 3;
+    assign y_D_mult = y_avg_D * 3;
     
     //IIR FILTER, latency = 3
-    iir iir_x_A(.clk(clk),.rst(rst),.in(x_avg_A_flipped),.out(x_A_filtered));
-    iir iir_x_B(.clk(clk),.rst(rst),.in(x_avg_B_flipped),.out(x_B_filtered));
-    iir iir_x_C(.clk(clk),.rst(rst),.in(x_avg_C_flipped),.out(x_C_filtered));
-    iir iir_x_D(.clk(clk),.rst(rst),.in(x_avg_D_flipped),.out(x_D_filtered));
-    iir iir_y_A(.clk(clk),.rst(rst),.in({1'b0,y_avg_A}),.out(y_A_filtered));
-    iir iir_y_B(.clk(clk),.rst(rst),.in({1'b0,y_avg_B}),.out(y_B_filtered));
-    iir iir_y_C(.clk(clk),.rst(rst),.in({1'b0,y_avg_C}),.out(y_C_filtered));
-    iir iir_y_D(.clk(clk),.rst(rst),.in({1'b0,y_avg_D}),.out(y_D_filtered));
+    iir #(.DECAY_FACTOR(decay_A)) iir_x_A(.clk(clk),.rst(rst),.in(x_A_mult),.out(x_A_filtered));
+    iir #(.DECAY_FACTOR(decay_B)) iir_x_B(.clk(clk),.rst(rst),.in(x_B_mult),.out(x_B_filtered));
+    iir #(.DECAY_FACTOR(decay_C)) iir_x_C(.clk(clk),.rst(rst),.in(x_C_mult),.out(x_C_filtered));
+    iir #(.DECAY_FACTOR(decay_D)) iir_x_D(.clk(clk),.rst(rst),.in(x_D_mult),.out(x_D_filtered));
+    iir #(.DECAY_FACTOR(decay_A)) iir_y_A(.clk(clk),.rst(rst),.in(y_A_mult),.out(y_A_filtered));
+    iir #(.DECAY_FACTOR(decay_B)) iir_y_B(.clk(clk),.rst(rst),.in(y_B_mult),.out(y_B_filtered));
+    iir #(.DECAY_FACTOR(decay_C)) iir_y_C(.clk(clk),.rst(rst),.in(y_C_mult),.out(y_C_filtered));
+    iir #(.DECAY_FACTOR(decay_D)) iir_y_D(.clk(clk),.rst(rst),.in(y_D_mult),.out(y_D_filtered));
 
 endmodule
 
@@ -170,19 +186,18 @@ endmodule
 //
 //////////////////////////////////////////////////////////////////////////////////
 
-module iir(
-    input clk,
+module iir
+    #(parameter DECAY_FACTOR = 4'd8)  //number between 0 (less filtering) and 16 (more filtering)
+    (input clk,
     input rst,
-    input [8:0] in,
+    input [9:0] in,
 
-    output logic [8:0] out
+    output logic [9:0] out
     );
 
-    parameter decay_factor = 4'd8; //number between 0 (less filtering) and 16 (more filtering)
-
-    logic [3:0] inverse_factor = 16 - decay_factor;
-    logic [4:0] in_shifted, out_shifted;
-    logic [8:0] out_reg, in_mult, out_mult;
+    logic [3:0] inverse_factor = 16 - DECAY_FACTOR;
+    logic [5:0] in_shifted, out_shifted;
+    logic [9:0] out_reg, in_mult, out_mult;
 
     assign out = out_reg;
 
@@ -192,7 +207,7 @@ module iir(
             in_shifted <= in >> 4;
             out_shifted <= out >> 4;
             in_mult <= in_shifted * inverse_factor;
-            out_mult <= out_shifted * decay_factor;
+            out_mult <= out_shifted * DECAY_FACTOR;
             out_reg <= in_mult + out_mult;
         end
     end
@@ -485,32 +500,6 @@ module rgb2hsv(clock, reset, r, g, b, h, s, v);
 		end
 endmodule
 
-
-///////////////////////////////////////////////////////////////////////////////
-//
-// DEBOUNCER
-//
-///////////////////////////////////////////////////////////////////////////////
-
-//module debounce (input reset_in, clock_in, noisy_in,
-//                 output reg clean_out);
-
-//   reg [19:0] count;
-//   reg new_input;
-
-//   always_ff @(posedge clock_in) begin
-//     if (reset_in) begin 
-//        new_input <= noisy_in; 
-//        clean_out <= noisy_in; 
-//        count <= 0;
-//     end else if (noisy_in != new_input) begin
-//        new_input <= noisy_in; 
-//        count <= 0; 
-//     end else if (count == 650000) clean_out <= new_input;
-//     else count <= count+1;
-//   end
-
-//endmodule
 
 ///////////////////////////////////////////////////////////////////////////////
 //

@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.1.2 (lin64) Build 2615518 Fri Aug  9 15:53:29 MDT 2019
-| Date         : Fri Dec  6 16:28:33 2019
+| Date         : Mon Dec  9 15:37:49 2019
 | Host         : eecs-digital-207 running 64-bit Ubuntu 14.04.6 LTS
 | Command      : report_drc -file labkit_drc_routed.rpt -pb labkit_drc_routed.pb -rpx labkit_drc_routed.rpx
 | Design       : labkit
@@ -24,12 +24,14 @@ Table of Contents
       Design limits: <entire design considered>
            Ruledeck: default
              Max violations: <unlimited>
-             Violations found: 37
+             Violations found: 71
 +----------+----------+-----------------------------------------------------+------------+
 | Rule     | Severity | Description                                         | Violations |
 +----------+----------+-----------------------------------------------------+------------+
 | CFGBVS-1 | Warning  | Missing CFGBVS and CONFIG_VOLTAGE Design Properties | 1          |
-| DPIP-1   | Warning  | Input pipelining                                    | 36         |
+| DPIP-1   | Warning  | Input pipelining                                    | 37         |
+| DPOP-2   | Warning  | MREG Output pipelining                              | 1          |
+| PDRC-153 | Warning  | Gated clock check                                   | 32         |
 +----------+----------+-----------------------------------------------------+------------+
 
 2. REPORT DETAILS
@@ -49,182 +51,352 @@ Related violations: <none>
 
 DPIP-1#1 Warning
 Input pipelining  
-DSP pg/a0/image_addr1 input pg/a0/image_addr1/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP my_img/my_hsv/h_top_reg input my_img/my_hsv/h_top_reg/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#2 Warning
 Input pipelining  
-DSP pg/a0/image_addr_reg input pg/a0/image_addr_reg/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP pg/a0/image_addr1 input pg/a0/image_addr1/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#3 Warning
 Input pipelining  
-DSP pg/a1/image_addr1 input pg/a1/image_addr1/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP pg/a0/image_addr_reg input pg/a0/image_addr_reg/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#4 Warning
 Input pipelining  
-DSP pg/a1/image_addr_reg input pg/a1/image_addr_reg/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP pg/a1/image_addr1 input pg/a1/image_addr1/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#5 Warning
 Input pipelining  
-DSP pg/a10/image_addr1 input pg/a10/image_addr1/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP pg/a1/image_addr_reg input pg/a1/image_addr_reg/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#6 Warning
 Input pipelining  
-DSP pg/a10/image_addr_reg input pg/a10/image_addr_reg/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP pg/a10/image_addr1 input pg/a10/image_addr1/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#7 Warning
 Input pipelining  
-DSP pg/a11/image_addr1 input pg/a11/image_addr1/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP pg/a10/image_addr_reg input pg/a10/image_addr_reg/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#8 Warning
 Input pipelining  
-DSP pg/a11/image_addr_reg input pg/a11/image_addr_reg/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP pg/a11/image_addr1 input pg/a11/image_addr1/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#9 Warning
 Input pipelining  
-DSP pg/a11/image_addr_reg input pg/a11/image_addr_reg/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP pg/a11/image_addr_reg input pg/a11/image_addr_reg/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#10 Warning
 Input pipelining  
-DSP pg/a2/image_addr1 input pg/a2/image_addr1/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP pg/a11/image_addr_reg input pg/a11/image_addr_reg/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#11 Warning
 Input pipelining  
-DSP pg/a2/image_addr_reg input pg/a2/image_addr_reg/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP pg/a2/image_addr1 input pg/a2/image_addr1/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#12 Warning
 Input pipelining  
-DSP pg/a3/image_addr1 input pg/a3/image_addr1/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP pg/a2/image_addr_reg input pg/a2/image_addr_reg/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#13 Warning
 Input pipelining  
-DSP pg/a3/image_addr_reg input pg/a3/image_addr_reg/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP pg/a3/image_addr1 input pg/a3/image_addr1/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#14 Warning
 Input pipelining  
-DSP pg/a4/image_addr1 input pg/a4/image_addr1/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP pg/a3/image_addr_reg input pg/a3/image_addr_reg/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#15 Warning
 Input pipelining  
-DSP pg/a4/image_addr_reg input pg/a4/image_addr_reg/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP pg/a4/image_addr1 input pg/a4/image_addr1/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#16 Warning
 Input pipelining  
-DSP pg/a5/image_addr1 input pg/a5/image_addr1/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP pg/a4/image_addr_reg input pg/a4/image_addr_reg/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#17 Warning
 Input pipelining  
-DSP pg/a5/image_addr_reg input pg/a5/image_addr_reg/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP pg/a5/image_addr1 input pg/a5/image_addr1/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#18 Warning
 Input pipelining  
-DSP pg/a6/image_addr1 input pg/a6/image_addr1/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP pg/a5/image_addr_reg input pg/a5/image_addr_reg/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#19 Warning
 Input pipelining  
-DSP pg/a6/image_addr_reg input pg/a6/image_addr_reg/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP pg/a6/image_addr1 input pg/a6/image_addr1/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#20 Warning
 Input pipelining  
-DSP pg/a7/image_addr1 input pg/a7/image_addr1/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP pg/a6/image_addr_reg input pg/a6/image_addr_reg/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#21 Warning
 Input pipelining  
-DSP pg/a7/image_addr_reg input pg/a7/image_addr_reg/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP pg/a7/image_addr1 input pg/a7/image_addr1/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#22 Warning
 Input pipelining  
-DSP pg/a7/image_addr_reg input pg/a7/image_addr_reg/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP pg/a7/image_addr_reg input pg/a7/image_addr_reg/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#23 Warning
 Input pipelining  
-DSP pg/a8/image_addr1 input pg/a8/image_addr1/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP pg/a7/image_addr_reg input pg/a7/image_addr_reg/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#24 Warning
 Input pipelining  
-DSP pg/a8/image_addr_reg input pg/a8/image_addr_reg/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP pg/a8/image_addr1 input pg/a8/image_addr1/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#25 Warning
 Input pipelining  
-DSP pg/a8/image_addr_reg input pg/a8/image_addr_reg/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP pg/a8/image_addr_reg input pg/a8/image_addr_reg/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#26 Warning
 Input pipelining  
-DSP pg/a9/image_addr1 input pg/a9/image_addr1/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP pg/a8/image_addr_reg input pg/a8/image_addr_reg/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#27 Warning
 Input pipelining  
-DSP pg/a9/image_addr_reg input pg/a9/image_addr_reg/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP pg/a9/image_addr1 input pg/a9/image_addr1/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#28 Warning
 Input pipelining  
-DSP pg/a9/image_addr_reg input pg/a9/image_addr_reg/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP pg/a9/image_addr_reg input pg/a9/image_addr_reg/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#29 Warning
 Input pipelining  
-DSP pg/d10/image_addr1 input pg/d10/image_addr1/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP pg/a9/image_addr_reg input pg/a9/image_addr_reg/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#30 Warning
 Input pipelining  
-DSP pg/d10/image_addr_reg input pg/d10/image_addr_reg/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP pg/d10/image_addr1 input pg/d10/image_addr1/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#31 Warning
 Input pipelining  
-DSP pg/d100/image_addr1 input pg/d100/image_addr1/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP pg/d10/image_addr_reg input pg/d10/image_addr_reg/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#32 Warning
 Input pipelining  
-DSP pg/d100/image_addr_reg input pg/d100/image_addr_reg/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP pg/d100/image_addr1 input pg/d100/image_addr1/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#33 Warning
 Input pipelining  
-DSP pg/d1000/image_addr1 input pg/d1000/image_addr1/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP pg/d100/image_addr_reg input pg/d100/image_addr_reg/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#34 Warning
 Input pipelining  
-DSP pg/d1000/image_addr_reg input pg/d1000/image_addr_reg/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP pg/d1000/image_addr1 input pg/d1000/image_addr1/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#35 Warning
 Input pipelining  
-DSP pg/d1__0/image_addr1 input pg/d1__0/image_addr1/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP pg/d1000/image_addr_reg input pg/d1000/image_addr_reg/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#36 Warning
 Input pipelining  
+DSP pg/d1__0/image_addr1 input pg/d1__0/image_addr1/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#37 Warning
+Input pipelining  
 DSP pg/d1__0/image_addr_reg input pg/d1__0/image_addr_reg/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPOP-2#1 Warning
+MREG Output pipelining  
+DSP my_img/my_hsv/h_top_reg multiplier stage my_img/my_hsv/h_top_reg/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+PDRC-153#1 Warning
+Gated clock check  
+Net pg/notegen/note0/pixel_out_reg[11]_i_2_n_0 is a gated clock net sourced by a combinational pin pg/notegen/note0/pixel_out_reg[11]_i_2/O, cell pg/notegen/note0/pixel_out_reg[11]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#2 Warning
+Gated clock check  
+Net pg/notegen/note1/pixel_out_reg[11]_i_2__0_n_0 is a gated clock net sourced by a combinational pin pg/notegen/note1/pixel_out_reg[11]_i_2__0/O, cell pg/notegen/note1/pixel_out_reg[11]_i_2__0. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#3 Warning
+Gated clock check  
+Net pg/notegen/note10/pixel_out_reg[11]_i_2__9_n_0 is a gated clock net sourced by a combinational pin pg/notegen/note10/pixel_out_reg[11]_i_2__9/O, cell pg/notegen/note10/pixel_out_reg[11]_i_2__9. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#4 Warning
+Gated clock check  
+Net pg/notegen/note11/pixel_out_reg[11]_i_2__10_n_0 is a gated clock net sourced by a combinational pin pg/notegen/note11/pixel_out_reg[11]_i_2__10/O, cell pg/notegen/note11/pixel_out_reg[11]_i_2__10. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#5 Warning
+Gated clock check  
+Net pg/notegen/note12/pixel_out_reg[11]_i_2__11_n_0 is a gated clock net sourced by a combinational pin pg/notegen/note12/pixel_out_reg[11]_i_2__11/O, cell pg/notegen/note12/pixel_out_reg[11]_i_2__11. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#6 Warning
+Gated clock check  
+Net pg/notegen/note13/pixel_out_reg[11]_i_2__12_n_0 is a gated clock net sourced by a combinational pin pg/notegen/note13/pixel_out_reg[11]_i_2__12/O, cell pg/notegen/note13/pixel_out_reg[11]_i_2__12. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#7 Warning
+Gated clock check  
+Net pg/notegen/note14/pixel_out_reg[11]_i_2__13_n_0 is a gated clock net sourced by a combinational pin pg/notegen/note14/pixel_out_reg[11]_i_2__13/O, cell pg/notegen/note14/pixel_out_reg[11]_i_2__13. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#8 Warning
+Gated clock check  
+Net pg/notegen/note15/pixel_out_reg[11]_i_2__14_n_0 is a gated clock net sourced by a combinational pin pg/notegen/note15/pixel_out_reg[11]_i_2__14/O, cell pg/notegen/note15/pixel_out_reg[11]_i_2__14. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#9 Warning
+Gated clock check  
+Net pg/notegen/note16/pixel_out_reg[11]_i_2__15_n_0 is a gated clock net sourced by a combinational pin pg/notegen/note16/pixel_out_reg[11]_i_2__15/O, cell pg/notegen/note16/pixel_out_reg[11]_i_2__15. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#10 Warning
+Gated clock check  
+Net pg/notegen/note17/pixel_out_reg[11]_i_2__16_n_0 is a gated clock net sourced by a combinational pin pg/notegen/note17/pixel_out_reg[11]_i_2__16/O, cell pg/notegen/note17/pixel_out_reg[11]_i_2__16. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#11 Warning
+Gated clock check  
+Net pg/notegen/note18/pixel_out_reg[11]_i_2__17_n_0 is a gated clock net sourced by a combinational pin pg/notegen/note18/pixel_out_reg[11]_i_2__17/O, cell pg/notegen/note18/pixel_out_reg[11]_i_2__17. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#12 Warning
+Gated clock check  
+Net pg/notegen/note19/pixel_out_reg[11]_i_2__18_n_0 is a gated clock net sourced by a combinational pin pg/notegen/note19/pixel_out_reg[11]_i_2__18/O, cell pg/notegen/note19/pixel_out_reg[11]_i_2__18. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#13 Warning
+Gated clock check  
+Net pg/notegen/note2/pixel_out_reg[11]_i_2__1_n_0 is a gated clock net sourced by a combinational pin pg/notegen/note2/pixel_out_reg[11]_i_2__1/O, cell pg/notegen/note2/pixel_out_reg[11]_i_2__1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#14 Warning
+Gated clock check  
+Net pg/notegen/note20/pixel_out_reg[11]_i_2__19_n_0 is a gated clock net sourced by a combinational pin pg/notegen/note20/pixel_out_reg[11]_i_2__19/O, cell pg/notegen/note20/pixel_out_reg[11]_i_2__19. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#15 Warning
+Gated clock check  
+Net pg/notegen/note21/pixel_out_reg[11]_i_2__20_n_0 is a gated clock net sourced by a combinational pin pg/notegen/note21/pixel_out_reg[11]_i_2__20/O, cell pg/notegen/note21/pixel_out_reg[11]_i_2__20. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#16 Warning
+Gated clock check  
+Net pg/notegen/note22/pixel_out_reg[11]_i_2__21_n_0 is a gated clock net sourced by a combinational pin pg/notegen/note22/pixel_out_reg[11]_i_2__21/O, cell pg/notegen/note22/pixel_out_reg[11]_i_2__21. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#17 Warning
+Gated clock check  
+Net pg/notegen/note23/pixel_out_reg[11]_i_2__22_n_0 is a gated clock net sourced by a combinational pin pg/notegen/note23/pixel_out_reg[11]_i_2__22/O, cell pg/notegen/note23/pixel_out_reg[11]_i_2__22. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#18 Warning
+Gated clock check  
+Net pg/notegen/note24/pixel_out_reg[11]_i_2__23_n_0 is a gated clock net sourced by a combinational pin pg/notegen/note24/pixel_out_reg[11]_i_2__23/O, cell pg/notegen/note24/pixel_out_reg[11]_i_2__23. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#19 Warning
+Gated clock check  
+Net pg/notegen/note25/pixel_out_reg[11]_i_2__24_n_0 is a gated clock net sourced by a combinational pin pg/notegen/note25/pixel_out_reg[11]_i_2__24/O, cell pg/notegen/note25/pixel_out_reg[11]_i_2__24. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#20 Warning
+Gated clock check  
+Net pg/notegen/note26/pixel_out_reg[11]_i_2__25_n_0 is a gated clock net sourced by a combinational pin pg/notegen/note26/pixel_out_reg[11]_i_2__25/O, cell pg/notegen/note26/pixel_out_reg[11]_i_2__25. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#21 Warning
+Gated clock check  
+Net pg/notegen/note27/pixel_out_reg[11]_i_2__26_n_0 is a gated clock net sourced by a combinational pin pg/notegen/note27/pixel_out_reg[11]_i_2__26/O, cell pg/notegen/note27/pixel_out_reg[11]_i_2__26. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#22 Warning
+Gated clock check  
+Net pg/notegen/note28/pixel_out_reg[11]_i_2__27_n_0 is a gated clock net sourced by a combinational pin pg/notegen/note28/pixel_out_reg[11]_i_2__27/O, cell pg/notegen/note28/pixel_out_reg[11]_i_2__27. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#23 Warning
+Gated clock check  
+Net pg/notegen/note29/pixel_out_reg[11]_i_2__28_n_0 is a gated clock net sourced by a combinational pin pg/notegen/note29/pixel_out_reg[11]_i_2__28/O, cell pg/notegen/note29/pixel_out_reg[11]_i_2__28. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#24 Warning
+Gated clock check  
+Net pg/notegen/note3/pixel_out_reg[11]_i_2__2_n_0 is a gated clock net sourced by a combinational pin pg/notegen/note3/pixel_out_reg[11]_i_2__2/O, cell pg/notegen/note3/pixel_out_reg[11]_i_2__2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#25 Warning
+Gated clock check  
+Net pg/notegen/note30/pixel_out_reg[11]_i_2__29_n_0 is a gated clock net sourced by a combinational pin pg/notegen/note30/pixel_out_reg[11]_i_2__29/O, cell pg/notegen/note30/pixel_out_reg[11]_i_2__29. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#26 Warning
+Gated clock check  
+Net pg/notegen/note31/pixel_out_reg[11]_i_2__30_n_0 is a gated clock net sourced by a combinational pin pg/notegen/note31/pixel_out_reg[11]_i_2__30/O, cell pg/notegen/note31/pixel_out_reg[11]_i_2__30. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#27 Warning
+Gated clock check  
+Net pg/notegen/note4/pixel_out_reg[11]_i_2__3_n_0 is a gated clock net sourced by a combinational pin pg/notegen/note4/pixel_out_reg[11]_i_2__3/O, cell pg/notegen/note4/pixel_out_reg[11]_i_2__3. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#28 Warning
+Gated clock check  
+Net pg/notegen/note5/pixel_out_reg[11]_i_2__4_n_0 is a gated clock net sourced by a combinational pin pg/notegen/note5/pixel_out_reg[11]_i_2__4/O, cell pg/notegen/note5/pixel_out_reg[11]_i_2__4. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#29 Warning
+Gated clock check  
+Net pg/notegen/note6/pixel_out_reg[11]_i_2__5_n_0 is a gated clock net sourced by a combinational pin pg/notegen/note6/pixel_out_reg[11]_i_2__5/O, cell pg/notegen/note6/pixel_out_reg[11]_i_2__5. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#30 Warning
+Gated clock check  
+Net pg/notegen/note7/pixel_out_reg[11]_i_2__6_n_0 is a gated clock net sourced by a combinational pin pg/notegen/note7/pixel_out_reg[11]_i_2__6/O, cell pg/notegen/note7/pixel_out_reg[11]_i_2__6. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#31 Warning
+Gated clock check  
+Net pg/notegen/note8/pixel_out_reg[11]_i_2__7_n_0 is a gated clock net sourced by a combinational pin pg/notegen/note8/pixel_out_reg[11]_i_2__7/O, cell pg/notegen/note8/pixel_out_reg[11]_i_2__7. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#32 Warning
+Gated clock check  
+Net pg/notegen/note9/pixel_out_reg[11]_i_2__8_n_0 is a gated clock net sourced by a combinational pin pg/notegen/note9/pixel_out_reg[11]_i_2__8/O, cell pg/notegen/note9/pixel_out_reg[11]_i_2__8. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 

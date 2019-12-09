@@ -1,7 +1,7 @@
 // Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2019.1.2 (lin64) Build 2615518 Fri Aug  9 15:53:29 MDT 2019
-// Date        : Fri Dec  6 14:28:50 2019
+// Date        : Sun Dec  8 19:50:52 2019
 // Host        : eecs-digital-207 running 64-bit Ubuntu 14.04.6 LTS
 // Command     : write_verilog -force -mode synth_stub
 //               /afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/ip/image_rom_1/image_rom_stub.v
@@ -15,8 +15,8 @@
 // Please paste the declaration into a Verilog source file or add the file as an additional source.
 (* x_core_info = "blk_mem_gen_v8_4_3,Vivado 2019.1.2" *)
 module image_rom(clka, addra, douta)
-/* synthesis syn_black_box black_box_pad_pin="clka,addra[15:0],douta[7:0]" */;
+/* synthesis syn_black_box black_box_pad_pin="clka,addra[10:0],douta[7:0]" */;
   input clka;
-  input [15:0]addra;
+  input [10:0]addra;
   output [7:0]douta;
 endmodule

@@ -33,12 +33,6 @@ set_property target_language Verilog [current_project]
 set_property board_part digilentinc.com:nexys4_ddr:part0:1.1 [current_project]
 set_property ip_output_repo /afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
-add_files /afs/athena.mit.edu/user/a/d/addiaz15/Downloads/ds_image.coe
-add_files /afs/athena.mit.edu/user/a/d/addiaz15/Downloads/ds_color_map.coe
-add_files /afs/athena.mit.edu/user/a/d/addiaz15/Downloads/image.coe
-add_files /afs/athena.mit.edu/user/a/d/addiaz15/Downloads/color_red.coe
-add_files /afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/alph_image.coe
-add_files /afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/alph_map_red.coe
 add_files /afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/alph2_image.coe
 add_files /afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/alph2_map_red.coe
 add_files /afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/num_100by11_image.coe
@@ -53,6 +47,7 @@ read_verilog -library xil_defaultlib -sv {
   /afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/note_generator.sv
   /afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/note_positions.sv
   /afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/picture_blob.sv
+  /afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/sarah_stuff.sv
   /afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/new/top_level.sv
 }
 read_ip -quiet /afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/ip/image_rom_1/image_rom.xci
@@ -66,6 +61,15 @@ set_property used_in_implementation false [get_files -all /afs/athena.mit.edu/us
 
 read_ip -quiet /afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/ip/alph_map_red_rom/alph_map_red_rom.xci
 set_property used_in_implementation false [get_files -all /afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/ip/alph_map_red_rom/alph_map_red_rom_ooc.xdc]
+
+read_ip -quiet /afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0.xci
+set_property used_in_implementation false [get_files -all /afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0_ooc.xdc]
+
+read_ip -quiet /afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/ip/div_gen_0/div_gen_0.xci
+set_property used_in_implementation false [get_files -all /afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/ip/div_gen_0/div_gen_0_ooc.xdc]
+
+read_ip -quiet /afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/ip/div_gen_1/div_gen_1.xci
+set_property used_in_implementation false [get_files -all /afs/athena.mit.edu/user/a/d/addiaz15/FPGuitAr/project_2/project_2.srcs/sources_1/ip/div_gen_1/div_gen_1_ooc.xdc]
 
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the
