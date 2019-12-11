@@ -1,22 +1,13 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
+// 6.111 Final Project Fall 2019
+// Engineer: Alejandro Diaz 
+//
 // Create Date: 11/11/2019 10:18:07 PM
-// Design Name: 
 // Module Name: beat_generator
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
+// Project Name: FPGuitarHero
+// Description: Creates the beat for songs that determines which notes should be
+// generated
 //////////////////////////////////////////////////////////////////////////////////
 
 
@@ -42,5 +33,4 @@ module beat_generator(
             end
         end
     end
-    
 endmodule

@@ -1,26 +1,15 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
+// 6.111 Final Project Fall 2019
+// Engineer: Alejandro Diaz 
 // 
 // Create Date: 11/01/2019 02:44:53 PM
-// Design Name: 
 // Module Name: audio_gen
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
+// Project Name: FPGuitarHero
+// Description: Takes the notes to be played and uses sine generators to create the 
+// notes. Audio mixing is done by scaling the signals and then adding them together. 
 //////////////////////////////////////////////////////////////////////////////////
 
-
-//Top level module (should not need to change except to uncomment ADC module)
 
 module audio_gen(   input clk,
                     input [1:0] volume,
@@ -29,74 +18,51 @@ module audio_gen(   input clk,
                     output logic aud_pwm,
                     output logic aud_sd
     );  
-    parameter SAMPLE_COUNT = 677;  // approximately (will generate audio at approx 48 kHz sample rate.
-                                    // 1354 = 65000000/48000KHz
-                                    // 677 = 65000000/96000KHz for a 128 sine table
+    parameter SAMPLE_COUNT = 677;   // approximately (will generate audio at approx 48 kHz sample rate.
+                                    // 1354 = 65000000 clock/48000KHz for a 64 sine table
+                                    // 677 = 65000000 clock/96000KHz for a 128 sine table
     logic [15:0] sample_counter;
-    logic [11:0] adc_data;
-    logic [11:0] sampled_adc_data;
     logic sample_trigger;
     logic adc_ready;
     logic enable;
-    logic [11:0] recorder_data;             
+    logic [11:0] recorder_data;     // data passed from play_notes to volume_control (sum of note signals)        
     logic [7:0] vol_out;
-    logic pwm_val; //pwm signal (HI/LO)
+    logic pwm_val;                  // pwm signal (HI/LO)
     
     assign aud_sd = 1;
-    assign sample_trigger = (sample_counter == SAMPLE_COUNT);   // rate at which the sine wave is toggled
+    assign sample_trigger = (sample_counter == SAMPLE_COUNT);   // rate at which the sine wave advances
 
     always_ff @(posedge clk)begin
-        if (sample_counter == SAMPLE_COUNT)begin
+        if (sample_counter == SAMPLE_COUNT)begin                // resets counter
             sample_counter <= 16'b0;
         end else begin
             sample_counter <= sample_counter + 16'b1;
         end
-//        if (sample_trigger) begin
-//            sampled_adc_data <= {~adc_data[11],adc_data[10:0]}; //convert to signed. incoming data is offset binary
-//            //https://en.wikipedia.org/wiki/Offset_binary
-//        end
     end
-
-    //ADC uncomment when activating!
-    //xadc_wiz_0 my_adc ( .dclk_in(clk), .daddr_in(8'h13), //read from 0x13 for a
-    //                    .vauxn3(vauxn3),.vauxp3(vauxp3),
-    //                    .vp_in(1),.vn_in(1),
-    //                    .di_in(16'b0),
-    //                    .do_out(adc_data),.drdy_out(adc_ready),
-    //                    .den_in(1), .dwe_in(0));
  
-    play_notes myrec( .clk_in(clk),.rst_in(reset),.ready_in(sample_trigger),
-                        .mic_in(sampled_adc_data[11:4]), .data_out(recorder_data), .notes(notes));   
-                                                                                            
-    volume_control vc (.vol_in(volume),
-                       .signal_in(recorder_data), .signal_out(vol_out));
-    pwm (.clk_in(clk), .rst_in(reset), .level_in({~vol_out[7],vol_out[6:0]}), .pwm_out(pwm_val));
+    play_notes myrec( .clk_in(clk),.rst_in(reset),.ready_in(sample_trigger), // notes and a trigger for advancing are passed
+                         .data_out(recorder_data), .notes(notes));                                                                
+    volume_control vc (.vol_in(volume),.signal_in(recorder_data), .signal_out(vol_out));            // scales signal
+    pwm (.clk_in(clk), .rst_in(reset), .level_in({~vol_out[7],vol_out[6:0]}), .pwm_out(pwm_val));   // creates pwm
     assign aud_pwm = pwm_val?1'bZ:1'b0; 
     
 endmodule
 
-
-///////////////////////////////////////////////////////////////////////////////
-//
-// Record/playback
-//
-///////////////////////////////////////////////////////////////////////////////
-
-
+// Playing Notes
 module play_notes(
   input logic clk_in,              // 100MHz system clock
   input logic rst_in,               // 1 to reset to initial state
   input logic ready_in,             // 1 when data is available
-  input logic signed [7:0] mic_in,         // 8-bit PCM data from mic
   input [60:0] notes,
   output logic signed [11:0] data_out       // 8-bit PCM data to headphone
 ); 
+    // all note signals
     logic [7:0] t55, t58, t61, t65, t69, t73, t77, t82, t87, t92, t98, t103, t110, t116, 
     t123, t130, t138, t146, t155, t164, t174, t185, t196, t207, t220, t233, t246, t261, 
     t277, t293, t311, t329, t349, t369, t392, t415, t440, t466, t493, t523, t554, t587, 
     t622, t659, t698, t739, t783, t830, t880, t932, t987, t1046, t1108, t1174, t1244, 
     t1318, t1396, t1479, t1567, t1661, t1760;
-    
+    // SINE GENERATORS for each note
     sine_generator #(.PHASE_INCR(32'd4921316))   tonet55(.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(t55));
     sine_generator #(.PHASE_INCR(32'd5213911))   tonet58(.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(t58));
     sine_generator #(.PHASE_INCR(32'd5524401))   tonet61(.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(t61));
@@ -158,12 +124,8 @@ module play_notes(
     sine_generator #(.PHASE_INCR(32'd140300475))   tonet1567(.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(t1567));
     sine_generator #(.PHASE_INCR(32'd148643449))   tonet1661(.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(t1661));
     sine_generator #(.PHASE_INCR(32'd157482134))   tonet1760(.clk_in(clk_in), .rst_in(rst_in),.step_in(ready_in), .amp_out(t1760));                            
-    //logic [7:0] data_to_bram;
-    //logic [7:0] data_from_bram;
-    //logic [15:0] addr;
-    //logic wea;
-    //  blk_mem_gen_0(.addra(addr), .clka(clk_in), .dina(data_to_bram), .douta(data_from_bram), 
-    //                .ena(1), .wea(bram_write));                                  
+    
+    // either contain note signal or nothing                               
     logic [7:0] d0, d1, d2, d3, d4, d5, d6, d7, d8, d9, d10, d11, 
         d12, d13, d14, d15, d16, d17, d18, d19, d20, d21, d22, d23, 
         d24, d25, d26, d27, d28, d29, d30, d31, d32, d33, d34, d35, 
@@ -232,7 +194,7 @@ module play_notes(
         d58 <= notes[2]?    t1567:8'b0; // send tone
         d59 <= notes[1]?    t1661:8'b0; // send tone
         d60 <= notes[0]?    t1760:8'b0; // send tone
-        data_out <= (d0 + d1 + d2 + d3 + d4 + d5 + d6 + d7 + 
+        data_out <= (d0 + d1 + d2 + d3 + d4 + d5 + d6 + d7 +    // sum all note signals
             d8 + d9 + d10 + d11 + d12 + d13 + d14 + d15 + d16 + 
             d17 + d18 + d19 + d20 + d21 + d22 + d23 + d24 + d25 + 
             d26 + d27 + d28 + d29 + d30 + d31 + d32 + d33 + d34 + 
@@ -241,89 +203,6 @@ module play_notes(
             d53 + d54 + d55 + d56 + d57 + d58 + d59 + d60);
     end                            
 endmodule                              
-
-
-
-/////////////////////////////////////////////////////////////////////////////////
-////
-//// 31-tap FIR filter, 8-bit signed data, 10-bit signed coefficients.
-//// ready is asserted whenever there is a new sample on the X input,
-//// the Y output should also be sampled at the same time.  Assumes at
-//// least 32 clocks between ready assertions.  Note that since the
-//// coefficients have been scaled by 2**10, so has the output (it's
-//// expanded from 8 bits to 18 bits).  To get an 8-bit result from the
-//// filter just divide by 2**10, ie, use Y[17:10].
-////
-/////////////////////////////////////////////////////////////////////////////////
-
-//module fir31(
-//  input  clk_in,rst_in,ready_in,
-//  input signed [7:0] x_in,
-//  output logic signed [17:0] y_out
-//);
-//  // for now just pass data through
-//  always_ff @(posedge clk_in) begin
-//    if (ready_in) y_out <= {x_in,10'd0};
-//  end
-//endmodule
-
-
-
-
-
-/////////////////////////////////////////////////////////////////////////////////
-////
-//// Coefficients for a 31-tap low-pass FIR filter with Wn=.125 (eg, 3kHz for a
-//// 48kHz sample rate).  Since we're doing integer arithmetic, we've scaled
-//// the coefficients by 2**10
-//// Matlab command: round(fir1(30,.125)*1024)
-////
-/////////////////////////////////////////////////////////////////////////////////
-
-//module coeffs31(
-//  input  [4:0] index_in,
-//  output logic signed [9:0] coeff_out
-//);
-//  logic signed [9:0] coeff;
-//  assign coeff_out = coeff;
-//  // tools will turn this into a 31x10 ROM
-//  always_comb begin
-//    case (index_in)
-//      5'd0:  coeff = -10'sd1;
-//      5'd1:  coeff = -10'sd1;
-//      5'd2:  coeff = -10'sd3;
-//      5'd3:  coeff = -10'sd5;
-//      5'd4:  coeff = -10'sd6;
-//      5'd5:  coeff = -10'sd7;
-//      5'd6:  coeff = -10'sd5;
-//      5'd7:  coeff = 10'sd0;
-//      5'd8:  coeff = 10'sd10;
-//      5'd9:  coeff = 10'sd26;
-//      5'd10: coeff = 10'sd46;
-//      5'd11: coeff = 10'sd69;
-//      5'd12: coeff = 10'sd91;
-//      5'd13: coeff = 10'sd110;
-//      5'd14: coeff = 10'sd123;
-//      5'd15: coeff = 10'sd128;
-//      5'd16: coeff = 10'sd123;
-//      5'd17: coeff = 10'sd110;
-//      5'd18: coeff = 10'sd91;
-//      5'd19: coeff = 10'sd69;
-//      5'd20: coeff = 10'sd46;
-//      5'd21: coeff = 10'sd26;
-//      5'd22: coeff = 10'sd10;
-//      5'd23: coeff = 10'sd0;
-//      5'd24: coeff = -10'sd5;
-//      5'd25: coeff = -10'sd7;
-//      5'd26: coeff = -10'sd6;
-//      5'd27: coeff = -10'sd5;
-//      5'd28: coeff = -10'sd3;
-//      5'd29: coeff = -10'sd1;
-//      5'd30: coeff = -10'sd1;
-//      default: coeff = 10'hXXX;
-//    endcase
-//  end
-//endmodule
 
 //Volume Control
 module volume_control (input [2:0] vol_in, input signed [11:0] signal_in, output logic signed[7:0] signal_out);
@@ -345,31 +224,27 @@ module pwm (input clk_in, input rst_in, input [7:0] level_in, output logic pwm_o
     end
 endmodule
 
-
-
-
 //Sine Wave Generator
 module sine_generator ( input clk_in, input rst_in, //clock and reset
                         input step_in, //trigger a phase step (rate at which you run sine generator)
                         output logic [7:0] amp_out); //output phase   
     parameter PHASE_INCR = 32'b1000_0000_0000_0000_0000_0000_0000_0000>>5; //1/64th of 48 khz is 750 Hz
-    logic [7:0] divider;
-    logic [31:0] phase;
+    logic [31:0] phase;                     // used to move through sine table
     logic [7:0] amp;
-    assign amp_out = {~amp[7],amp[6:0]};
-    sine_lut lut_1(.clk_in(clk_in), .phase_in(phase[31:25]), .amp_out(amp)); // changed this to be 7 bits
+    assign amp_out = {~amp[7],amp[6:0]};    // output of this module
+    sine_lut lut_1(.clk_in(clk_in), .phase_in(phase[31:25]), .amp_out(amp)); // selects correct sine value to display
     
     always_ff @(posedge clk_in)begin
         if (rst_in)begin
-            divider <= 8'b0;
             phase <= 32'b0;
         end else if (step_in)begin
-            phase <= phase+PHASE_INCR;
+            phase <= phase+PHASE_INCR;      // used to move through the sine table
         end
     end
 endmodule
 
-//6bit sine lookup, 8bit depth
+// 7bit sine lookup for 128 values, 8bit depth (values are the addition of 3 sine functions
+// flipped around a vertical axis)
 module sine_lut(input[6:0] phase_in, input clk_in, output logic[7:0] amp_out);
   always_ff @(posedge clk_in)begin
     case(phase_in)

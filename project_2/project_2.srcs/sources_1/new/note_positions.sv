@@ -1,22 +1,12 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
+// 6.111 Final Project Fall 2019
+// Engineer: Alejandro Diaz  
 // 
 // Create Date: 11/11/2019 11:20:27 PM
-// Design Name: 
 // Module Name: note_positions
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
+// Project Name: FPGuitarHero
+// Description: Gets x position for the specified index (note)
 //////////////////////////////////////////////////////////////////////////////////
 
 

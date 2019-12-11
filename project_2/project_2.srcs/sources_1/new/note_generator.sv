@@ -1,22 +1,13 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
+// 6.111 Final Project Fall 2019
+// Engineer: Alejandro Diaz 
+//
 // Create Date: 11/11/2019 11:12:04 PM
-// Design Name: 
 // Module Name: note_generator
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
+// Project Name: FPGuitarHero
+// Description: Generate note pixels based on the current music output for a 1/16th amount of time.
+// Also move them according to bpm
 //////////////////////////////////////////////////////////////////////////////////
 
 
@@ -33,26 +24,26 @@ module note_generator(
     output reg pixel_step
     );
     
-    
     // NOTE BLOBS
     logic [10:0] x0, x1, x2, x3, x4, x5, x6, x7, x8, x9, x10, x11, x12, x13, x14, x15,
-                x16, x17, x18, x19, x20, x21, x22, x23, x24, x25, x26, x27, x28, x29, x30, x31;  // x coordinate
+                x16, x17, x18, x19, x20, x21, x22, x23, x24, x25, x26, x27, x28, x29, x30, x31; // x coordinate
     logic [9:0]  y0, y1, y2, y3, y4, y5, y6, y7, y8, y9, y10, y11, y12, y13, y14, y15, 
                 y16, y17, y18, y19, y20, y21, y22, y23, y24, y25, y26, y27, y28, y29, y30, y31; // y coord which changes
-    wire [11:0] npixel0, npixel1, npixel2, npixel3, npixel4, npixel5, npixel6, npixel7, 
+    wire [11:0] npixel0, npixel1, npixel2, npixel3, npixel4, npixel5, npixel6, npixel7,         // output pixels for notes
         npixel8, npixel9, npixel10, npixel11, npixel12, npixel13, npixel14, npixel15, 
         npixel16, npixel17, npixel18, npixel19, npixel20, npixel21, npixel22, npixel23, 
-        npixel24, npixel25, npixel26, npixel27, npixel28, npixel29, npixel30, npixel31;    // output from blob module for paddle
-    logic[2:0] nlen0, nlen1, nlen2, nlen3, nlen4, nlen5, nlen6, nlen7, nlen8, nlen9, 
+        npixel24, npixel25, npixel26, npixel27, npixel28, npixel29, npixel30, npixel31;   
+    logic[2:0] nlen0, nlen1, nlen2, nlen3, nlen4, nlen5, nlen6, nlen7, nlen8, nlen9,            // length of notes
         nlen10, nlen11, nlen12, nlen13, nlen14, nlen15, nlen16, nlen17, nlen18, nlen19, 
         nlen20, nlen21, nlen22, nlen23, nlen24, nlen25, nlen26, nlen27, nlen28, nlen29, 
         nlen30, nlen31;
-    logic[11:0] ncolor0, ncolor1, ncolor2, ncolor3, ncolor4, ncolor5, ncolor6, ncolor7, ncolor8, ncolor9, 
+    logic[11:0] ncolor0, ncolor1, ncolor2, ncolor3, ncolor4, ncolor5, ncolor6, ncolor7, ncolor8, ncolor9, // note colors
         ncolor10, ncolor11, ncolor12, ncolor13, ncolor14, ncolor15, ncolor16, ncolor17, ncolor18, ncolor19, 
         ncolor20, ncolor21, ncolor22, ncolor23, ncolor24, ncolor25, ncolor26, ncolor27, ncolor28, ncolor29, 
         ncolor30, ncolor31;
     parameter note_width = 9;        // fixed note width
     
+    // 32 notes for up to 32 notes on the screen at the same time
     note_blob note0(.width(note_width), .height(nlen0), .color(ncolor0), .pixel_clk_in(clk_in),.x_in(x0),.y_in(y0),.hcount_in(hcount_in),.vcount_in(vcount_in), .pixel_out(npixel0));
     note_blob note1(.width(note_width), .height(nlen1), .color(ncolor1), .pixel_clk_in(clk_in),.x_in(x1),.y_in(y1),.hcount_in(hcount_in),.vcount_in(vcount_in), .pixel_out(npixel1));
     note_blob note2(.width(note_width), .height(nlen2), .color(ncolor2), .pixel_clk_in(clk_in),.x_in(x2),.y_in(y2),.hcount_in(hcount_in),.vcount_in(vcount_in), .pixel_out(npixel2));
@@ -88,12 +79,12 @@ module note_generator(
 
     
     logic [8:0] old_beat;
-    logic [1:0] note_state;
+    logic [1:0] note_state;     // index for note in each 1/16th note chunk
     logic outputting;
-    logic [4:0] note_buffer;
+    logic [4:0] note_buffer;    // specifies note_blob to be used for the next note
     logic [5:0] note_num;
-    logic [1:0] wait_; 
-    logic [10:0] x_pos;
+    logic [1:0] wait_;          // small time buffer
+    logic [10:0] x_pos;         // x position for the new note
     
     logic [2:0] curr_note_length;
     logic [11:0] note_color;
@@ -108,13 +99,13 @@ module note_generator(
     assign testing = { 3'b0, note_buffer, 2'b0, note_num, 2'b0, music_out[35:30]}; // 24 bits goes into top part of hex display
     
     always_ff @ (posedge clk_in) begin
-        old_beat <= beat;                   // feed in new beat
+        old_beat <= beat;                               // feed in new beat
         pixel <= (npixel0 | npixel1 | npixel2 | npixel3 | npixel4 | npixel5 | npixel6 | 
             npixel7 | npixel8 | npixel9 | npixel10 | npixel11 | npixel12 | npixel13 | 
             npixel14 | npixel15 | npixel16 | npixel17 | npixel18 | npixel19 | npixel20 | 
             npixel21 | npixel22 | npixel23 | npixel24 | npixel25 | npixel26 | npixel27 | 
-            npixel28 | npixel29 | npixel30 | npixel31);       // displays the note pixels on the screen
-        if( reset ) begin                   // reset values
+            npixel28 | npixel29 | npixel30 | npixel31); // displays the note pixels on the screen
+        if( reset ) begin                               // reset values
             note_state <= 0;
             wait_ <= 0;
             note_buffer <= 31;
@@ -123,25 +114,25 @@ module note_generator(
             old_beat <= 0;
             activate_wait <= 1;
             pixel_step <= 0;
-        end else begin
-            if (beat != old_beat) begin
+        end else begin  
+            if (beat != old_beat) begin                 // detects new beats
                 outputting <= 1;
             end
-            if(outputting) begin
-                wait_ <= wait_ + 1;
+            if(outputting) begin                        // if the start of a new beat
+                wait_ <= wait_ + 1;                     // waits a bit
                 if(wait_ == 0) begin                    // creates small time buffer for note creation
-                    note_state <= note_state + 1;          
+                    note_state <= note_state + 1;       // goes to next part of the music chunk every iteration      
                     case(note_state) 
                         2'd0:  begin
-                            if(music_out[35:30] != 0) begin
-                                note_buffer <= note_buffer + 1;
-                                note_num <= music_out[35:30];
-                                curr_note_length <= music_out[29:27];
+                            if(music_out[35:30] != 0) begin             // checks for first note
+                                note_buffer <= note_buffer + 1;         // goes to next note_blob
+                                note_num <= music_out[35:30];           // take in the pitch
+                                curr_note_length <= music_out[29:27];   // takes in the length
                                 activate_note <= 1;
                             end
                         end
                         2'd1:  begin
-                            if(music_out[26:21] != 0) begin
+                            if(music_out[26:21] != 0) begin             // checks for 2nd note
                                 note_buffer <= note_buffer + 1;
                                 note_num <= music_out[26:21];
                                 curr_note_length <= music_out[20:18];
@@ -149,7 +140,7 @@ module note_generator(
                             end
                         end
                         2'd2:  begin
-                            if(music_out[17:12] != 0) begin
+                            if(music_out[17:12] != 0) begin             // checks for 3rd note
                                 note_buffer <= note_buffer + 1;
                                 note_num <= music_out[17:12];
                                 curr_note_length <= music_out[11:9];
@@ -157,8 +148,8 @@ module note_generator(
                             end
                         end
                         2'd3:  begin
-                            outputting <= 0;                        // done generating notes
-                            if(music_out[8:3] != 0) begin
+                            outputting <= 0;                            // done generating notes until next bear
+                            if(music_out[8:3] != 0) begin               // checks for 4th note
                                 note_buffer <= note_buffer + 1;
                                 note_num <= music_out[8:3];
                                 curr_note_length <= music_out[2:0];
@@ -172,13 +163,24 @@ module note_generator(
                 activate_note <= 0;
             end
             
+            // determine note color based on octave: black 000, blue 00F, green 0F0, cyan 0FF, red F00, magenta F0F, 
+            // yellow FF0, and white FFF
+            case(note_num) inside
+                [6'd1 :6'd12]:  note_color <= 12'hFFF; // white
+                [6'd13 :6'd24]: note_color <= 12'hF00; // red
+                [6'd25 :6'd36]: note_color <= 12'h0F0; // green
+                [6'd37 :6'd48]: note_color <= 12'h00F; // blue
+                [6'd49 :6'd60]: note_color <= 12'h0FF; // cyan
+                6'd61:          note_color <= 12'hFF0; // yellow
+            endcase
+            
             // display appropriate notes with x position and length
             if( activate_note ) begin
-                if(activate_wait) begin
+                if(activate_wait) begin // small wait
                     activate_wait <= 0;
                 end else begin
                     activate_wait <= 1;
-                    case(note_buffer) 
+                    case(note_buffer)   // assigns new values to the correct blob (x, y. length, and color) 
                         5'd0: begin x0 <=  x_pos; y0 <= 0; nlen0 <= curr_note_length; ncolor0 <= note_color; end
                         5'd1: begin x1 <=  x_pos; y1 <= 0; nlen1 <= curr_note_length; ncolor1 <= note_color; end
                         5'd2: begin x2 <=  x_pos; y2 <= 0; nlen2 <= curr_note_length; ncolor2 <= note_color; end
@@ -215,10 +217,9 @@ module note_generator(
                 end
             end
             
-            // move notes
-            // check if blob has been moved out of screen
+            // move notes one pixel at a time, check if blob has been moved out of screen
             // if so then hold it out of screen
-            if(speed_counter >= speed) begin
+            if(speed_counter >= speed) begin    // if counter is reached then y position is updated
                 y0 <= y0 < 770? y0 + 1: 780;
                 y1 <= y1 < 770? y1 + 1: 780;
                 y2 <= y2 < 770? y2 + 1: 780;
@@ -253,25 +254,11 @@ module note_generator(
                 y31 <= y31 < 770? y31 + 1: 780;
 
                 speed_counter <= 0;
-                pixel_step <= 1;
+                pixel_step <= 1;                    // raised every time y is moved
             end else begin
                 pixel_step <= 0;
-                speed_counter <= speed_counter + 1;
+                speed_counter <= speed_counter + 1; // increment counter
             end
-            
-            
-            
-            // determine note color based on octave
-            // The rgb rotate through black 000, blue 00F, green 0F0, cyan 0FF, red F00, magenta F0F, 
-            // yellow FF0, and white FFF
-            case(note_num) inside
-                [6'd1 :6'd12]:  note_color <= 12'hFFF; // white
-                [6'd13 :6'd24]: note_color <= 12'hF00; // red
-                [6'd25 :6'd36]: note_color <= 12'h0F0; // green
-                [6'd37 :6'd48]: note_color <= 12'h00F; // blue
-                [6'd49 :6'd60]: note_color <= 12'h0FF; // cyan
-                6'd61:          note_color <= 12'hFF0; // yellow
-            endcase
         end
     end
     

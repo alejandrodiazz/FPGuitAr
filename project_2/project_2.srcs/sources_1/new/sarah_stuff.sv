@@ -6,7 +6,7 @@
 // -blk_mem_gen_1 is a simple dual port BRAM, port A is 16 bit wide and 76800 bits deep
 // -div_gen_0 is a divider, radix 2, unsigned, 16/16
 // -div_gen_1 is a divider, radix 2, unsigned, 24/17
-//
+// Sarah Spector 6.111 Final Project Fall 2019
 //////////////////////////////////////////////////////////////////////////////////
 
 module image_processing(

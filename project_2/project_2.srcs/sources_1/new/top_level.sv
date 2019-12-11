@@ -74,7 +74,6 @@ module labkit(
                                 .x_C_filtered(x_C),.y_C_filtered(y_C),.x_D_filtered(x_D),.y_D_filtered(y_D),
                                 .is_A(is_A),.is_B(is_B),.is_C(is_C),.is_D(is_D));
     
-    
     //GAME LOGIC, GUI, AUDIO
     FPGuitAr_Hero pg(   .x_A(x_A), .y_A(y_A), .x_B(x_B), .y_B(y_B), .x_C(x_C), .y_C(y_C), .x_D(x_D), .y_D(y_D),
                         .is_A(is_A),.is_B(is_B),.is_C(is_C),.is_D(is_D),
@@ -116,7 +115,7 @@ module blob
     output logic [11:0] pixel_out);
 
    always_comb begin
-      if (off) begin
+      if (off) begin        // allows toggling of display for blobs
         pixel_out = 0;
       end else if ((hcount_in >= x_in && hcount_in < (x_in+width)) &&
 	 (vcount_in >= y_in && vcount_in < (y_in+height)))
@@ -141,7 +140,7 @@ module note_blob
     output logic [11:0] pixel_out);
             
     always_comb begin
-        case(height) 
+        case(height)     // takes height for the note    
             3'd0: begin  //16th note
                 if ((hcount_in >= x_in && hcount_in < (x_in+width)) &&
                 (vcount_in >= y_in && vcount_in < (y_in+ 9'b000011000)))
@@ -178,12 +177,6 @@ module note_blob
                 pixel_out = color;
                 else pixel_out = 0;
             end 
-            
-//            3'd0: note_length <= 9'b000011000;  //16th note
-//            3'd1: note_length <= 9'b000110000;  // 8th note
-//            3'd2: note_length <= 9'b001100000;  // 1/4th note
-//            3'd3: note_length <= 9'b011000000;  // 1/2 note
-//            3'd4: note_length <= 9'b110000000;  // whole note
         endcase      
    end
 endmodule
